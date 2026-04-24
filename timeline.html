@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BANANA AIRWAYS — Production Timeline</title>
+  <meta name="description" content="12-week production Gantt leading to the BANANA AIRWAYS prototype milestone." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%85%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">B</div>
+    <span>BANANA AIRWAYS — TIMELINE</span>
+  </div>
+  <nav>
+    <a href="index.html">← Portal</a>
+    <a href="https://avioncito-site.onrender.com/" target="_blank" rel="noopener">Brief</a>
+  </nav>
+</header>
+
+<main class="wrap-wide">
+
+  <section class="hero">
+    <div>
+      <h1>Prototype in <span class="accent">12 weeks.</span></h1>
+      <p>From kickoff (Apr 20) to playable vertical slice (Jul 12). Five milestones, eight disciplines, one plane falling apart on schedule.</p>
+    </div>
+    <div class="meta">
+      <div class="row"><span>Start</span><strong>Mon 2026-04-20 &middot; W1</strong></div>
+      <div class="row"><span>Prototype</span><strong>Sun 2026-07-12 &middot; end W12</strong></div>
+      <div class="row"><span>Total weeks</span><strong>12</strong></div>
+      <div class="row"><span>Milestones</span><strong>M0 &middot; M1 &middot; M2 &middot; M3</strong></div>
+    </div>
+  </section>
+
+  <div class="gantt-toolbar">
+    <span><strong>Legend</strong></span>
+    <div class="legend">
+      <span class="chip"><span class="dot" style="background:#64748b"></span> Pre-prod</span>
+      <span class="chip"><span class="dot" style="background:#ff6b6b"></span> Concept</span>
+      <span class="chip"><span class="dot" style="background:#a78bfa"></span> 3D Model</span>
+      <span class="chip"><span class="dot" style="background:#14b8a6"></span> UV</span>
+      <span class="chip"><span class="dot" style="background:#fb923c"></span> Rig/Skin</span>
+      <span class="chip"><span class="dot" style="background:#22c55e"></span> Environments</span>
+      <span class="chip"><span class="dot" style="background:#ec4899"></span> VO/Audio</span>
+      <span class="chip"><span class="dot" style="background:#3b82f6"></span> Graphic Design</span>
+      <span class="chip"><span class="dot" style="background:#f59e0b"></span> Unity</span>
+      <span class="chip"><span class="dot" style="background:#ffd93d;border:2px solid #0a1628"></span> Milestone</span>
+    </div>
+  </div>
+
+  <div class="gantt" id="gantt">
+
+    <!-- Header row with week numbers and start dates -->
+    <div class="gantt-header">
+      <div>Discipline</div>
+      <div class="cell"><span class="wk">W1</span><span class="dt">Apr 20</span></div>
+      <div class="cell"><span class="wk">W2</span><span class="dt">Apr 27</span></div>
+      <div class="cell"><span class="wk">W3</span><span class="dt">May 4</span></div>
+      <div class="cell"><span class="wk">W4</span><span class="dt">May 11</span></div>
+      <div class="cell"><span class="wk">W5</span><span class="dt">May 18</span></div>
+      <div class="cell"><span class="wk">W6</span><span class="dt">May 25</span></div>
+      <div class="cell"><span class="wk">W7</span><span class="dt">Jun 1</span></div>
+      <div class="cell"><span class="wk">W8</span><span class="dt">Jun 8</span></div>
+      <div class="cell"><span class="wk">W9</span><span class="dt">Jun 15</span></div>
+      <div class="cell"><span class="wk">W10</span><span class="dt">Jun 22</span></div>
+      <div class="cell"><span class="wk">W11</span><span class="dt">Jun 29</span></div>
+      <div class="cell"><span class="wk">W12</span><span class="dt">Jul 6</span></div>
+    </div>
+
+    <!-- Phase bands -->
+    <div class="phase-strip">
+      <div class="row-label">Phases</div>
+      <div class="phase p1" style="grid-column: 2 / span 4">Pre-prod &amp; Concept</div>
+      <div class="phase p2" style="grid-column: 6 / span 4">Production</div>
+      <div class="phase p3" style="grid-column: 10 / span 4">Integration &amp; Polish</div>
+    </div>
+
+    <!-- Pre-production -->
+    <div class="gantt-row">
+      <div class="row-label"><span class="stripe" style="background:#64748b"></span>Pre-production</div>
+      <div class="bar slate" style="grid-column: 2 / span 2;" title="Scope lock, GDD v1, Unity project, repo, asset pipeline">Scope lock + pipeline setup</div>
+      <div class="bar slate" style="grid-column: 4 / span 9;" title="Standups, weekly demos, playtests with friends from W6">Weekly syncs &amp; playtests</div>
+    </div>
+
+    <!-- Concept Art -->
+    <div class="gantt-row">
+      <div class="row-label"><span class="stripe" style="background:#ff6b6b"></span>Concept Art</div>
+      <div class="bar coral" style="grid-column: 2 / span 2;" title="Style frames, color scripts, tone references">Style frames + mood</div>
+      <div class="bar coral" style="grid-column: 4 / span 2;" title="4 crew silhouettes, turnarounds, expression sheet for hero">Hero crew concepts</div>
+      <div class="bar coral" style="grid-column: 6 / span 2;" title="Archetypes: Karen, Baby, Businessman, Tourist, etc.">Passenger archetypes</div>
+      <div class="bar coral lane-2" style="grid-column: 4 / span 3;" title="Cart, umbrella, duct tape, plunger, wrench, wood planks">Prop concepts</div>
+      <div class="bar coral lane-2" style="grid-column: 7 / span 2;" title="HUD mood, UI iconography, signage voice">UI / signage mood</div>
+    </div>
+
+    <!-- 3D Modeling -->
+    <div class="gantt-row">
+      <div class="row-label"><span class="stripe" style="background:#a78bfa"></span>3D Modeling</div>
+      <div class="bar purple" style="grid-column: 4 / span 2;" title="High-poly sculpt of hero crew member">Hero crew sculpt</div>
+      <div class="bar purple" style="grid-column: 6 / span 1;" title="Retopo to game mesh, LODs">Game mesh</div>
+      <div class="bar purple" style="grid-column: 7 / span 2;" title="Shared passenger base mesh for variants">Passenger base</div>
+      <div class="bar purple lane-2" style="grid-column: 5 / span 3;" title="Cart, umbrella, duct tape, plunger, tools">Prop pack</div>
+      <div class="bar purple lane-2" style="grid-column: 8 / span 3;" title="Cabin modular pieces: seats, overhead, windows, doors">Cabin modular kit</div>
+    </div>
+
+    <!-- UV Mapping -->
+    <div class="gantt-row">
+      <div class="row-label"><span class="stripe" style="background:#14b8a6"></span>UV Mapping</div>
+      <div class="bar teal" style="grid-column: 6 / span 1;" title="UV unwrap hero character, UDIMs if needed">Hero crew UVs</div>
+      <div class="bar teal" style="grid-column: 7 / span 1;" title="Atlas props into 1–2 texture sheets">Prop UVs</div>
+      <div class="bar teal" style="grid-column: 8 / span 2;" title="Passenger variants + modular kit atlas">Passenger + kit UVs</div>
+    </div>
+
+    <!-- Rig & Skin -->
+    <div class="gantt-row">
+      <div class="row-label"><span class="stripe" style="background:#fb923c"></span>Rig &amp; Skin</div>
+      <div class="bar orange" style="grid-column: 7 / span 1;" title="IK/FK arms, face controls, grip bones">Hero crew rig</div>
+      <div class="bar orange" style="grid-column: 8 / span 1;" title="Weight paint, deform tests">Skin + weight paint</div>
+      <div class="bar orange" style="grid-column: 9 / span 1;" title="Idle, walk, carry, interact cycles">Test cycles</div>
+      <div class="bar orange lane-2" style="grid-column: 10 / span 1;" title="Simpler rig shared across passenger variants">Passenger rig</div>
+    </div>
+
+    <!-- Environments / Spaces -->
+    <div class="gantt-row">
+      <div class="row-label"><span class="stripe" style="background:#22c55e"></span>Environments &amp; Spaces</div>
+      <div class="bar green" style="grid-column: 3 / span 2;" title="Greybox cabin volume in Unity — blocking and scale">Cabin blockout</div>
+      <div class="bar green" style="grid-column: 5 / span 1;" title="Cockpit greybox + pilot seat">Cockpit blockout</div>
+      <div class="bar green" style="grid-column: 8 / span 3;" title="Assemble modular kit into full playable cabin">Modular space assembly</div>
+      <div class="bar green" style="grid-column: 11 / span 2;" title="Props, posters, luggage, hand props for atmosphere">Set dressing</div>
+      <div class="bar green lane-2" style="grid-column: 10 / span 2;" title="Key lighting, emergency flashes, window sun">Lighting pass 1</div>
+    </div>
+
+    <!-- VO / Audio -->
+    <div class="gantt-row">
+      <div class="row-label"><span class="stripe" style="background:#ec4899"></span>VO / Audio</div>
+      <div class="bar pink" style="grid-column: 4 / span 1;" title="Character voice direction, line list, tone guide">VO direction doc</div>
+      <div class="bar pink" style="grid-column: 5 / span 2;" title="Self-record scratch lines for iteration in engine">Scratch VO (self-record)</div>
+      <div class="bar pink" style="grid-column: 7 / span 2;" title="Talent shortlist, auditions, book sessions">Casting + shortlist</div>
+      <div class="bar pink" style="grid-column: 11 / span 2;" title="Record finals for hero crew + key passenger barks">First final VO pass</div>
+      <div class="bar pink lane-2" style="grid-column: 6 / span 4;" title="Placeholder SFX library: alarms, engine, cabin, UI">SFX placeholder library</div>
+    </div>
+
+    <!-- Graphic Design -->
+    <div class="gantt-row">
+      <div class="row-label"><span class="stripe" style="background:#3b82f6"></span>Graphic Design</div>
+      <div class="bar blue" style="grid-column: 2 / span 2;" title="Logo lockup, type system, color palette, brand kit">Logo + brand kit</div>
+      <div class="bar blue" style="grid-column: 4 / span 3;" title="Safety cards, posters, cabin signage, boarding passes">In-world signage &amp; posters</div>
+      <div class="bar blue" style="grid-column: 7 / span 2;" title="Happiness meter, prompts, inventory, icon set">HUD mockups</div>
+      <div class="bar blue" style="grid-column: 9 / span 3;" title="Final UI sprites, icons, font packaging, 9-slices">Final UI asset pack</div>
+    </div>
+
+    <!-- Unity Integration -->
+    <div class="gantt-row">
+      <div class="row-label"><span class="stripe" style="background:#f59e0b"></span>Unity Integration</div>
+      <div class="bar gold" style="grid-column: 2 / span 1;" title="URP project, git, folder structure, asset pipeline">Project scaffolding</div>
+      <div class="bar gold" style="grid-column: 4 / span 2;" title="Character controller, cameras, pickup + interact">Controller + 3C</div>
+      <div class="bar gold" style="grid-column: 6 / span 2;" title="Serve food/water/oxygen, seat changes, lollipops">Core loop — Attend</div>
+      <div class="bar gold" style="grid-column: 8 / span 2;" title="Doors, engines (rope), bathrooms, wings (duct tape)">Core loop — Repair</div>
+      <div class="bar gold" style="grid-column: 11 / span 2;" title="Bug bash, FPS budget, build pipeline, Steam build">Prototype polish + build</div>
+      <div class="bar gold lane-2" style="grid-column: 7 / span 2;" title="Per-passenger happiness tick, meter UI, feedback VFX">Happiness meter + feedback</div>
+      <div class="bar gold lane-2" style="grid-column: 9 / span 2;" title="Shared/split-screen for prototype. Netcode deferred.">Local co-op (shared screen)</div>
+      <div class="bar gold lane-2" style="grid-column: 11 / span 1;" title="Final lighting bake, post-processing, LUT">Lighting + post</div>
+    </div>
+
+    <!-- Milestones -->
+    <div class="gantt-row milestone-row">
+      <div class="row-label"><span class="stripe" style="background:#ffd93d;border:1px solid #0a1628;"></span>Milestones</div>
+      <div class="bar milestone" style="grid-column: 3 / span 1;" title="GDD v1 locked, scope frozen, Unity project live">M0 · Scope lock</div>
+      <div class="bar milestone" style="grid-column: 5 / span 1;" title="Style frames, hero concept, brand kit approved">M1 · Art bible</div>
+      <div class="bar milestone" style="grid-column: 9 / span 1;" title="Hero crew rigged + moving in cabin blockout, Attend loop playable">M2 · First playable</div>
+      <div class="bar milestone final" style="grid-column: 13 / span 1;" title="Vertical slice: 1 hero crew, cabin, Attend + Repair, HUD, scratch VO">M3 · PROTOTYPE</div>
+    </div>
+
+    <!-- TODAY marker (positioned by JS) -->
+    <div class="today-line" id="todayLine" style="display:none"></div>
+
+  </div>
+
+  <!-- Milestone detail cards -->
+  <section>
+    <div class="section-title">
+      <h2>Milestone checklist</h2>
+      <span class="tag">Definition of done</span>
+    </div>
+    <div class="cards" style="grid-template-columns: repeat(4, 1fr); gap: 14px;">
+      <div class="card" style="padding: 20px 18px;">
+        <div class="kicker">M0 · end W2 · May 3</div>
+        <h3 style="font-size: 18px;">Scope lock</h3>
+        <p style="font-size: 13px;">GDD v1 signed. Prototype feature list frozen. Unity project + repo live. Asset naming + pipeline doc. Discord/Slack ready.</p>
+      </div>
+      <div class="card" style="padding: 20px 18px;">
+        <div class="kicker">M1 · end W4 · May 17</div>
+        <h3 style="font-size: 18px;">Art bible</h3>
+        <p style="font-size: 13px;">Style frames, hero crew turnaround, passenger silhouettes, brand kit, prop pack concepts — all approved. Ready for 3D.</p>
+      </div>
+      <div class="card" style="padding: 20px 18px;">
+        <div class="kicker">M2 · end W8 · Jun 14</div>
+        <h3 style="font-size: 18px;">First playable</h3>
+        <p style="font-size: 13px;">Hero crew rigged and moving in cabin blockout. Attend loop playable end-to-end with placeholder art. Happiness meter reacts.</p>
+      </div>
+      <div class="card banana" style="padding: 20px 18px;">
+        <div class="kicker">M3 · end W12 · Jul 12</div>
+        <h3 style="font-size: 18px;">PROTOTYPE</h3>
+        <p style="font-size: 13px;">Vertical slice: 1 hero crew, textured cabin, Attend + Repair loops, final HUD, scratch VO, local co-op (shared screen). Steam build.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope notes -->
+  <section>
+    <div class="section-title">
+      <h2>Scope guardrails</h2>
+      <span class="tag">What we're NOT doing in prototype</span>
+    </div>
+    <div class="pipeline">
+      <div class="pipe-item">
+        <h4>Netcode</h4>
+        <p>Prototype is local/shared-screen. True online co-op is a post-prototype epic.</p>
+      </div>
+      <div class="pipe-item">
+        <h4>Defend &amp; Fly pillars</h4>
+        <p>Only Attend + Repair in prototype. Defend (aliens, bombs) and Fly (piloting) come after M3.</p>
+      </div>
+      <div class="pipe-item">
+        <h4>Character variety</h4>
+        <p>1 fully-rigged hero crew in prototype. Other 3 are concepted but not production-ready yet.</p>
+      </div>
+      <div class="pipe-item">
+        <h4>Final VO</h4>
+        <p>Scratch VO (self-recorded) for prototype. Real talent booked only for hero lines by W11.</p>
+      </div>
+      <div class="pipe-item">
+        <h4>Passenger variety</h4>
+        <p>Shared base mesh with material swaps. No unique rigs or barks per passenger yet.</p>
+      </div>
+      <div class="pipe-item">
+        <h4>Steam storefront polish</h4>
+        <p>Steam page is a placeholder. Capsule art, trailer, and wishlist push are post-prototype.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>BANANA AIRWAYS · Production timeline v1 · 2026-04-23</span>
+    <span>Questions or changes? Ping Jorge (producer).</span>
+  </footer>
+
+</main>
+
+<script>
+  // Position TODAY marker based on real date within the 12-week window
+  (function () {
+    const START = new Date('2026-04-20T00:00:00');
+    const WEEKS = 12;
+    const DAYS_TOTAL = WEEKS * 7;
+    const LABEL_WIDTH = 200;
+
+    const line = document.getElementById('todayLine');
+    const gantt = document.getElementById('gantt');
+    if (!line || !gantt) return;
+
+    function place() {
+      const today = new Date();
+      const daysSince = (today - START) / (1000 * 60 * 60 * 24);
+      if (daysSince < 0 || daysSince > DAYS_TOTAL) {
+        line.style.display = 'none';
+        return;
+      }
+      line.style.display = 'block';
+      const totalWidth = gantt.scrollWidth;
+      const weeksWidth = totalWidth - LABEL_WIDTH;
+      const px = LABEL_WIDTH + weeksWidth * (daysSince / DAYS_TOTAL);
+      line.style.left = px + 'px';
+    }
+
+    place();
+    window.addEventListener('resize', place);
+  })();
+</script>
+
+</body>
+</html>
