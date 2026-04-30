@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BANANA AIRWAYS — Production Portal</title>
-  <meta name="description" content="Production hub for BANANA AIRWAYS — a 2–4 player co-op Steam party game. Brief, timeline, and Steam page." />
+  <title>BANANA AIRLINES — Production Portal</title>
+  <meta name="description" content="Production hub for BANANA AIRLINES — three-person Steam co-op game. Brief, master schedule, internal timeline, and Steam page." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%8C%3C/text%3E%3C/svg%3E" />
 </head>
@@ -13,11 +13,12 @@
 <header class="topbar">
   <div class="brand">
     <div class="logo">B</div>
-    <span>BANANA AIRWAYS — PRODUCTION</span>
+    <span>BANANA AIRLINES — PRODUCTION</span>
   </div>
   <nav>
     <a href="#links">Links</a>
-    <a href="#pipeline">Pipeline</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#crew">Crew</a>
     <a href="timeline.html">Timeline</a>
   </nav>
 </header>
@@ -26,15 +27,16 @@
 
   <section class="hero">
     <div>
-      <h1>Boarding <span class="accent">chaos.</span><br/>On schedule.</h1>
-      <p>A 2–4 player co-op party game for Steam. Manage an ultra-low-cost airline through cascading mid-flight disasters: Attend, Repair, Defend, Fly.</p>
+      <h1>Boarding for <span class="accent">Next Fest.</span></h1>
+      <p>A "friendslop" co-op game for Steam by a three-person team. Production launches Apr 28, Steam page goes live Jun 1, Steam Next Fest Oct 19–26.</p>
     </div>
     <div class="meta">
-      <div class="row"><span>Producer / Lead Art</span><strong>Jorge &mdash; 3dar.com</strong></div>
+      <div class="row"><span>Crew</span><strong>Valentín &middot; Jorge &middot; Federico</strong></div>
       <div class="row"><span>Platform</span><strong>PC &middot; Steam</strong></div>
-      <div class="row"><span>Team size</span><strong>2&ndash;4 co-op</strong></div>
-      <div class="row"><span>Prototype target</span><strong>Mid-July 2026 &middot; ~12 weeks</strong></div>
-      <div class="row"><span>Status</span><strong>Pre-production</strong></div>
+      <div class="row"><span>Flight launch</span><strong>Tue 28 APR 2026</strong></div>
+      <div class="row"><span>Departure (Steam page)</span><strong>Mon 1 JUN 2026</strong></div>
+      <div class="row"><span>Next Fest</span><strong>19&ndash;26 OCT 2026</strong></div>
+      <div class="row"><span>Status</span><strong id="status">Pre-launch</strong></div>
     </div>
   </section>
 
@@ -44,80 +46,115 @@
       <span class="tag">Start here</span>
     </div>
 
-    <div class="cards">
+    <div class="cards" style="grid-template-columns: repeat(2, 1fr); gap: 18px;">
 
-      <a class="card banana" href="https://avioncito-site.onrender.com/" target="_blank" rel="noopener">
-        <div class="kicker">01 &middot; Brief</div>
-        <h3>Design Brief</h3>
-        <p>The original concept site — pillars, features, scope tiers, and tone. Treat as source of truth for design intent.</p>
-        <div class="arrow">→ Open brief</div>
+      <a class="card banana" href="https://banana.3dar.com/" target="_blank" rel="noopener">
+        <div class="kicker">01 &middot; Master schedule</div>
+        <h3>Steam Launch Schedule</h3>
+        <p>The canonical schedule from banana.3dar.com — milestones, exact dates, deliverables, team assignments, open questions. Source of truth for dates.</p>
+        <div class="arrow">→ Open master schedule</div>
       </a>
 
       <a class="card" href="timeline.html">
-        <div class="kicker">02 &middot; Plan</div>
-        <h3>Production Timeline</h3>
-        <p>12-week interactive Gantt across concept, 3D, UV, rig/skin, environments, VO, graphic design, and Unity — ending at the prototype milestone.</p>
-        <div class="arrow">→ Open timeline</div>
+        <div class="kicker">02 &middot; Visualized plan</div>
+        <h3>Internal Gantt Timeline</h3>
+        <p>The same schedule visualized: 8 milestones, 7 work streams, phase bands from Apr 28 through Oct 26. Live TODAY marker.</p>
+        <div class="arrow">→ Open Gantt</div>
       </a>
 
-      <a class="card placeholder" href="#" onclick="alert('Steam page not yet live. Paste the Steamworks URL into index.html when ready.'); return false;">
-        <span class="badge">Placeholder</span>
-        <div class="kicker">03 &middot; Storefront</div>
+      <a class="card" href="https://avioncito-site.onrender.com/" target="_blank" rel="noopener">
+        <div class="kicker">03 &middot; Design brief</div>
+        <h3>Concept &amp; Design Brief</h3>
+        <p>Original brief — 4 gameplay pillars (Attend, Repair, Defend, Fly), feature scope tiers, tone references. Design intent canon.</p>
+        <div class="arrow">→ Open brief</div>
+      </a>
+
+      <a class="card placeholder" href="#" onclick="alert('Steam page goes live 1 JUN 2026 (Departure milestone). Swap this link in index.html when published.'); return false;">
+        <span class="badge">Live 1 JUN</span>
+        <div class="kicker">04 &middot; Storefront</div>
         <h3>Steam Page</h3>
-        <p>Temporary slot for the Steam store page. Swap this link when the Steamworks store page is live.</p>
+        <p>Live at Departure milestone. Until then, this is a placeholder — replace href with Steam URL after publication.</p>
         <div class="arrow">→ Steam (TBD)</div>
       </a>
 
     </div>
   </section>
 
-  <section id="pipeline">
+  <section id="schedule">
     <div class="section-title">
-      <h2>Production disciplines</h2>
-      <span class="tag">What we're making</span>
+      <h2>Milestone summary</h2>
+      <span class="tag">8 named milestones</span>
     </div>
     <div class="pipeline">
-      <div class="pipe-item concept">
-        <h4>Concept Art</h4>
-        <p>Crew, passengers, props, plane interiors, branding mood.</p>
+      <div class="pipe-item concept"><h4>M0 · Flight Launch · 28 APR</h4><p>Production begins. Team kickoff.</p></div>
+      <div class="pipe-item concept"><h4>M1 · Foundation · 7 MAY</h4><p>Mood board + creative direction lock.</p></div>
+      <div class="pipe-item model"><h4>M2 · Content Lock · 31 MAY</h4><p>Final designs, GDD v1, trailer script.</p></div>
+      <div class="pipe-item ui"><h4>M3 · Departure · 1 JUN</h4><p><strong>Steam page LIVE.</strong> Wishlist push.</p></div>
+      <div class="pipe-item unity"><h4>M4 · Demo Scope · 15 JUL</h4><p>Public demo plan + greybox approved.</p></div>
+      <div class="pipe-item unity"><h4>M5 · Demo Build · 15 AUG</h4><p>Content complete, internal beta running.</p></div>
+      <div class="pipe-item rig"><h4>M6 · Demo Lock · 19 SEP</h4><p>Feature freeze, 1 month before Fest.</p></div>
+      <div class="pipe-item env"><h4>M7 · Next Fest · 19–26 OCT</h4><p><strong>Steam Next Fest LIVE.</strong></p></div>
+    </div>
+  </section>
+
+  <section id="crew">
+    <div class="section-title">
+      <h2>Crew</h2>
+      <span class="tag">Three-person team</span>
+    </div>
+    <div class="cards" style="grid-template-columns: repeat(3, 1fr); gap: 16px;">
+      <div class="card" style="padding: 22px 20px;">
+        <div class="kicker">V · Art</div>
+        <h3>Valentín</h3>
+        <p style="font-size: 13px;">Creative direction, mood board, logo, character design, capsule images, trailers, promotional materials.</p>
       </div>
-      <div class="pipe-item model">
-        <h4>3D Modeling</h4>
-        <p>Hero crew, passenger bases, prop pack, modular cabin kit.</p>
+      <div class="card" style="padding: 22px 20px;">
+        <div class="kicker">J · Code</div>
+        <h3>Jorge</h3>
+        <p style="font-size: 13px;">Prototyping, playable builds, multiplayer/matchmaking, performance, bug fixing. Producer + 3D/concept on this project.</p>
       </div>
-      <div class="pipe-item uv">
-        <h4>UV Mapping</h4>
-        <p>Characters, props, modular environment panels.</p>
-      </div>
-      <div class="pipe-item rig">
-        <h4>Rig &amp; Skin</h4>
-        <p>Crew rig, weight paint, test cycles (idle / walk / interact).</p>
-      </div>
-      <div class="pipe-item env">
-        <h4>Environments &amp; Spaces</h4>
-        <p>Cabin, cockpit, modular kit, lighting, set dressing.</p>
-      </div>
-      <div class="pipe-item vo">
-        <h4>Voices &amp; Audio</h4>
-        <p>VO direction, scratch records, casting, first final pass, SFX.</p>
-      </div>
-      <div class="pipe-item ui">
-        <h4>Graphic Design</h4>
-        <p>Logo, in-world signage, HUD, UI asset pack, posters.</p>
-      </div>
-      <div class="pipe-item unity">
-        <h4>Unity Integration</h4>
-        <p>Scaffolding, character controller, core loop, lighting, polish.</p>
+      <div class="card" style="padding: 22px 20px;">
+        <div class="kicker">F · Design</div>
+        <h3>Federico</h3>
+        <p style="font-size: 13px;">GDD, copy, Steam page backend, registrations, deadlines, production coordination.</p>
       </div>
     </div>
   </section>
 
   <footer class="foot">
-    <span>BANANA AIRWAYS · Production portal · Last updated 2026-04-23</span>
-    <span>Built for producer &amp; team use. Not public-facing.</span>
+    <span>BANANA AIRLINES · Production portal · Synced from <a href="https://banana.3dar.com/" target="_blank" rel="noopener">banana.3dar.com</a></span>
+    <span>Built for the crew. Not public-facing.</span>
   </footer>
 
 </main>
+
+<script>
+  // Live "T-X days" status
+  (function () {
+    const FLIGHT = new Date('2026-04-28T00:00:00');
+    const DEPARTURE = new Date('2026-06-01T00:00:00');
+    const FEST_START = new Date('2026-10-19T00:00:00');
+    const FEST_END = new Date('2026-10-26T23:59:59');
+    const today = new Date();
+
+    const el = document.getElementById('status');
+    if (!el) return;
+
+    const days = (a, b) => Math.ceil((a - b) / 86400000);
+
+    if (today < FLIGHT) {
+      el.textContent = `Pre-launch · T-${days(FLIGHT, today)} to Flight Launch`;
+    } else if (today < DEPARTURE) {
+      el.textContent = `Asset production · T-${days(DEPARTURE, today)} to Departure`;
+    } else if (today < FEST_START) {
+      el.textContent = `Marketing/Demo · T-${days(FEST_START, today)} to Next Fest`;
+    } else if (today <= FEST_END) {
+      el.textContent = `★ NEXT FEST LIVE ★`;
+    } else {
+      el.textContent = `Post-Fest`;
+    }
+  })();
+</script>
 
 </body>
 </html>
