@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BANANA AIRLINES — Flight Brief</title>
+  <meta name="description" content="Banana Airlines — a co-op party game where the airplane disassembles mid-flight and you must repair it while passengers ask for plant-based milk. Flight brief: pillars, threats, inventory, roadmap, cast." />
+  <link rel="stylesheet" href="brief.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%8C%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">B</div>
+    <div class="brand-text">
+      <span class="name">BANANA_AIRLINES</span>
+      <span class="code">BA·001 · ON TIME</span>
+    </div>
+  </div>
+  <nav>
+    <a href="#manifesto">Pitch</a>
+    <a href="#loop">Gameplay</a>
+    <a href="#threats">Threats</a>
+    <a href="#inventory">Inventory</a>
+    <a href="#passengers">Passengers</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#cast">Cast</a>
+    <a href="index.html" class="back">← Portal</a>
+  </nav>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>⚠ The oxygen mask drops automatically during depressurization</span>
+    <span>⚠ Level 3 turbulence inbound</span>
+    <span>♥ A lollipop calms the baby in 12A</span>
+    <span>⚠ Opening the umbrella before deploying it is fatal</span>
+    <span>⚠ Suspicious luggage in row 12</span>
+    <span>⚠ Grandma is not who she claims to be</span>
+    <span>⚠ Engine 2 is held together with duct tape — please don't tell the FAA</span>
+    <span>♥ Free peanuts. Bring your own EpiPen</span>
+    <!-- duplicate for seamless loop -->
+    <span>⚠ The oxygen mask drops automatically during depressurization</span>
+    <span>⚠ Level 3 turbulence inbound</span>
+    <span>♥ A lollipop calms the baby in 12A</span>
+    <span>⚠ Opening the umbrella before deploying it is fatal</span>
+    <span>⚠ Suspicious luggage in row 12</span>
+    <span>⚠ Grandma is not who she claims to be</span>
+    <span>⚠ Engine 2 is held together with duct tape — please don't tell the FAA</span>
+    <span>♥ Free peanuts. Bring your own EpiPen</span>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <div class="kicker">CO-OP PARTY GAME</div>
+      <h1>Cleared for <span class="accent">chaos.</span></h1>
+      <p class="lede">A cooperative party game where the airplane disassembles mid-flight, and you have to repair it while the passengers keep asking if the coffee comes with plant-based milk.</p>
+      <div class="hero-tags">
+        <span class="tag">Flight 747</span>
+        <span class="tag">Co-op</span>
+        <span class="tag">2–4 pax</span>
+        <span class="tag">PC · Steam</span>
+      </div>
+    </div>
+
+    <aside class="ticket" aria-label="Boarding pass">
+      <div class="ticket-head">
+        <div class="ticket-airline">
+          <span class="ticket-logo">B</span>
+          <span>BANANA_AIRLINES</span>
+        </div>
+        <div class="ticket-flight">BA·001</div>
+      </div>
+
+      <div class="ticket-body">
+        <div class="ticket-route">
+          <div class="endpoint">
+            <span class="iata">LBY</span>
+            <span class="city">Lobby</span>
+          </div>
+          <div class="route-arrow">✈</div>
+          <div class="endpoint">
+            <span class="iata">CHX</span>
+            <span class="city">Chaos</span>
+          </div>
+        </div>
+
+        <dl class="ticket-meta">
+          <div><dt>Genre</dt><dd>Party · Co-op</dd></div>
+          <div><dt>Players</dt><dd>2–4</dd></div>
+          <div><dt>Platform</dt><dd>PC · Steam</dd></div>
+          <div><dt>Tone</dt><dd>Absurd · Chaotic</dd></div>
+          <div><dt>Gate</dt><dd>B-4</dd></div>
+          <div><dt>Seat</dt><dd>14A</dd></div>
+          <div><dt>Class</dt><dd>Economy</dd></div>
+          <div><dt>Steam Page</dt><dd>1 JUN 2026</dd></div>
+        </dl>
+      </div>
+
+      <div class="ticket-foot">
+        <span>EST. 2026</span>
+        <span>ULTRA LOW COST</span>
+        <span>MADE IN 3DAR</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- 01 — MANIFESTO -->
+  <section id="manifesto" class="block">
+    <header class="block-head">
+      <span class="num">01</span>
+      <h2>Flight manifesto</h2>
+    </header>
+
+    <div class="manifesto-grid">
+      <p class="lead">
+        An ultra-low-cost airline where <strong>everything breaks at the same time</strong>. The players are the Banana Airlines crew. The job: get from A to B while keeping passenger happiness as high as possible — even though the cabin is on fire, the wing is leaking fuel, and someone in row 12 is, in fact, a bomb.
+      </p>
+
+      <ul class="manifesto-list">
+        <li><strong>Visible happiness meters.</strong> Each passenger reacts in real time. Chaos, impacts and rough landings drag satisfaction down — and once it bottoms out, that passenger is a problem of its own.</li>
+        <li><strong>Repair with whatever's around.</strong> Patch the fuselage with wood and nails. Use an umbrella as a lightning rod. Hang from a rope outside the plane to fix an engine.</li>
+        <li><strong>Comedy of process, not jokes.</strong> The humor lives in the systems: "repair a door with planks while a passenger asks if the coffee has plant-based milk."</li>
+      </ul>
+
+      <blockquote class="pull">
+        <p>"Repair a door with planks while a passenger asks if the coffee comes with plant-based milk."</p>
+        <cite>§ 4.2 — Repair Protocol</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 02 — GAMEPLAY LOOP -->
+  <section id="loop" class="block">
+    <header class="block-head">
+      <span class="num">02</span>
+      <h2>Gameplay loop</h2>
+      <span class="hint">Four pillars · always running in parallel</span>
+    </header>
+
+    <div class="pillars">
+      <article class="pillar p-serve">
+        <div class="pillar-head">
+          <span class="pillar-tag">P-01</span>
+          <h3>Serve</h3>
+        </div>
+        <ul>
+          <li>Food, water, oxygen masks</li>
+          <li>Seat changes for difficult passengers</li>
+          <li>Lollipops for crying babies</li>
+          <li>Handle complaints before they spread panic</li>
+        </ul>
+      </article>
+
+      <article class="pillar p-repair">
+        <div class="pillar-head">
+          <span class="pillar-tag">P-02</span>
+          <h3>Repair</h3>
+        </div>
+        <ul>
+          <li>Doors with wood &amp; nails</li>
+          <li>Engines while dangling on a rope</li>
+          <li>Clogged toilets with the plunger</li>
+          <li>Wings patched with duct tape</li>
+        </ul>
+      </article>
+
+      <article class="pillar p-defend">
+        <div class="pillar-head">
+          <span class="pillar-tag">P-03</span>
+          <h3>Defend</h3>
+        </div>
+        <ul>
+          <li>Bomb puzzles inside luggage — crack the code</li>
+          <li>Alien invasions in the cabin</li>
+          <li>Missiles from the war zone below</li>
+          <li>Eject threats through the door (gently)</li>
+        </ul>
+      </article>
+
+      <article class="pillar p-fly">
+        <div class="pillar-head">
+          <span class="pillar-tag">P-04</span>
+          <h3>Fly</h3>
+        </div>
+        <ul>
+          <li>Take the controls in the cockpit</li>
+          <li>Dodge missiles and storms</li>
+          <li>Respond to "TERRAIN PULL UP" alerts</li>
+          <li>Stick a precision landing</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- 03 — THREATS -->
+  <section id="threats" class="block">
+    <header class="block-head">
+      <span class="num">03</span>
+      <h2>Events &amp; threats</h2>
+      <span class="hint">9 escalating threat classes</span>
+    </header>
+
+    <div class="threats">
+
+      <article class="threat">
+        <header><span class="t-code">ALT-01</span><h3>Turbulence</h3><span class="t-tier">T1 → T2 → T3</span></header>
+        <p>Tier 1: cabin shake. Tier 2: a door gets ripped off. Tier 3: engine damage. Hold onto something.</p>
+      </article>
+
+      <article class="threat">
+        <header><span class="t-code">ELX-02</span><h3>Storm / Turbostorm</h3><span class="t-tier">Lightning</span></header>
+        <p>Lightning strikes damage the plane. Deploy the umbrella as a lightning rod — but never open it inside the cabin.</p>
+      </article>
+
+      <article class="threat">
+        <header><span class="t-code">WAR-03</span><h3>War zone</h3><span class="t-tier">Missiles</span></header>
+        <p>Missiles incoming from the ground. Evade, absorb, repair. Whichever happens first.</p>
+      </article>
+
+      <article class="threat">
+        <header><span class="t-code">EMR-04</span><h3>Bomb puzzle</h3><span class="t-tier">Code-cracking</span></header>
+        <p>Codes hidden across the luggage. Find them, enter them, defuse it. Difficulty escalates per tier.</p>
+      </article>
+
+      <article class="threat">
+        <header><span class="t-code">BIO-05</span><h3>Alien invasion</h3><span class="t-tier">Infection</span></header>
+        <p>An alien pathogen spreads across passengers. Apply antidote — or eject through the door.</p>
+      </article>
+
+      <article class="threat">
+        <header><span class="t-code">BUG-06</span><h3>Face bug</h3><span class="t-tier">Vision blocked</span></header>
+        <p>A bug latches onto a player's face. They can't see. A teammate has to pry it off. Funny once. Funnier twice.</p>
+      </article>
+
+      <article class="threat">
+        <header><span class="t-code">PWR-07</span><h3>Electrical failure</h3><span class="t-tier">Cascade</span></header>
+        <p>Lights flicker, doors malfunction, panic spreads. Reset the fuses before the cabin loses it.</p>
+      </article>
+
+      <article class="threat">
+        <header><span class="t-code">GPW-08</span><h3>TERRAIN PULL UP</h3><span class="t-tier">Imminent impact</span></header>
+        <p>The alarm screams. Someone has to sprint to the controls and pull up before the plane meets the dirt.</p>
+      </article>
+
+      <article class="threat">
+        <header><span class="t-code">WC-09</span><h3>Clogged bathroom</h3><span class="t-tier">Plunger ops</span></header>
+        <p>The toilet is overflowing. The plunger is in your hands. Turbulence is making it splash. Good luck.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 04 — INVENTORY -->
+  <section id="inventory" class="block">
+    <header class="block-head">
+      <span class="num">04</span>
+      <h2>Cabin inventory</h2>
+      <span class="hint">Standard issue · ultra low cost</span>
+    </header>
+
+    <div class="inventory">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Rarity</th>
+            <th>Function</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Food cart</td><td><span class="rar common">Common</span></td><td>Water, snacks, lollipops</td></tr>
+          <tr><td>Oxygen masks</td><td><span class="rar common">Common</span></td><td>Deploy on depressurization</td></tr>
+          <tr><td>Anti-bomb kit</td><td><span class="rar epic">Epic</span></td><td>Defuse or delay explosives</td></tr>
+          <tr><td>Wood + nails</td><td><span class="rar common">Common</span></td><td>Patch doors, windows, wings</td></tr>
+          <tr><td>Antidote</td><td><span class="rar rare">Rare</span></td><td>Cure alien infection</td></tr>
+          <tr><td>Umbrella / lightning rod</td><td><span class="rar epic">Epic</span></td><td>Storm defense — open <em>outside</em> only</td></tr>
+          <tr><td>Plunger</td><td><span class="rar common">Common</span></td><td>Unclog the toilet</td></tr>
+          <tr><td>Pliers</td><td><span class="rar rare">Rare</span></td><td>Cut bomb chains (Tier 2)</td></tr>
+          <tr><td>Duct tape</td><td><span class="rar common">Common</span></td><td>Seal wing fuel leaks</td></tr>
+          <tr><td>Rope &amp; harness</td><td><span class="rar rare">Rare</span></td><td>External engine repair</td></tr>
+          <tr><td>Fuses</td><td><span class="rar common">Common</span></td><td>Restore electrical systems</td></tr>
+          <tr><td>Lollipop</td><td><span class="rar legend">Legendary</span></td><td>Universal emotional fix</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 05 — PASSENGERS -->
+  <section id="passengers" class="block">
+    <header class="block-head">
+      <span class="num">05</span>
+      <h2>Passengers</h2>
+      <span class="hint">Each one carries their own happiness meter</span>
+    </header>
+
+    <p class="block-intro">
+      Every passenger reacts in real time. Quick service, masks during turbulence and the right candy push their meter <strong>up</strong>; luggage to the head, rough landings, and watching the person in the next seat get sucked out a door push it <strong>down</strong>. Happy passengers tip. Unhappy passengers spread panic.
+    </p>
+
+    <div class="seats">
+      <article class="seat">
+        <span class="seat-id">12A</span>
+        <h4>Crying baby</h4>
+        <p>Tantrum at altitude. A single lollipop solves it.</p>
+      </article>
+      <article class="seat">
+        <span class="seat-id">07F</span>
+        <h4>Smelly passenger</h4>
+        <p>Neighbors are losing happiness. Move them or open a window — figuratively.</p>
+      </article>
+      <article class="seat">
+        <span class="seat-id">22C</span>
+        <h4>Suction hazard</h4>
+        <p>Sitting next to a compromised door. Move them <em>now</em>.</p>
+      </article>
+      <article class="seat">
+        <span class="seat-id">14B</span>
+        <h4>Hit by luggage</h4>
+        <p>Apologize. Lollipop. Maybe both.</p>
+      </article>
+      <article class="seat">
+        <span class="seat-id">19D</span>
+        <h4>Infected passenger</h4>
+        <p>Antidote, or eject. Do not stall.</p>
+      </article>
+      <article class="seat">
+        <span class="seat-id">01A</span>
+        <h4>Panicked passenger</h4>
+        <p>Spreads panic to the row. Calm them before it cascades.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 06 — ROADMAP -->
+  <section id="roadmap" class="block">
+    <header class="block-head">
+      <span class="num">06</span>
+      <h2>Production roadmap</h2>
+      <span class="hint">Two scopes · scope 1 first</span>
+    </header>
+
+    <div class="scopes">
+
+      <article class="scope scope-1">
+        <header>
+          <span class="scope-tag">SCOPE 1</span>
+          <h3>Minimum Viable Product</h3>
+          <span class="scope-window">Target · Q3 2026</span>
+        </header>
+
+        <h4>Core features (9, required)</h4>
+        <ul class="scope-list">
+          <li>Passenger happiness meter</li>
+          <li>Start &amp; arrival flow with cabin progress slider</li>
+          <li>Food cart with items</li>
+          <li>Door open / close mechanics</li>
+          <li>Bomb puzzle with hidden codes</li>
+          <li>Turbulence</li>
+          <li>Electrical storm</li>
+          <li>War zone with missiles</li>
+          <li>Door &amp; engine repair systems</li>
+        </ul>
+
+        <h4>Nice-to-have</h4>
+        <ul class="scope-list soft">
+          <li>Umbrella defense</li>
+          <li>Alien luggage</li>
+          <li>Antidote item</li>
+          <li>Alien invasion event</li>
+          <li>Electrical failures</li>
+          <li>Clogged bathroom</li>
+          <li>Landing minigame</li>
+          <li>Airport lobby</li>
+        </ul>
+
+        <h4>Stretch</h4>
+        <ul class="scope-list soft">
+          <li>Alien combat</li>
+          <li>"Infected passenger" meme moment</li>
+          <li>Themed passengers</li>
+          <li>Fuel loss mechanic</li>
+        </ul>
+      </article>
+
+      <article class="scope scope-2">
+        <header>
+          <span class="scope-tag">SCOPE 2</span>
+          <h3>Polish &amp; depth</h3>
+          <span class="scope-window">Target · Q1 2027</span>
+        </header>
+
+        <h4>Enhancements</h4>
+        <ul class="scope-list">
+          <li>Physics-based character animation</li>
+          <li>Better plane models with rotation feedback</li>
+          <li>Directional voice chat with in/out cabin effects</li>
+          <li>Steam integration (party, lobby)</li>
+          <li>Tiered bomb difficulty (1–3)</li>
+          <li>Bug-on-face rescue mechanic</li>
+          <li>Turbostorm combo events</li>
+          <li>Tier 3 turbulence — engines actually break</li>
+          <li>"TERRAIN PULL UP" elevated terrain alarm</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 07 — CAST -->
+  <section id="cast" class="block">
+    <header class="block-head">
+      <span class="num">07</span>
+      <h2>Cast — flight crew</h2>
+      <span class="hint">Four playable characters · final lineup TBD</span>
+    </header>
+
+    <p class="block-intro">
+      Four playable characters, each with a role in the chaos. Iconic passengers and route-themed skins are defined in the next iteration.
+    </p>
+
+    <div class="crew">
+
+      <article class="crewmate">
+        <div class="crewmate-portrait" data-letter="C"></div>
+        <div class="crewmate-body">
+          <span class="crew-tag">C-01</span>
+          <h3>CAPI</h3>
+          <p class="crew-role">Pilot · runs the cockpit</p>
+          <p>The voice in the headset. Holds the yoke when missiles, storms or alien invasions threaten to ruin the flight plan. First on "TERRAIN PULL UP."</p>
+        </div>
+      </article>
+
+      <article class="crewmate">
+        <div class="crewmate-portrait" data-letter="R"></div>
+        <div class="crewmate-body">
+          <span class="crew-tag">C-02</span>
+          <h3>RUBI</h3>
+          <p class="crew-role">Flight attendant · cabin lead</p>
+          <p>Trolley, lollipops, oxygen masks, complaint handling. Keeps the happiness meters from collapsing. Will absolutely fight a passenger if the situation calls for it.</p>
+        </div>
+      </article>
+
+      <article class="crewmate tbd">
+        <div class="crewmate-portrait" data-letter="?"></div>
+        <div class="crewmate-body">
+          <span class="crew-tag">C-03</span>
+          <h3>TBD</h3>
+          <p class="crew-role">Mechanic / engineer · TBD</p>
+          <p>Final design pending. Owns repairs: wings, engines, doors. Carries the rope and harness for outside-the-plane work.</p>
+        </div>
+      </article>
+
+      <article class="crewmate tbd">
+        <div class="crewmate-portrait" data-letter="?"></div>
+        <div class="crewmate-body">
+          <span class="crew-tag">C-04</span>
+          <h3>TBD</h3>
+          <p class="crew-role">Security / defender · TBD</p>
+          <p>Final design pending. Handles bombs, aliens, panicked passengers. The last line between the cabin and the void.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div>
+      <strong>BANANA_AIRLINES</strong> · Flight brief · English edition.<br />
+      Original (Spanish): <a href="https://avioncito-site.onrender.com/" target="_blank" rel="noopener">avioncito-site.onrender.com</a>
+    </div>
+    <div>
+      Made in 3DAR · EST. 2026 · ULTRA LOW COST
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>
