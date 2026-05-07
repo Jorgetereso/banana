@@ -1312,6 +1312,12 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
   justify-content: center;
 }
+/* Defensive: guarantee crew content is visible regardless of animation state */
+.slide--crew, .slide--crew * { opacity: 1 !important; }
+.slide--crew .crew__kicker { opacity: .55 !important; }
+.slide--crew .crew__lede   { opacity: .82 !important; }
+.slide--crew .crew__group-lbl { opacity: .55 !important; }
+.slide--crew .crewcard__role  { opacity: .7 !important; }
 .crew__num    { font-family: var(--f-mono); font-size: 14px; letter-spacing: .15em; font-weight: 700; color: var(--banana-deep); margin-bottom: 8px; }
 .crew__kicker { font-family: var(--f-mono); font-size: 12px; letter-spacing: .25em; opacity: .55; display: block; margin-bottom: 18px; }
 .crew__title {
@@ -1474,13 +1480,10 @@ a { color: inherit; text-decoration: none; }
 .slide.is-active .ticket--3 { animation-delay: .45s; }
 .slide.is-active .ticket--4 { animation-delay: .6s; }
 
-.slide.is-active .crew__title    { animation: fade-up .9s cubic-bezier(.2,.7,.3,1) .1s both; }
-.slide.is-active .crewcard       { animation: card-in .7s cubic-bezier(.2,.7,.3,1) both; }
-.slide.is-active .crew__group:nth-of-type(1) .crewcard:nth-child(1) { animation-delay: .15s; }
-.slide.is-active .crew__group:nth-of-type(1) .crewcard:nth-child(2) { animation-delay: .25s; }
-.slide.is-active .crew__group:nth-of-type(2) .crewcard:nth-child(1) { animation-delay: .35s; }
-.slide.is-active .crew__group:nth-of-type(2) .crewcard:nth-child(2) { animation-delay: .45s; }
-.slide.is-active .crew__group:nth-of-type(2) .crewcard:nth-child(3) { animation-delay: .55s; }
+/* Crew animations disabled — slide visibility was being affected. Use simple fade-in
+   on the slide itself (already handled by .slide.is-active opacity transition). */
+.slide.is-active .crew__title    { animation: none; }
+.slide.is-active .crewcard       { animation: none; }
 
 .slide.is-active .thanks__logo   { animation: fade-up 1s cubic-bezier(.2,.7,.3,1) both; }
 .slide.is-active .thanks__title  { animation: fade-up 1s cubic-bezier(.2,.7,.3,1) .2s both; }
