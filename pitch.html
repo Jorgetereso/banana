@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BANANA AIRWAYS — Pitch</title>
-<meta name="description" content="An ultra low-cost airline where everything goes wrong at once. A friendslop co-op chaos game for 2–4 players on PC/Steam." />
+<meta name="description" content="A multiplayer co-op chaos game for 2–4 players on PC/Steam. An ultra low-cost airline where everything goes wrong at once." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,17 +18,15 @@
 
 <!-- Persistent slide chrome -->
 <div class="chrome">
-  <a class="chrome__brand" href="index.html" title="Back to portal">
+  <a class="chrome__brand" href="index.html" title="Back to portal" aria-label="Back to portal">
     <span class="chrome__b">B</span>
-    <span class="chrome__txt">BANANA<br>AIRWAYS</span>
   </a>
   <div class="chrome__counter">
     <span class="chrome__cur" id="slideCur">01</span>
     <span class="chrome__sep">/</span>
-    <span class="chrome__tot" id="slideTot">07</span>
+    <span class="chrome__tot" id="slideTot">09</span>
   </div>
-  <nav class="chrome__dots" id="slideDots" aria-label="Slide navigation"></nav>
-  <div class="chrome__hint">← → or click arrows</div>
+  <div class="chrome__hint">← →  navigate</div>
 </div>
 
 <button class="nav-arrow nav-arrow--prev" id="navPrev" aria-label="Previous slide">
@@ -44,31 +42,20 @@
 <section class="slide slide--cover" data-title="Cover" id="s1">
 
   <div class="cover__topbar">
-    <span>FLT BA-001</span>
+    <span>BANANA AIRWAYS</span>
     <span class="cover__topbar-dot"></span>
-    <span>GATE 8</span>
+    <span class="cover__topbar-glow">MULTIPLAYER · 2&ndash;4 PLAYERS</span>
     <span class="cover__topbar-dot"></span>
-    <span class="cover__topbar-blink">BOARDING NOW</span>
-    <span class="cover__topbar-dot"></span>
-    <span>BUILD 2026.05</span>
+    <span>PC · STEAM</span>
   </div>
 
   <div class="cover__center">
-    <img class="cover__logo" src="assets/miro/logo.png" alt="Banana Airways" />
-    <h1 class="cover__tagline">
-      <span class="cover__t-row cover__t-row--small">an ultra low-cost airline</span>
-      <span class="cover__t-row cover__t-row--big">WHERE EVERYTHING</span>
-      <span class="cover__t-row cover__t-row--shade">GOES WRONG</span>
-      <span class="cover__t-row cover__t-row--big">AT ONCE.</span>
-    </h1>
+    <img class="cover__logo" src="assets/miro/logo-glow.png" alt="Banana Airways" />
+    <p class="cover__tagline">an ultra low-cost airline where <em>everything goes wrong at once</em>.</p>
   </div>
 
   <div class="cover__pass">
     <div class="pass">
-      <div class="pass__head">
-        <span class="pass__tag">BOARDING PASS</span>
-        <span class="pass__stamp">PRE-LAUNCH</span>
-      </div>
       <div class="pass__route">
         <div><div class="pass__code">CHA</div><div class="pass__sub">Chaos Apron</div></div>
         <div class="pass__plane">✈</div>
@@ -84,7 +71,6 @@
 
   <div class="cover__runway">
     <div class="cover__runway-line"></div>
-    <span class="cover__runway-label">RWY 26 · CLEARED FOR TAKEOFF</span>
   </div>
 </section>
 
@@ -93,7 +79,7 @@
 
   <div class="why__kicker">
     <span class="why__num">02</span>
-    <span class="why__lbl">WHY BUILD A —</span>
+    <span class="why__lbl">Why build a</span>
   </div>
 
   <h2 class="why__word">
@@ -106,17 +92,17 @@
     <li>
       <span class="why__notes-num">i.</span>
       <strong>Chaotic but accessible.</strong>
-      Easy to pick up. Hard to keep it together. Skill ceiling = how well you laugh together.
+      <p>Easy to pick up. Hard to keep it together. Skill ceiling is how well you laugh together.</p>
     </li>
     <li>
       <span class="why__notes-num">ii.</span>
       <strong>Designed for shareable failure.</strong>
-      Every flight produces a "you had to be there" moment worth retelling.
+      <p>Every flight produces a "you had to be there" moment worth retelling.</p>
     </li>
     <li>
       <span class="why__notes-num">iii.</span>
       <strong>The game does the marketing.</strong>
-      Vertical chaos for TikTok, screams for YouTube reactions, clips for Discord.
+      <p>Vertical chaos for TikTok, screams for YouTube reactions, clips for Discord.</p>
     </li>
   </ol>
 
@@ -139,45 +125,61 @@
   <div class="concept__bg" style="background-image:url('assets/miro/wing-repair-fpv.png')"></div>
   <div class="concept__overlay"></div>
 
-  <div class="concept__num">03</div>
+  <div class="concept__inner">
+    <div class="concept__num">03</div>
+    <span class="concept__kicker">— THE GAME —</span>
+    <h2 class="concept__title">
+      Coordinated <span class="concept__title-shade">chaos</span>
+    </h2>
+    <p class="concept__lede">2&ndash;4 players. Online. PC&middot;Steam.<br>Work together to complete objectives — while everything around you falls apart.</p>
 
-  <h2 class="concept__title">
-    COORDINATED<br>
-    <span class="concept__title-shade">CHAOS</span>
-    <span class="concept__title-tail">in co-op.</span>
-  </h2>
-
-  <p class="concept__lede">2&ndash;4 players. Online. PC&middot;Steam. Work together to complete objectives — while everything around you falls apart.</p>
-
-  <div class="concept__hud">
-    <div class="hud__line">› SYSTEM REPORT</div>
-    <div class="hud__row"><span>WING REPAIR</span><strong>15%</strong></div>
-    <div class="hud__row"><span>FUEL</span><strong>LOW</strong></div>
-    <div class="hud__row"><span>PLAYER 1</span><strong>3 LIVES</strong></div>
-    <div class="hud__row hud__row--err"><span>!!!</span><strong>ENGINE FAILURE</strong></div>
-  </div>
-
-  <div class="concept__stamp">
-    <span>It's not about doing things</span>
-    <s>perfectly</s>
-    <span>it's about</span>
-    <strong>SURVIVING<br>THE CHAOS<br>TOGETHER.</strong>
-  </div>
-
-  <!-- Engagement loop as departure board -->
-  <div class="board">
-    <div class="board__head">
-      <span>GATE</span><span>VERB</span><span>STATUS</span>
+    <div class="concept__stats">
+      <div><span>PLATFORM</span><strong>PC · Steam</strong></div>
+      <div><span>MODE</span><strong>Online co-op</strong></div>
+      <div><span>PLAYERS</span><strong>2 – 4</strong></div>
+      <div><span>TONE</span><strong>Friendslop</strong></div>
     </div>
-    <div class="board__row"><span>01</span><strong>SERVE</strong><em class="board__on">ON TIME</em></div>
-    <div class="board__row"><span>02</span><strong>REPAIR</strong><em class="board__del">DELAYED</em></div>
-    <div class="board__row"><span>03</span><strong>DEFEND</strong><em class="board__brd">BOARDING</em></div>
-    <div class="board__row"><span>04</span><strong>FLY</strong><em class="board__fin">FINAL CALL</em></div>
   </div>
 </section>
 
-<!-- ============================== 04 · PROTOTYPE ============================== -->
-<section class="slide slide--proto" data-title="Prototype" id="s4">
+<!-- ============================== 04 · THE LOOP ============================== -->
+<section class="slide slide--loop" data-title="The Loop" id="s4">
+  <div class="loop__num">04</div>
+  <span class="loop__kicker">— THE GAMEPLAY LOOP —</span>
+  <h2 class="loop__title">
+    Four verbs. <span class="loop__title-shade">Every flight.</span>
+  </h2>
+  <p class="loop__lede">Every player is doing one of these at any moment — and probably failing at it. The game emerges from how the four blur into each other.</p>
+
+  <div class="board">
+    <div class="board__head">
+      <span>GATE</span><span>VERB</span><span>WHAT IT MEANS</span>
+    </div>
+    <div class="board__row">
+      <span>01</span>
+      <strong>SERVE</strong>
+      <em>Coffee, snacks, smiles. Keep passenger satisfaction green.</em>
+    </div>
+    <div class="board__row">
+      <span>02</span>
+      <strong>REPAIR</strong>
+      <em>Wings, fuel lines, cabin pressure. Tools, hands, panic.</em>
+    </div>
+    <div class="board__row">
+      <span>03</span>
+      <strong>DEFEND</strong>
+      <em>Birds, asteroids, smuggled livestock, angry passengers.</em>
+    </div>
+    <div class="board__row">
+      <span>04</span>
+      <strong>FLY</strong>
+      <em>Someone has to land this thing. Anyone. Please.</em>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 05 · PROTOTYPE ============================== -->
+<section class="slide slide--proto" data-title="Prototype" id="s5">
 
   <figure class="proto__shot">
     <img src="assets/miro/environment-paintover.png" alt="Cabin paintover" />
@@ -187,12 +189,12 @@
   </figure>
 
   <div class="proto__right">
-    <div class="proto__num">04</div>
+    <div class="proto__num">05</div>
     <span class="proto__kicker">— STATUS REPORT —</span>
     <h2 class="proto__title">
-      <span>BUILT FROM A</span>
-      <span class="proto__title-big">PLAYABLE</span>
-      <span class="proto__title-big proto__title-shade">PROTOTYPE.</span>
+      <span>Built from a</span>
+      <span class="proto__title-big">playable</span>
+      <span class="proto__title-big proto__title-shade">prototype.</span>
     </h2>
     <p class="proto__lede">We already validated the core. This isn't a slide deck pretending to be a game — it's a game pretending to be organized.</p>
 
@@ -206,14 +208,14 @@
 
 </section>
 
-<!-- ============================== 05 · VISUAL — TONE ============================== -->
-<section class="slide slide--tone" data-title="Visual: Tone" id="s5">
-  <div class="tone__num">05</div>
+<!-- ============================== 06 · TONE (Visual I) ============================== -->
+<section class="slide slide--tone" data-title="Visual: Tone" id="s6">
+  <div class="tone__num">06</div>
   <span class="tone__kicker">— VISUAL DIRECTION · PART I —</span>
   <h2 class="tone__title">
-    THE <span class="tone__title-shade">TONE</span><br>
-    we're printing onto the game.
+    The <span class="tone__title-shade">tone</span>.
   </h2>
+  <p class="tone__lede">Saturday-morning cartoon meets adult-swim chaos.<br>From absurd-funny to genuinely-on-fire — in under a frame.</p>
 
   <div class="tone__grid">
     <figure class="polaroid polaroid--1">
@@ -222,55 +224,68 @@
     </figure>
     <figure class="polaroid polaroid--2">
       <img src="assets/miro/chaos-2d-engine-failure.png" alt="2D mood: engine failure chaos" />
-      <figcaption>engine failure!<br>still funny.</figcaption>
+      <figcaption>engine failure.<br>still funny.</figcaption>
     </figure>
-    <div class="tone__note">
-      <em>Saturday-morning cartoon</em><br>meets <em>adult-swim chaos</em>.<br>
-      <span>From absurd-funny to genuinely-on-fire in under a frame.</span>
+  </div>
+
+  <div class="tone__palette">
+    <span class="tone__palette-lbl">PALETTE</span>
+    <div class="tone__chip" style="background:#FFD93D"></div>
+    <div class="tone__chip" style="background:#0B1A2E"></div>
+    <div class="tone__chip" style="background:#FF5E5B"></div>
+    <div class="tone__chip" style="background:#4ECDC4"></div>
+    <div class="tone__chip" style="background:#F4F1E8"></div>
+    <div class="tone__chip" style="background:#F4B400"></div>
+  </div>
+</section>
+
+<!-- ============================== 07 · PEPE (Visual II) ============================== -->
+<section class="slide slide--pepe" data-title="Visual: Pepe" id="s7">
+  <div class="pepe__num">07</div>
+  <span class="pepe__kicker">— VISUAL DIRECTION · PART II —</span>
+
+  <div class="pepe__layout">
+    <div class="pepe__left">
+      <h2 class="pepe__title">
+        Meet <span class="pepe__title-shade">Pepe.</span>
+      </h2>
+      <p class="pepe__sub">Your average chicken-passenger.</p>
+
+      <div class="pepe__bullets">
+        <div><strong>Material</strong><span>chicken comb · textured face · hand-painted</span></div>
+        <div><strong>Range</strong><span>24+ poses · 4 morphs · full turnaround</span></div>
+        <div><strong>Role</strong><span>passenger NPC · panic state · happy state</span></div>
+      </div>
+    </div>
+
+    <div class="pepe__hero">
+      <img src="assets/miro/pepe-hero.png" alt="Pepe hero render" />
+    </div>
+
+    <div class="pepe__polaroids">
+      <figure class="polaroid polaroid--p1">
+        <img src="assets/miro/pepe-character-sheet.png" alt="Pepe character reference sheet" />
+        <figcaption>concept sheet.</figcaption>
+      </figure>
+      <figure class="polaroid polaroid--p2">
+        <img src="assets/miro/pepe-poses.png" alt="Pepe expression sheet" />
+        <figcaption>24+ moods.</figcaption>
+      </figure>
+      <figure class="polaroid polaroid--p3">
+        <img src="assets/miro/pepe-airport.png" alt="Pepe in airport context" />
+        <figcaption>cherry bin van.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ============================== 06 · VISUAL — PEPE ============================== -->
-<section class="slide slide--pepe" data-title="Visual: Pepe" id="s6">
-  <div class="pepe__num">06</div>
-  <span class="pepe__kicker">— VISUAL DIRECTION · PART II —</span>
-
-  <h2 class="pepe__title">
-    MEET <span class="pepe__title-shade">PEPE.</span>
-    <span class="pepe__sub">your average chicken-passenger.</span>
-  </h2>
-
-  <div class="pepe__hero">
-    <img src="assets/miro/pepe-hero.png" alt="Pepe hero render" />
-  </div>
-
-  <figure class="polaroid polaroid--p1">
-    <img src="assets/miro/pepe-character-sheet.png" alt="Pepe character reference sheet" />
-    <figcaption>concept sheet.</figcaption>
-  </figure>
-  <figure class="polaroid polaroid--p2">
-    <img src="assets/miro/pepe-poses.png" alt="Pepe expression sheet" />
-    <figcaption>24+ moods.</figcaption>
-  </figure>
-  <figure class="polaroid polaroid--p3">
-    <img src="assets/miro/pepe-airport.png" alt="Pepe in airport context" />
-    <figcaption>cherry bin van.</figcaption>
-  </figure>
-
-  <div class="pepe__tag">
-    chicken comb · textured face · hand-painted details · 4 morphs
-  </div>
-</section>
-
-<!-- ============================== 07 · ROADMAP + CREW ============================== -->
-<section class="slide slide--road" data-title="Roadmap" id="s7">
-  <div class="road__num">07</div>
-  <span class="road__kicker">— ROADMAP · CREW · TAKEOFF —</span>
+<!-- ============================== 08 · ROADMAP ============================== -->
+<section class="slide slide--road" data-title="Roadmap" id="s8">
+  <div class="road__num">08</div>
+  <span class="road__kicker">— THE FLIGHT PLAN —</span>
 
   <h2 class="road__title">
-    THE <span class="road__title-shade">FLIGHT PLAN</span><br>
-    from here to Next Fest.
+    From here to <span class="road__title-shade">Next Fest.</span>
   </h2>
 
   <div class="road__path">
@@ -278,23 +293,23 @@
       <path d="M 30 220 Q 240 80, 420 160 T 820 100 T 1170 50" fill="none" stroke="#0B1A2E" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" />
     </svg>
     <div class="road__stop road__stop--1">
-      <div class="road__date">JUN 1</div>
+      <div class="road__step">M01</div>
       <strong>Steam page LIVE</strong>
       <p>Capsule, screenshots, first wishlist push.</p>
     </div>
     <div class="road__stop road__stop--2">
-      <div class="road__date">JUL 1</div>
+      <div class="road__step">M02</div>
       <strong>Reveal trailer</strong>
       <p>Public-facing chaos cut.</p>
     </div>
     <div class="road__stop road__stop--3">
-      <div class="road__date">SEP 19</div>
+      <div class="road__step">M03</div>
       <strong>Demo lock</strong>
-      <p>Feature freeze. One month before Fest.</p>
+      <p>Feature freeze.</p>
     </div>
     <div class="road__stop road__stop--4 road__stop--final">
-      <div class="road__date">OCT 19–26</div>
-      <strong>NEXT FEST</strong>
+      <div class="road__step">M04</div>
+      <strong>Next Fest</strong>
       <p>Steam Next Fest LIVE.</p>
     </div>
   </div>
@@ -307,9 +322,14 @@
       <div class="crew__card"><span>F</span><strong>Federico</strong><em>Design · GDD · Coordination</em></div>
     </div>
   </div>
+</section>
 
-  <div class="road__final">
-    <strong>CLEARED FOR TAKEOFF.</strong>
+<!-- ============================== 09 · THANK YOU ============================== -->
+<section class="slide slide--thanks" data-title="Thank you" id="s9">
+  <div class="thanks__inner">
+    <img class="thanks__logo" src="assets/miro/logo-glow.png" alt="Banana Airways" />
+    <h2 class="thanks__title">Thank you.</h2>
+    <p class="thanks__sub">Now boarding.</p>
   </div>
 </section>
 
