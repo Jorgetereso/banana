@@ -1311,13 +1311,27 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
-/* Defensive: guarantee crew content is visible regardless of animation state */
-.slide--crew, .slide--crew * { opacity: 1 !important; }
-.slide--crew .crew__kicker { opacity: .55 !important; }
-.slide--crew .crew__lede   { opacity: .82 !important; }
-.slide--crew .crew__group-lbl { opacity: .55 !important; }
-.slide--crew .crewcard__role  { opacity: .7 !important; }
+/* Wing-repair watermark via pseudo (no DOM child, no z-index hacks) */
+.slide--crew::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('assets/miro/wing-repair-fpv.png') center/cover no-repeat;
+  opacity: .28;
+  z-index: 0;
+  pointer-events: none;
+}
+.slide--crew > * { position: relative; z-index: 2; }
+
+/* Defensive: only force visibility on crew content when slide IS active.
+   Otherwise the slide stays at .slide { opacity: 0 } base, hidden as it should be. */
+.slide--crew.is-active, .slide--crew.is-active * { opacity: 1 !important; }
+.slide--crew.is-active .crew__kicker { opacity: .55 !important; }
+.slide--crew.is-active .crew__lede   { opacity: .82 !important; }
+.slide--crew.is-active .crew__group-lbl { opacity: .55 !important; }
+.slide--crew.is-active .crewcard__role  { opacity: .7 !important; }
 .crew__num    { font-family: var(--f-mono); font-size: 14px; letter-spacing: .15em; font-weight: 700; color: var(--banana-deep); margin-bottom: 8px; }
 .crew__kicker { font-family: var(--f-mono); font-size: 12px; letter-spacing: .25em; opacity: .55; display: block; margin-bottom: 18px; }
 .crew__title {
