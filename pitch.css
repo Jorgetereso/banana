@@ -33,9 +33,10 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html {
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
+html, body {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
 }
 body {
   background: var(--cream);
@@ -44,20 +45,38 @@ body {
   font-size: 17px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 
-/* paper grain — subtle on cream slides */
-.deck { isolation: isolate; }
-.slide {
+/* Deck = paginated stage. One slide visible at a time. */
+.deck {
   position: relative;
-  min-height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   display: block;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .45s ease, transform .55s cubic-bezier(.2,.7,.3,1);
+  z-index: 1;
+}
+[data-direction="next"] .slide:not(.is-active) { transform: translateX(50px); }
+[data-direction="prev"] .slide:not(.is-active) { transform: translateX(-50px); }
+.slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+  z-index: 2;
 }
 
 /* paper grain pseudo-overlay */
@@ -174,6 +193,44 @@ a { color: inherit; text-decoration: none; }
   mix-blend-mode: difference;
   opacity: .6;
 }
+
+/* ============ NAV ARROWS ============ */
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(11, 26, 46, .55);
+  border: 1.5px solid rgba(255, 217, 61, .55);
+  color: var(--banana);
+  cursor: pointer;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: background .2s, transform .15s, box-shadow .2s, opacity .2s, border-color .2s;
+  padding: 0;
+}
+.nav-arrow svg { width: 26px; height: 26px; display: block; }
+.nav-arrow:hover {
+  background: var(--banana);
+  color: var(--ink);
+  border-color: var(--banana);
+  box-shadow: 0 10px 30px rgba(255, 217, 61, .4);
+}
+.nav-arrow:active { transform: translateY(-50%) scale(.92); }
+.nav-arrow:focus-visible { outline: 2px solid var(--banana); outline-offset: 4px; }
+.nav-arrow:disabled, .nav-arrow[aria-disabled="true"] {
+  opacity: .25;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.nav-arrow--prev { left: 26px; }
+.nav-arrow--next { right: 26px; }
 
 /* ============================================================
    SLIDE 01 · COVER
@@ -1309,11 +1366,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 800px) {
-  html { scroll-snap-type: none; }
   .chrome__hint, .chrome__dots { display: none; }
   .chrome__brand { top: 14px; left: 16px; }
   .chrome__counter { top: 14px; right: 16px; }
-  .slide { padding: 80px 5vw 50px; }
+  .nav-arrow { width: 44px; height: 44px; }
+  .nav-arrow svg { width: 20px; height: 20px; }
+  .nav-arrow--prev { left: 12px; }
+  .nav-arrow--next { right: 12px; }
+  .slide { padding: 80px 5vw 50px; overflow-y: auto; }
   .cover__pass { position: relative; bottom: auto; right: auto; margin: 30px auto 0; transform: rotate(-2deg); }
   .cover__center { margin-top: 0; }
   .cover__topbar { font-size: 9px; gap: 10px; flex-wrap: wrap; justify-content: center; padding: 0 16px; }
