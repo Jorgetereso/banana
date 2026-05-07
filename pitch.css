@@ -1305,7 +1305,9 @@ a { color: inherit; text-decoration: none; }
    10 · CREW
    ============================================================ */
 .slide--crew {
-  background: var(--cream);
+  background:
+    linear-gradient(rgba(244,241,232,.82), rgba(244,241,232,.82)),
+    url('assets/miro/wing-repair-fpv.png') center/cover no-repeat;
   color: var(--ink);
   padding: 110px 6vw 80px;
   display: flex;
@@ -1313,17 +1315,6 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   position: relative;
 }
-.crew__bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: .12;
-  filter: saturate(.85);
-  z-index: 0;
-  pointer-events: none;
-}
-.slide--crew > *:not(.crew__bg) { position: relative; z-index: 1; }
 .crew__num    { font-family: var(--f-mono); font-size: 14px; letter-spacing: .15em; font-weight: 700; color: var(--banana-deep); margin-bottom: 8px; }
 .crew__kicker { font-family: var(--f-mono); font-size: 12px; letter-spacing: .25em; opacity: .55; display: block; margin-bottom: 18px; }
 .crew__title {
@@ -1372,6 +1363,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 8px;
   transition: transform .2s, box-shadow .2s, border-color .2s;
   min-height: 150px;
+  box-shadow: 0 6px 16px rgba(11,26,46,.10);
 }
 .crewcard:hover {
   transform: translateY(-3px);
