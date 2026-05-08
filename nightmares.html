@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nightmare Stories — Banana Airways</title>
+<meta name="description" content="Real chaos stories from low-cost airline passengers. Browseable research for the Banana Airways game." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="nightmares.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%98%B1%3C/text%3E%3C/svg%3E" />
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html" title="Back to portal">
+    <span class="topbar__b">B</span>
+    <span class="topbar__txt">BANANA<br>AIRWAYS</span>
+  </a>
+  <nav class="topbar__nav">
+    <a href="index.html">← Portal</a>
+    <a href="pitch.html">Pitch</a>
+    <a href="brief.html">Brief</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__pre">
+      <span class="dot dot--blink"></span>
+      RESEARCH · INSPIRATION · EVIDENCE
+    </div>
+    <h1 class="hero__title">
+      Nightmare<br>
+      <span class="hero__title--shade">Stories.</span>
+    </h1>
+    <p class="hero__lede">Real chaos from low-cost airline passengers — pulled from Reddit, news, and reader forums. Browse for game ideas.</p>
+    <div class="hero__meta">
+      <div><span>Stories</span><strong id="storyCount">—</strong></div>
+      <div><span>Sources</span><strong>Reddit · News · Blogs</strong></div>
+      <div><span>Tone</span><strong>Real · Verified-ish</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="filters">
+  <div class="filters__inner">
+    <div class="chips" id="chips">
+      <button class="chip chip--all is-active" data-cat="all">All</button>
+      <!-- chips injected by JS -->
+    </div>
+    <input type="search" class="search" id="search" placeholder="Search stories…" autocomplete="off" />
+  </div>
+</section>
+
+<section class="grid-wrap">
+  <div class="container">
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>
+      <p>No stories match. Try a different filter or term.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container foot__inner">
+    <span>BANANA AIRWAYS · Internal research · Not public-facing</span>
+    <a href="index.html">← back to portal</a>
+  </div>
+</footer>
+
+</main>
+
+<script src="nightmares.js"></script>
+</body>
+</html>
