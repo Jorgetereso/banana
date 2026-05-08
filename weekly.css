@@ -193,6 +193,14 @@ a { color: inherit; text-decoration: none; }
   border-top: 2px dashed var(--line-ink);
 }
 .task--alt { background: var(--paper); }
+.task--cork {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(180, 130, 80, .18) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(160, 120, 70, .15) 0%, transparent 45%),
+    #e8dfc7;
+  background-color: #e8dfc7;
+}
+.task--cork .task__title--shade { color: #b8843a; }
 .task__inner {
   width: 100%;
   max-width: 1200px;
@@ -323,6 +331,93 @@ a { color: inherit; text-decoration: none; }
   background: var(--cream);
   color: var(--ink);
   opacity: .75;
+}
+
+/* ============ MOOD BOARD COLLAGE ============ */
+.moodboard {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 180px;
+  gap: 36px 28px;
+  grid-auto-flow: dense;
+  padding: 30px 10px 60px;
+}
+.mood {
+  margin: 0;
+  background: white;
+  padding: 14px 14px 38px;
+  position: relative;
+  box-shadow: 0 14px 30px rgba(11,26,46,.22), 0 4px 8px rgba(11,26,46,.12);
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+  grid-row: span 2;
+  transition: transform .25s, box-shadow .25s, z-index 0s .25s;
+}
+.mood:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 0 22px 50px rgba(11,26,46,.32), 0 6px 14px rgba(11,26,46,.18);
+  z-index: 10;
+  transition: transform .25s, box-shadow .25s, z-index 0s 0s;
+}
+.mood img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  flex: 1;
+  min-height: 0;
+}
+.mood figcaption {
+  position: absolute;
+  bottom: 8px; left: 0; right: 0;
+  text-align: center;
+  font-family: var(--f-marker);
+  font-size: 16px;
+  color: var(--ink);
+}
+.mood::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 90px; height: 20px;
+  background: rgba(255, 217, 61, .85);
+  box-shadow: 0 3px 6px rgba(0,0,0,.18);
+  z-index: 2;
+}
+
+/* Spans */
+.mood--big  { grid-column: span 3; grid-row: span 3; }
+.mood--wide { grid-column: span 3; grid-row: span 2; }
+
+/* Per-item rotation (overrides rotation under transform shorthand) */
+.mood.rot-a { transform: rotate(-2.5deg); }
+.mood.rot-b { transform: rotate(1.8deg); }
+.mood.rot-c { transform: rotate(-1.5deg); }
+.mood.rot-d { transform: rotate(2.5deg); }
+.mood.rot-e { transform: rotate(-1deg); }
+.mood.rot-f { transform: rotate(2deg); }
+.mood.rot-g { transform: rotate(-3deg); }
+
+/* Tape variations */
+.mood.rot-b::before { transform: translateX(-50%) rotate(2deg); background: rgba(255, 217, 61, .8); }
+.mood.rot-c::before { transform: translateX(-50%) rotate(-1deg); background: rgba(244, 241, 232, .9); border: 1px solid rgba(11,26,46,.1); }
+.mood.rot-d::before { transform: translateX(-50%) rotate(3deg); }
+.mood.rot-e::before { transform: translateX(-50%) rotate(-2deg); background: rgba(78, 205, 196, .75); }
+.mood.rot-f::before { transform: translateX(-50%) rotate(1deg); }
+.mood.rot-g::before { transform: translateX(-50%) rotate(-2.5deg); background: rgba(255, 94, 91, .7); }
+
+@media (max-width: 1100px) {
+  .moodboard { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 160px; }
+  .mood--big  { grid-column: span 2; grid-row: span 2; }
+  .mood--wide { grid-column: span 2; grid-row: span 2; }
+  .mood       { grid-column: span 2; grid-row: span 2; }
+}
+@media (max-width: 700px) {
+  .moodboard { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+  .mood, .mood--big, .mood--wide { grid-column: span 1; grid-row: span 1; }
 }
 
 /* Placeholder asset card */
