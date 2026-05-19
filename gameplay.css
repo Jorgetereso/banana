@@ -1,0 +1,454 @@
+/* ============================================================
+   BANANA AIRWAYS · GAMEPLAY SHOTS
+   Dark press-kit aesthetic. Matches weekly typography family
+   but goes full dark for a "screenshot gallery" feel.
+   ============================================================ */
+
+:root {
+  --bg: #0a0907;
+  --bg-2: #14110d;
+  --bg-3: #1d1812;
+  --ink: #f5f0e6;
+  --ink-2: #cdc4b3;
+  --ink-3: #8a8275;
+  --banana: #ffd233;
+  --banana-deep: #f0a500;
+  --coral: #ff5c3a;
+  --mint: #7be0a8;
+  --crt: #1a160f;
+  --line: rgba(245,240,230,0.10);
+  --line-2: rgba(245,240,230,0.18);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ====================== TOPBAR ====================== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(10,9,7,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.topbar__b {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: var(--banana);
+  color: #1a160f;
+  font-family: 'Bungee', sans-serif;
+  font-size: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px #1a160f inset;
+}
+.topbar__txt {
+  font-family: 'Bungee', sans-serif;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+.topbar__nav {
+  display: flex;
+  gap: 22px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.topbar__nav a:hover { color: var(--banana); }
+
+/* ====================== HERO ====================== */
+.hero {
+  padding: 80px 28px 40px;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(255,210,51,0.07), transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(255,92,58,0.05), transparent 60%),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.hero__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hero__pre {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--banana);
+  letter-spacing: 0.12em;
+  margin-bottom: 24px;
+}
+.hero__pre .dot {
+  width: 8px; height: 8px;
+  background: var(--banana);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--banana);
+}
+.hero__title {
+  font-family: 'Bungee', sans-serif;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 0.95;
+  margin: 0 0 24px 0;
+  color: var(--ink);
+}
+.hero__title--shade {
+  font-family: 'Bungee Shade', sans-serif;
+  color: var(--banana);
+}
+.hero__lead {
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 760px;
+  color: var(--ink-2);
+  margin: 0 0 14px 0;
+}
+.hero__lead--small {
+  font-size: 14px;
+  color: var(--ink-3);
+}
+.hero__lead em { color: var(--banana-deep); font-style: italic; }
+.hero__lead code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--banana);
+}
+
+/* ====================== BADGES ====================== */
+.badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.badge--nb {
+  background: var(--banana);
+  color: #1a160f;
+}
+.badge--gpt {
+  background: var(--mint);
+  color: #0a2a1a;
+}
+
+/* ====================== STYLE BIBLE ====================== */
+.style {
+  padding: 60px 28px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line);
+}
+.style__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.style__head {
+  margin-bottom: 22px;
+}
+.style__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--banana-deep);
+  letter-spacing: 0.14em;
+}
+.style__head h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 32px;
+  letter-spacing: 0.02em;
+  margin: 6px 0 0 0;
+  color: var(--ink);
+}
+.style__block {
+  position: relative;
+  background: var(--bg-3);
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.style__block pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  padding: 22px 26px 22px 22px;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.style__hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+  margin: 14px 0 0 0;
+  letter-spacing: 0.02em;
+}
+
+/* ====================== SHOTS GRID ====================== */
+.shots {
+  padding: 60px 28px 100px;
+  background: var(--bg);
+}
+.shots__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+@media (max-width: 900px) {
+  .shots__inner { grid-template-columns: 1fr; }
+}
+
+.shot {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.shot:hover {
+  border-color: var(--line-2);
+  transform: translateY(-2px);
+}
+
+.shot__head {
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.shot__num {
+  font-family: 'Bungee Shade', sans-serif;
+  font-size: 36px;
+  color: var(--banana);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.shot__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.shot__pillar {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--coral);
+  font-weight: 700;
+}
+.shot__title {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  line-height: 1.1;
+  margin: 0 0 10px 0;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+.shot__desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+/* media slot */
+.shot__media {
+  position: relative;
+  margin: 0;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.shot__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.shot__placeholder {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(255,210,51,0.03) 14px 28px),
+    var(--crt);
+  border: 2px dashed rgba(255,210,51,0.25);
+  color: var(--ink-3);
+}
+.shot__media.is-empty .shot__placeholder { display: flex; }
+.shot__media.is-empty { cursor: default; }
+.shot__placeholder-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--banana);
+  letter-spacing: 0.08em;
+}
+.shot__placeholder code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+  border-radius: 3px;
+  color: var(--ink-2);
+}
+
+/* prompt block */
+.shot__prompt {
+  position: relative;
+  background: var(--bg-3);
+  border-top: 1px solid var(--line);
+}
+.shot__prompt pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  padding: 20px 20px 20px 20px;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.shot__prompt pre::-webkit-scrollbar { width: 6px; }
+.shot__prompt pre::-webkit-scrollbar-track { background: var(--bg-2); }
+.shot__prompt pre::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 3px; }
+
+/* ====================== COPY BUTTON ====================== */
+.copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--banana);
+  color: #1a160f;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.copy:hover { background: #ffe066; }
+.copy:active { transform: scale(0.96); }
+.copy.is-copied {
+  background: var(--mint);
+  color: #0a2a1a;
+}
+
+/* ====================== FOOTER ====================== */
+.foot {
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+  padding: 26px 28px;
+}
+.foot__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+.foot__inner a:hover { color: var(--banana); }
+@media (max-width: 600px) {
+  .foot__inner { flex-direction: column; gap: 8px; }
+}
+
+/* ====================== LIGHTBOX ====================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox__img {
+  max-width: 95vw;
+  max-height: 85vh;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.lightbox__cap {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-2);
+  background: rgba(0,0,0,0.6);
+  padding: 6px 12px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+}
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 12px;
+  font-family: 'Bungee', sans-serif;
+}
+.lightbox__close:hover { color: var(--banana); }
