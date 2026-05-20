@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Props · Banana Airways</title>
+<meta name="description" content="Priority prop hero shots for the reveal trailer. No characters, no UI." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="gameplay.css" />
+<link rel="stylesheet" href="props.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B0%3C/text%3E%3C/svg%3E" />
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html" title="Back to portal">
+    <span class="topbar__b">B</span>
+    <span class="topbar__txt">BANANA<br>AIRWAYS</span>
+  </a>
+  <nav class="topbar__nav">
+    <a href="index.html">← Portal</a>
+    <a href="#p01">Cart</a>
+    <a href="#p02">Bomb</a>
+    <a href="#p03">Debris</a>
+    <a href="#p04">Harness</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__pre">
+      <span class="dot"></span>
+      JORGE · REVEAL TRAILER · PRIORITY PROPS
+    </div>
+    <h1 class="hero__title">
+      Props <span class="hero__title--shade">in context.</span>
+    </h1>
+    <p class="hero__lead">
+      Four priority prop hero shots for the reveal trailer. No characters, no UI, no
+      POV hands — just the prop as the subject, in the rundown Banana Airways cabin.
+      Stylized 3D in the GTA V / Far Cry family.
+    </p>
+    <p class="hero__lead hero__lead--small">
+      Generated via the Krea API with Nano Banana Pro at 2K. Source files in
+      <code>assets/PROPS/</code>.
+    </p>
+  </div>
+</section>
+
+<!-- ============================ PROPS GRID ============================ -->
+<section class="props" id="props">
+  <div class="props__inner">
+
+    <article class="prop" id="p01">
+      <div class="prop__head">
+        <div class="prop__num">01</div>
+        <div class="prop__tag">SERVE</div>
+        <h2 class="prop__title">Service cart · changuito</h2>
+        <p class="prop__desc">
+          Battered red-and-yellow steel BANANA AIRWAYS trolley parked in the aisle.
+          Coffee pot, paper cups, foil snacks, a basket of bruised bananas on top.
+          Hero of every SERVE mission.
+        </p>
+      </div>
+      <figure class="prop__media">
+        <img src="assets/PROPS/01-cart.png" alt="Service cart" />
+      </figure>
+    </article>
+
+    <article class="prop" id="p02">
+      <div class="prop__head">
+        <div class="prop__num">02</div>
+        <div class="prop__tag">DEFEND</div>
+        <h2 class="prop__title">Bomb suitcase</h2>
+        <p class="prop__desc">
+          Open hard-shell carry-on on the cabin floor: tangled wires, green-LED timer
+          counting down at 00:38, taped explosive bricks, a torn BANANA AIRWAYS
+          DISARM MANUAL page. The 30-second decision.
+        </p>
+      </div>
+      <figure class="prop__media">
+        <img src="assets/PROPS/02-bomb-suitcase.png" alt="Bomb suitcase" />
+      </figure>
+    </article>
+
+    <article class="prop" id="p03">
+      <div class="prop__head">
+        <div class="prop__num">03</div>
+        <div class="prop__tag">CHAOS</div>
+        <h2 class="prop__title">Airborne debris</h2>
+        <p class="prop__desc">
+          Empty BANANA AIRWAYS cabin mid-turbulence. Food trays, plastic cups, bananas,
+          a tumbling coffee can, papers and a thrown safety card all frozen in mid-air.
+          The "everything that flies" moment.
+        </p>
+      </div>
+      <figure class="prop__media">
+        <img src="assets/PROPS/03-airborne-debris.png" alt="Airborne debris" />
+      </figure>
+    </article>
+
+    <article class="prop" id="p04">
+      <div class="prop__head">
+        <div class="prop__num">04</div>
+        <div class="prop__tag">REPAIR</div>
+        <h2 class="prop__title">Harness + rope</h2>
+        <p class="prop__desc">
+          Safety-yellow BANANA AIRWAYS harness belt draped over an empty cabin seat,
+          chunky steel D-ring carabiner, thick coiled yellow rope clipped in. The
+          tool for engine-on-rope and door-on-rope repairs.
+        </p>
+      </div>
+      <figure class="prop__media">
+        <img src="assets/PROPS/04-harness-belt.png" alt="Harness and rope" />
+      </figure>
+    </article>
+
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <span>BANANA AIRWAYS · Props · Jorge · May 20 2026</span>
+    <a href="index.html">← back to portal</a>
+  </div>
+</footer>
+
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close">×</button>
+  <img class="lightbox__img" id="lightboxImg" alt="" />
+  <div class="lightbox__cap" id="lightboxCap"></div>
+</div>
+
+<script src="props.js"></script>
+</body>
+</html>

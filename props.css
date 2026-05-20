@@ -1,0 +1,87 @@
+/* ============================================================
+   BANANA AIRWAYS · PROPS
+   Stacked hero-shot layout. Inherits palette + topbar + lightbox
+   from gameplay.css.
+   ============================================================ */
+
+.props {
+  padding: 60px 28px 100px;
+  background: var(--bg);
+}
+.props__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+@media (max-width: 900px) {
+  .props__inner { grid-template-columns: 1fr; }
+}
+
+.prop {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.prop:hover {
+  border-color: var(--line-2);
+  transform: translateY(-2px);
+}
+
+.prop__head {
+  padding: 26px 28px 22px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.prop__num {
+  font-family: 'Bungee Shade', sans-serif;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--banana);
+}
+.prop__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--coral);
+  text-transform: uppercase;
+}
+.prop__title {
+  font-family: 'Anton', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  margin: 4px 0 6px;
+  color: var(--ink);
+}
+.prop__desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.prop__media {
+  margin: 0;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.prop__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.prop:hover .prop__media img {
+  transform: scale(1.02);
+}
