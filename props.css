@@ -1,87 +1,159 @@
 /* ============================================================
    BANANA AIRWAYS · PROPS
-   Stacked hero-shot layout. Inherits palette + topbar + lightbox
-   from gameplay.css.
+   Per-prop sections: hero shot + modeling references.
+   Inherits palette + topbar + lightbox from gameplay.css.
    ============================================================ */
 
-.props {
-  padding: 60px 28px 100px;
+.prop-section {
+  padding: 60px 28px;
   background: var(--bg);
+  border-bottom: 1px solid var(--line);
 }
-.props__inner {
+.prop-section--alt { background: var(--bg-2); }
+.prop-section:last-child { border-bottom: none; }
+.prop-section__inner {
   max-width: 1400px;
   margin: 0 auto;
+}
+
+/* ---------- Section head ---------- */
+.prop-section__head {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 36px;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 4px;
+  margin-bottom: 26px;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed var(--line);
 }
-@media (max-width: 900px) {
-  .props__inner { grid-template-columns: 1fr; }
-}
-
-.prop {
-  background: var(--bg-2);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-.prop:hover {
-  border-color: var(--line-2);
-  transform: translateY(-2px);
-}
-
-.prop__head {
-  padding: 26px 28px 22px;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.prop__num {
+.prop-section__num {
   font-family: 'Bungee Shade', sans-serif;
-  font-size: 44px;
+  font-size: 52px;
   line-height: 1;
   color: var(--banana);
 }
-.prop__tag {
+.prop-section__tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: var(--coral);
   text-transform: uppercase;
+  color: var(--coral);
+  background: rgba(255,92,58,0.10);
+  border: 1px solid rgba(255,92,58,0.35);
+  padding: 5px 10px;
+  border-radius: 3px;
 }
-.prop__title {
+.prop-section__head h2 {
+  grid-column: 2 / -1;
   font-family: 'Anton', sans-serif;
-  font-size: 28px;
+  font-size: 36px;
   letter-spacing: 0.02em;
-  margin: 4px 0 6px;
   color: var(--ink);
+  margin: 6px 0 0 0;
 }
-.prop__desc {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--ink-2);
+.prop-section__head p {
+  grid-column: 2 / -1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-3);
   margin: 0;
 }
 
-.prop__media {
+/* ---------- Sub head ---------- */
+.prop-section__sub {
+  font-family: 'Anton', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: var(--banana-deep);
+  margin: 36px 0 14px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  text-transform: uppercase;
+}
+.prop-section__note {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0 0 18px 0;
+  max-width: 760px;
+  font-style: italic;
+}
+
+/* ---------- Hero shot ---------- */
+.prop-hero {
   margin: 0;
   background: #000;
-  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   overflow: hidden;
   cursor: zoom-in;
+  position: relative;
 }
-.prop__media img {
+.prop-hero img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
 }
-.prop:hover .prop__media img {
-  transform: scale(1.02);
+.prop-hero:hover img { transform: scale(1.02); }
+.prop-hero figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 18px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
+
+/* ---------- Modeling refs grid ---------- */
+.prop-refs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.prop-refs--single { grid-template-columns: 1fr; }
+@media (max-width: 700px) {
+  .prop-refs { grid-template-columns: 1fr; }
+}
+
+.prop-refs figure {
+  margin: 0;
+  background: var(--bg-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: border-color 0.2s ease;
+}
+.prop-refs figure:hover {
+  border-color: var(--line-2);
+}
+.prop-refs img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #fff;
+  display: block;
+}
+.prop-refs--single img {
+  aspect-ratio: 21 / 9;
+}
+.prop-refs figcaption {
+  padding: 10px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-2);
+  letter-spacing: 0.06em;
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+}
+

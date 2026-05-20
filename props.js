@@ -1,4 +1,4 @@
-// Props page · click any prop image to zoom into the lightbox.
+// Props page lightbox · zoom hero shots + modeling-ref images.
 (() => {
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
@@ -23,14 +23,13 @@
   };
 
   document.addEventListener('click', (e) => {
-    const media = e.target.closest('.prop__media');
-    if (!media) return;
-    const img = media.querySelector('img');
+    const fig = e.target.closest('.prop-hero, .prop-refs figure');
+    if (!fig) return;
+    const img = fig.querySelector('img');
     if (!img || !img.src) return;
     e.preventDefault();
-    const prop = media.closest('.prop');
-    const title = prop ? prop.querySelector('.prop__title')?.textContent : '';
-    open(img.src, title);
+    const cap = fig.querySelector('figcaption');
+    open(img.src, cap ? cap.textContent.trim() : img.alt);
   });
 
   lbClose.addEventListener('click', close);

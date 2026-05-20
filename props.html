@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Props · Banana Airways</title>
-<meta name="description" content="Priority prop hero shots for the reveal trailer. No characters, no UI." />
+<meta name="description" content="Hero shots + modeling reference views of the 4 priority props for the reveal trailer." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,10 +24,10 @@
   </a>
   <nav class="topbar__nav">
     <a href="index.html">← Portal</a>
-    <a href="#p01">Cart</a>
-    <a href="#p02">Bomb</a>
-    <a href="#p03">Debris</a>
-    <a href="#p04">Harness</a>
+    <a href="#cart">Cart</a>
+    <a href="#suitcase">Suitcase</a>
+    <a href="#debris">Debris</a>
+    <a href="#harness">Harness</a>
   </nav>
 </header>
 
@@ -37,15 +37,16 @@
   <div class="hero__inner">
     <div class="hero__pre">
       <span class="dot"></span>
-      JORGE · REVEAL TRAILER · PRIORITY PROPS
+      JORGE · REVEAL TRAILER · PROPS + MODELING REFS
     </div>
     <h1 class="hero__title">
       Props <span class="hero__title--shade">in context.</span>
     </h1>
     <p class="hero__lead">
-      Four priority prop hero shots for the reveal trailer. No characters, no UI, no
-      POV hands — just the prop as the subject, in the rundown Banana Airways cabin.
-      Stylized 3D in the GTA V / Far Cry family.
+      Four priority props for the reveal trailer. Each prop has a <strong>hero
+      shot</strong> in the rundown Banana Airways cabin, plus isolated
+      <strong>modeling references</strong> on white background for the 3D modeler
+      — front and 3/4 perspectives so size and form are clear.
     </p>
     <p class="hero__lead hero__lead--small">
       Generated via the Krea API with Nano Banana Pro at 2K. Source files in
@@ -54,80 +55,139 @@
   </div>
 </section>
 
-<!-- ============================ PROPS GRID ============================ -->
-<section class="props" id="props">
-  <div class="props__inner">
+<!-- =================================================================
+     1. SERVICE CART
+     ================================================================= -->
+<section class="prop-section" id="cart">
+  <div class="prop-section__inner">
 
-    <article class="prop" id="p01">
-      <div class="prop__head">
-        <div class="prop__num">01</div>
-        <div class="prop__tag">SERVE</div>
-        <h2 class="prop__title">Service cart · changuito</h2>
-        <p class="prop__desc">
-          Battered red-and-yellow steel BANANA AIRWAYS trolley parked in the aisle.
-          Coffee pot, paper cups, foil snacks, a basket of bruised bananas on top.
-          Hero of every SERVE mission.
-        </p>
-      </div>
-      <figure class="prop__media">
-        <img src="assets/PROPS/01-cart.png" alt="Service cart" />
-      </figure>
-    </article>
+    <div class="prop-section__head">
+      <span class="prop-section__num">01</span>
+      <span class="prop-section__tag">SERVE</span>
+      <h2>Service cart</h2>
+      <p>Hero of every SERVE mission. Two design directions.</p>
+    </div>
 
-    <article class="prop" id="p02">
-      <div class="prop__head">
-        <div class="prop__num">02</div>
-        <div class="prop__tag">DEFEND</div>
-        <h2 class="prop__title">Bomb suitcase</h2>
-        <p class="prop__desc">
-          Open hard-shell carry-on on the cabin floor: tangled wires, green-LED timer
-          counting down at 00:38, taped explosive bricks, a torn BANANA AIRWAYS
-          DISARM MANUAL page. The 30-second decision.
-        </p>
-      </div>
-      <figure class="prop__media">
-        <img src="assets/PROPS/02-bomb-suitcase.png" alt="Bomb suitcase" />
-      </figure>
-    </article>
+    <figure class="prop-hero">
+      <img src="assets/PROPS/01-cart.png" alt="Service cart hero" />
+      <figcaption>Hero · in the cabin aisle</figcaption>
+    </figure>
 
-    <article class="prop" id="p03">
-      <div class="prop__head">
-        <div class="prop__num">03</div>
-        <div class="prop__tag">CHAOS</div>
-        <h2 class="prop__title">Airborne debris</h2>
-        <p class="prop__desc">
-          Empty BANANA AIRWAYS cabin mid-turbulence. Food trays, plastic cups, bananas,
-          a tumbling coffee can, papers and a thrown safety card all frozen in mid-air.
-          The "everything that flies" moment.
-        </p>
-      </div>
-      <figure class="prop__media">
-        <img src="assets/PROPS/03-airborne-debris.png" alt="Airborne debris" />
-      </figure>
-    </article>
+    <h3 class="prop-section__sub">Option A · Standard Banana Airways cart</h3>
+    <div class="prop-refs">
+      <figure><img src="assets/PROPS/m01-cart-a-front.png" alt="Cart A front" /><figcaption>Front</figcaption></figure>
+      <figure><img src="assets/PROPS/m02-cart-a-three-quarter.png" alt="Cart A 3/4" /><figcaption>3/4 perspective</figcaption></figure>
+    </div>
 
-    <article class="prop" id="p04">
-      <div class="prop__head">
-        <div class="prop__num">04</div>
-        <div class="prop__tag">REPAIR</div>
-        <h2 class="prop__title">Harness + rope</h2>
-        <p class="prop__desc">
-          Safety-yellow BANANA AIRWAYS harness belt draped over an empty cabin seat,
-          chunky steel D-ring carabiner, thick coiled yellow rope clipped in. The
-          tool for engine-on-rope and door-on-rope repairs.
-        </p>
-      </div>
-      <figure class="prop__media">
-        <img src="assets/PROPS/04-harness-belt.png" alt="Harness and rope" />
-      </figure>
-    </article>
+    <h3 class="prop-section__sub">Option B · Hacked supermarket trolley</h3>
+    <p class="prop-section__note">
+      No había plata para hacer carritos de verdad — agarraron un carrito de
+      supermercado, le clavaron una tabla de madera arriba, bandejas atornilladas
+      a los costados, un cartel de cartón pintado "BANANA AIRWAYS", y un termo
+      sujetado con bungees.
+    </p>
+    <div class="prop-refs">
+      <figure><img src="assets/PROPS/m03-cart-b-front.png" alt="Cart B front" /><figcaption>Front</figcaption></figure>
+      <figure><img src="assets/PROPS/m04-cart-b-three-quarter.png" alt="Cart B 3/4" /><figcaption>3/4 perspective</figcaption></figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- =================================================================
+     2. BOMB SUITCASE
+     ================================================================= -->
+<section class="prop-section prop-section--alt" id="suitcase">
+  <div class="prop-section__inner">
+
+    <div class="prop-section__head">
+      <span class="prop-section__num">02</span>
+      <span class="prop-section__tag">DEFEND</span>
+      <h2>Bomb suitcase</h2>
+      <p>Generic civilian carry-on outside · nightmare inside. No banana sticker.</p>
+    </div>
+
+    <figure class="prop-hero">
+      <img src="assets/PROPS/02-bomb-suitcase.png" alt="Bomb suitcase hero" />
+      <figcaption>Hero · open in the cabin</figcaption>
+    </figure>
+
+    <h3 class="prop-section__sub">Closed</h3>
+    <div class="prop-refs">
+      <figure><img src="assets/PROPS/m05-suitcase-closed-front.png" alt="Suitcase closed front" /><figcaption>Front</figcaption></figure>
+      <figure><img src="assets/PROPS/m06-suitcase-closed-three-quarter.png" alt="Suitcase closed 3/4" /><figcaption>3/4 perspective</figcaption></figure>
+    </div>
+
+    <h3 class="prop-section__sub">Open · chaotic nightmare interior</h3>
+    <div class="prop-refs">
+      <figure><img src="assets/PROPS/m07-suitcase-open-chaotic.png" alt="Suitcase open 3/4" /><figcaption>3/4 open · countdown 00:38</figcaption></figure>
+      <figure><img src="assets/PROPS/m08-suitcase-open-topdown.png" alt="Suitcase open top-down" /><figcaption>Top-down inside</figcaption></figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- =================================================================
+     3. AIRBORNE DEBRIS
+     ================================================================= -->
+<section class="prop-section" id="debris">
+  <div class="prop-section__inner">
+
+    <div class="prop-section__head">
+      <span class="prop-section__num">03</span>
+      <span class="prop-section__tag">CHAOS</span>
+      <h2>Airborne debris</h2>
+      <p>Empty cabin in turbulence · individual items on white for modeling.</p>
+    </div>
+
+    <figure class="prop-hero">
+      <img src="assets/PROPS/03-airborne-debris.png" alt="Airborne debris hero" />
+      <figcaption>Hero · cabin mid-turbulence</figcaption>
+    </figure>
+
+    <h3 class="prop-section__sub">Items sheet</h3>
+    <div class="prop-refs prop-refs--single">
+      <figure><img src="assets/PROPS/m12-debris-sheet.png" alt="Debris items flat-lay" /><figcaption>Tray · cup · can · banana · snack bag · safety card · boarding pass</figcaption></figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- =================================================================
+     4. HARNESS + ROPE
+     ================================================================= -->
+<section class="prop-section prop-section--alt" id="harness">
+  <div class="prop-section__inner">
+
+    <div class="prop-section__head">
+      <span class="prop-section__num">04</span>
+      <span class="prop-section__tag">REPAIR</span>
+      <h2>Harness + rope</h2>
+      <p>The tool for engine-on-rope repairs. Harness goes ON the character.</p>
+    </div>
+
+    <figure class="prop-hero">
+      <img src="assets/PROPS/04-harness-belt.png" alt="Harness + rope hero" />
+      <figcaption>Hero · draped over an empty seat</figcaption>
+    </figure>
+
+    <h3 class="prop-section__sub">Harness on character · Orange Chubby</h3>
+    <div class="prop-refs">
+      <figure><img src="assets/PROPS/m09-harness-on-char-front.png" alt="Harness on character front" /><figcaption>Front</figcaption></figure>
+      <figure><img src="assets/PROPS/m10-harness-on-char-side.png" alt="Harness on character side" /><figcaption>Side</figcaption></figure>
+    </div>
+
+    <h3 class="prop-section__sub">Rope alone</h3>
+    <div class="prop-refs prop-refs--single">
+      <figure><img src="assets/PROPS/m11-rope-coiled.png" alt="Coiled rope with carabiner" /><figcaption>Coiled · 3/4 with carabiner</figcaption></figure>
+    </div>
 
   </div>
 </section>
 
 <footer class="foot">
   <div class="foot__inner">
-    <span>BANANA AIRWAYS · Props · Jorge · May 20 2026</span>
+    <span>BANANA AIRWAYS · Props + modeling refs · Jorge · May 20 2026</span>
     <a href="index.html">← back to portal</a>
   </div>
 </footer>
