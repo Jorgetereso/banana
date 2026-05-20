@@ -6,17 +6,17 @@ from generate_gameplay import run, OUT_DIR, NB, NB_BODY  # STYLE is auto-applied
 from generate_gameplay_cast import ORANGE, GREEN, PURPLE, RED, OCTOPUS, CAST_NOTE
 
 REROLLS = [
-    # 17 → 21: four-Pollo huddle (most ambitious cast composition)
+    # 17 → 21: four-character huddle (most ambitious cast composition)
     {
-        "filename": "21-pollo-huddle-manual-v2.png",
+        "filename": "21-cast-huddle-manual-v2.png",
         "endpoint": NB, "extra": dict(NB_BODY, imageUrls=[ORANGE, GREEN, PURPLE, RED]),
         "prompt": (
-            "First-person POV at the center of a tight huddle of all FOUR main Pollos pressed "
+            "First-person POV at the center of a tight huddle of all FOUR main characters pressed "
             "around the camera in the dim Banana Airways cabin. Player hands at the bottom of "
             "the frame hold an open battered booklet labelled \"B.A.N.A.N.A. FLIGHT MANUAL\" "
-            "with diagrams of a plane crashing. Surrounding the camera: ORANGE chubby Pollo on "
-            "the left pointing at one page, GREEN braided Pollo on the right shaking her head, "
-            "PURPLE muscular Pollo behind flexing one arm dramatically, RED mustache Pollo "
+            "with diagrams of a plane crashing. Surrounding the camera: ORANGE CHUBBY character on "
+            "the left pointing at one page, GREEN PIGTAILS character on the right shaking her head, "
+            "PURPLE MUSCLE character behind flexing one arm dramatically, RED MUSTACHE character "
             "stroking his mustache contemplatively. All four faces visible, all leaning in. "
             "Warm tungsten cabin light. " + CAST_NOTE
         ),
@@ -28,7 +28,7 @@ REROLLS = [
         "prompt": (
             "First-person pilot POV inside the cockpit of a battered Banana Airways propeller "
             "plane. Player hands grip the left yellow Banana Airways yoke at the bottom of the "
-            "frame. To the right of the player, in the co-pilot seat, the RED Pollo with the "
+            "frame. To the right of the player, in the co-pilot seat, the RED MUSTACHE character with the "
             "magnificent handlebar mustache is twirling the tip of his mustache with one fuzzy "
             "hand while completely ignoring the alarm lights — sleepy droopy green eyes, smug "
             "calm expression. The other yoke vibrates wildly in front of him. Through the "

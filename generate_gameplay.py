@@ -63,9 +63,9 @@ JOBS = [
             "plane, both player hands gripping the red push-handle of a steel Banana Airways food cart "
             "in the lower half of the frame. The cart is stacked with paper coffee cups, foil snacks "
             "and a single bruised banana. Yellow vinyl seats with red BANANA AIRWAYS logos line the "
-            "aisle. In the mid-ground a furious purple fuzzy Pollo passenger leans out of seat 12C, "
+            "aisle. In the mid-ground a furious purple fuzzy passenger leans out of seat 12C, "
             "lips wide open mid-shout, googly eyes locked on the camera, one fuzzy arm raised. Other "
-            "Pollos peek over their headrests. Warm tungsten cabin lights, slight motion blur on the "
+            "passengers peek over their headrests. Warm tungsten cabin lights, slight motion blur on the "
             "cart wheels, no UI."
         ),
     },
@@ -87,7 +87,7 @@ JOBS = [
         "prompt": (
             "First-person POV crouched in the aisle of a Banana Airways cabin, leaning toward seat 7A. "
             "Player's right hand extended into the frame, fingers pinching the white paper stick of a "
-            "rainbow-swirl lollipop, offering it forward. A sobbing fluffy green Pollo passenger "
+            "rainbow-swirl lollipop, offering it forward. A sobbing fluffy green passenger "
             "buckled in the seat looks up — googly eyes wide and wet, thick rubber lips trembling, "
             "two big tears mid-fall. Yellow Banana Airways seat back behind them. Soft warm cabin "
             "light, slight depth-of-field on the lollipop, no UI, no text."
@@ -98,9 +98,9 @@ JOBS = [
         "prompt": (
             "First-person POV in the central aisle of a Banana Airways cabin, both player hands "
             "gripping a scratched wooden baseball bat lifted into a windup at the bottom of the frame. "
-            "Standing in the aisle two steps away: a tall orange fuzzy Pollo teammate, arms flailing, "
+            "Standing in the aisle two steps away: a tall orange fuzzy teammate, arms flailing, "
             "with a chittering insectoid alien creature splayed across their face — many spindly legs "
-            "wrapped around their head, oversized googly eyes of the Pollo barely peeking out. "
+            "wrapped around their head, oversized googly eyes of the teammate barely peeking out. "
             "Teammate's body language is pure panic. Cabin seats blurred on either side, warning red "
             "light strobing on the ceiling. Slight motion blur on the bat."
         ),
@@ -112,7 +112,7 @@ JOBS = [
             "Both player hands in fingerless gloves grip a yellow Banana Airways yoke at the lower "
             "frame, knuckles tense, yoke banked hard left. Dashboard fills the lower third — analog "
             "gauges, scratched paint, banana stickers, a single dangling polaroid of a fluffy orange "
-            "Pollo. Through the cracked, oil-streaked windshield: a green-blue mountain valley at "
+            "crewmate. Through the cracked, oil-streaked windshield: a green-blue mountain valley at "
             "sunset, and a missile streaking diagonally past the right window, white smoke trail "
             "curling, blast glow on the glass. Distant flak puffs in the sky."
         ),

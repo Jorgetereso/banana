@@ -314,6 +314,36 @@ img { display: block; max-width: 100%; }
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
+.shots__wave-head {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 22px 0 6px;
+  border-bottom: 1px dashed var(--line);
+}
+.shots__wave-head:first-child { padding-top: 0; }
+.shots__wave-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  background: var(--banana-deep);
+  color: #1a160f;
+}
+.shots__wave-head--reroll .shots__wave-tag { background: var(--coral); color: #1a160f; }
+.shots__wave-head--cast .shots__wave-tag { background: var(--mint); color: #0a2a1a; }
+.shots__wave-head--original .shots__wave-tag { background: var(--ink-3); color: #1a160f; }
+.shots__wave-head h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin: 0;
+}
 @media (max-width: 900px) {
   .shots__inner { grid-template-columns: 1fr; }
 }
