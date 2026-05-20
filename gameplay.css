@@ -367,6 +367,19 @@ img { display: block; max-width: 100%; }
 .shot--cast .shot__num {
   color: var(--mint);
 }
+.shot--reroll .shot__num {
+  color: var(--coral);
+}
+.shot--reroll .shot__title em {
+  font-style: normal;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--coral);
+  margin-left: 6px;
+  vertical-align: middle;
+}
 .shot__title {
   font-family: 'Anton', sans-serif;
   font-size: 24px;
