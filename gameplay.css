@@ -215,6 +215,93 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.02em;
 }
 
+/* ====================== CAST ====================== */
+.cast {
+  padding: 60px 28px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.cast__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.cast__head {
+  margin-bottom: 28px;
+  max-width: 760px;
+}
+.cast__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--banana-deep);
+  letter-spacing: 0.14em;
+}
+.cast__head h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 32px;
+  letter-spacing: 0.02em;
+  margin: 6px 0 12px 0;
+  color: var(--ink);
+}
+.cast__lead {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+}
+.cast__lead code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--banana);
+}
+.cast__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1000px) {
+  .cast__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .cast__grid { grid-template-columns: repeat(2, 1fr); }
+}
+.cast__card {
+  margin: 0;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cast__card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #ddd;
+}
+.cast__card figcaption {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cast__card strong {
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: var(--banana);
+}
+.cast__card span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: var(--ink-3);
+}
+
 /* ====================== SHOTS GRID ====================== */
 .shots {
   padding: 60px 28px 100px;
@@ -268,6 +355,17 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.12em;
   color: var(--coral);
   font-weight: 700;
+}
+.shot__refs {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.shot--cast .shot__num {
+  color: var(--mint);
 }
 .shot__title {
   font-family: 'Anton', sans-serif;
