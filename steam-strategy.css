@@ -1,0 +1,230 @@
+/* ============================================================
+   Steam wishlist strategy · internal memo
+   Minimal research-doc styling. Light theme, serif body for
+   long-form reading. No connection to Banana Airways branding.
+   ============================================================ */
+
+:root {
+  --bg: #fafaf7;
+  --ink: #1a1a17;
+  --ink-2: #4a4a44;
+  --ink-3: #8a8a82;
+  --accent: #1f5f3f;
+  --warn: #a05a1a;
+  --line: #d8d8d2;
+  --line-soft: #ececea;
+  --code-bg: #f1f0eb;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--ink); }
+
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+/* ==================== LAYOUT ==================== */
+
+.doc {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 28px 100px;
+}
+
+.doc__head {
+  margin-bottom: 48px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.doc__kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--ink-3);
+  margin-bottom: 14px;
+}
+.doc__head h1 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.01em;
+}
+.doc__sub {
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0 0 18px 0;
+}
+.doc__meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-3);
+  margin: 0;
+}
+
+.doc__foot {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+/* ==================== TOC ==================== */
+
+.toc {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin: 0 0 48px 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+}
+.toc strong {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.toc ol {
+  margin: 0;
+  padding-left: 22px;
+  columns: 2;
+  column-gap: 24px;
+}
+.toc li { line-height: 1.5; padding: 2px 0; }
+.toc a {
+  text-decoration: none;
+  color: var(--ink);
+}
+.toc a:hover { color: var(--accent); text-decoration: underline; }
+
+@media (max-width: 600px) {
+  .toc ol { columns: 1; }
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+
+section {
+  margin: 56px 0;
+}
+
+h2 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  margin: 0 0 18px 0;
+  padding-top: 10px;
+  scroll-margin-top: 28px;
+}
+
+h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 28px 0 10px 0;
+  color: var(--ink);
+}
+
+p {
+  margin: 0 0 16px 0;
+}
+
+ul, ol {
+  margin: 0 0 18px 0;
+  padding-left: 22px;
+}
+li {
+  margin-bottom: 6px;
+}
+li > strong:first-child {
+  /* lead-in bold text for definition-style list items */
+}
+
+/* ==================== CALLOUTS ==================== */
+
+.callout {
+  border-left: 4px solid var(--accent);
+  background: rgba(31,95,63,0.06);
+  padding: 14px 18px;
+  margin: 22px 0;
+  font-size: 16px;
+  border-radius: 0 4px 4px 0;
+}
+.callout--warn {
+  border-left-color: var(--warn);
+  background: rgba(160,90,26,0.07);
+}
+.callout--ok {
+  border-left-color: var(--accent);
+  background: rgba(31,95,63,0.07);
+}
+
+/* ==================== TABLES ==================== */
+
+.data {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 22px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14.5px;
+}
+.data th, .data td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.data thead th {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--line);
+}
+.data tbody tr:hover {
+  background: var(--code-bg);
+}
+
+.data--timeline th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+  vertical-align: top;
+  width: 1%;
+  padding-right: 18px;
+}
+.data--timeline td {
+  font-size: 14.5px;
+  line-height: 1.5;
+}

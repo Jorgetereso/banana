@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Steam wishlist strategy · internal memo</title>
+<meta name="description" content="Internal strategy memo on getting wishlisted on Steam: demo vs trailer, Steam page anatomy, and a concrete plan for our Next Fest target." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="steam-strategy.css" />
+</head>
+
+<body>
+
+<main class="doc">
+
+<header class="doc__head">
+  <div class="doc__kicker">INTERNAL MEMO · DRAFT</div>
+  <h1>Steam wishlist strategy</h1>
+  <p class="doc__sub">
+    The real question we need to answer: <strong>trailer only, demo only, or
+    both?</strong> &mdash; and what we'd actually have to build to be ready by
+    Steam Next Fest, October 19&ndash;26 2026.
+  </p>
+  <p class="doc__meta">Jorge · May 2026 · v1</p>
+</header>
+
+<nav class="toc">
+  <strong>Sections</strong>
+  <ol>
+    <li><a href="#tldr">TL;DR</a></li>
+    <li><a href="#reality">The reality check</a></li>
+    <li><a href="#numbers">How wishlists actually work</a></li>
+    <li><a href="#page">The Steam page anatomy</a></li>
+    <li><a href="#path-a">Path A &mdash; Trailer-only, skip Next Fest</a></li>
+    <li><a href="#path-b">Path B &mdash; Trailer + tight demo for Next Fest</a></li>
+    <li><a href="#path-c">Path C &mdash; Steam Playtest first</a></li>
+    <li><a href="#recommendation">Recommendation for our team</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#risks">Risks</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ol>
+</nav>
+
+<section id="tldr">
+  <h2>TL;DR</h2>
+  <p>
+    There is no &ldquo;trailer-only vs trailer+demo&rdquo; choice for Next Fest.
+    <strong>Next Fest requires a publicly playable demo to participate.</strong> A
+    trailer-only Steam page is a valid path, but it skips the single biggest
+    wishlist event of the year for indies.
+  </p>
+  <p>
+    The data is also clearer than people think: a <em>median</em> Next Fest demo
+    only adds about <strong>800 wishlists</strong> during the fest. The breakouts
+    that get 10k+ are the games that walked in with strong pre-fest momentum
+    already. <strong>Next Fest amplifies momentum, it does not create it.</strong>
+  </p>
+  <p>
+    For our team (3 people, 6 months runway, co-op chaos game where streamers are
+    a natural fit) the recommended path is:
+  </p>
+  <ol>
+    <li>Steam page live by <strong>Jun 1, 2026</strong> (already on the schedule).</li>
+    <li>Killer cinematic trailer (mix of in-engine + AI-assisted, the way we've
+        been working on the props/gameplay shots).</li>
+    <li>A <strong>tight demo</strong> &mdash; one chaotic mid-flight scenario,
+        10&ndash;15 minutes of play &mdash; for Next Fest.</li>
+    <li>Use the months between June and October to build wishlist <em>momentum
+        before</em> the fest. The fest itself is a multiplier, not a starting point.</li>
+  </ol>
+  <p class="callout callout--ok">
+    <strong>Bottom line.</strong> Trailer alone is cheaper but leaves the Next Fest
+    boost on the table. A tight demo is more work but unlocks the only large
+    discovery event we have between now and launch. The math favors building a
+    tight demo, not skipping it.
+  </p>
+</section>
+
+<section id="reality">
+  <h2>The reality check</h2>
+  <p>
+    Steam Next Fest eligibility, from Valve's own documentation:
+  </p>
+  <ul>
+    <li>Game <strong>must have a publicly playable demo</strong> by the time the fest begins.</li>
+    <li>Each game can participate <strong>only once</strong> &mdash; we pick one Next Fest, ever.</li>
+    <li>Demo submitted for review at least <strong>2 weeks before the fest</strong>
+        (4 weeks if we want it live for the press preview).</li>
+    <li>No restriction on demo length, but it must be a publicly accessible build.</li>
+  </ul>
+  <p>
+    So &ldquo;trailer instead of demo&rdquo; is not a Next Fest option. It's a
+    choice between (A) launching a Steam page with a trailer and skipping the
+    fest entirely, or (B) building a demo and being in the fest. Mixing both is
+    not on the menu.
+  </p>
+</section>
+
+<section id="numbers">
+  <h2>How wishlists actually work</h2>
+
+  <h3>Where wishlists come from</h3>
+  <p>
+    Wishlists are the only signal Steam's algorithm uses to give an unreleased
+    game free visibility. They come from four places:
+  </p>
+  <ul>
+    <li><strong>Discovery on Steam itself</strong> &mdash; Coming Soon lists, similar games, the
+        Discovery Queue, tags. Steam will surface us more aggressively if our
+        wishlist <em>velocity</em> (per day) is rising.</li>
+    <li><strong>Steam events</strong> &mdash; Next Fest, Steam Indie Days, genre-specific fests.
+        Next Fest is by far the biggest.</li>
+    <li><strong>Off-Steam marketing</strong> &mdash; streamers, social, press, our portfolio site.
+        Anything that gets people to type the game into Steam search.</li>
+    <li><strong>Direct from the trailer</strong> &mdash; a great trailer that goes mildly viral
+        on Reddit/Twitter/TikTok can do enormous volume on its own.</li>
+  </ul>
+
+  <h3>The numbers from recent Next Fests</h3>
+  <p>
+    From third-party tracking (Ziva, Alinea) of February 2026 Next Fest, sample
+    of 208+ games:
+  </p>
+  <table class="data">
+    <thead>
+      <tr><th>Percentile</th><th>Wishlists added during the fest</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>50th (median)</td><td>~806</td></tr>
+      <tr><td>70th</td><td>~1,839</td></tr>
+      <tr><td>95th</td><td>~13,461</td></tr>
+      <tr><td>Single top breakout</td><td>57,074</td></tr>
+    </tbody>
+  </table>
+  <p class="callout callout--warn">
+    <strong>Sobering fact.</strong> Half of all games at Next Fest get <em>under
+    a thousand</em> wishlists during the event. The story of &ldquo;Next Fest will
+    save our launch&rdquo; only happens for the top 5&ndash;10%.
+  </p>
+
+  <h3>What predicts a strong Next Fest</h3>
+  <p>
+    The single strongest signal in the 2026 data is a Spearman correlation of
+    <strong>r = 0.825 between pre-fest wishlist count and wishlists earned
+    during the fest</strong>. Translated: <em>Next Fest mostly amplifies a game
+    that already has momentum.</em> A game with 0 pre-fest wishlists adds a
+    median of ~322. A game with 100,000 pre-fest wishlists adds a median of
+    ~12,882.
+  </p>
+  <p>
+    The other striking number: <strong>68&ndash;88% of wishlists during the
+    fest come from people who never opened the demo</strong>. The demo is the
+    ticket of entry into the fest's visibility machinery, but the Steam page
+    (capsules, trailer, screenshots, description, tags) does the actual
+    converting.
+  </p>
+
+  <h3>Wishlist conversion at launch</h3>
+  <p>
+    Average indie wishlist-to-purchase conversion at launch is somewhere between
+    <strong>5% and 20%</strong>, depending on price and genre. So:
+  </p>
+  <ul>
+    <li>10,000 wishlists at launch &rarr; roughly 500&ndash;2,000 day-one sales.</li>
+    <li>50,000 wishlists at launch &rarr; roughly 2,500&ndash;10,000 day-one sales.</li>
+  </ul>
+  <p>
+    These are not life-changing numbers for a three-person studio, but they're
+    enough to validate a sequel/expansion strategy and to get streamer attention,
+    which compounds.
+  </p>
+</section>
+
+<section id="page">
+  <h2>The Steam page anatomy</h2>
+  <p>
+    Even before we decide demo vs no demo, this is the minimum we have to ship
+    by June 1 to have a Steam page live at all:
+  </p>
+  <ul>
+    <li><strong>Capsule images</strong> at four sizes (small, main, header,
+        library/hero). Steam reviewers reject pages with weak capsules. This is
+        the single most important art deliverable.</li>
+    <li><strong>Screenshots</strong> &mdash; minimum 5, ideal 8&ndash;12. They show up in the
+        Discovery Queue and in the carousel. Our gameplay-mock shots from the
+        last few sessions are a strong starting point.</li>
+    <li><strong>At least one trailer.</strong> Steam allows multiple. The first
+        one auto-plays on the page.</li>
+    <li><strong>About this game</strong> &mdash; 200&ndash;400 words, the short version of the
+        pitch.</li>
+    <li><strong>Tags</strong> &mdash; up to 20. These drive ~30% of Steam discovery. We
+        want &ldquo;Co-op&rdquo;, &ldquo;Comedy&rdquo;, &ldquo;Multiplayer&rdquo;, &ldquo;Chaotic&rdquo;, etc. Get
+        these right and the page rides discovery on its own.</li>
+    <li><strong>System requirements</strong> and a planned release date or window
+        (we can say &ldquo;Coming 2026&rdquo;).</li>
+    <li><strong>Review by Valve</strong> takes 3&ndash;5 business days the first time.</li>
+  </ul>
+  <p>
+    Optional but worth it: a <strong>franchise / publisher page</strong> on Steam,
+    so we can cross-promote any follow-up titles or DLC; <strong>Steam Community
+    Hub</strong> moderation set up before launch.
+  </p>
+</section>
+
+<section id="path-a">
+  <h2>Path A &mdash; Trailer-only, skip Next Fest</h2>
+
+  <h3>What it looks like</h3>
+  <p>
+    Steam page goes live June 1 with a strong cinematic trailer, capsules,
+    screenshots, tags. No playable build. We market the trailer hard between
+    June and October. We launch the full game some time in 2027 without ever
+    having done Next Fest.
+  </p>
+
+  <h3>Pros</h3>
+  <ul>
+    <li>Drastically cheaper: one trailer plus some screenshots vs a full demo build.</li>
+    <li>Lower risk: a bad demo can actively hurt wishlist conversion. A great
+        trailer with no demo is pure upside.</li>
+    <li>The team can spend all dev time on the actual game.</li>
+    <li>If our trailer is genuinely great, it can hit the same wishlist numbers
+        as a top-quartile Next Fest demo, purely from social virality.</li>
+  </ul>
+
+  <h3>Cons</h3>
+  <ul>
+    <li>We lose Next Fest entirely. It is the single biggest one-week wishlist
+        event of the year and we can only do it <em>once</em>.</li>
+    <li>No demo means no streamer playthroughs, which is the natural marketing
+        vector for a co-op chaos game.</li>
+    <li>Steam algorithm bias: games with demos get more aggressive surfacing
+        in the &ldquo;Recommended for you&rdquo; queue.</li>
+    <li>No real player feedback before launch &mdash; the design is essentially
+        unvalidated until release day.</li>
+  </ul>
+
+  <h3>Rough cost</h3>
+  <p>
+    Trailer + capsules + screenshots: 4&ndash;6 weeks of one artist plus some
+    Jorge time for capture. Maybe US$0&ndash;5k for any extra rendering/AI tooling.
+    Negligible compared to the full game.
+  </p>
+</section>
+
+<section id="path-b">
+  <h2>Path B &mdash; Trailer + tight demo for Next Fest</h2>
+
+  <h3>What it looks like</h3>
+  <p>
+    Steam page live June 1 with the same trailer/capsules as Path A. A small
+    demo &mdash; one chaotic flight scenario, 10&ndash;15 minutes &mdash; submitted
+    to Steam by early October. Public for the duration of Next Fest, then we
+    can choose to keep it live or take it down.
+  </p>
+
+  <h3>Pros</h3>
+  <ul>
+    <li>We get into Next Fest. Even a median outcome is ~800 wishlists in one
+        week, which is more than most months of organic marketing.</li>
+    <li>Demo unlocks streamer/content-creator coverage &mdash; for a co-op chaos
+        game, this is the biggest single multiplier we can pull.</li>
+    <li>Real playtest data &mdash; we learn what's fun before we lock the final scope.</li>
+    <li>Wishlist conversion at launch is typically higher for games that had a
+        Next Fest demo &mdash; players who liked the demo are pre-sold.</li>
+    <li>If our demo is genuinely fun, the breakout outcome (10k+ wishlists)
+        is a real possibility for a co-op chaos game. Lethal Company, Among Us,
+        Content Warning all rode this exact vector.</li>
+  </ul>
+
+  <h3>Cons</h3>
+  <ul>
+    <li>Real dev cost: a polished slice means 3&ndash;4 months of focused work
+        for our two engineers.</li>
+    <li>If the demo is broken or boring, it hurts <em>more</em> than no demo.
+        First impressions on Steam are sticky.</li>
+    <li>Demo content has to be representative of the final game &mdash; we
+        can't show stuff we're not actually going to ship.</li>
+    <li>One-shot opportunity: we only get one Next Fest. If we burn it too
+        early, we don't get a second chance.</li>
+  </ul>
+
+  <h3>Rough cost</h3>
+  <p>
+    A &ldquo;one chaotic flight&rdquo; demo: 3&ndash;4 months of focused work
+    for Valentín + Federico, plus production from Jorge. In actual money this
+    is mostly opportunity cost &mdash; the same hours could go into the full
+    game. Expect US$5&ndash;15k of out-of-pocket if we need any external help
+    (sound design, QA, etc).
+  </p>
+</section>
+
+<section id="path-c">
+  <h2>Path C &mdash; Steam Playtest first, public demo later</h2>
+  <p>
+    Worth flagging because it's a real third option: Valve also offers
+    <strong>Steam Playtest</strong>, which is essentially a private demo. We can
+    gate it (sign-up required, key-based access, limited slots), gather feedback
+    from real players, and iterate without exposing rough edges to the whole
+    Steam audience.
+  </p>
+  <h3>Pros</h3>
+  <ul>
+    <li>Lower-stakes validation. Bad first impressions don't get a public
+        Steam review or land on YouTube.</li>
+    <li>Useful as a bridge: build a Playtest in Aug, use it to fix the worst
+        problems, promote it to a public demo for Next Fest in October.</li>
+    <li>Gives us a list of engaged playtesters who'll wishlist and promote
+        on launch.</li>
+  </ul>
+  <h3>Cons</h3>
+  <ul>
+    <li>Doesn't replace the Next Fest demo &mdash; still need a public demo for the fest.</li>
+    <li>Extra production overhead on top of Path B.</li>
+    <li>Smaller eyeballs &mdash; private means few people actually see it.</li>
+  </ul>
+  <p>
+    Best used in combination with Path B, not as a substitute.
+  </p>
+</section>
+
+<section id="recommendation">
+  <h2>Recommendation for our team</h2>
+
+  <p>
+    <strong>Path B, with two opinionated constraints.</strong>
+  </p>
+
+  <h3>Constraint 1: keep the demo tight</h3>
+  <p>
+    Do not try to make a full first-act demo. One chaotic flight, three or
+    four mechanics live (serve coffee, fix one thing, defend against one
+    threat, land badly), 10&ndash;15 minutes of play, replayable for co-op
+    chaos value. That's it.
+  </p>
+  <p>
+    The reason isn't ambition &mdash; it's that the data says
+    <strong>68&ndash;88% of wishlists come from non-demo-players</strong>. The
+    demo doesn't need to convert players, it just needs to <em>exist</em> so
+    we qualify for the fest, and be <em>fun enough</em> that streamers don't
+    bounce in the first five minutes.
+  </p>
+
+  <h3>Constraint 2: build wishlist momentum <em>before</em> the fest</h3>
+  <p>
+    The most important number in our entire campaign is our wishlist count on
+    the morning Next Fest opens. The r=0.825 correlation between pre-fest
+    wishlists and fest performance means the four months between Steam page
+    launch (Jun 1) and Next Fest (Oct 19) are where this gets won or lost.
+  </p>
+  <p>
+    Specifically:
+  </p>
+  <ul>
+    <li>Cinematic trailer up on day one. This is the page's main conversion engine.</li>
+    <li>Submit to as many smaller events as we qualify for between June and
+        October: LudoNarraCon, Day of the Devs, indie genre-specific showcases.
+        Each one is a small wishlist bump.</li>
+    <li>Hand-pick 5&ndash;10 streamers who play co-op chaos games. Send them a
+        Steam Playtest key in August or early September. Don't beg, just give
+        them something genuinely fun to play.</li>
+    <li>Devlog content (Twitter/Bluesky/Reddit r/IndieDev) twice a week from
+        June onwards. Cheap, repeatable, compounds.</li>
+  </ul>
+
+  <h3>What this means for the schedule</h3>
+  <p>
+    The existing schedule already targets Jun 1 for the Steam page and Oct
+    19&ndash;26 for Next Fest. That's the right plan. The non-obvious addition
+    is treating <strong>August</strong> as the
+    &ldquo;internal alpha + Steam Playtest&rdquo; milestone &mdash; gated, low
+    stakes, used to harden the demo before the public eats it.
+  </p>
+</section>
+
+<section id="timeline">
+  <h2>Timeline (Path B)</h2>
+  <table class="data data--timeline">
+    <tbody>
+      <tr><th>JUN 1</th><td><strong>Steam page live.</strong> Cinematic trailer, capsules, screenshots, tags. Submit page to Valve for review by ~May 25.</td></tr>
+      <tr><th>JUN&ndash;JUL</th><td>Devlog momentum. Apply to summer indie showcases. Capture more in-engine footage as features come online.</td></tr>
+      <tr><th>AUG</th><td><strong>Steam Playtest live.</strong> Gated, ~50&ndash;200 keys. Bring in 5&ndash;10 friendly streamers. Iterate on the demo from this feedback.</td></tr>
+      <tr><th>EARLY SEP</th><td>Refresh the trailer with real footage from the Playtest build.</td></tr>
+      <tr><th>SEP 19 (M6)</th><td><strong>Demo feature freeze.</strong> Lock content, fix only bugs from this point.</td></tr>
+      <tr><th>OCT 5</th><td>Submit demo to Valve for Next Fest review (2 weeks lead time).</td></tr>
+      <tr><th>OCT 19&ndash;26</th><td><strong>NEXT FEST.</strong> Full team monitoring streams, replying to comments, releasing patches.</td></tr>
+      <tr><th>NOV</th><td>Post-fest momentum capture. Keep the demo up if quality holds. Plan launch.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="risks">
+  <h2>Risks worth naming</h2>
+  <ul>
+    <li><strong>Demo eats the full game.</strong> Scope creep on the demo
+        delays the full game and burns runway. The 10&ndash;15 minute hard cap
+        on demo content exists to prevent this.</li>
+    <li><strong>Trailer underperforms.</strong> The trailer is the single
+        biggest wishlist driver. If it's flat, the rest of the strategy is
+        propping up nothing. Mitigation: make and test 2&ndash;3 trailer cuts
+        before launch.</li>
+    <li><strong>We blow our one Next Fest shot too early.</strong> Once we
+        participate, we can't again. If the game's not ready, we wait. Better
+        to slip to February 2027 Next Fest than burn it on a broken demo.</li>
+    <li><strong>Multiplayer matchmaking breaks at scale.</strong> Co-op chaos
+        games live or die on a smooth first-five-minutes experience. Playtest
+        in August has to specifically stress-test the matchmaking path.</li>
+  </ul>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest" target="_blank" rel="noopener">Valve &mdash; Steam Next Fest eligibility &amp; requirements</a></li>
+    <li><a href="https://partner.steamgames.com/doc/marketing/wishlist" target="_blank" rel="noopener">Valve &mdash; Wishlists official guidance</a></li>
+    <li><a href="https://ziva.sh/blogs/steam-next-fest-2026" target="_blank" rel="noopener">Ziva &mdash; Next Fest 2026 data analysis (median demo = 806 wishlists, r=0.825 correlation)</a></li>
+    <li><a href="https://alineaanalytics.substack.com/p/wishlist-to-buyer-conversions-for" target="_blank" rel="noopener">Alinea Analytics &mdash; Wishlist-to-buyer conversion for Next Fest demos (68&ndash;88% non-players)</a></li>
+    <li><a href="https://presskit.gg/field-guides/steam-next-fest-guide" target="_blank" rel="noopener">presskit.gg &mdash; Steam Next Fest 2026 complete guide</a></li>
+  </ul>
+</section>
+
+<footer class="doc__foot">
+  Internal memo &middot; not for external distribution &middot; v1 &middot; May 2026
+</footer>
+
+</main>
+
+</body>
+</html>
