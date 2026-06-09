@@ -167,6 +167,10 @@ a { color: inherit; }
   font-weight: 700;
   margin-bottom: 18px;
 }
+.sc-kicker--wip {
+  background: var(--coral);
+  color: var(--ink);
+}
 
 .sc-h2 {
   font-family: "Bungee", sans-serif;
@@ -251,6 +255,19 @@ a { color: inherit; }
   line-height: 0.92;
   margin: 0 0 24px;
   letter-spacing: -0.01em;
+}
+
+.sc-cover__title--plain {
+  margin-bottom: 18px;
+}
+
+.sc-cover__working {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--slate);
+  margin: 0 0 28px;
+  text-transform: uppercase;
 }
 
 .sc-mark {
@@ -422,18 +439,10 @@ a { color: inherit; }
 }
 .sc-char__hero img {
   width: 100%;
-  height: 44vh;
-  object-fit: cover;
-  object-position: center;
-}
-.sc-char__hero figcaption {
-  padding: 10px 14px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--ink-soft);
-  border-top: 1px solid var(--line);
+  max-height: 56vh;
+  object-fit: contain;
   background: var(--paper);
+  padding: 8px;
 }
 .sc-char__sheet { margin-top: 18px; }
 .sc-char__row {
@@ -999,6 +1008,31 @@ a { color: inherit; }
 .sc-threat--low  { border-left: 4px solid var(--teal); }
 .sc-threat--mid  { border-left: 4px solid var(--orange); }
 .sc-threat--high { border-left: 4px solid var(--coral); }
+
+/* ============ THANKS (final slide) ============ */
+.sc-slide--thanks {
+  background: var(--ink);
+  display: grid;
+  place-items: center;
+}
+.sc-slide--thanks .sc-slide__num {
+  color: var(--banana);
+  opacity: 0.18;
+}
+.sc-thanks {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+.sc-thanks__h1 {
+  font-family: "Bungee", sans-serif;
+  font-size: clamp(72px, 14vw, 200px);
+  margin: 0;
+  color: var(--banana);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
 
 /* ============ NAV ============ */
 .sc-nav {
