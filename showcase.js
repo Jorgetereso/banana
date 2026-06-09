@@ -24,8 +24,15 @@
   });
 
   function pauseVideo() {
-    if (video && !video.paused) {
+    if (!video) return;
+    // Native <video> case
+    if (typeof video.pause === 'function' && 'paused' in video && !video.paused) {
       try { video.pause(); } catch (_) { /* noop */ }
+      return;
+    }
+    // <iframe> embed case (Drive/YouTube) — reload src to stop playback
+    if (video.tagName === 'IFRAME' && video.src) {
+      try { video.src = video.src; } catch (_) { /* noop */ }
     }
   }
 
