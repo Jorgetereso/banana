@@ -1,0 +1,342 @@
+/* ============================================================
+   Andrew feedback memo — single-column scrollable reference page.
+   Same Banana palette as the rest of the project, memo style.
+   ============================================================ */
+
+:root {
+  --banana: #ffd400;
+  --banana-soft: #fff3a8;
+  --ink: #111111;
+  --ink-soft: #2a2a2a;
+  --cream: #fff8e1;
+  --paper: #fffdf5;
+  --line: #e7dfb8;
+  --coral: #c8201a;
+  --teal: #0e7c66;
+  --slate: #6b6b6b;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+
+a { color: inherit; }
+
+/* ============ TOPBAR ============ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 22px;
+  background: var(--ink);
+  color: var(--cream);
+  border-bottom: 4px solid var(--banana);
+}
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topbar__b {
+  width: 36px; height: 36px;
+  background: var(--banana);
+  color: var(--ink);
+  display: grid; place-items: center;
+  font-family: "Bungee", sans-serif;
+  font-size: 18px;
+  border-radius: 50%;
+}
+.topbar__txt {
+  font-family: "Bungee", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+.topbar__tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--banana);
+  font-weight: 700;
+}
+
+/* ============ MEMO LAYOUT ============ */
+.memo {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 48px 28px 80px;
+}
+
+.memo__meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--slate);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.memo__h1 {
+  font-family: "Bungee", sans-serif;
+  font-size: clamp(46px, 6vw, 78px);
+  line-height: 0.95;
+  margin: 0 0 18px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.memo__lead {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 36px;
+  max-width: 640px;
+}
+
+/* ============ TL;DR BOX ============ */
+.tldr {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 26px 28px 22px;
+  border-radius: 14px;
+  margin: 0 0 56px;
+  box-shadow: 6px 6px 0 var(--banana);
+}
+.tldr__tag {
+  font-family: "Bungee", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--banana);
+  margin-bottom: 14px;
+}
+.tldr ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tldr li {
+  padding: 10px 0 10px 22px;
+  position: relative;
+  border-bottom: 1px dashed rgba(255, 248, 225, 0.18);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.tldr li:last-child { border-bottom: none; }
+.tldr li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: var(--banana);
+  font-family: "Bungee", sans-serif;
+}
+.tldr b { color: var(--banana); font-weight: 700; }
+
+/* ============ THEMED SECTION ============ */
+.theme {
+  margin: 0 0 48px;
+  padding-top: 32px;
+  border-top: 2px solid var(--ink);
+  position: relative;
+}
+.theme__tag {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: var(--banana);
+  color: var(--ink);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.theme h2 {
+  font-family: "Bungee", sans-serif;
+  font-size: clamp(26px, 3.2vw, 36px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  letter-spacing: -0.005em;
+}
+
+.theme p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 14px;
+  color: var(--ink);
+}
+
+.theme ul,
+.theme ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+.theme ul li,
+.theme ol li {
+  font-size: 16px;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.theme ul li::marker { color: var(--coral); }
+.theme ol li::marker { color: var(--coral); font-weight: 700; }
+
+.theme b { font-weight: 700; }
+
+/* ============ BLOCKQUOTE (verbatim Andrew) ============ */
+blockquote {
+  margin: 16px 0;
+  padding: 14px 20px;
+  background: var(--paper);
+  border-left: 5px solid var(--banana);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  position: relative;
+}
+blockquote::before {
+  content: "“";
+  position: absolute;
+  top: -2px;
+  left: 6px;
+  font-family: "Bungee", sans-serif;
+  font-size: 36px;
+  color: var(--banana);
+  opacity: 0.4;
+  line-height: 1;
+}
+
+/* ============ INLINE NOTE BOX ============ */
+.note {
+  margin: 16px 0 !important;
+  padding: 14px 18px;
+  background: var(--banana-soft);
+  border: 1px dashed var(--ink);
+  border-radius: 8px;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+}
+
+/* ============ NEXT STEPS ============ */
+.next {
+  margin: 64px 0 48px;
+  padding: 30px 30px 26px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  position: relative;
+}
+.next__tag {
+  position: absolute;
+  top: -14px;
+  left: 18px;
+  background: var(--coral);
+  color: var(--cream);
+  font-family: "Bungee", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.next h2 {
+  font-family: "Bungee", sans-serif;
+  font-size: 28px;
+  margin: 0 0 18px;
+  letter-spacing: -0.005em;
+}
+.next ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.next ol li {
+  counter-increment: step;
+  position: relative;
+  padding: 12px 0 12px 44px;
+  border-bottom: 1px dashed var(--line);
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+.next ol li:last-child { border-bottom: none; }
+.next ol li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-family: "Bungee", sans-serif;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--banana);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+/* ============ QUOTES SECTION ============ */
+.quotes {
+  margin: 56px 0 32px;
+  padding-top: 32px;
+  border-top: 2px solid var(--ink);
+}
+.quotes__tag {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: var(--ink);
+  color: var(--banana);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.quotes h2 {
+  font-family: "Bungee", sans-serif;
+  font-size: 28px;
+  margin: 0 0 22px;
+  letter-spacing: -0.005em;
+}
+.quotes blockquote {
+  background: var(--paper);
+  border-left-width: 6px;
+  font-size: 16px;
+  padding: 18px 22px;
+  margin-bottom: 14px;
+}
+
+/* ============ FOOTER ============ */
+.memo__foot {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--line);
+  color: var(--slate);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 640px) {
+  .memo { padding: 32px 18px 60px; }
+  .tldr { padding: 22px 20px 18px; box-shadow: 4px 4px 0 var(--banana); }
+  .next { padding: 24px 20px 20px; }
+  blockquote { padding: 12px 16px; }
+}

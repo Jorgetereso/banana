@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Feedback Andrew · 9 jun 2026</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Notas internas de la llamada con Andrew del 9 jun 2026." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="andrew-feedback.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9D%3C/text%3E%3C/svg%3E" />
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="topbar__brand">
+    <span class="topbar__b">B</span>
+    <span class="topbar__txt">BANANA<br>AIRWAYS</span>
+  </div>
+  <span class="topbar__tag">INTERNO · FEEDBACK ANDREW</span>
+</header>
+
+<main class="memo">
+  <article>
+
+    <div class="memo__meta">9 jun 2026 · 39 min · Andrew, Jorge, Valentín</div>
+    <h1 class="memo__h1">Feedback de la call.</h1>
+    <p class="memo__lead">
+      Notas organizadas por tema. Para volver a consultar sin tener que
+      escuchar los 39 minutos de nuevo. Inversor: <b>Andrew</b>.
+    </p>
+
+    <!-- ============ TL;DR ============ -->
+    <section class="tldr">
+      <div class="tldr__tag">LO PRINCIPAL</div>
+      <ul>
+        <li><b>El build le impresionó.</b> Lo probó esa mañana. &ldquo;The feeling is good.&rdquo;</li>
+        <li><b>TikTok ads es la jugada de marketing.</b> Su recomendación más fuerte de toda la call &mdash; el ad como entretenimiento, no como promo.</li>
+        <li><b>Hay playbook claro post-launch.</b> Steam premium funciona como games-as-a-service: shippeás calidad, el algoritmo te promociona, consola multiplica 2&ndash;5&times;.</li>
+        <li><b>El número que pintó:</b> $500k de inversión → $6M de revenue es el ratio que tiene que cerrar para que el modelo escale. Comparable: Brain Jar / Dead at Disco.</li>
+        <li><b>Él se hace cargo del ruido.</b> Va a manejar la reestructuración del lado de 3DAR/Xscape para que el equipo de Banana pueda hacer foco.</li>
+      </ul>
+    </section>
+
+    <!-- ============ PRODUCTO · BUILD ============ -->
+    <section class="theme">
+      <span class="theme__tag">PRODUCTO</span>
+      <h2>Lo que le gustó del build</h2>
+      <p>Probó el build ese mismo día antes de la call. Sus palabras:</p>
+      <blockquote>
+        &ldquo;I played it today and the feeling is good. You can feel the characters, you get close to them. There's some awkwardness but it's there.&rdquo;
+      </blockquote>
+      <p>Lo que valoró específicamente:</p>
+      <ul>
+        <li><b>La cabina rota.</b> &ldquo;I love how the airline is so torn down.&rdquo;</li>
+        <li><b>Los objetos volando.</b> &ldquo;It's the perfect excuse for total chaos.&rdquo;</li>
+        <li><b>La pipeline de props con AI.</b> 10 minutos prop → game-ready le voló la cabeza. &ldquo;Dude, incredible.&rdquo;</li>
+        <li><b>La decisión de evitar el &ldquo;AI look&rdquo;.</b> Trailer = real-time gameplay capture, no AI render. Totalmente de acuerdo: &ldquo;Awesome that you have the pipeline banged out to allow you to stand up actual gameplay footage for the video. If you can do it in-engine, always better.&rdquo;</li>
+      </ul>
+      <p class="note">
+        Comentario honesto al pasar: dijo que la cabina actual &ldquo;looks a bit
+        more like a cargo plane right now&rdquo;. No es crítica fuerte &mdash; estaba
+        bromeando &mdash; pero conviene apuntarlo para el próximo pase de arte.
+      </p>
+    </section>
+
+    <!-- ============ PRODUCTO · UI ============ -->
+    <section class="theme">
+      <span class="theme__tag">PRODUCTO · UI</span>
+      <h2>Su única pregunta abierta sobre el juego</h2>
+      <p>
+        Preguntó cómo el jugador va a saber qué está pasando con el avión
+        mientras corre por la cabina. ¿UI de altitud? ¿De daño? ¿Algún
+        indicador visual?
+      </p>
+      <p>
+        Respondimos que estamos en pleno test: por ejemplo, si el avión se va
+        de costado, el jugador tiene que descubrir si el motor roto es el
+        izquierdo o el derecho. La idea es probar si con <b>sonido</b> alcanza
+        o si hay que sumar UI.
+      </p>
+      <p>
+        Andrew lo dejó como pregunta abierta. Vale tener una respuesta más
+        firme para la próxima call &mdash; aunque sea una hipótesis con prototipo.
+      </p>
+    </section>
+
+    <!-- ============ MARKETING · TIKTOK ============ -->
+    <section class="theme">
+      <span class="theme__tag">MARKETING</span>
+      <h2>TikTok ads es la jugada</h2>
+      <p>Su recomendación más insistida de toda la call. Razones:</p>
+      <ul>
+        <li>Nuestra fortaleza es CG / calidad de assets. TikTok premia eso.</li>
+        <li>Es <b>barato</b>. Brain Jar tuvo 100M+ impresiones gastando casi nada.</li>
+        <li>El truco no es comprar tráfico. Es que <b>el ad sea entretenimiento</b> &mdash; gracioso, compartible, que la gente lo postee por su cuenta.</li>
+        <li>Música reconocible (sin licencia) + gameplay bueno = la fórmula que vio funcionar.</li>
+      </ul>
+      <blockquote>
+        &ldquo;The key is just like something that's so stand out and funny that
+        people share it, that the ad is entertainment itself and then they'll
+        push it on your behalf.&rdquo;
+      </blockquote>
+      <p>
+        <b>Cuándo arrancar:</b> apenas tengamos algo que sintamos que está
+        bueno &mdash; o incluso <i>usarlo para testear</i>, &ldquo;might be cheaper than
+        anything else&rdquo;.
+      </p>
+    </section>
+
+    <!-- ============ CASO 1 · DEAD AT DISCO ============ -->
+    <section class="theme">
+      <span class="theme__tag">CASO 1</span>
+      <h2>Dead at Disco · Brain Jar</h2>
+      <p>La referencia que más usó. Qué pasó:</p>
+      <ul>
+        <li>1.2M wishlists en un año &mdash; casi sin spend en ads, todo orgánico vía TikTok.</li>
+        <li>Convirtió 1.2M → 300k unit sales.</li>
+        <li>Precio: $25 full / $20 early access.</li>
+        <li><b>~$6M de revenue.</b></li>
+        <li>97% Steam review score.</li>
+      </ul>
+      <p>Qué falló (lo importante):</p>
+      <ul>
+        <li>Launched <b>sin publisher</b> → no tenían plata para el empuje del launch day.</li>
+        <li>97% review score pero performando por debajo del nivel del producto. Diagnóstico de Andrew: <b>not enough retention, not enough marketing</b>.</li>
+      </ul>
+      <p class="note">
+        <b>Implicancia para Banana:</b> si replicamos este performance, $6M
+        sobre $500k de inversión es el escenario base. Pero <b>tenemos que
+        tener publisher pensado</b> para no repetir el error de Brain Jar.
+      </p>
+      <p>
+        Acción directa que pidió: &ldquo;Try to seek out the Dead at Disco TikTok
+        ads and get a feeling for how they did their page.&rdquo;
+      </p>
+    </section>
+
+    <!-- ============ CASO 2 · VOYAGERS OF NERO ============ -->
+    <section class="theme">
+      <span class="theme__tag">CASO 2</span>
+      <h2>Voyagers of Nero · Treehouse Games</h2>
+      <p>El otro caso. Más doloroso, también más útil.</p>
+      <ul>
+        <li>Vendieron <b>un vibe, not a creative direction</b>: survival crafting en barco tipo Moana. Mundo interesante, sin personajes a los que apegarte.</li>
+        <li>Los founders no habían hecho un juego así antes.</li>
+        <li>Pivotaron 2.5D → 3D. Sobre-escalaron, hirieron COO, sobre-delegaron, sobre-gastaron. Tuvieron que downsizear y shippear a las apuradas.</li>
+        <li>Launch a 83% de score.</li>
+      </ul>
+      <p>Qué hizo Andrew post-launch:</p>
+      <ul>
+        <li>Los founders pensaban que tenían <b>3 meses de runway</b>. Deprimidos.</li>
+        <li>Andrew tomó 2 semanas de sales data y armó un <b>forecast simulator con Claude</b>. Le tiró 9 meses de runway, no 3.</li>
+        <li>3 meses después, ese forecast tenía <b>95% de accuracy</b>.</li>
+        <li>Los empujó a invertir en quality. El siguiente content drop subió el score 83% → 89%.</li>
+        <li>Resultado: más sales orgánicos + Steam empezó a promocionarlo activamente.</li>
+      </ul>
+      <p class="note">
+        <b>Implicancia para Banana:</b> si llegamos a un punto incómodo
+        post-launch, no asumir que es el fin. Andrew tiene las herramientas y
+        el criterio para leer los números bien y aconsejar el pivot correcto.
+      </p>
+    </section>
+
+    <!-- ============ PLATAFORMA · STEAM ============ -->
+    <section class="theme">
+      <span class="theme__tag">PLATAFORMA</span>
+      <h2>Steam premium funciona como games-as-a-service</h2>
+      <p>Esto es contra-intuitivo y vale internalizarlo.</p>
+      <blockquote>
+        &ldquo;Premium products on Steam, you don't have the ability to advertise
+        them, but they actually work like games as a service. You need to, every
+        single day, think about: how can I get more sales today?&rdquo;
+      </blockquote>
+      <p>Concretamente:</p>
+      <ul>
+        <li>El algoritmo de Steam <b>promociona tu juego solo</b> si hay retention.</li>
+        <li>Incluso sin discount activo, te empuja.</li>
+        <li>Multiplayer + retention = el algoritmo te ama.</li>
+        <li>Día a día post-launch: marketing constante, community, features que importan a próximos buyers, contenido para los que ya juegan.</li>
+      </ul>
+      <p>
+        <b>Implicancia:</b> post-launch no es &ldquo;ya está, sigamos&rdquo;. Es el
+        momento en que arranca la operación de verdad. Hay que tener equipo
+        y plan para sostenerlo.
+      </p>
+    </section>
+
+    <!-- ============ NEGOCIO ============ -->
+    <section class="theme">
+      <span class="theme__tag">MODELO DE NEGOCIO</span>
+      <h2>El escenario $500k → $6M</h2>
+      <p>
+        Preguntó cuánto cuesta construir un producto tipo Peak con nuestra
+        pipeline y equipo en Argentina.
+      </p>
+      <p>
+        Respuesta tuya en la call: <b>menos de medio millón</b>, &ldquo;aunque hay
+        que mirar los detalles&rdquo;.
+      </p>
+      <blockquote>
+        &ldquo;If you guys could generate $6M on $500K of investment for Banana
+        Airlines, that would be incredible for the company. And you could
+        start to see a playbook that you'd be able to execute in Buenos Aires
+        that Brain Jar can't do in San Francisco.&rdquo;
+      </blockquote>
+      <p>Su lógica:</p>
+      <ul>
+        <li>Brain Jar generó $6M con un team de San Francisco (costos americanos).</li>
+        <li>Nosotros, mismo target, en Buenos Aires = ventaja de costo enorme.</li>
+        <li>Si Banana funciona → ese cash flow puede &ldquo;build real momentum&rdquo; para Xscape como compañía.</li>
+        <li><b>Define el mínimo viable de éxito</b> para un proyecto green-lit. Si no llegás a ese ratio, el modelo no escala.</li>
+      </ul>
+      <p>El multiplicador siguiente:</p>
+      <blockquote>
+        &ldquo;The playbook for both Brain Jar and Treehouse is now that they have
+        proven it on PC, they can get a publishing deal with a console... I
+        think you could end up with a business that's actually very, very
+        profitable.&rdquo;
+      </blockquote>
+      <p><b>Consola = 2&ndash;5&times; el revenue de PC</b>, dependiendo del fit del género.</p>
+    </section>
+
+    <!-- ============ NOMBRE ============ -->
+    <section class="theme">
+      <span class="theme__tag">NOMBRE · A/B</span>
+      <h2>El A/B de nombre, sin romper Steam TOS</h2>
+      <p>
+        Andrew preguntó si poner el mismo producto en 2 Steam pages distintas
+        (una con cada nombre) traía backlash o si Steam directamente lo
+        bloqueaba.
+      </p>
+      <p>Su lectura:</p>
+      <ul>
+        <li>Adzap hace concept testing, pero no con la misma idea.</li>
+        <li>Nunca vio a nadie hacer el mismo concept con multiple Steam pages.</li>
+        <li><b>Sospecha que Steam no lo permite.</b></li>
+      </ul>
+      <p>Su recomendación:</p>
+      <blockquote>
+        &ldquo;That ad approach is better. And that's a safe way to do it.&rdquo;
+      </blockquote>
+      <p>
+        Es decir: hacer el A/B vía <b>ads</b> (thumbnails con un nombre y otro,
+        pointing al mismo producto), no vía dos Steam pages.
+      </p>
+      <p class="note">
+        <b>Action concreto:</b> NO crear dos Steam pages. SI armar dos
+        thumbnails / ad creatives con cada nombre y testear conversión con
+        ad spend bajo.
+      </p>
+    </section>
+
+    <!-- ============ EQUIPO ============ -->
+    <section class="theme">
+      <span class="theme__tag">EQUIPO</span>
+      <h2>Cómo le contaste al team en la call</h2>
+      <p>El framing que dejaste a Andrew sobre el core:</p>
+      <ul>
+        <li><b>Pablo</b> &mdash; trajo la idea original desde el game shop. ~25 años, &ldquo;generalist brilliante&rdquo;, criterio de producto, entiende game dynamics. Le diste el rol de <b>director del gameplay</b> bajo supervisión.</li>
+        <li><b>Valentín</b> &mdash; &ldquo;more like a rock star&rdquo;, creative direction.</li>
+        <li><b>Vos</b> &mdash; entraste con los personajes, llevás la parte de producción y producto.</li>
+        <li><b>Lucila</b> &mdash; producer.</li>
+        <li><b>Un segundo dev</b> también full on Banana, justo abajo de Pablo en el organigrama.</li>
+      </ul>
+      <p>Le destacaste que Pablo es &ldquo;the most proactive ever, never going to have a power struggle&rdquo; &mdash; eso le interesó.</p>
+      <p>Y dejaste claro el modelo: <b>5 personas, compacto, moviéndose rápido, light, no expensive, good quality</b>.</p>
+      <p>Andrew lo bancó explícitamente:</p>
+      <blockquote>
+        &ldquo;It's kind of the way that we want to work for the next couple of years. Small teams. Light, not expensive, and good quality.&rdquo;
+      </blockquote>
+    </section>
+
+    <!-- ============ ROL DE ANDREW ============ -->
+    <section class="theme">
+      <span class="theme__tag">ROL DE ANDREW</span>
+      <h2>Lo que él se compromete a hacer</h2>
+      <p>Tu pitch al final de la call:</p>
+      <blockquote>
+        &ldquo;I'm taking care of this. I'm gonna be the one doing the
+        restructuring and everything. I'm trying to protect the small team so
+        they can play high with the banana early play.&rdquo;
+      </blockquote>
+      <p>Andrew respondió: &ldquo;Yes, there you go.&rdquo;</p>
+      <p>
+        Lectura: está alineado con que vos seas el escudo del equipo de
+        Banana mientras él te sostiene en la reestructuración más amplia de
+        3DAR/Xscape. <b>No vas a estar solo en la decisión dura.</b>
+      </p>
+    </section>
+
+    <!-- ============ NEXT STEPS ============ -->
+    <section class="next">
+      <div class="next__tag">PRÓXIMOS PASOS</div>
+      <h2>Lo que sale de la call</h2>
+      <ol>
+        <li><b>Estudiar las TikTok ads de Dead at Disco.</b> Andrew pidió esto explícitamente. Ver formato, ritmo, qué músicas usaron, qué frames.</li>
+        <li><b>Mirar la Steam page de Dead at Disco</b> como referencia de capsule, screenshots, copy.</li>
+        <li><b>Cerrar la respuesta sobre UI/feedback in-game.</b> Tener una hipótesis con prototipo para la próxima call &mdash; sonido vs UI, o las dos.</li>
+        <li><b>Confirmar el A/B de nombre vía ads, NO vía dos Steam pages.</b> Ajustar el plan actual.</li>
+        <li><b>Iniciar conversación con publishers</b> para el launch &mdash; aprender de Brain Jar, no llegar sin uno.</li>
+        <li><b>Hacer una proyección honesta de costo total</b> para llegar al launch. &ldquo;Less than half a million&rdquo; fue verbal &mdash; hay que poder defender el número con un breakdown.</li>
+        <li><b>Pensar la estrategia de consola desde ya</b> aunque no se ejecute hasta post-launch PC. Si target = 2&ndash;5&times; revenue, vale tener plan.</li>
+        <li><b>Definir el modelo de operación post-launch</b> con la lente de Steam-as-a-service. No es deploy-and-done, es operación continua.</li>
+      </ol>
+    </section>
+
+    <!-- ============ QUOTES ============ -->
+    <section class="quotes">
+      <div class="quotes__tag">FRASES PARA RECORDAR</div>
+      <h2>Lo que dijo Andrew, textual</h2>
+      <blockquote>
+        &ldquo;I'm really excited for you guys. I know you're dealing with a lot of stuff. Don't let it hide that opportunity.&rdquo;
+      </blockquote>
+      <blockquote>
+        &ldquo;If you can just land the plane on this first game, I think it could really turn things around. And there's a very clear playbook for how to do it. Way easier than VR.&rdquo;
+      </blockquote>
+      <blockquote>
+        &ldquo;You guys are in a better place to be building creative stuff. You're naturally creative. You're building tools and tech that allow you to build high-quality gameplay.&rdquo;
+      </blockquote>
+      <blockquote>
+        &ldquo;Even though there's so many games, there's so many people playing Steam games. The market is there.&rdquo;
+      </blockquote>
+      <blockquote>
+        &ldquo;Awesome that you have the pipeline banged out to allow you to stand up actual gameplay footage for the video. If you can do it in-engine, always better.&rdquo;
+      </blockquote>
+    </section>
+
+    <footer class="memo__foot">
+      <span>Notas internas · no compartir · Banana Airways</span>
+      <span>Transcripción procesada con Whisper local · 9 jun 2026</span>
+    </footer>
+
+  </article>
+</main>
+
+</body>
+</html>
