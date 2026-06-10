@@ -1,0 +1,295 @@
+/* ============================================================
+   Voice prompts page — Banana Airways internal reference.
+   Same palette and topbar conventions as andrew-feedback.
+   ============================================================ */
+
+:root {
+  --banana: #ffd400;
+  --banana-soft: #fff3a8;
+  --ink: #111111;
+  --ink-soft: #2a2a2a;
+  --cream: #fff8e1;
+  --paper: #fffdf5;
+  --line: #e7dfb8;
+  --coral: #c8201a;
+  --teal: #0e7c66;
+  --slate: #6b6b6b;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+
+a { color: inherit; }
+
+/* ============ TOPBAR ============ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 22px;
+  background: var(--ink);
+  color: var(--cream);
+  border-bottom: 4px solid var(--banana);
+}
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s ease;
+}
+.topbar__brand:hover { opacity: 0.85; }
+.topbar__b {
+  width: 36px; height: 36px;
+  background: var(--banana);
+  color: var(--ink);
+  display: grid; place-items: center;
+  font-family: "Bungee", sans-serif;
+  font-size: 18px;
+  border-radius: 50%;
+}
+.topbar__txt {
+  font-family: "Bungee", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+.topbar__tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--banana);
+  font-weight: 700;
+}
+
+/* ============ MEMO LAYOUT ============ */
+.memo {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 28px 80px;
+}
+
+.memo__meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--slate);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.memo__h1 {
+  font-family: "Bungee", sans-serif;
+  font-size: clamp(46px, 6vw, 78px);
+  line-height: 0.95;
+  margin: 0 0 18px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.memo__lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 48px;
+  max-width: 680px;
+}
+.memo__lead a {
+  color: var(--coral);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--coral);
+}
+.memo__lead a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* ============ VOICE CARD ============ */
+.voice {
+  margin: 0 0 36px;
+  padding: 28px 28px 24px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 4px 4px 0 var(--banana);
+}
+
+.voice__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.voice__num {
+  flex-shrink: 0;
+  font-family: "Bungee", sans-serif;
+  font-size: 22px;
+  background: var(--banana);
+  color: var(--ink);
+  padding: 6px 12px;
+  border-radius: 6px;
+  line-height: 1;
+}
+.voice__head h2 {
+  font-family: "Bungee", sans-serif;
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.1;
+  margin: 0 0 4px;
+  letter-spacing: -0.005em;
+}
+.voice__sub {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--slate);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ============ PROMPT BOX ============ */
+.prompt {
+  margin: 0 0 14px;
+  padding: 18px 20px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13.5px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid var(--ink);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.prompt:hover {
+  background: var(--ink-soft);
+}
+.prompt:focus { outline: none; border-color: var(--banana); }
+
+.prompt::after {
+  content: "click para copiar";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  color: var(--banana);
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+.prompt--copied { background: var(--teal); border-color: var(--teal); }
+.prompt--copied::after { content: "✓ copiado"; opacity: 1; color: var(--cream); }
+
+/* ============ PREVIEW BOX ============ */
+.preview {
+  background: var(--banana-soft);
+  border: 1px dashed var(--ink);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.preview__tag {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--ink);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.7;
+}
+.preview p {
+  margin: 4px 0;
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.voice__note {
+  margin: 10px 0 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--coral);
+  line-height: 1.45;
+}
+
+/* ============ DIALOG LINES ============ */
+.dialog {
+  margin: 64px 0 32px;
+  padding: 30px 30px 26px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 14px;
+  box-shadow: 6px 6px 0 var(--banana);
+}
+.dialog__tag {
+  display: inline-block;
+  font-family: "Bungee", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--banana);
+  margin-bottom: 14px;
+}
+.dialog h2 {
+  font-family: "Bungee", sans-serif;
+  font-size: 26px;
+  margin: 0 0 18px;
+  letter-spacing: -0.005em;
+}
+.dialog ol {
+  margin: 0;
+  padding-left: 22px;
+}
+.dialog li {
+  padding: 6px 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  border-bottom: 1px dashed rgba(255, 248, 225, 0.14);
+}
+.dialog li:last-child { border-bottom: none; }
+.dialog li::marker { color: var(--banana); font-family: "JetBrains Mono", monospace; font-weight: 700; }
+
+/* ============ FOOTER ============ */
+.memo__foot {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--line);
+  color: var(--slate);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.memo__foot a {
+  color: var(--coral);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--coral);
+}
+.memo__foot a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 640px) {
+  .memo { padding: 32px 18px 60px; }
+  .voice { padding: 22px 18px 18px; box-shadow: 3px 3px 0 var(--banana); }
+  .voice__head { gap: 12px; }
+  .voice__num { font-size: 18px; padding: 5px 10px; }
+  .prompt { font-size: 12.5px; padding: 14px 16px; }
+  .dialog { padding: 22px 18px 18px; box-shadow: 4px 4px 0 var(--banana); }
+}
