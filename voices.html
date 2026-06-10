@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Voice Prompts · Banana Airways Trailer</title>
 <meta name="robots" content="noindex, nofollow" />
-<meta name="description" content="Prompts de voz para miso-one.com — personajes del trailer de Banana Airways." />
+<meta name="description" content="Prompts de voz para ElevenLabs Voice Design — personajes del trailer de Banana Airways." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,15 +28,26 @@
 <main class="memo">
   <article>
 
-    <div class="memo__meta">Trailer v1 · miso-one.com · AI Voice Design</div>
+    <div class="memo__meta">Trailer v1 · ElevenLabs · Voice Design</div>
     <h1 class="memo__h1">Voice<br>Prompts</h1>
     <p class="memo__lead">
-      Prompts de voz para generar en <a href="https://elevenlabs.io" target="_blank" rel="noopener">ElevenLabs</a> o <a href="https://miso-one.com" target="_blank" rel="noopener">miso-one.com</a>.
-      Cada personaje tiene su prompt en inglés y un preview text sugerido del
-      <a href="https://avioncitowiki.onrender.com/07-marketing/guion-del-trailer-v1-valen/" target="_blank" rel="noopener">guión del trailer</a>.
-      Todos los prompts cierran con la misma ancla de tono — <b>Discord-call energy, unscripted, imperfect</b> — porque es la spec del guión completo, no de personajes sueltos.
+      Prompts de voz para <a href="https://elevenlabs.io/docs/eleven-creative/voices/voice-design" target="_blank" rel="noopener">ElevenLabs Voice Design</a>,
+      siguiendo la estructura oficial recomendada (<i>Language → Gender/Age → Quality → Persona → Emotion → Timbre/Pacing/Delivery</i>).
+      Preview text del <a href="https://avioncitowiki.onrender.com/07-marketing/guion-del-trailer-v1-valen/" target="_blank" rel="noopener">guión del trailer</a>.
+      Todos cierran con la misma ancla de tono — <b>Discord-call energy, unscripted, imperfect</b> — porque es la spec del guión completo.
       Click en el prompt para copiarlo.
     </p>
+
+    <div class="tips">
+      <span class="tips__tag">Tips de ElevenLabs para Discord-chat real</span>
+      <ul>
+        <li><b>Voice Design → Guidance Scale 30–40%</b> para que respete el tono raro de cada personaje sin perder calidad.</li>
+        <li><b>Preview text largo</b> (frase completa o párrafo, no 3 palabras) — genera resultados más estables y expresivos.</li>
+        <li>No uses palabras FX (<i>reverb, echo, phone, tape</i>) — degradan la calidad de audio según el guide oficial.</li>
+        <li>Después de guardar la voz, en <b>Text-to-Speech</b> bajá <b>Stability a 30–40%</b> y <b>Similarity a 70–80%</b> — eso mete las imperfecciones, variaciones de pitch y stammers naturales que rompen el "AI perfecto".</li>
+        <li>Para audio que parezca grabado con headset, dejá la voz como sale y aplicá compresión + un poco de saturación suave en post (Audacity / Reaper). No pidas "sounds like Discord mic" en el prompt — te baja la calidad.</li>
+      </ul>
+    </div>
 
     <!-- ============ CAPITÁN ============ -->
     <section class="voice">
@@ -47,7 +58,9 @@
           <p class="voice__sub">~30, streamer dejado y gracioso · deadpan</p>
         </div>
       </div>
-      <pre class="prompt" tabindex="0">Late-twenties male streamer voice with a relaxed, slightly nasal mid-low register. Deadpan delivery, slow casual pacing, dry comedic timing. Sounds like he's leaning back in a gaming chair — unbothered, half-amused, occasional smirk in the voice. Natural breathiness, gentle vocal fry on trailing syllables. American or neutral accent. Discord-call energy — sounds like a real person talking to friends mid-game, not voice acting. Unscripted, imperfect, conversational, with natural stammers and trailing words.</pre>
+      <pre class="prompt" tabindex="0">Native English. Male, late 20s to early 30s. Good quality recording.
+Persona: laid-back streamer dude. Emotion: relaxed, amused, unbothered.
+Mid-low register with a slightly nasal timbre, breathy delivery, gentle vocal fry on trailing syllables. Slow conversational pacing with dry comedic timing and deadpan emphasis — sounds like he's leaning back in a gaming chair on a Discord call with friends, unscripted and improvisational, never performing, with natural stammers and trailing words. Casual Discord voice chat with friends through a headset mic — intimate close-mic proximity, no studio polish, no performance, just real talk between gaming buddies.</pre>
       <div class="preview">
         <span class="preview__tag">Preview text</span>
         <p>"Dude, this is way too easy."</p>
@@ -64,7 +77,9 @@
           <p class="voice__sub">~20, alterado, voz aguda · panic energy</p>
         </div>
       </div>
-      <pre class="prompt" tabindex="0">Early-twenties male voice, bright and high-pitched with a thin, energetic timbre. Fast pacing, slightly panicked edge, words tumbling over each other. Cracks and pitch jumps when stressed. Reactive, expressive, lots of dynamic range — goes from quick chatter to sudden loud bursts. Friendly but on-edge, like he's mid-co-op disaster. Discord-call energy — sounds like a real person talking to friends mid-game, not voice acting. Unscripted, imperfect, conversational, with natural stammers and trailing words.</pre>
+      <pre class="prompt" tabindex="0">Native English. Male, early 20s. Good quality recording.
+Persona: panicked co-op gamer. Emotion: urgent, frantic, on-edge.
+Bright, high-pitched, thin and energetic timbre with cracks and pitch jumps when stressed. Hurried cadence with words tumbling over each other and sudden loud bursts of dynamic range — sounds like a real person mid-co-op disaster on a Discord call with friends, unscripted and improvisational, with natural stammers and overlapping speech. Casual Discord voice chat with friends through a headset mic — intimate close-mic proximity, no studio polish, no performance, just real talk between gaming buddies.</pre>
       <div class="preview">
         <span class="preview__tag">Preview text</span>
         <p>"Dude, can you throw me the coffee?"</p>
@@ -81,13 +96,14 @@
           <p class="voice__sub">young adult, boyish, gremlin energy</p>
         </div>
       </div>
-      <pre class="prompt" tabindex="0">Young adult male voice with a youthful, boyish quality — light, bright, still a bit thin in the upper register. Playful and energetic, with quick bursts of fast speech, sudden volume spikes, and laughter breaking into words. Highly expressive, slightly chaotic delivery — pitch wobbles when excited, words tumble out enthusiastically. Sounds like he's having the best time in any situation. Loose, mischievous, very animated. Discord-call energy — sounds like a real person talking to friends mid-game, not voice acting. Unscripted, imperfect, conversational, with natural stammers and trailing words.</pre>
+      <pre class="prompt" tabindex="0">Native English. Male, young adult in his early 20s. Good quality recording.
+Persona: hyperactive co-op gamer. Emotion: playful, excited, mischievous.
+Light, bright, boyish timbre, still a bit thin in the upper register, with pitch wobbles when excited. Erratic pacing with bursts of fast speech, sudden volume spikes, and laughter breaking into words — sounds like a real person having the best time on a Discord call with friends mid-game, unscripted and improvisational, with natural stammers and trailing words. Casual Discord voice chat with friends through a headset mic — intimate close-mic proximity, no studio polish, no performance, just real talk between gaming buddies.</pre>
       <div class="preview">
         <span class="preview__tag">Preview text</span>
         <p>"Yeah, I got it, I got it."</p>
         <p>"Wait. Who's flying the plane?"</p>
       </div>
-      <p class="voice__note">⚠ Versión safe — si pedís edad de menor o palabras como "unhinged", Miso lo bouncea.</p>
     </section>
 
     <!-- ============ BIZARRO URGENTE ============ -->
@@ -99,7 +115,9 @@
           <p class="voice__sub">la voz más excitada del grupo · cartoonish conviction</p>
         </div>
       </div>
-      <pre class="prompt" tabindex="0">Adult male voice with a wild, theatrical edge — like a caffeinated street preacher mid-emergency. Permanently elevated pitch, breathless urgency in every line, words crashing into each other. Slightly strained, on the verge of cracking. Eyes-wide energy — frantic, twitchy, hyper-alert. Sudden pitch jumps and sharp inhales mid-sentence. Intense conviction, like everything he says is the most important thing ever said. Weird cadence, off-rhythm emphasis on random words. Cartoonish but not joking — he MEANS it. Discord-call energy — sounds like a real person freaking out to friends mid-game, not voice acting. Unscripted, imperfect, with natural stammers and overlapping words.</pre>
+      <pre class="prompt" tabindex="0">Native English. Male, in his 30s. Good quality recording.
+Persona: caffeinated street preacher mid-emergency. Emotion: frantic, intense, theatrical.
+Permanently elevated pitch, breathless and slightly strained timbre on the verge of cracking, sharp inhales mid-sentence. Erratic hurried pacing with words crashing into each other, sudden pitch jumps, and weird off-rhythm emphasis on random words — sounds like a real person freaking out to friends on a Discord call mid-game, unscripted and improvisational, cartoonish but convinced, with natural stammers and overlapping speech. Casual Discord voice chat with friends through a headset mic — intimate close-mic proximity, no studio polish, no performance, just real talk between gaming buddies.</pre>
       <div class="preview">
         <span class="preview__tag">Preview text</span>
         <p>"Yo can you grab something to fix this?!"</p>
@@ -116,7 +134,9 @@
           <p class="voice__sub">deadpan, sardonic, unimpressed</p>
         </div>
       </div>
-      <pre class="prompt" tabindex="0">Young adult female voice with a low, smoky alto register. Flat, deadpan delivery — almost monotone, sardonic, perpetually unimpressed. Slow casual pacing, dry ironic timing, slight vocal fry. Sounds like she's seen it all and finds most things mildly stupid but worth a quiet comment. Effortlessly cool, zero performance, zero enthusiasm — even when reacting to chaos. Subtle smirk in the voice. No upspeak. Discord-call energy — sounds like a real person talking to friends mid-game, not voice acting. Unscripted, imperfect, conversational, with natural stammers and trailing words.</pre>
+      <pre class="prompt" tabindex="0">Native English. Female, young adult in her 20s. Good quality recording.
+Persona: deadpan sardonic friend. Emotion: bored, unimpressed, dry.
+Low smoky alto register with slight vocal fry, flat near-monotone delivery and subtle smirk in the voice. Slow casual pacing with dry ironic timing and zero upspeak — sounds like a real person on a Discord call with friends who's seen it all and finds it mildly stupid, unscripted and improvisational, with natural pauses and trailing words. Casual Discord voice chat with friends through a headset mic — intimate close-mic proximity, no studio polish, no performance, just real talk between gaming buddies.</pre>
       <div class="preview">
         <span class="preview__tag">Preview text</span>
         <p>"Yeah. We did it."</p>
@@ -133,13 +153,14 @@
           <p class="voice__sub">voz aguda, tímido, al borde del llanto</p>
         </div>
       </div>
-      <pre class="prompt" tabindex="0">Adult male voice with a naturally high, light timbre — soft, breathy, and thin in the upper register. Nervous, timid delivery with shaky breathing and quiet volume that occasionally jumps into a panicked yelp. Hesitant pacing, trailing words, lots of "uh" and pauses. Sounds scared, overwhelmed, on edge — like he really doesn't want to be doing this but is trying to keep streaming. Vulnerable, jittery, very expressive. Discord-call energy — sounds like a real person talking to friends mid-game, not voice acting. Unscripted, imperfect, conversational, with natural stammers and trailing words.</pre>
+      <pre class="prompt" tabindex="0">Native English. Male, young adult. Good quality recording.
+Persona: timid nervous streamer. Emotion: scared, anxious, vulnerable.
+Naturally high, light, breathy, thin upper register with shaky breathing and quiet volume that occasionally jumps into a panicked yelp. Hesitant pacing with trailing words, lots of "uh" and pauses — sounds like a real person who doesn't want to be playing this on a Discord call with friends, unscripted and improvisational, with natural stammers and broken-off thoughts. Casual Discord voice chat with friends through a headset mic — intimate close-mic proximity, no studio polish, no performance, just real talk between gaming buddies.</pre>
       <div class="preview">
         <span class="preview__tag">Preview text</span>
         <p>"Hello everyone… uh, thank you for flying with us today."</p>
         <p>"…enjoy your flight."</p>
       </div>
-      <p class="voice__note">⚠ Framing 100% adulto — no menciona edad de menor para no disparar el filtro.</p>
     </section>
 
     <!-- ============ FUMADOR DEPRIMIDO ============ -->
@@ -151,7 +172,9 @@
           <p class="voice__sub">rasp, monotone, sin energía · "100k cigarrillos en una semana"</p>
         </div>
       </div>
-      <pre class="prompt" tabindex="0">Older male voice, deep and gravelly, with a thick smoker's rasp — wet, raspy texture in every word, like the vocal cords are coated. Extremely slow, labored pacing. Breath sounds heavy and short, occasional throat-clear or wheeze between phrases. Volume barely above a mumble. Words half-swallowed, trailing off into nothing. Hollow, worn out, completely depleted. Dead-eyed monotone — no inflection, no reaction, no energy left. Sounds like he hasn't slept in a month and just wants to sit down. Quiet, weathered, resigned. Discord-call energy — sounds like a real person reluctantly talking to friends mid-game, not voice acting. Unscripted, imperfect, with natural pauses and mumbled words.</pre>
+      <pre class="prompt" tabindex="0">Native English. Male, middle-aged man in his 50s. Good quality recording.
+Persona: exhausted weathered smoker. Emotion: depleted, resigned, hollow.
+Deep, gravelly, throaty timbre with a thick smoker's rasp and short labored breath. Extremely slow drawn-out pacing, dead-eyed monotone with no inflection, occasional throat-clear between phrases, words half-swallowed and trailing off into nothing — sounds like a real person reluctantly on a Discord call with friends mid-game, unscripted and improvisational, with natural pauses and mumbled words. Casual Discord voice chat with friends through a headset mic — intimate close-mic proximity, no studio polish, no performance, just real talk between gaming buddies.</pre>
       <div class="preview">
         <span class="preview__tag">Preview text</span>
         <p>"…yeah. whatever."</p>
@@ -168,7 +191,9 @@
           <p class="voice__sub">vive con la mamá, twitchy, off-rhythm</p>
         </div>
       </div>
-      <pre class="prompt" tabindex="0">Adult male voice with an unstable, unpredictable register — jumps between a flat mutter and a sudden high-pitched squeal mid-sentence. Wet, slightly nasal texture, heavy mouth sounds, audible breathing. Erratic pacing — long weird pauses, then bursts of rapid mumbled chatter. Random emphasis on the wrong words, sentences that change direction halfway through. Talks to himself as much as to anyone. Giggles at things that aren't funny. Sounds indoor, fluorescent-lit. Off-rhythm cadence, like he's not used to talking to other people. Intense, twitchy, unfiltered. Discord-call energy — sounds like a real person rambling to friends mid-game, not voice acting. Unscripted, imperfect, with natural stammers and broken-off thoughts.</pre>
+      <pre class="prompt" tabindex="0">Native English. Male, in his 30s. Good quality recording.
+Persona: twitchy isolated oddball. Emotion: intense, agitated, off-kilter.
+Unstable unpredictable register jumping between a flat mutter and high-pitched squeals mid-sentence, slightly nasal timbre with heavy mouth sounds and audible breathing. Erratic pacing with long weird pauses then bursts of rapid mumbled chatter, random emphasis on the wrong words, sentences changing direction halfway through, giggles at things that aren't funny — sounds like a real person who isn't used to talking to others on a Discord call with friends, unscripted and improvisational, with broken-off thoughts. Casual Discord voice chat with friends through a headset mic — intimate close-mic proximity, no studio polish, no performance, just real talk between gaming buddies.</pre>
       <div class="preview">
         <span class="preview__tag">Preview text</span>
         <p>"oh… oh oh oh, yeah, yeah yeah yeah — wait."</p>
