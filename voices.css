@@ -30,6 +30,47 @@ html, body {
 
 a { color: inherit; }
 
+/* ============ FLOATING GAMEPLAY VIDEO ============ */
+.floating-video {
+  position: fixed;
+  top: 90px;
+  right: 24px;
+  width: 340px;
+  z-index: 8;
+  background: var(--ink);
+  border: 3px solid var(--banana);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.18);
+}
+.floating-video__tag {
+  display: block;
+  font-family: "Bungee", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--banana);
+  background: var(--ink);
+  padding: 7px 12px 6px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 212, 0, 0.25);
+}
+.floating-video video {
+  width: 100%;
+  display: block;
+  background: var(--ink);
+}
+
+/* On wider screens (>1280px), keep the floating video clear of the centered memo */
+@media (max-width: 1280px) {
+  .floating-video {
+    position: static;
+    width: 100%;
+    max-width: 520px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+  }
+}
+
 /* ============ TOPBAR ============ */
 .topbar {
   position: sticky;
