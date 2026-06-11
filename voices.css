@@ -224,6 +224,50 @@ a { color: inherit; }
 .prompt--copied { background: var(--teal); border-color: var(--teal); }
 .prompt--copied::after { content: "✓ copiado"; opacity: 1; color: var(--cream); }
 
+/* ============ TAKES (AUDIO PLAYERS) ============ */
+.takes {
+  margin: 0 0 14px;
+  padding: 16px 18px 14px;
+  background: var(--ink);
+  border-radius: 8px;
+  border: 2px solid var(--ink);
+}
+.takes__tag {
+  display: block;
+  font-family: "Bungee", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--banana);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.take {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.take:last-child { margin-bottom: 0; }
+.take__num {
+  flex-shrink: 0;
+  font-family: "Bungee", sans-serif;
+  font-size: 11px;
+  color: var(--ink);
+  background: var(--banana);
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1;
+}
+.take audio {
+  flex: 1;
+  height: 36px;
+  min-width: 0;
+}
+/* Brand the native player controls in the supported browsers */
+.take audio::-webkit-media-controls-panel {
+  background: var(--cream);
+}
+
 /* ============ PREVIEW BOX ============ */
 .preview {
   background: var(--banana-soft);
