@@ -35,15 +35,23 @@ a { color: inherit; }
   position: fixed;
   top: 90px;
   right: 24px;
-  width: 340px;
+  width: 360px;
+  height: 260px;
+  min-width: 280px;
+  min-height: 220px;
+  max-width: 90vw;
+  max-height: 90vh;
   z-index: 8;
   background: var(--ink);
   border: 3px solid var(--banana);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.18);
+  display: flex;
+  flex-direction: column;
 }
 .floating-video__tag {
+  flex-shrink: 0;
   display: block;
   font-family: "Bungee", sans-serif;
   font-size: 10px;
@@ -54,21 +62,56 @@ a { color: inherit; }
   text-transform: uppercase;
   border-bottom: 1px solid rgba(255, 212, 0, 0.25);
 }
-.floating-video video {
-  width: 100%;
-  display: block;
+.floating-video__frame {
+  flex: 1;
+  position: relative;
   background: var(--ink);
+  min-height: 0;
 }
+.floating-video__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+/* Resize handle (bottom-left) — drag to scale */
+.floating-video__resize {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 22px;
+  height: 22px;
+  cursor: nesw-resize;
+  z-index: 12;
+  background:
+    linear-gradient(45deg, var(--banana) 0%, var(--banana) 45%, transparent 47%) bottom left / 100% 100% no-repeat;
+  border-bottom-left-radius: 10px;
+}
+.floating-video__resize::after {
+  content: "";
+  position: absolute;
+  left: 4px; bottom: 4px;
+  width: 8px; height: 2px;
+  background: var(--ink);
+  transform: rotate(45deg);
+  transform-origin: left bottom;
+}
+/* Disable iframe pointer events while dragging so the mouse keeps tracking */
+.floating-video--resizing iframe { pointer-events: none; }
+.floating-video--resizing { user-select: none; }
 
 /* On wider screens (>1280px), keep the floating video clear of the centered memo */
 @media (max-width: 1280px) {
   .floating-video {
     position: static;
     width: 100%;
+    height: auto;
     max-width: 520px;
     margin: 20px auto 0;
     border-radius: 10px;
   }
+  .floating-video__frame { height: 260px; }
+  .floating-video__resize { display: none; }
 }
 
 /* ============ TOPBAR ============ */

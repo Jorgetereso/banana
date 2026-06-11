@@ -17,9 +17,18 @@
 
 <body>
 
-<aside class="floating-video" aria-label="Banana Airways gameplay reference">
+<aside class="floating-video" id="floatingVideo" aria-label="Banana Airways gameplay reference">
   <span class="floating-video__tag">Gameplay · ref</span>
-  <video src="assets/PROTOTIPO_BANANA-VO.mp4" autoplay muted loop playsinline controls preload="metadata"></video>
+  <div class="floating-video__frame">
+    <iframe
+      src="https://drive.google.com/file/d/1RA25hYX4tmtFOiCDbY6I5IrvwKxHVMl-/preview"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      loading="lazy"
+      title="Banana Airways gameplay"></iframe>
+  </div>
+  <div class="floating-video__resize" title="Arrastrá para escalar"></div>
 </aside>
 
 <header class="topbar">
@@ -214,6 +223,46 @@
       });
     });
   });
+
+  // Floating video resize (drag bottom-left corner)
+  (function() {
+    var fv = document.getElementById('floatingVideo');
+    if (!fv) return;
+    var handle = fv.querySelector('.floating-video__resize');
+    var resizing = false, startX = 0, startY = 0, startW = 0, startH = 0;
+    var MIN_W = 280, MIN_H = 220;
+
+    function onMouseDown(e) {
+      resizing = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      var rect = fv.getBoundingClientRect();
+      startW = rect.width;
+      startH = rect.height;
+      fv.classList.add('floating-video--resizing');
+      document.body.style.userSelect = 'none';
+      e.preventDefault();
+    }
+    function onMouseMove(e) {
+      if (!resizing) return;
+      var dx = startX - e.clientX; // dragging left grows width
+      var dy = e.clientY - startY; // dragging down grows height
+      var newW = Math.max(MIN_W, Math.min(window.innerWidth * 0.9, startW + dx));
+      var newH = Math.max(MIN_H, Math.min(window.innerHeight * 0.9, startH + dy));
+      fv.style.width = newW + 'px';
+      fv.style.height = newH + 'px';
+    }
+    function onMouseUp() {
+      if (!resizing) return;
+      resizing = false;
+      fv.classList.remove('floating-video--resizing');
+      document.body.style.userSelect = '';
+    }
+
+    handle.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+  })();
 </script>
 
 </body>
