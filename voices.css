@@ -159,6 +159,36 @@ a { color: inherit; }
   font-weight: 700;
 }
 
+/* ============ VERSION SWITCH ============ */
+.version-switch {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255, 212, 0, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 212, 0, 0.06);
+}
+.version-switch a {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: var(--cream);
+  text-decoration: none;
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  opacity: 0.65;
+  transition: opacity 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+.version-switch a:hover { opacity: 1; }
+.version-switch a.version-switch--active {
+  background: var(--banana);
+  color: var(--ink);
+  opacity: 1;
+}
+
 /* ============ MEMO LAYOUT ============ */
 .memo {
   max-width: 860px;
