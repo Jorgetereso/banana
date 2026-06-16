@@ -63,10 +63,10 @@ engine | door-sealed | metal airplane door slamming shut and sealing, pressurize
 # ---------- CHARACTER ----------
 character | footstep-rubber | single heavy realistic footstep on rubber airplane cabin floor, large heavy person walking, soft padded thud with weight, no voice | 0.5
 character | footstep-metal | single heavy realistic footstep on metal aircraft floor, large heavy person walking, dull metallic ring with weight, no voice | 0.5
-character | jump | raw field recording of adult man jumping vertically off concrete floor, sneaker rubber sole compressing and releasing, brief denim fabric rustle, single quick natural motion, no foley, no music, no synth, no production | 0.8
+character | jump | heavy adult male work boot pressing hard into hard concrete floor then quickly leaving the ground, brief rubber sole compression and release, sharp short squeak, isolated single footwear contact, no voice, no human sounds, no vocal, no scream, no music, no foley | 0.5
 character | land | heavy realistic body landing on floor, large heavy person hitting ground, weighty dull thud, gear rattle, no voice | 0.8
-character | ragdoll | heavy 80 kilogram adult body falling dead weight onto hard floor, massive deep boom, dull bone and muscle thud, clothing impact, close mic recording, loud single hit, no voice | 1.2
-character | fall-void | heavy body falling through open air, long dopplered wind rushing whoosh, fabric flapping violently, no voice, no scream | 4
+character | ragdoll | large heavy fabric pillow stuffed completely with sugar dropping onto wooden floor, muffled deep thud, dense granular shifting inside, weighted dead-weight impact, close mic recording, single loud hit, no voice | 1.2
+character | fall-void | sustained wind tunnel recording, fast object falling through open air at terminal velocity, long dopplered rushing wind whoosh, loose fabric flapping violently in high speed airflow, no voice, no human, no scream, no child, no music | 4
 character | breathing-tired | realistic heavy breathing loop, tired adult panting after physical effort, raspy natural exhales, no acting, no music | 4
 
 # ---------- OBJECTS / ITEMS ----------
