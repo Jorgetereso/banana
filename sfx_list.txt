@@ -63,11 +63,11 @@ engine | door-sealed | metal airplane door slamming shut and sealing, pressurize
 # ---------- CHARACTER ----------
 character | footstep-rubber | single heavy realistic footstep on rubber airplane cabin floor, large heavy person walking, soft padded thud with weight, no voice | 0.5
 character | footstep-metal | single heavy realistic footstep on metal aircraft floor, large heavy person walking, dull metallic ring with weight, no voice | 0.5
-character | jump | physical jumping motion, fabric clothing rustle, brief shoe push off floor, no voice, no grunt | 0.6
+character | jump | real adult human jumping off hard floor, athletic shoe sole pushing off ground, brief fabric clothing rustle, single quick natural action, no voice, no music | 0.8
 character | land | heavy realistic body landing on floor, large heavy person hitting ground, weighty dull thud, gear rattle, no voice | 0.8
 character | ragdoll | heavy realistic body slamming into wall, large person impact, dull thud and clothing rustle, no voice | 1
 character | fall-void | heavy body falling through open air, long dopplered wind rushing whoosh, fabric flapping violently, no voice, no scream | 4
-character | breathing-tired | realistic heavy breathing loop, tired adult panting after physical effort, raspy natural exhales, no acting, no cartoon | 4
+character | breathing-tired | realistic heavy breathing loop, tired adult panting after physical effort, raspy natural exhales, no acting, no music | 4
 
 # ---------- OBJECTS / ITEMS ----------
 objects | pickup | quick item pickup sound, soft material rustle, short positive cue | 0.5
