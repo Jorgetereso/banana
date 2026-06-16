@@ -63,9 +63,9 @@ engine | door-sealed | metal airplane door slamming shut and sealing, pressurize
 # ---------- CHARACTER ----------
 character | footstep-rubber | single heavy realistic footstep on rubber airplane cabin floor, large heavy person walking, soft padded thud with weight, no voice | 0.5
 character | footstep-metal | single heavy realistic footstep on metal aircraft floor, large heavy person walking, dull metallic ring with weight, no voice | 0.5
-character | jump | real adult human jumping off hard floor, athletic shoe sole pushing off ground, brief fabric clothing rustle, single quick natural action, no voice, no music | 0.8
+character | jump | raw field recording of adult man jumping vertically off concrete floor, sneaker rubber sole compressing and releasing, brief denim fabric rustle, single quick natural motion, no foley, no music, no synth, no production | 0.8
 character | land | heavy realistic body landing on floor, large heavy person hitting ground, weighty dull thud, gear rattle, no voice | 0.8
-character | ragdoll | heavy realistic body slamming into wall, large person impact, dull thud and clothing rustle, no voice | 1
+character | ragdoll | heavy 80 kilogram adult body falling dead weight onto hard floor, massive deep boom, dull bone and muscle thud, clothing impact, close mic recording, loud single hit, no voice | 1.2
 character | fall-void | heavy body falling through open air, long dopplered wind rushing whoosh, fabric flapping violently, no voice, no scream | 4
 character | breathing-tired | realistic heavy breathing loop, tired adult panting after physical effort, raspy natural exhales, no acting, no music | 4
 
@@ -76,10 +76,10 @@ objects | charge-throw | subtle quiet rising tone, soft throw windup, very gentl
 objects | throw | object whoosh through air, fast swing release, short clean whoosh | 0.6
 objects | impact-generic | large heavy object impact thud, big dull weighted low-mid frequency hit, fallback hit | 0.6
 objects | sliding-turbulence | loose objects sliding and rattling across floor during turbulence, papers and small items rolling, loop | 5
-objects | impact-potato | clearly audible raw potato hitting hard floor, distinct soft organic thud, prominent and noticeable | 0.6
-objects | impact-banana | clearly audible banana hitting hard floor, distinct soft squishy splat, organic and prominent | 0.6
+objects | impact-potato | hard raw potato slamming onto wooden floor from above, loud sharp organic thud, punchy hit, close mic recording, single loud impact | 0.8
+objects | impact-banana | whole ripe banana slamming hard onto wooden floor from above, loud wet squishy splat, punchy organic impact, close mic recording, single loud hit | 0.8
 objects | impact-suitcase | heavy hard-shell suitcase hitting floor, dull thud and rattle inside | 0.7
 objects | impact-coffeepot | large heavy glass coffee pot dropping on hard floor, loud clear thud, liquid sloshing inside, glass intact, no breaking, no shattering | 0.8
 objects | impact-cart | metal beverage cart slamming into wall, loud metallic crash, dishes rattling | 1
-objects | impact-hammer | large heavy metal hammer dropping on hard floor, loud heavy metallic clang, weighty impact, prominent | 0.6
+objects | impact-hammer | large heavy sledgehammer slamming onto concrete floor, loud booming metallic clang, massive deep impact, close mic recording, single loud hit | 1.0
 objects | suitcase-open | old leather briefcase latches clicking open clearly, brass clasps snapping audibly, leather creak as lid lifts, prominent | 1.5
