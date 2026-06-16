@@ -61,8 +61,8 @@ engine | hammer-wood | hammer striking wooden plank, fast repeating nail hits, s
 engine | door-sealed | metal airplane door slamming shut and sealing, pressurized lock click, heavy metallic clunk | 2
 
 # ---------- CHARACTER ----------
-character | footstep-rubber | single heavy realistic footstep on rubber airplane cabin floor, large heavy person walking, soft padded thud with weight, no voice | 0.5
-character | footstep-metal | single heavy realistic footstep on metal aircraft floor, large heavy person walking, dull metallic ring with weight, no voice | 0.5
+character | footstep-rubber | heavy work boot stepping firmly on thick black rubber gym mat, soft dampened padded thud, slight rubber sole squeak, muffled dull impact, close mic recording, single soft step, no voice, no metal, no clang, no resonance | 0.6
+character | footstep-metal | heavy work boot stomping firmly on hollow aluminum aircraft floor panel, clear sharp metallic clang with hollow ringing resonance, distinct steel sheet vibration, close mic recording, single loud metal impact, no voice | 0.6
 character | jump | heavy adult male work boot pressing hard into hard concrete floor then quickly leaving the ground, brief rubber sole compression and release, sharp short squeak, isolated single footwear contact, no voice, no human sounds, no vocal, no scream, no music, no foley | 0.5
 character | land | heavy realistic body landing on floor, large heavy person hitting ground, weighty dull thud, gear rattle, no voice | 0.8
 character | ragdoll | large heavy fabric pillow stuffed completely with sugar dropping onto wooden floor, muffled deep thud, dense granular shifting inside, weighted dead-weight impact, close mic recording, single loud hit, no voice | 1.2
