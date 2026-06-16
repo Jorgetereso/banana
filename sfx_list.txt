@@ -15,4 +15,71 @@
 # To skip generation, just rebuild HTML: python generate_sfx.py --html-only
 # ============================================================
 
-cockpit | engine-cough | old propeller plane engine sputtering and coughing, mechanical failure, single short burst | 4
+# ---------- COCKPIT ----------
+cockpit | yoke-grab | hands gripping airplane yoke control wheel, leather creak, mechanical turn of metal column, single short motion | 1.5
+
+# ---------- AMBIENT ----------
+ambient | cabin-interior | interior airplane cabin ambience loop, low engine drone, distant air vents hum, soft cabin pressure, subtle creak | 10
+ambient | cabin-exterior | exterior airplane in flight, propeller engine roar muffled by distance, wind passing over fuselage, steady loop | 10
+ambient | wind-ejection | violent rushing wind blasting past, exterior of fast-moving aircraft, sense of being thrown into the air, dopplered | 4
+ambient | light-flicker | fluorescent cabin light flickering, faint electrical buzz, intermittent ballast hum, short flavor sound | 3
+
+# ---------- UI ----------
+ui | beep-instrument | single cockpit instrument beep, soft electronic blip, navigation display alert, short and clean | 0.6
+ui | host | clean UI confirmation chime, soft positive beep, lobby host sound, friendly | 0.5
+ui | join | subtle UI notification, player joining lobby, short pleasant tone | 0.5
+ui | connected | successful connection confirmation chime, double-note positive UI tone | 0.8
+
+# ---------- PASSENGERS ----------
+passengers | request-water | cartoon passenger asking for water, short polite plea voice, one quick exclamation, dry mouth desperate | 2
+passengers | request-food | cartoon passenger asking for food, short whining hungry plea voice, single exclamation | 2
+passengers | request-coffee | cartoon passenger demanding coffee, short impatient grumpy request voice | 2
+passengers | thanks | cartoon passenger happy thank you, short pleased murmur voice, satisfied | 2
+passengers | serve-coffee | pouring hot coffee into ceramic mug, liquid splash, cup placed on tray, short action | 2
+passengers | scream-vacuum | cartoon passenger screaming while being sucked out of plane, dopplered yell, fading into rushing wind | 3
+
+# ---------- EMERGENCY ----------
+emergency | explosion | large dry explosion blast, brief deep boom, mechanical debris scatter, dry and punchy | 2.5
+emergency | wall-break | metal airplane fuselage tearing apart, sheet metal ripping and snapping, short violent burst | 2.5
+emergency | suction-hole | violent decompression suction loop, howling wind rushing through hole in fuselage, papers flying, continuous | 8
+emergency | alarm-cabin | high-pitched cockpit emergency alarm, repeating warning beep, urgent rhythmic siren in cabin | 4
+emergency | turbulence | violent airplane turbulence rumble, fuselage shaking and creaking, low rolling shake | 6
+emergency | thunder | loud thunder crack rolling into storm rumble, heavy rain on metal, distant lightning crackle | 5
+
+# ---------- FIRE ----------
+fire | ignition | fire ignition whoosh, gas burst igniting, short flame burst with crackle | 1.5
+fire | burning-loop | fire burning loop, crackling flames consuming material, steady fire roar, continuous | 8
+fire | extinguisher | fire extinguisher spray, pressurized CO2 hiss, white foam blast, short burst | 3
+fire | dying | fire dying down, flame crackle fading, embers hissing, last small pops | 4
+
+# ---------- ENGINE / REPAIR ----------
+engine | broken | broken propeller engine sputtering and grinding, mechanical failure, metal scraping, smoky misfires, single short burst | 4
+engine | repairing | mechanic repair work loop, wrench tightening bolts, small metal clanks, screwdriver turns, no music | 4
+engine | cable-click | plug connector snapping into socket, plastic click, short mechanical engage, single action | 0.6
+engine | repaired | successful engine start, propeller spinning up cleanly, healthy engine roar swelling, positive cue | 3
+engine | hammer-wood | hammer striking wooden plank, fast repeating nail hits, sharp wood thuds | 2.5
+engine | door-sealed | metal airplane door slamming shut and sealing, pressurized lock click, heavy metallic clunk | 2
+
+# ---------- CHARACTER ----------
+character | footstep-rubber | single footstep on rubber airplane cabin floor, soft padded thud, light and dry | 0.5
+character | footstep-metal | single footstep on metal aircraft floor, light clank, hollow metallic ring | 0.5
+character | jump | short cartoon character jump effort grunt, light exertion vocal, quick | 0.6
+character | land | cartoon character landing impact, dull body thud on ground, short grunt | 0.8
+character | ragdoll | cartoon body crashing into wall, dull thud and rattle, short impact, ragdoll | 1
+character | fall-void | long cartoon falling scream into void, dopplered yell trailing off, wind rushing | 4
+character | breathing-tired | tired character heavy breathing loop, panting and short gasps, low stamina vocal | 4
+
+# ---------- OBJECTS / ITEMS ----------
+objects | pickup | quick item pickup sound, soft material rustle, short positive cue | 0.5
+objects | drop | small object dropping on hard surface, single dull thud, short | 0.5
+objects | charge-throw | rising tension charge loop, building energy hum, throw windup tone | 2
+objects | throw | object whoosh through air, fast swing release, short clean whoosh | 0.6
+objects | impact-generic | generic object impact thud, dull mid-frequency hit, short fallback | 0.5
+objects | sliding-turbulence | loose objects sliding and rattling across floor during turbulence, papers and small items rolling, loop | 5
+objects | impact-potato | raw potato hitting hard surface, dull soft thud, organic squish | 0.5
+objects | impact-banana | banana hitting hard surface, soft squishy splat, organic | 0.5
+objects | impact-suitcase | heavy hard-shell suitcase hitting floor, dull thud and rattle inside | 0.7
+objects | impact-coffeepot | metal coffee pot hitting hard surface, sharp clang and liquid sloshing inside | 0.7
+objects | impact-cart | metal beverage cart slamming into wall, loud metallic crash, dishes rattling | 1
+objects | impact-hammer | metal hammer hitting hard surface, single sharp metallic clang | 0.5
+objects | suitcase-open | hard-shell suitcase latches clicking and opening, hinges creaking, single open action | 1.5
