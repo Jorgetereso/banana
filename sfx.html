@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SFX Library · Banana Airways</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Librería interna de sound effects para Banana Airways." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="sfx.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%8A%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<header class="topbar">
+  <a class="topbar__brand" href="https://3dar.com" target="_blank" rel="noopener" title="3DAR">
+    <span class="topbar__b">B</span>
+    <span class="topbar__txt">BANANA<br>AIRWAYS</span>
+  </a>
+  <span class="topbar__tag">INTERNO · SFX LIBRARY</span>
+  <span class="topbar__stats">1 sfx · 1 categorías</span>
+</header>
+
+<main class="memo">
+  <article>
+    <div class="memo__meta">ElevenLabs Sound Effects · auto-generated</div>
+    <h1 class="memo__h1">SFX<br>Library</h1>
+    <p class="memo__lead">
+      Catálogo interno de sound effects generados con
+      <a href="https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert" target="_blank" rel="noopener">ElevenLabs Sound Effects API</a>.
+      Edita <code>sfx_list.txt</code> y corré <code>python generate_sfx.py</code> para agregar o regenerar.
+      Click en el prompt para copiarlo.
+    </p>
+    
+    <section class="cat">
+      <h2 class="cat__h">cockpit</h2>
+      <div class="sfx-grid">
+        <article class="sfx" data-id="engine-cough">
+          <div class="sfx__head">
+            <span class="sfx__id">engine-cough</span>
+            <span class="sfx__dur">4s</span>
+          </div>
+          <pre class="sfx__prompt" tabindex="0" title="Click to copy">old propeller plane engine sputtering and coughing, mechanical failure, single short burst</pre>
+          <audio controls preload="none" src="assets/SFX/cockpit_engine-cough.mp3"></audio>
+          
+        </article>
+      </div>
+    </section>
+
+    <footer class="memo__foot">
+      <span>Interno · Banana Airways · by <a href="https://3dar.com" target="_blank" rel="noopener">3DAR</a></span>
+      <span>noindex · nofollow</span>
+    </footer>
+  </article>
+</main>
+
+<script>
+  document.querySelectorAll('.sfx__prompt').forEach(el => {
+    el.addEventListener('click', () => {
+      navigator.clipboard.writeText(el.textContent).then(() => {
+        el.classList.add('sfx__prompt--copied');
+        setTimeout(() => el.classList.remove('sfx__prompt--copied'), 1100);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

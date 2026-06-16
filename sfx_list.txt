@@ -1,0 +1,18 @@
+# ============================================================
+# Banana Airways — SFX catalog
+# Format (pipe-separated, four columns):
+#
+#   category | id | prompt | duration_seconds
+#
+# - category : group for the page (cockpit, ui, crew, ambient, explosions, etc.)
+# - id       : kebab-case, used for filename → assets/SFX/{category}_{id}.mp3
+# - prompt   : English description for ElevenLabs (works best in English)
+# - duration : 0.5 – 22 seconds (4 is a safe default; for loops use 6–10)
+#
+# Lines starting with # are comments. Blank lines ignored.
+# To regenerate everything from scratch: python generate_sfx.py --force
+# To regenerate one entry:               python generate_sfx.py --only engine-cough
+# To skip generation, just rebuild HTML: python generate_sfx.py --html-only
+# ============================================================
+
+cockpit | engine-cough | old propeller plane engine sputtering and coughing, mechanical failure, single short burst | 4

@@ -1,0 +1,243 @@
+/* ============================================================
+   SFX Library — Banana Airways internal.
+   Same palette/topbar as voices + andrew-feedback.
+   ============================================================ */
+
+:root {
+  --banana: #ffd400;
+  --banana-soft: #fff3a8;
+  --ink: #111111;
+  --ink-soft: #2a2a2a;
+  --cream: #fff8e1;
+  --paper: #fffdf5;
+  --line: #e7dfb8;
+  --coral: #c8201a;
+  --teal: #0e7c66;
+  --slate: #6b6b6b;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+
+a { color: inherit; }
+
+/* ============ TOPBAR ============ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--cream);
+  border-bottom: 3px solid var(--banana);
+}
+.topbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--cream);
+}
+.topbar__b {
+  width: 36px; height: 36px;
+  background: var(--banana);
+  color: var(--ink);
+  display: grid; place-items: center;
+  font-family: "Bungee", sans-serif;
+  font-size: 18px;
+  border-radius: 50%;
+}
+.topbar__txt {
+  font-family: "Bungee", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+.topbar__tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--banana);
+  font-weight: 700;
+}
+.topbar__stats {
+  margin-left: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  opacity: 0.75;
+}
+
+/* ============ MEMO LAYOUT ============ */
+.memo {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 44px 28px 80px;
+}
+.memo__meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--slate);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.memo__h1 {
+  font-family: "Bungee", sans-serif;
+  font-size: 56px;
+  line-height: 0.95;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+.memo__lead {
+  font-size: 16px;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin: 0 0 36px;
+}
+.memo__lead code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  background: var(--banana-soft);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.memo__foot {
+  margin-top: 60px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--slate);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============ CATEGORY ============ */
+.cat {
+  margin-bottom: 44px;
+}
+.cat__h {
+  font-family: "Bungee", sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--ink);
+  text-transform: uppercase;
+}
+
+/* ============ SFX GRID ============ */
+.sfx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.sfx {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 14px 16px 16px;
+  box-shadow: 4px 4px 0 rgba(17, 17, 17, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sfx__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+.sfx__id {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  word-break: break-word;
+}
+.sfx__dur {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--coral);
+  background: var(--banana-soft);
+  padding: 2px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.sfx__prompt {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  line-height: 1.45;
+  background: var(--cream);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  cursor: pointer;
+  transition: background 0.14s ease, border-color 0.14s ease;
+}
+.sfx__prompt:hover {
+  background: var(--banana-soft);
+  border-color: var(--banana);
+}
+.sfx__prompt--copied {
+  background: var(--banana);
+  border-color: var(--ink);
+}
+.sfx audio {
+  width: 100%;
+  height: 36px;
+}
+.sfx__missing {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--coral);
+  text-transform: uppercase;
+  background: rgba(200, 32, 26, 0.08);
+  padding: 4px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+/* ============ EMPTY STATE ============ */
+.empty {
+  font-style: italic;
+  color: var(--slate);
+  padding: 20px;
+  text-align: center;
+  background: var(--paper);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+}
+.empty code {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--banana-soft);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-style: normal;
+}
+
+@media (max-width: 600px) {
+  .memo__h1 { font-size: 40px; }
+  .sfx-grid { grid-template-columns: 1fr; }
+  .topbar__stats { display: none; }
+}
