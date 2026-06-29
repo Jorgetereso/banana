@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Feedback Germán · Trailer + Steam Page · 29 jun 2026</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Notas internas de la reunión con Germán sobre el trailer y la Steam page. Action items organizados." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="andrew-feedback.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+
+<style>
+  /* Extras propios de esta página: tarjeta problema→acción y chips de dueño */
+  .pa {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: 14px 0 4px;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .pa__row { padding: 12px 16px; font-size: 15.5px; line-height: 1.55; }
+  .pa__row--prob { background: #fff0ef; border-bottom: 1px dashed var(--ink); }
+  .pa__row--act { background: var(--banana-soft); }
+  .pa__k {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 8px;
+    padding: 1px 7px;
+    border-radius: 3px;
+  }
+  .pa__k--prob { background: var(--coral); color: var(--cream); }
+  .pa__k--act { background: var(--ink); color: var(--banana); }
+  .owner {
+    display: inline-block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--teal);
+    color: #fff;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .owner--grupo { background: #444; }
+  .owner--jorge { background: #0e7c66; }
+  .owner--valen { background: #1f6feb; }
+  .deadline {
+    margin: 18px 0 0;
+    padding: 16px 18px;
+    background: var(--coral);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .deadline b { color: var(--banana); }
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="topbar__brand" href="https://3dar.com" target="_blank" rel="noopener" title="3DAR">
+    <span class="topbar__b">B</span>
+    <span class="topbar__txt">BANANA<br>AIRWAYS</span>
+  </a>
+  <span class="topbar__tag">INTERNO · FEEDBACK GERMÁN</span>
+</header>
+
+<main class="memo">
+  <article>
+
+    <div class="memo__meta">29 jun 2026 · ~42 min · Germán, Valentin, Jorge</div>
+    <h1 class="memo__h1">Feedback de Germán.</h1>
+    <p class="memo__lead">
+      Notas de la reunión sobre el primer corte del trailer y la Steam page,
+      ordenadas en action items. Cada tema tiene el <b>problema</b> que marcó
+      Germán y la <b>acción</b> concreta que sale de eso.
+    </p>
+
+    <!-- ============ TL;DR ============ -->
+    <section class="tldr">
+      <div class="tldr__tag">LO PRINCIPAL</div>
+      <ul>
+        <li><b>El foco es la Steam page y conseguir wishlists.</b> Todo lo demás (pulir visual, mejorar la demo) pasa a segundo plano. &ldquo;Se acaba el oxígeno&rdquo; si cerramos julio sin un caudal mínimo de wishlists.</li>
+        <li><b>El trailer necesita narrativa y ritmo, no más caos.</b> Arranca serio/institucional, escala al desastre. Editar primero sin voces. Jorge edita y prueba 3 versiones.</li>
+        <li><b>Logo nuevo: serio y aeronáutico.</b> La ironía es una aerolínea profesional con todo cayéndose adentro.</li>
+        <li><b>Plan concreto de distribución.</b> Reunión de los 3 solo sobre cómo mover la página, a 3 semanas. Discord abierto ya, esta semana.</li>
+      </ul>
+    </section>
+
+    <!-- ============ TRAILER · NARRATIVA ============ -->
+    <section class="theme">
+      <span class="theme__tag">TRAILER · NARRATIVA</span>
+      <h2>Falta una historia que se entienda</h2>
+      <p>
+        Germán vio el corte actual como <b>muy caótico</b>: pasa todo a la vez
+        y no se llega a entender la dinámica del juego. La cafetera, el café, las
+        turbinas, el martillo &mdash; se mezcla todo y &ldquo;parece más un secuestro&rdquo;
+        que un juego. Falta una curva que vaya contando las cosas de a poco.
+      </p>
+      <p>
+        Su propuesta de estructura: arrancar con una <b>intro institucional</b> de
+        la aerolínea (&ldquo;Welcome to Banana Airways, nuestra prioridad es la
+        seguridad&rdquo;), el avión despega, y de ahí el caos <b>escala
+        gradualmente</b> &mdash; un pasajero pide algo, se rompe algo atrás, otro
+        pide otra cosa, y al final se va todo a la mierda. Una curva que sube,
+        no caos plano desde el segundo cero.
+      </p>
+      <div class="pa">
+        <div class="pa__row pa__row--prob"><span class="pa__k pa__k--prob">Problema</span>Caos plano sin narrativa; no se entiende de qué va el juego.</div>
+        <div class="pa__row pa__row--act"><span class="pa__k pa__k--act">Acción</span>Reestructurar con curva ascendente: intro seria → incidentes que escalan → desastre total. Que cada momento cuente algo.</div>
+      </div>
+      <p class="note">
+        <b>Coincidencia del equipo:</b> los referentes (REPO, el de camping) también
+        son caóticos, <i>pero siempre se entiende de qué se trata el juego</i>. Ese
+        es el equilibrio a buscar: caos clipeable + claridad.
+      </p>
+    </section>
+
+    <!-- ============ TRAILER · RITMO / EDICIÓN ============ -->
+    <section class="theme">
+      <span class="theme__tag">TRAILER · RITMO Y EDICIÓN</span>
+      <h2>El editado necesita ritmo y climas</h2>
+      <p>
+        El corte actual se siente como &ldquo;muchas tomas&rdquo; sin ritmo: todo junto,
+        sin tres o cuatro climas distintos con velocidades distintas (uno gracioso,
+        uno caótico, uno que muestre de qué va el juego). El material está bueno
+        &mdash; es cuestión de <b>ordenarlo</b> bien. La intro que debía durar 3
+        segundos quedó en 12 y se siente como un video que intenta contar algo,
+        no como un gancho.
+      </p>
+      <ul>
+        <li><b>Editar primero sin voces.</b> Lograr un corte que funcione solo con imagen + música; recién después evaluar voiceover. Las voces pueden sumar confusión en esta etapa &mdash; si en el camino quedan bien, go for it.</li>
+        <li><b>Elegir un buen tema y atar las imágenes a la música.</b> Eso es lo que da el ritmo. Como REPO, que tiene un crescendo al final y la música acompaña ese crecimiento.</li>
+        <li><b>Intro de ~3 segundos, no 12.</b> Si las tomas duran más de un segundo, parecen estar contando algo en vez de funcionar como hook.</li>
+        <li><b>El logo: un toque, un segundo.</b> No hace falta que se quede en pantalla mucho tiempo.</li>
+        <li><b>Hook de caos al inicio que después &ldquo;rebobina&rdquo;.</b> Puede haber 5 segundos de todo en pánico y después volver atrás (como REPO con el &ldquo;Guys, we have a plan&rdquo;).</li>
+      </ul>
+      <div class="pa">
+        <div class="pa__row pa__row--prob"><span class="pa__k pa__k--prob">Problema</span>Sin ritmo, sin climas, intro larga. Lo edita un productor, no un editor.</div>
+        <div class="pa__row pa__row--act"><span class="pa__k pa__k--act">Acción</span>Jorge edita y hace <b>3 versiones distintas</b> para comparar y ver qué funciona. Primero sin voces, con un buen tema musical.</div>
+      </div>
+    </section>
+
+    <!-- ============ TRAILER · REFERENCIAS ============ -->
+    <section class="theme">
+      <span class="theme__tag">TRAILER · REFERENCIAS</span>
+      <h2>Tener las referencias a mano</h2>
+      <p>
+        Germán pidió explícitamente ver <b>qué trailers se tomaron como referencia</b>
+        para poder dar feedback con un target claro, no a ciegas. Los que salieron
+        en la charla:
+      </p>
+      <ul>
+        <li><b>REPO</b> &mdash; ~5 segundos de caos total y después te cuentan el juego; tiene el momento &ldquo;Guys, we have a plan&rdquo; y un crecimiento final.</li>
+        <li><b>El de camping (estilo PEAK / ARBI)</b> &mdash; narrativa lineal: me voy de camping, tengo un desafío, lo resuelvo, sigue. Caos con hilo.</li>
+      </ul>
+      <p class="note">
+        <b>Para la próxima:</b> dejar las referencias linkeadas junto al corte para
+        que el feedback sea sobre una misma vara.
+      </p>
+    </section>
+
+    <!-- ============ TRAILER vs DEMO ============ -->
+    <section class="theme">
+      <span class="theme__tag">TRAILER ≠ DEMO</span>
+      <h2>El trailer es el producto, no el juego</h2>
+      <p>
+        Recordatorio de Germán: <b>el entregable de este proceso es el trailer + la
+        Steam page</b>, no la demo. El trailer es un elemento de venta separado &mdash;
+        su única función es dejar al espectador con ganas de jugar y generar el
+        wishlist. No tiene que explicar todo el juego ni mostrar todo lo que se hizo.
+      </p>
+      <p>
+        Lo que hoy se llama &ldquo;demo&rdquo; es en realidad una <b>consola de desgracias</b>:
+        un set de grabación muy desarrollado para poder capturar clips y momentos
+        graciosos, no un juego final jugable. Eso está bueno como prueba de
+        &ldquo;capturabilidad&rdquo;, pero no hay que confundirlo con un producto terminado
+        ni invertir más tiempo ahí ahora.
+      </p>
+      <div class="pa">
+        <div class="pa__row pa__row--prob"><span class="pa__k pa__k--prob">Problema</span>Riesgo de seguir puliendo &ldquo;la demo&rdquo; / el producto en vez de cerrar el trailer y mover la página.</div>
+        <div class="pa__row pa__row--act"><span class="pa__k pa__k--act">Acción</span>Tratar el trailer como pieza aislada de venta. Mostrar los ganchos, dejar picando, no contar todo. Frenar el trabajo de producto que no alimente trailer/página.</div>
+      </div>
+    </section>
+
+    <!-- ============ LOGO · BRANDING ============ -->
+    <section class="theme">
+      <span class="theme__tag">LOGO · BRANDING</span>
+      <h2>Logo serio, aeronáutico, irónico</h2>
+      <p>
+        Germán ve el logo actual como <b>deformado y poco legible</b>: no se lee
+        &ldquo;banana&rdquo;, la V se dobla y no transmite nada de aviación. La gracia de
+        Banana Airways es justamente lo contrario: que el branding transmita
+        <b>seguridad y seriedad</b> &mdash; una aerolínea tipo American Airlines, con
+        100 años de trayectoria &mdash; y que el chiste sea el contraste con el desastre
+        que pasa adentro. Si el logo ya es gracioso, se pierde el efecto.
+      </p>
+      <ul>
+        <li>Estética aeronáutica clásica, legible, profesional.</li>
+        <li>Slogan tipo &ldquo;Nuestra prioridad es la seguridad&rdquo; / &ldquo;Safety first&rdquo; como eslogan de la compañía &mdash; sirve para el branding <i>y</i> para el tono del trailer.</li>
+        <li>El logo que aparece detrás de los asientos está mejor que el principal &mdash; usar esa dirección.</li>
+        <li>Es barato de resolver: tirar muchísimas iteraciones (&ldquo;20.000&rdquo;) y elegir la que mejor cierre.</li>
+      </ul>
+      <div class="pa">
+        <div class="pa__row pa__row--prob"><span class="pa__k pa__k--prob">Problema</span>Logo ilegible, sin lenguaje de aviación, demasiado &ldquo;gracioso&rdquo;.</div>
+        <div class="pa__row pa__row--act"><span class="pa__k pa__k--act">Acción</span>Rediseñar serio/aeronáutico tipo aerolínea real. Iterar mucho, elegir el más sólido. Sumar el eslogan de seguridad.</div>
+      </div>
+    </section>
+
+    <!-- ============ STEAM PAGE · SCREENSHOTS ============ -->
+    <section class="theme">
+      <span class="theme__tag">STEAM PAGE · CAPTURAS</span>
+      <h2>Screenshots variados, sin redundancia</h2>
+      <p>
+        La página ya está casi terminada (estilo REPO: textos grandes + GIFs abajo
+        mostrando jugabilidad y momentos graciosos, porque casi nadie lee el texto).
+        El problema que marcó Germán está en los <b>screenshots</b>: hay redundancia,
+        casi todos los de cabina muestran el iconito del café. Tres capturas seguidas
+        de café, café, café &mdash; deja de ser gracioso y mete ruido.
+      </p>
+      <ul>
+        <li>Capturar <b>más cantidad</b> y elegir las mejores.</li>
+        <li>Buscar <b>variedad</b> de situaciones: uno pidiendo café, otro haciendo otra cosa, distintos desastres.</li>
+        <li>Que <b>no redunden con el trailer</b> &mdash; hoy algunas son la misma toma.</li>
+        <li>Entender por qué un screenshot está bueno antes de subirlo, no llenar por llenar.</li>
+      </ul>
+      <div class="pa">
+        <div class="pa__row pa__row--prob"><span class="pa__k pa__k--prob">Problema</span>Screenshots repetitivos (todos café), redundantes con el trailer.</div>
+        <div class="pa__row pa__row--act"><span class="pa__k pa__k--act">Acción</span>Capturar muchas más, seleccionar variadas y representativas de distintos momentos del juego.</div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTAGE ============ -->
+    <section class="theme">
+      <span class="theme__tag">FOOTAGE · ORGANIZACIÓN</span>
+      <h2>Empaquetar el crudo para el editor</h2>
+      <p>
+        Para que el editado fluya, el material crudo tiene que estar ordenado. Hoy
+        es un bulk de archivos con un <b>timecode</b> que sirve para sincronizar las
+        tomas (distintos puntos de vista) y poder hacer cambios de cámara. Las voces
+        ya están en <b>pistas separadas</b> (hay un capturador propio), así que se
+        puede mutear o dejar solo el ambiente.
+      </p>
+      <div class="pa">
+        <div class="pa__row pa__row--prob"><span class="pa__k pa__k--prob">Problema</span>El crudo es un bulk de archivos; difícil de editar eficientemente.</div>
+        <div class="pa__row pa__row--act"><span class="pa__k pa__k--act">Acción</span>Valentin empaqueta y sincroniza el footage por timecode, con pistas separadas, listo para Premier. Anotar qué tomas faltan.</div>
+      </div>
+    </section>
+
+    <!-- ============ COMMUNITY · DISCORD ============ -->
+    <section class="theme">
+      <span class="theme__tag">COMMUNITY · DISCORD</span>
+      <h2>Abrir el Discord ya, sin esperar nada</h2>
+      <p>
+        Germán quiere abrir la comunidad <b>esta semana</b>, en paralelo, sin esperar
+        a que la Steam page esté perfecta. Se puede mover incluso sin trailer:
+        mostrar el progreso del juego y empezar a juntar gente interesada en este
+        estilo. La idea de Valentin: un sondeo temprano &mdash; mostrar la creación a un
+        primer grupo, formar una mini comunidad y <b>recoger feedback de gente real</b>
+        antes de tener la estrategia completa.
+      </p>
+      <div class="pa">
+        <div class="pa__row pa__row--prob"><span class="pa__k pa__k--prob">Problema</span>Sin comunidad propia ni canal de feedback temprano.</div>
+        <div class="pa__row pa__row--act"><span class="pa__k pa__k--act">Acción</span>Valentin arma y abre el Discord esta semana. Mostrar progreso, juntar early adopters, feedback continuo.</div>
+      </div>
+    </section>
+
+    <!-- ============ DISTRIBUCIÓN · EL FOCO ============ -->
+    <section class="theme">
+      <span class="theme__tag">DISTRIBUCIÓN · EL FOCO REAL</span>
+      <h2>Un plan concreto para mover la página</h2>
+      <p>
+        El mensaje más fuerte de la reunión. Germán quiere que el equipo (los tres)
+        haga una <b>reunión solo de distribución</b> y baje muchos action items: con
+        la Steam page lista, ¿cómo se mueve? Un <b>planning a corto plazo</b>, bien
+        concentrado, para las semanas <b>2, 3 y 4 de julio</b> &mdash; qué se hace primero,
+        qué después.
+      </p>
+      <ul>
+        <li>Estudiar los casos de otros juegos (cómo armaron su página y su movida).</li>
+        <li><b>itch.io</b> como canal extra para publicar / top-of-funnel.</li>
+        <li>El <b>Discord de Escape</b> &mdash; pensar qué se puede hacer ahí.</li>
+        <li>Ver qué se puede <b>automatizar en Reddit</b> y otras comunidades.</li>
+        <li>Definir semana a semana: &ldquo;primera semana esto, esto y esto; después esto otro&rdquo;.</li>
+      </ul>
+      <div class="deadline">
+        <b>El dramatismo, textual:</b> &ldquo;Se acaba el oxígeno de este proyecto si no
+        enfocamos. Pongan el foco en ir a buscar las wishlist, que es lo que le va a
+        dar vida a Banana Airways.&rdquo; La meta que puso: llegar a un caudal fuerte de
+        wishlists (Germán habló de <b>20.000</b>) para ir al Next Fest con una demo o
+        a un publisher. Si cerramos julio sin eso, se complica el financiamiento.
+      </div>
+    </section>
+
+    <!-- ============ NEXT STEPS ============ -->
+    <section class="next">
+      <div class="next__tag">ACTION ITEMS</div>
+      <h2>Lo que sale de la reunión</h2>
+      <ol>
+        <li><span class="owner owner--jorge">JORGE</span><b>Editar el trailer.</b> Nueva versión con narrativa y ritmo (intro seria → escalada → desastre). Hacer <b>3 cortes distintos</b> para comparar. Primero sin voces, con un buen tema musical bien atado a la imagen.</li>
+        <li><span class="owner owner--grupo">GRUPO</span><b>Refinar el logo.</b> Serio, aeronáutico, legible, tipo aerolínea real. Iterar mucho y elegir el más sólido. Sumar eslogan de seguridad.</li>
+        <li><span class="owner owner--grupo">GRUPO</span><b>Seleccionar screenshots.</b> Capturar muchas más, variadas, sin la redundancia del café, que no repitan el trailer.</li>
+        <li><span class="owner owner--valen">VALENTIN</span><b>Empaquetar el footage.</b> Crudo sincronizado por timecode, pistas separadas, ordenado para el editor. Marcar tomas faltantes.</li>
+        <li><span class="owner owner--valen">VALENTIN</span><b>Abrir el Discord.</b> Esta semana. Mostrar progreso, juntar comunidad temprana, recoger feedback.</li>
+        <li><span class="owner owner--grupo">LOS 3</span><b>Reunión de distribución.</b> Plan concreto semana a semana (2ª, 3ª y 4ª de julio) para mover la Steam page y juntar wishlists.</li>
+        <li><span class="owner owner--grupo">FECHA</span><b>Miércoles 18:00 con Germán.</b> Revisar el primer corte del trailer y la estrategia de distribución.</li>
+      </ol>
+    </section>
+
+    <!-- ============ QUOTES ============ -->
+    <section class="quotes">
+      <div class="quotes__tag">FRASES PARA RECORDAR</div>
+      <h2>Lo que dijo Germán, textual</h2>
+      <blockquote>
+        &ldquo;El objetivo es la Steam Page ahora y después mover la Steam Page bien
+        movida como para tener 20.000 wishlist. Y ahí después vamos al Steam Fest con
+        una demo o vamos a un publisher.&rdquo;
+      </blockquote>
+      <blockquote>
+        &ldquo;Realmente se acaba el oxígeno de este proyecto si no enfocamos. Pongan el
+        foco en ir a buscar las wishlist, que es lo que le va a dar vida a Banana
+        Airways.&rdquo;
+      </blockquote>
+      <blockquote>
+        &ldquo;Yo haría un editado que esté bueno primero y después se le puede poner el
+        voiceover. Podés contar toda la historia, ver que cierra, y después en otra
+        pasada ver qué hace falta de voiceover.&rdquo;
+      </blockquote>
+      <blockquote>
+        &ldquo;La gracia de Banana Airways es que transmita seguridad: una aerolínea seria
+        que tiene 100 años de trayectoria, y después adentro es cualquier vergüenza.&rdquo;
+      </blockquote>
+      <blockquote>
+        &ldquo;No pongamos a gente que no edita a editar. La gran ventaja de este juego es
+        que está buena la idea, está bueno el footage, están buenos los personajes.&rdquo;
+      </blockquote>
+    </section>
+
+    <footer class="memo__foot">
+      <span>Notas internas · Banana Airways · by <a href="https://3dar.com" target="_blank" rel="noopener">3DAR</a></span>
+      <span>29 jun 2026</span>
+    </footer>
+
+  </article>
+</main>
+
+</body>
+</html>

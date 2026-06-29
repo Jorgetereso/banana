@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Estrategia de Wishlists · Banana Airways</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Plan completo de tácticas para conseguir wishlists en Steam: página, Next Fest, TikTok, streamers, comunidades, ads." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="andrew-feedback.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%AD%90%3C/text%3E%3C/svg%3E" />
+
+<style>
+  /* ---- Navegación interna sticky ---- */
+  .toc {
+    position: sticky;
+    top: 60px;
+    z-index: 5;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 0 0 44px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .toc a {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    transition: all 0.12s ease;
+  }
+  .toc a:hover { background: var(--banana); border-color: var(--ink); }
+
+  /* ---- Tarjetas de táctica ---- */
+  .card {
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    padding: 18px 20px 16px;
+    margin: 0 0 16px;
+    background: var(--paper);
+  }
+  .card__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .card__num {
+    font-family: "Bungee", sans-serif;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--banana);
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+  .card__title {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.25;
+    margin: 0;
+    flex: 1 1 240px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 0; }
+  .chip {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .chip--prio-alta { background: var(--coral); color: #fff; }
+  .chip--prio-media { background: #e6a700; color: var(--ink); }
+  .chip--prio-baja { background: #c9c2a0; color: var(--ink); }
+  .chip--esf { background: #eee7c8; color: var(--ink); border: 1px solid var(--line); }
+  .chip--imp { background: var(--teal); color: #fff; }
+  .card p { margin: 0 0 8px; font-size: 15px; line-height: 1.55; }
+  .card .why {
+    font-size: 13.5px;
+    color: var(--slate);
+    border-left: 3px solid var(--banana);
+    padding-left: 12px;
+    margin-top: 10px;
+  }
+  .card .why b { color: var(--ink-soft); }
+  .card ul { margin: 8px 0 4px; padding-left: 20px; }
+  .card ul li { font-size: 14.5px; line-height: 1.5; margin-bottom: 5px; }
+
+  .lead-num {
+    font-family: "Bungee", sans-serif;
+    color: var(--coral);
+  }
+
+  /* ---- Tabla simple para benchmarks ---- */
+  .bench {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 8px;
+    font-size: 14.5px;
+  }
+  .bench th, .bench td {
+    text-align: left;
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .bench th {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--banana);
+  }
+  .bench tr:nth-child(even) td { background: var(--cream); }
+
+  /* ---- Plan calendario ---- */
+  .week {
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    margin: 0 0 14px;
+    overflow: hidden;
+  }
+  .week__h {
+    background: var(--ink);
+    color: var(--banana);
+    font-family: "Bungee", sans-serif;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+  .week__b { padding: 12px 18px; }
+  .week__b ul { margin: 0; padding-left: 20px; }
+  .week__b li { font-size: 14.5px; line-height: 1.5; margin-bottom: 6px; }
+
+  .src { font-size: 13px; color: var(--slate); }
+  .src a { color: var(--coral); }
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="topbar__brand" href="https://3dar.com" target="_blank" rel="noopener" title="3DAR">
+    <span class="topbar__b">B</span>
+    <span class="topbar__txt">BANANA<br>AIRWAYS</span>
+  </a>
+  <span class="topbar__tag">INTERNO · PLAN WISHLISTS</span>
+</header>
+
+<main class="memo">
+  <article>
+
+    <div class="memo__meta">29 jun 2026 · Plan de marketing · Objetivo: wishlists</div>
+    <h1 class="memo__h1">Cómo conseguir wishlists.</h1>
+    <p class="memo__lead">
+      Todo lo que sirve para mover la Steam page, el trailer y el juego en
+      internet y convertir atención en wishlists. Mezcla de mejores prácticas
+      de la industria (Chris Zukowski / How To Market A Game, GameDiscoverCo,
+      docs de Steam) y conclusiones propias aplicadas a un co-op caótico estilo
+      REPO. Ordenado por dónde está la mayor palanca.
+    </p>
+
+    <!-- ============ POR QUÉ ============ -->
+    <section class="tldr">
+      <div class="tldr__tag">POR QUÉ LAS WISHLISTS SON TODO AHORA</div>
+      <ul>
+        <li><b>El Next Fest amplifica momentum, no lo crea.</b> El dato más fuerte del research: los juegos que rompieron en un Next Fest <i>entraron</i> con 3.000+ wishlists ya hechas. Entrar desde cero casi no mueve la aguja (mediana ~322 wishlists nuevas). Todo el trabajo real pasa <b>antes</b> del Fest.</li>
+        <li><b>Son la métrica que abre presupuesto y publishers.</b> Es el número duro que mira un inversor o un publisher. Por eso el foco de Germán.</li>
+        <li><b>Umbrales reales:</b> ~<b>7.000</b> wishlists (a buena velocidad) = entrás a "Popular Upcoming". <b>10.000+</b> = tier "breakout" y piso práctico para conversaciones serias con publishers/inversores. Nuestro rango 5k–20k es exactamente el correcto: 7k abre visibilidad, 10k+ abre las conversaciones.</li>
+        <li><b>Nuestro género juega a favor.</b> Los co-op convierten muchísimo mejor que el promedio (outliers de 18–266× la base). Calidad visual + momentos clipeables + "compralo para el grupo" = la mejor categoría que hay ahora mismo.</li>
+        <li><b>El motor #1 orgánico es el video corto</b> (TikTok / Reels / Shorts) + streamers. Es exactamente nuestra fortaleza.</li>
+      </ul>
+    </section>
+
+    <!-- ============ TOC ============ -->
+    <nav class="toc">
+      <a href="#pagina">1 · La página</a>
+      <a href="#video">2 · Video corto</a>
+      <a href="#streamers">3 · Streamers</a>
+      <a href="#nextfest">4 · Next Fest</a>
+      <a href="#comunidades">5 · Comunidades</a>
+      <a href="#discord">6 · Discord propio</a>
+      <a href="#festivales">7 · Festivales</a>
+      <a href="#ads">8 · Paid ads</a>
+      <a href="#metricas">9 · Métricas</a>
+      <a href="#plan">10 · Plan 3 semanas</a>
+      <a href="#yo">11 · Lo que yo haría</a>
+    </nav>
+
+    <!-- ============ 1 · LA PÁGINA ============ -->
+    <section class="theme" id="pagina">
+      <span class="theme__tag">1 · LA PÁGINA DE STEAM (CONVERSIÓN)</span>
+      <h2>La página convierte o no convierte</h2>
+      <p>
+        Todo el tráfico que generes muere o vive acá. Antes de gastar un peso o
+        una hora en traer gente, la página tiene que estar afilada para convertir
+        visita → wishlist. Esto es lo más barato y de mayor impacto que se puede
+        hacer esta semana.
+      </p>
+      <p class="note">
+        <b>El dato que ordena todo:</b> entre el <b>68% y el 88%</b> de las wishlists
+        de un Fest vienen de gente que <i>nunca juega la demo</i> &mdash; wishlistean
+        solo por la cápsula, los screenshots y la descripción corta. <b>Para la mayoría,
+        la página ES el producto.</b> Por eso esto va primero.
+      </p>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">1.1</span>
+          <h3 class="card__title">La cápsula (capsule) es el 80% del juego</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Altísimo</span>
+        </div>
+        <p>
+          La imagen chiquita (capsule) es lo que ve la gente en todo Steam y en
+          cada post que compartas. Tiene que leerse a 1cm: poco texto, un foco
+          claro, el chiste visual de Banana Airways (aerolínea seria + caos).
+          Texto grande y legible, contraste fuerte, cara/personaje expresivo si
+          se puede.
+        </p>
+        <ul>
+          <li><b>Test del thumbnail:</b> tiene que leerse a <b>120×45px</b> (el tamaño que genera Steam solo). Si a ese tamaño es un puré, perdés todas las superficies algorítmicas.</li>
+          <li><b>Test en escala de grises:</b> el título, el personaje y el fondo tienen que estar en capas de valor distintas para que se separen. Probala también sobre fondo oscuro tipo Steam.</li>
+          <li>Un solo gag visual claro (la tripulación volando en un avión que se cae), paleta saturada, silueta fuerte.</li>
+          <li>Evitá el "look AI" genérico: detalle, gracia, personalidad.</li>
+        </ul>
+        <p class="why"><b>Por qué:</b> la cápsula determina el click-through en toda la cola de descubrimiento de Steam y en cada thumbnail externo. Es la palanca de conversión #1 según todos los análisis (Zukowski / presskit.gg). Los juegos que rompieron en Next Fest pasaban todos el test de "reconocer el género al instante a 120×45".</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">1.2</span>
+          <h3 class="card__title">A/B testear la cápsula (y el nombre) por ads, no por dos páginas</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          Steam permite testear cápsulas con su herramienta interna, pero el
+          método que ya validó Andrew para el A/B de nombre es vía <b>ads</b>:
+          dos creatives con cápsula/nombre distinto apuntando al mismo producto,
+          medir cuál convierte. NO crear dos Steam pages (probable violación de
+          TOS).
+        </p>
+        <p class="why"><b>Por qué:</b> el A/B con datos reales evita decidir la cápsula y el nombre por gusto. Coincide con lo que recomendó Andrew en su call.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">1.3</span>
+          <h3 class="card__title">El primer GIF/video y los primeros 3 screenshots</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          Arriba de todo (above the fold) la gente ve el video/primer GIF y las
+          primeras capturas. Tienen que mostrar el <b>gancho en 2 segundos</b>:
+          el momento más gracioso y caótico, no la pantalla más tranquila. Variá
+          las situaciones (acá pega el feedback de Germán: no todo café).
+        </p>
+        <p class="why"><b>Por qué:</b> la decisión de wishlist se toma en los primeros segundos sin scrollear. Si el primer asset no engancha, perdés la visita.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">1.4</span>
+          <h3 class="card__title">Tags: elegir los correctos y en orden</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          Steam usa los tags para recomendar tu juego junto a otros similares.
+          Los primeros tags pesan más. Para Banana Airways: <b>Co-op, Multiplayer,
+          Online Co-Op, Comedy, Funny, Physics, Party Game, Chaos</b>. Mirá los
+          tags exactos de REPO, Lethal Company, Content Warning y copiá los que
+          apliquen, en orden de relevancia.
+        </p>
+        <p class="why"><b>Por qué:</b> los tags te meten en la "more like this" de los juegos que ya explotaron en tu nicho. Tráfico gratis y altamente cualificado.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">1.5</span>
+          <h3 class="card__title">Short description: una frase que se entienda y se comparta</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Medio</span>
+        </div>
+        <p>
+          La descripción corta (la que aparece arriba) tiene que decir qué es el
+          juego en una línea memorable, no en párrafos. Algo tipo: "Sé la
+          tripulación de la peor aerolínea del mundo. Servila con una sonrisa
+          mientras todo se cae a pedazos. Co-op para 1–4."
+        </p>
+        <p class="why"><b>Por qué:</b> es el "pitch" que la gente repite. Casi nadie lee el cuerpo largo (Valentin ya lo notó). Hookea arriba.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">1.6</span>
+          <h3 class="card__title">Cuerpo de la página estilo REPO: bloques visuales + GIFs</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Medio</span>
+        </div>
+        <p>
+          Ya van por buen camino. Textos grandes, GIFs animados mostrando los 3–4
+          ganchos principales (servir café que sale mal, turbulencia que tira
+          todo, ragdolls, reparar el avión a las apuradas). Cada GIF debe vender
+          un tipo de momento distinto.
+        </p>
+        <p class="why"><b>Por qué:</b> el GIF en movimiento convierte mucho mejor que el texto en un juego de "tenés que verlo para entenderlo".</p>
+      </div>
+    </section>
+
+    <!-- ============ 2 · VIDEO CORTO ============ -->
+    <section class="theme" id="video">
+      <span class="theme__tag">2 · VIDEO CORTO (TIKTOK / REELS / SHORTS)</span>
+      <h2>El motor orgánico #1</h2>
+      <p>
+        Para un co-op caótico, esto es lo que mueve la aguja. Es gratis, es
+        nuestra fortaleza (momentos clipeables + calidad), y es lo que recomendó
+        Andrew con tanta fuerza. La clave: <b>el clip es entretenimiento en sí
+        mismo</b>, no una publicidad.
+      </p>
+      <div class="note">
+        <b>Lo que es posible (casos reales):</b><br>
+        • <b>Dead as Disco</b> &mdash; pasó de &lt;50k a <b>250.000+ wishlists en menos de un mes</b>; 35M+ impresiones en TikTok; más del <b>50% del tráfico vino de TikTok</b>. El video top sacó 2M+ plays desde una cuenta con &lt;1.000 seguidores.<br>
+        • <b>The Matriarch</b> &mdash; pasó de <b>400 a 23.000 wishlists</b> con esencialmente <b>un solo video</b> (1M views / 100k likes en 24h → +1.500 el día 1, +3.500 el día 2, +2.500 el día 3).<br>
+        No hace falta tener audiencia previa: hace falta volumen de clips y que uno pegue.
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">2.1</span>
+          <h3 class="card__title">Abrir cuentas y postear a diario / casi diario</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Alto (sostenido)</span>
+          <span class="chip chip--imp">Impacto Altísimo</span>
+        </div>
+        <p>
+          TikTok + Reels + YouTube Shorts con la misma cuenta/marca. Cadencia de
+          <b>4–5 clips por semana</b>, nunca quedarse en silencio. Es un juego de
+          volumen: la mayoría hacen poco y de golpe uno explota. No te enamores de
+          un solo video.
+        </p>
+        <ul>
+          <li>Mismo clip se reusa en las 3 plataformas. Clips de <b>menos de 15 segundos</b>.</li>
+          <li><b>Cuenta Business</b> (gratis): desbloquea scheduling, analytics y botón de contacto.</li>
+          <li>Bio con link a Steam + Discord (Linktree). Comentario fijado con el link real.</li>
+          <li>Repostear los que no pegaron con un pequeño cambio (acelerar, recortar) &mdash; contenido casi igual rinde muy distinto.</li>
+          <li>Opcional avanzado: modelo de <b>cluster</b> (1 cuenta marca + 5–10 cuentas con ángulos/personas distintas) para multiplicar superficie.</li>
+        </ul>
+        <p class="why"><b>Por qué:</b> el algoritmo de short-form premia volumen y consistencia. Un hit entre decenas de intentos ya te cambia el mes (ver casos arriba). Postear poco y abandonar mata el momentum.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">2.2</span>
+          <h3 class="card__title">Fórmula del hook: 0–2 segundos o nada</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Altísimo</span>
+        </div>
+        <p>
+          El primer frame tiene que mostrar el momento más absurdo. Formatos que
+          funcionan: "POV: sos el azafato de la peor aerolínea", "cosas que pasan
+          en Banana Airways", clip de desastre + reacción graciosa, texto en
+          pantalla que plantea una situación y el clip la paga.
+        </p>
+        <p class="why"><b>Por qué:</b> en short-form el retention de los primeros 2s decide si el algoritmo lo empuja. Mismo principio que el trailer (lo de Germán).</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">2.3</span>
+          <h3 class="card__title">Música reconocible / trending audio</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          Usar audios trending de TikTok (dentro de la app, que están licenciados
+          para uso orgánico) sube el alcance. Andrew lo mencionó: música
+          reconocible + gameplay bueno = la fórmula que vio funcionar.
+        </p>
+        <p class="why"><b>Por qué:</b> el algoritmo agrupa y promociona contenido por audio. Sumarte a un sonido en alza es subirte a una ola gratis.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">2.4</span>
+          <h3 class="card__title">CTA suave al final + comentario fijado</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Medio</span>
+        </div>
+        <p>
+          No vendas duro. Al final un "wishlist en Steam" suave, y el link real en
+          el comentario fijado y en bio. Dejá que el clip entretenga; el wishlist
+          viene de gente que ya quedó enganchada.
+        </p>
+        <p class="why"><b>Por qué:</b> el CTA agresivo mata el alcance orgánico. El funnel correcto es entretener → bio/coment → página.</p>
+      </div>
+    </section>
+
+    <!-- ============ 3 · STREAMERS ============ -->
+    <section class="theme" id="streamers">
+      <span class="theme__tag">3 · STREAMERS Y CREATORS</span>
+      <h2>El segundo gran motor para co-op</h2>
+      <p>
+        Festivales + streamers son ~90% de las wishlists nuevas de un juego, y el
+        co-op caótico es el género <b>más streamer-friendly</b> que existe (el pánico
+        compartido es contenido automático). Lethal Company explotó así: 600 →
+        50.000+ jugadores concurrentes por boca-en-boca de streamers, sin reseñas de
+        prensa, a $10. Un solo streamer grande puede mover muchísimo: el caso de
+        Knekro = <b>14.000 wishlists netas en un día</b>. Banana Airways tiene
+        exactamente ese ADN.
+      </p>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">3.1</span>
+          <h3 class="card__title">Plataformas de key distribution</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          Registrarse en <b>Keymailer</b> y <b>Woovit</b> (los dos más amigables de
+          precio para indies) y <b>Lurkit</b> para campañas de mayor visibilidad.
+          <b>Evitar Terminals.io</b> (demasiado caro para indie). Permiten que
+          creators pidan keys filtrando por tamaño/relevancia. Apuntar primero a
+          micro y mid streamers de co-op/horror/party (más accesibles y con mejor
+          conversión por viewer).
+        </p>
+        <p class="why"><b>Por qué:</b> centraliza el contacto con cientos de creators que buscan activamente juegos co-op nuevos para jugar con amigos en cámara.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">3.2</span>
+          <h3 class="card__title">Build de 4 jugadores lista para mandar</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          Cuando llegue el momento de playtest/demo, tener una build estable para
+          que un streamer la juegue con su grupo sin fricción (fácil de unirse,
+          sin bugs que rompan el clip). El "set de desgracias" actual no sirve
+          para esto; hace falta algo jugable en grupo.
+        </p>
+        <p class="why"><b>Por qué:</b> un streamer mediano jugando en grupo genera decenas de clips y un pico de wishlists en una noche. Pero solo si la experiencia multiplayer funciona en vivo.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">3.3</span>
+          <h3 class="card__title">Lista curada + outreach manual a 20–30 creators</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          Armar una lista de creators que ya juegan REPO / Lethal Company /
+          Content Warning, ordenada por fit (no solo por tamaño). Contacto
+          personalizado y corto: por qué tu juego es para ellos, link, key a
+          pedido. Sin spam.
+        </p>
+        <p class="why"><b>Por qué:</b> el outreach dirigido a quien ya juega tu género convierte mucho mejor que el bombardeo masivo.</p>
+      </div>
+    </section>
+
+    <!-- ============ 4 · NEXT FEST ============ -->
+    <section class="theme" id="nextfest">
+      <span class="theme__tag">4 · STEAM NEXT FEST</span>
+      <h2>El evento que multiplica wishlists</h2>
+      <p>
+        Steam Next Fest (3 veces al año, con demo jugable) es el mayor pico
+        gratuito de wishlists que vas a tener antes del launch. Bien jugado, suma
+        miles de wishlists en una semana. El objetivo de Germán de ir al Next Fest
+        con demo apunta exactamente acá.
+      </p>
+      <div class="note">
+        <b>Fechas Next Fest 2026 (solo se participa UNA vez):</b><br>
+        • <b>23 feb – 2 mar 2026</b> (registro ya cerrado)<br>
+        • <b>15 – 22 jun 2026</b> (registro ya cerrado)<br>
+        • <b>19 – 26 oct 2026</b> &mdash; registro cierra ~<b>31 ago 2026</b> (49 días antes). La demo tiene que estar viva y estable antes de esa fecha.<br>
+        <b>El de octubre es el nuestro</b> &mdash; coincide con el roadmap del proyecto. Todo lo demás se planifica para llegar con base de wishlists a ese Fest.
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">4.1</span>
+          <h3 class="card__title">Llegar con wishlists previas (no estrenar la página en el Fest)</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Alto</span>
+          <span class="chip chip--imp">Impacto Altísimo</span>
+        </div>
+        <p>
+          El ranking del Next Fest se alimenta de las wishlists que ya tenés. Las
+          medianas de wishlists NUEVAS ganadas en el Fest, según con cuántas
+          entrás:
+        </p>
+        <ul>
+          <li>Entrás con <b>0–999</b> → ganás ~<b>322</b> (casi nada).</li>
+          <li>Entrás con <b>1.000–9.999</b> → ganás ~<b>1.006</b>.</li>
+          <li>Entrás con <b>10.000+</b> → ganás ~<b>5.215</b>.</li>
+        </ul>
+        <p>
+          La cantidad con la que entrás es el predictor más fuerte del resultado.
+          Por eso TODO el trabajo previo es para llegar con base &mdash; apuntar a entrar
+          con <b>3.000–10.000</b> mínimo.
+        </p>
+        <p class="why"><b>Por qué:</b> el Fest premia a quien ya tiene momentum. Entrar "desde cero" desaprovecha el evento. Es el "rich get richer" de Steam: la celebración, no el debut.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">4.2</span>
+          <h3 class="card__title">Elegir bien CUÁL Next Fest (timing vs. launch)</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Bajo (decisión)</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          Solo se puede participar UNA vez con la demo. Para nuestro roadmap, el
+          <b>Next Fest de octubre (19–26 oct 2026)</b> es el indicado. Lo crítico:
+          la demo debe estar live y estable <b>antes del ~31 de agosto</b> (cierre de
+          registro). E idealmente la demo sale <b>meses antes</b> del Fest, no durante:
+          los juegos que estrenaron demo con anticipación sacaron ~<b>2,5× más</b>
+          wishlists del Fest, porque le dan tiempo a streamers y prensa a cubrirlos.
+        </p>
+        <p class="why"><b>Por qué:</b> el Fest es la "fiesta de quince", no la presentación en sociedad. Estrenar la demo durante el Fest desperdicia el evento; con la demo ya rodada y con cobertura previa, entrás con el momentum que el algoritmo premia.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">4.3</span>
+          <h3 class="card__title">Demo que convierte: corta, pulida, clipeable</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Alto</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          La demo del Fest tiene que dejar con ganas de más, no agotar el juego.
+          15–30 min de la experiencia más divertida, con un final que invite a
+          wishlistear. Un stream propio durante el Fest también suma visibilidad
+          dentro del evento.
+        </p>
+        <p class="why"><b>Por qué:</b> Steam destaca demos con buen engagement; una demo larga o aburrida baja la conversión a wishlist/venta.</p>
+      </div>
+    </section>
+
+    <!-- ============ 5 · COMUNIDADES ============ -->
+    <section class="theme" id="comunidades">
+      <span class="theme__tag">5 · REDDIT Y COMUNIDADES</span>
+      <h2>Tráfico cualificado y gratis (si no spameás)</h2>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">5.1</span>
+          <h3 class="card__title">Subreddits de co-op / indie / clips graciosos</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Medio-Alto</span>
+        </div>
+        <p>
+          Postear clips (no links a la tienda) en r/CoopGames, r/IndieGaming,
+          r/IndieDev, r/gaming (difícil pero enorme), r/PhysicsGames, y subs de
+          humor/clips. La regla: aportar contenido entretenido, no autopromo
+          descarada. El wishlist viene del clip que se hace viral, no del "compren
+          mi juego".
+        </p>
+        <p class="why"><b>Por qué:</b> un clip que pega en Reddit manda miles de visitas cualificadas. Pero los mods banean autopromo; tiene que parecer contenido, no ad.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">5.2</span>
+          <h3 class="card__title">itch.io como top-of-funnel</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-baja">Prioridad Media-Baja</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Medio</span>
+        </div>
+        <p>
+          Publicar una versión/prototipo en itch.io (lo mencionó Germán) con CTA
+          fuerte a wishlist en Steam. itch tiene audiencia que busca cosas raras y
+          tempranas, y es un canal extra de descubrimiento.
+        </p>
+        <p class="why"><b>Por qué:</b> capta a early adopters fuera de Steam y los redirige a la página. Bajo esfuerzo, canal incremental.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">5.3</span>
+          <h3 class="card__title">Discords ajenos del nicho (con permiso)</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-baja">Prioridad Baja</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Bajo-Medio</span>
+        </div>
+        <p>
+          El "Discord de Escape" y otros servers de juegos co-op tienen canales de
+          self-promo o de "juegos en desarrollo". Compartir ahí con respeto a las
+          reglas. También buscar playtesters ahí.
+        </p>
+        <p class="why"><b>Por qué:</b> audiencia ya caliente para el género. Útil para feedback temprano y primeros wishlists/playtesters.</p>
+      </div>
+    </section>
+
+    <!-- ============ 6 · DISCORD PROPIO ============ -->
+    <section class="theme" id="discord">
+      <span class="theme__tag">6 · DISCORD PROPIO</span>
+      <h2>La comunidad como base de operaciones</h2>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">6.1</span>
+          <h3 class="card__title">Abrirlo ya y mostrar progreso (lo pidió Germán)</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Medio-Alto</span>
+        </div>
+        <p>
+          Server propio abierto esta semana. Canales de devlog/progreso, clips,
+          feedback, y un funnel claro hacia el wishlist. Cada clip de TikTok y la
+          Steam page apuntan al Discord; el Discord apunta al wishlist.
+        </p>
+        <p class="why"><b>Por qué:</b> convierte audiencia pasiva en fans que wishlistean, testean y reparten clips. Es el activo que más rinde a largo plazo.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">6.2</span>
+          <h3 class="card__title">Playtests cerrados como gancho de comunidad</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Medio</span>
+        </div>
+        <p>
+          "Sumate al Discord para entrar a los playtests" es un imán fuerte para
+          un co-op. Steam tiene un sistema de playtest nativo que además pide
+          wishlist/seguir para participar.
+        </p>
+        <p class="why"><b>Por qué:</b> la gente se suma por acceso temprano y termina wishlisteando y generando boca-en-boca.</p>
+      </div>
+    </section>
+
+    <!-- ============ 7 · FESTIVALES ============ -->
+    <section class="theme" id="festivales">
+      <span class="theme__tag">7 · FESTIVALES Y EVENTOS CURADOS</span>
+      <h2>Más allá del Next Fest</h2>
+      <p>
+        Festivales + streamers = ~90% de las wishlists. Aplicar a TODO lo que
+        encaje: cada evento es una superficie de visibilidad gratis y un pico de
+        wishlists. Calendarios para chequear cada mes:
+        <span class="src"><a href="https://howtomarketagame.com/festivals/" target="_blank" rel="noopener">howtomarketagame.com/festivals</a> y el de GameOutreach.</span>
+      </p>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">7.1</span>
+          <h3 class="card__title">Tiny Teams Festival (Yogscast) — fuerte fit, calificamos</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-alta">Prioridad Alta</span>
+          <span class="chip chip--esf">Esfuerzo Bajo (aplicar)</span>
+          <span class="chip chip--imp">Impacto Alto</span>
+        </div>
+        <p>
+          Festival curado para estudios de ≤5 personas (los publishers no cuentan,
+          así que <b>con 3 calificamos</b>). La audiencia de Yogscast es justo el
+          público co-op/comedy. En 2026 las submissions fueron <b>1–30 abril</b> y el
+          festival es <b>6–13 agosto</b> &mdash; o sea la ventana de este año
+          <b>ya cerró</b>. <span class="src">Acción: escribirles igual por si aceptan
+          entradas tardías, y dejar agendada la ventana de abril 2027.</span>
+        </p>
+        <p class="why"><b>Por qué:</b> equipo chico curado = mucha visibilidad relativa y un pico de wishlists. Fit altísimo para nosotros; el timing de aplicación es lo único a vigilar para no volver a perderlo.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">7.2</span>
+          <h3 class="card__title">The MIX, Day of the Devs, Wholesome &amp; showcases de indie</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Bajo (aplicar)</span>
+          <span class="chip chip--imp">Impacto Medio-Alto</span>
+        </div>
+        <p>
+          Aplicar a showcases con alcance de prensa/creators: <b>The MIX</b>
+          (ex-Guerrilla Collective), <b>Day of the Devs</b> (Double Fine + iam8bit,
+          muy selectivo, aplicar temprano), <b>Wholesome Direct</b> (solo si el arte
+          tira más a lo encantador que a lo gross — fit dudoso). Cada uno te pone en
+          un destacado por unos días.
+        </p>
+        <p class="why"><b>Por qué:</b> reach de prensa/creators + visibilidad en Steam, gratis. Day of the Devs tiene barra alta pero el upside es enorme.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">7.3</span>
+          <h3 class="card__title">Aplicar a eventos temáticos y "Days of" de Steam</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Bajo-Medio</span>
+          <span class="chip chip--imp">Impacto Medio</span>
+        </div>
+        <p>
+          Steam corre "Days of" y sales temáticas por género constantemente (co-op,
+          comedy, multiplayer). Se opta in desde Steamworks. Ejemplo con timing:
+          <b>Steam Scream Fest</b> (fines de oct 2026) &mdash; entrás si el caos tiene
+          algún ángulo "spooky". Aplicar a todos los que encajen es tráfico gratis.
+        </p>
+        <p class="why"><b>Por qué:</b> cada evento temático te pone en una página destacada de Steam por unos días = pico de wishlists sin costo.</p>
+      </div>
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">7.4</span>
+          <h3 class="card__title">Sumarse a colecciones de curadores</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-baja">Prioridad Baja</span>
+          <span class="chip chip--esf">Esfuerzo Bajo</span>
+          <span class="chip chip--imp">Impacto Bajo-Medio</span>
+        </div>
+        <p>
+          Contactar curators de Steam de co-op/indie para que agreguen el juego a
+          sus listas. Suma señales de descubrimiento.
+        </p>
+        <p class="why"><b>Por qué:</b> mejora la presencia en "recomendado por curadores" y agrega micro-tráfico constante.</p>
+      </div>
+    </section>
+
+    <!-- ============ 8 · ADS ============ -->
+    <section class="theme" id="ads">
+      <span class="theme__tag">8 · PAID ADS</span>
+      <h2>Solo cuando el orgánico ya funciona</h2>
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">8.1</span>
+          <h3 class="card__title">El ad como entretenimiento (no como promo)</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-media">Prioridad Media</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Variable</span>
+        </div>
+        <p>
+          La jugada de Andrew: el ad tiene que ser tan gracioso/compartible que la
+          gente lo reposte sola. Usar los <b>clips orgánicos que ya funcionaron como
+          ads</b> &mdash; TikTok le da hasta 25% menos de CPM y descuentos de delivery al
+          creative nativo/auténtico, mientras que el ad de marca pulido rinde peor.
+          Primero validás cuál clip pega gratis, después le ponés plata a ESE.
+        </p>
+        <p class="why"><b>Por qué:</b> poner plata en un creative que no validaste orgánicamente quema presupuesto. El orgánico te dice qué amplificar. <b>TikTok &gt; Meta</b> para este público: CPM ~$6–9 vs $8–18 de Meta, y mucho mejor engagement.</p>
+      </div>
+      <div class="card">
+        <div class="card__head">
+          <span class="card__num">8.2</span>
+          <h3 class="card__title">Empezar barato, medir costo por wishlist</h3>
+        </div>
+        <div class="chips">
+          <span class="chip chip--prio-baja">Prioridad Baja (por ahora)</span>
+          <span class="chip chip--esf">Esfuerzo Medio</span>
+          <span class="chip chip--imp">Impacto Variable</span>
+        </div>
+        <p>
+          Benchmark: una campaña bien apuntada da ~<b>$1 por wishlist</b>; $1–2 es
+          aceptable; <b>$3–4+ significa que el targeting o la cápsula están rotos</b>.
+          Los mejores usos del paid para nosotros: (1) A/B testear cápsula + tagline
+          rápido y barato antes de un festival; (2) un empujón para cruzar el umbral
+          de ~7k (Popular Upcoming) justo antes del launch; (3) escalar más adelante
+          con plata de publisher. Andrew: incluso testear con ads "might be cheaper
+          than anything else".
+        </p>
+        <p class="why"><b>Por qué:</b> el paid solo tiene sentido si el costo por wishlist es sano y el funnel (página) ya convierte. No metas plata hasta validar la cápsula/página, o tirás presupuesto más rápido.</p>
+      </div>
+    </section>
+
+    <!-- ============ 9 · MÉTRICAS ============ -->
+    <section class="theme" id="metricas">
+      <span class="theme__tag">9 · MÉTRICAS Y UMBRALES</span>
+      <h2>Los números que importan</h2>
+      <p>Referencias de la industria para calibrar expectativas (orden de magnitud, no ley):</p>
+      <table class="bench">
+        <tr><th>Métrica</th><th>Referencia típica</th></tr>
+        <tr><td>Entrar a "Popular Upcoming" (visibilidad pre-launch)</td><td>~7.000 wishlists <b>a buena velocidad</b> (la velocidad pesa más que el total)</td></tr>
+        <tr><td>Tier "breakout" / piso para publishers</td><td>10.000+</td></tr>
+        <tr><td>Conversión wishlist → venta (primera semana)</td><td>mediana ~<b>0,15×</b> (15%); ~0,10× si el precio &gt; US$10</td></tr>
+        <tr><td>Conversión en co-op (nuestro género)</td><td>outlier: <b>18–266×</b> la base &mdash; convierte mucho mejor que el promedio</td></tr>
+        <tr><td>Reseñas y conversión</td><td>los que más convierten promedian <b>91% Very Positive</b> a 7 días vs 67% de los que menos</td></tr>
+        <tr><td>Wishlists nuevas en Next Fest, según con cuántas entrás</td><td>0–999 → ~322 · 1k–10k → ~1.006 · 10k+ → ~5.215</td></tr>
+        <tr><td>Las wishlists "no envejecen" mucho</td><td>conversión ~estable por antigüedad → <b>empezar ya</b>, no esperar</td></tr>
+      </table>
+      <p class="why" style="border-left-color: var(--coral);">
+        <b>Conclusión:</b> 5.000 wishlists es un piso alcanzable y útil para abrir
+        conversaciones; el objetivo de Germán de 20.000 es el escenario donde el
+        algoritmo de Steam empieza a trabajar para vos en el launch. El plan debe
+        apuntar al rango alto y celebrar el piso.
+      </p>
+    </section>
+
+    <!-- ============ 10 · PLAN ============ -->
+    <section class="theme" id="plan">
+      <span class="theme__tag">10 · PLAN CONCRETO · 3 SEMANAS DE JULIO</span>
+      <h2>Lo que pidió Germán, bajado a calendario</h2>
+      <p>Un esqueleto editable para la reunión de distribución. Ajustar dueños y fechas.</p>
+
+      <div class="week">
+        <div class="week__h">SEMANA 1 (2ª de julio) · CIMIENTOS</div>
+        <div class="week__b">
+          <ul>
+            <li>Afilar la Steam page: cápsula nueva, primer GIF, 3 primeros screenshots variados, tags definitivos, short description.</li>
+            <li>Abrir Discord propio + cuentas de TikTok / Reels / Shorts con bio y link.</li>
+            <li>Registrarse en Keymailer / Lurkit / Woovit.</li>
+            <li>Cerrar el trailer (3 cortes → elegir) y subirlo a la página.</li>
+            <li>Armar banco de clips a partir del crudo ya grabado.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week">
+        <div class="week__h">SEMANA 2 (3ª de julio) · MOTOR ORGÁNICO</div>
+        <div class="week__b">
+          <ul>
+            <li>Postear video corto a diario (banco de clips). Medir cuáles pegan.</li>
+            <li>Primeros posteos de clips en Reddit (formato contenido, no ad).</li>
+            <li>Publicar en itch.io con CTA a wishlist.</li>
+            <li>Outreach manual a 20–30 micro/mid streamers de co-op.</li>
+            <li>Aplicar a showcases/eventos de Steam que encajen.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week">
+        <div class="week__h">SEMANA 3 (4ª de julio) · AMPLIFICAR Y MEDIR</div>
+        <div class="week__b">
+          <ul>
+            <li>Doblar la apuesta en el formato de clip que mejor funcionó.</li>
+            <li>Test chico de TikTok ads sobre el clip ganador (medir costo/wishlist).</li>
+            <li>A/B de cápsula/nombre vía ads (lo de Andrew).</li>
+            <li>Revisar números: wishlists/día, fuentes, conversión de la página.</li>
+            <li>Fijar el plan hacia el <b>Next Fest de octubre</b> (registro antes del ~31 ago).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>El horizonte detrás de las 3 semanas:</b> julio es para encender los
+        motores y empezar a acumular. Pero el verdadero objetivo es <b>llegar al
+        Next Fest de octubre con 3k–10k+ wishlists</b>. Hitos: demo estable y
+        registro del Fest antes del <b>~31 ago</b>; demo pública idealmente
+        <b>meses antes</b> del Fest para que streamers y prensa la cubran; en
+        sep–oct, sembrar streamers para que la cobertura caiga <b>24–48h antes</b>
+        del día 1. El research es contundente: el Fest cosecha lo que sembraste
+        antes.
+      </div>
+    </section>
+
+    <!-- ============ 11 · LO QUE YO HARÍA ============ -->
+    <section class="next" id="yo">
+      <div class="next__tag">MI RECOMENDACIÓN</div>
+      <h2>Si tuviera que priorizar, en este orden</h2>
+      <ol>
+        <li><b>Afilar la página primero.</b> Es lo más barato y de mayor impacto. Sin una página que convierta, todo el tráfico que traigas se desperdicia. Cápsula + primer GIF + tags + short description, esta semana.</li>
+        <li><b>Encender el motor de video corto y sostenerlo.</b> Es nuestra mayor ventaja (calidad + clips) y el canal #1 orgánico para co-op caótico. Volumen y consistencia, no perfección.</li>
+        <li><b>Preparar la distribución a streamers</b> (Keymailer/Lurkit + lista curada) para cuando haya build jugable en grupo. Un buen streamer = pico de wishlists en una noche.</li>
+        <li><b>Tratar el Next Fest como el gran objetivo</b>, y todo julio como la carrera para llegar con base de wishlists. Elegir la edición correcta según el launch.</li>
+        <li><b>Discord ya, ads después.</b> El Discord acumula fans desde el día uno; los ads recién cuando el orgánico te dijo qué clip amplificar.</li>
+        <li><b>Medir todo.</b> Wishlists por día y por fuente. Lo que no mejora los números, se corta. (Es literal lo que pidió Germán: foco.)</li>
+      </ol>
+    </section>
+
+    <!-- ============ FUENTES ============ -->
+    <section class="quotes">
+      <div class="quotes__tag">FUENTES</div>
+      <h2>De dónde sale esto</h2>
+      <p style="font-size:14.5px;color:var(--ink-soft);">
+        Mezcla de análisis de la industria (con datos) y conclusiones propias
+        aplicadas a Banana Airways. Las fuentes principales:
+      </p>
+      <ul style="font-size:13.5px;line-height:1.5;">
+        <li><b>GameDiscoverCo</b> (Simon Carless) — <a href="https://newsletter.gamediscover.co/p/how-dead-as-disco-surged-wishlists" target="_blank" rel="noopener">caso Dead as Disco</a>, <a href="https://newsletter.gamediscover.co/p/the-state-of-steam-wishlist-conversions" target="_blank" rel="noopener">conversión de wishlists 2024-25</a>, <a href="https://newsletter.gamediscover.co/p/what-can-we-learn-from-lethal-companys" target="_blank" rel="noopener">Lethal Company</a>.</li>
+        <li><b>presskit.gg</b> — <a href="https://presskit.gg/blog/steam-next-fest-2026-results" target="_blank" rel="noopener">resultados Next Fest 2026</a>, <a href="https://presskit.gg/field-guides/steam-page-optimization-guide" target="_blank" rel="noopener">optimización de página</a> y <a href="https://presskit.gg/field-guides/steam-capsule-art-guide" target="_blank" rel="noopener">cápsula</a>.</li>
+        <li><b>Steam Page Analyzer</b> — <a href="https://www.steampageanalyzer.com/blog/how-to-get-steam-wishlists" target="_blank" rel="noopener">cómo conseguir wishlists (rankeado por datos)</a>.</li>
+        <li><b>Steamworks (Valve)</b> — <a href="https://partner.steamgames.com/doc/marketing/visibility" target="_blank" rel="noopener">visibilidad</a>, <a href="https://partner.steamgames.com/doc/marketing/wishlist" target="_blank" rel="noopener">wishlists</a> y <a href="https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest" target="_blank" rel="noopener">Next Fest</a>.</li>
+        <li><b>Game Developer</b> — <a href="https://www.gamedeveloper.com/game-platforms/from-400-to-20-000-wishlists-with-1-video-how-tiktok-can-make-your-game-go-viral" target="_blank" rel="noopener">de 400 a 20.000 wishlists con 1 video de TikTok (The Matriarch)</a>.</li>
+        <li><b>Chris Zukowski</b> — <a href="https://howtomarketagame.com/festivals/" target="_blank" rel="noopener">calendario de festivales</a> y benchmarks de ads ($1/wishlist).</li>
+        <li><b>Yogscast</b> — <a href="https://www.yogscast.games/tinyteams" target="_blank" rel="noopener">Tiny Teams Festival</a>. <b>Cloutboost</b> — <a href="https://www.cloutboost.com/blog/keymailer-vs-lurkit-vs-terminals-vs-woovit-whats-the-best-key-distribution-service-for-game-publishers" target="_blank" rel="noopener">comparación de key-distribution</a>.</li>
+      </ul>
+      <p class="src">
+        Nota: algunos números puntuales (medianas por tier, deadlines de festivales)
+        vienen de análisis secundarios, no de Valve directo. Tratalos como estimaciones
+        bien fundadas. Las conclusiones estratégicas (ventaja del género, momentum
+        antes del Fest, TikTok como motor principal, siembra de streamers) son
+        consistentes en todas las fuentes.
+      </p>
+    </section>
+
+    <footer class="memo__foot">
+      <span>Plan de marketing · Banana Airways · by <a href="https://3dar.com" target="_blank" rel="noopener">3DAR</a></span>
+      <span>29 jun 2026</span>
+    </footer>
+
+  </article>
+</main>
+
+</body>
+</html>
