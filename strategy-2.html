@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estrategia 2.0 — BANANA AIRWAYS</title>
+  <meta name="description" content="El pivote post-Dear Passengers: de perseguir wishlists a shipear el juego. Diagnóstico honesto, plan de relanzamiento, y banco de ideas de producto." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%8C%3C/text%3E%3C/svg%3E" />
+  <style>
+    /* ---- Strategy 2.0 additions (scoped) ---- */
+    .lead {
+      font-size: 19px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 760px;
+    }
+    .lead strong { color: var(--ink); }
+
+    .callout {
+      border: 2px solid var(--ink);
+      border-left-width: 8px;
+      border-radius: 12px;
+      background: var(--cream);
+      padding: 22px 26px;
+      margin: 26px 0;
+    }
+    .callout.good { border-left-color: var(--green); }
+    .callout.bad { border-left-color: var(--coral); }
+    .callout.key { border-left-color: var(--banana); background: #fffbe6; }
+    .callout h3 { margin: 0 0 8px; font-size: 18px; font-weight: 800; }
+    .callout p { margin: 0 0 6px; font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout strong { color: var(--ink); }
+
+    /* Verdict table for the 5 options */
+    .verdicts { display: grid; gap: 12px; margin: 22px 0; }
+    .verdict {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--paper);
+    }
+    .verdict .tagcol {
+      padding: 16px 14px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      color: var(--cream);
+    }
+    .verdict.no .tagcol { background: var(--coral); }
+    .verdict.yes .tagcol { background: var(--green); }
+    .verdict.hold .tagcol { background: var(--slate); }
+    .verdict .body { padding: 14px 18px; }
+    .verdict .body h4 { margin: 0 0 5px; font-size: 15px; font-weight: 800; }
+    .verdict .body p { margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+
+    /* Asymmetry compare */
+    .versus {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .vs-card {
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      padding: 20px 22px;
+      background: var(--cream);
+    }
+    .vs-card.them { background: var(--paper); }
+    .vs-card h4 { margin: 0 0 4px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); }
+    .vs-card .big { font-size: 30px; font-weight: 900; letter-spacing: -0.01em; margin: 4px 0 10px; line-height: 1; }
+    .vs-card ul { margin: 0; padding-left: 18px; }
+    .vs-card li { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 4px; }
+    .vs-card .win { color: var(--green); font-weight: 700; }
+    .vs-card .lose { color: var(--coral); font-weight: 700; }
+
+    /* Gate checklist */
+    .gate {
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      background: var(--paper);
+      overflow: hidden;
+      margin: 22px 0;
+    }
+    .gate .gate-head {
+      background: var(--ink);
+      color: var(--banana);
+      padding: 14px 20px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+    .gate ul { list-style: none; margin: 0; padding: 8px 0; }
+    .gate li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 20px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .gate li:last-child { border-bottom: none; }
+    .gate li .box {
+      flex: none;
+      width: 20px; height: 20px;
+      border: 2px solid var(--ink);
+      border-radius: 5px;
+      margin-top: 1px;
+    }
+    .gate li strong { color: var(--ink); }
+    .gate li span { color: var(--ink-soft); }
+
+    /* Steps / timeline */
+    .steps { display: grid; gap: 14px; margin: 22px 0; counter-reset: step; }
+    .step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 20px;
+      background: var(--cream);
+    }
+    .step .num {
+      grid-row: 1 / span 2;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--banana);
+      border: 2px solid var(--ink);
+      display: grid; place-items: center;
+      font-weight: 900; font-size: 18px;
+    }
+    .step h4 { margin: 0 0 4px; font-size: 16px; font-weight: 800; }
+    .step .when { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); font-weight: 700; }
+    .step p { margin: 6px 0 0; font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+    /* Ideas grid */
+    .ideas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 22px 0; }
+    .idea {
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      background: var(--cream);
+      padding: 20px 22px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .idea:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--ink); }
+    .idea .lvl {
+      display: inline-block;
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800;
+      padding: 3px 9px; border-radius: 999px; margin-bottom: 10px;
+    }
+    .idea .lvl.now { background: var(--green); color: #05210f; }
+    .idea .lvl.mid { background: var(--banana); color: var(--ink); }
+    .idea .lvl.big { background: var(--purple); color: #1a1033; }
+    .idea h4 { margin: 0 0 8px; font-size: 17px; font-weight: 800; }
+    .idea p { margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+    .idea .why { margin-top: 10px; font-size: 13px; color: var(--ink); }
+    .idea .why b { color: var(--green); }
+
+    .section-intro { max-width: 780px; font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 8px; }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+    .pill {
+      font-size: 12px; padding: 5px 12px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--paper); color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    .divider { border: none; border-top: 1px dashed var(--line); margin: 48px 0; }
+
+    @media (max-width: 900px) {
+      .versus { grid-template-columns: 1fr; }
+      .ideas { grid-template-columns: 1fr; }
+      .verdict { grid-template-columns: 100px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">B</div>
+    <span>BANANA AIRWAYS — ESTRATEGIA 2.0</span>
+  </div>
+  <nav>
+    <a href="index.html">Portal</a>
+    <a href="steam-strategy.html">Strategy v1</a>
+    <a href="press-coverage.html">Prensa</a>
+    <a href="#plan">Plan</a>
+    <a href="#ideas">Ideas</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Estrategia<br><span class="accent">2.0</span></h1>
+      <p>El relanzamiento no funcionó. Un juego casi idéntico salió un día antes, con mejor arte y meses de ventaja. Nos acusaron de copiar y de usar IA. Esto es el pivote: de <em>anunciar</em> un juego a <em>shipear</em> uno.</p>
+    </div>
+    <div class="meta">
+      <div class="row"><span>Estado</span><strong>Post-relanzamiento · pivote</strong></div>
+      <div class="row"><span>Wishlists</span><strong>~1.000 en 1 semana</strong></div>
+      <div class="row"><span>Paid ads</span><strong>Cortado — US$0 más</strong></div>
+      <div class="row"><span>Netcode</span><strong>5 jugadores online ✓</strong></div>
+      <div class="row"><span>Próximo hito</span><strong>Demo pública + trailer</strong></div>
+      <div class="row"><span>Doc</span><strong>Jorge · v2 · jul 2026</strong></div>
+    </div>
+  </section>
+
+  <!-- REALITY CHECK -->
+  <section>
+    <div class="section-title">
+      <h2>Qué pasó, sin maquillaje</h2>
+      <span class="tag">Diagnóstico</span>
+    </div>
+    <p class="lead">
+      El 14 de julio FLEXUS (Kiev) anunció <strong>Dear Passengers</strong>: co-op físico, sos la tripulación
+      de la peor aerolínea del mundo. Es, esencialmente, nuestra premisa. Explotó — 500K wishlists en horas,
+      1M en días, 45M de views en X. Nosotros anunciamos días después, con ~1.000 wishlists y 11 followers.
+      La única mención de prensa que conseguimos nos usa como <em>contraejemplo</em>.
+    </p>
+    <p class="lead" style="margin-top:16px">
+      Lo duro, dicho de frente: los usuarios nos acusaron de copiar, de usar IA, de hacer un juego
+      <strong>más feo y menos pulido</strong>. En superficie tienen razón — ellos tienen la delantera por meses.
+      Pero hay que separar el golpe emocional del diagnóstico real, porque lo que falló tiene nombre y no es "el juego":
+    </p>
+
+    <div class="callout bad">
+      <h3>Su juego es mejor. Esa es la razón, y es la buena noticia.</h3>
+      <p>Sin rodeos: <strong>el juego de ellos es mejor que el nuestro.</strong> Mejor arte, más pulido, se siente mejor.
+      Dos millones de personas no eligen un juego por el timing de un trailer — lo eligen porque quieren jugar <em>ese</em> juego.
+      La calidad es lo que mueve wishlists, más que cualquier otra cosa. Todo lo demás (distribución, timing, quién salió primero)
+      es ruido alrededor de ese hecho.</p>
+      <p>Hicimos el mismo tipo de trailer que ellos — mismo montaje, mismas voces, mismo humor. No perdimos por no saber armar el
+      video. Perdimos porque, cuando la gente miró los dos, el de ellos se veía como el mejor juego.</p>
+      <p>Y por eso esto es una buena noticia, no una mala: la calidad es <strong>lo único que sí controlamos.</strong> No podemos
+      volver el tiempo atrás ni ganarles la ola de julio. Pero sí podemos hacer que la próxima vez que alguien compare los dos,
+      la comparación no sea obvia. Ese es todo el trabajo de acá en adelante — y tenemos el build andando para hacerlo.</p>
+    </div>
+  </section>
+
+  <!-- THE REFRAME -->
+  <section>
+    <div class="section-title">
+      <h2>La asimetría que nadie está mirando</h2>
+      <span class="tag">El giro</span>
+    </div>
+    <p class="section-intro">
+      Que quede claro para no engañarnos: <strong>ellos son superiores en calidad, y si no subimos la nuestra, desaparecemos.</strong>
+      Estar disponibles no nos salva por sí solo — un juego peor, disponible, solo hace pública la brecha. Pero tenemos un punto
+      de apoyo que ellos no tienen: su juego es un trailer con fecha TBA, y nosotros tenemos un build multiplayer de 5 jugadores
+      que ya corre. Ese build es la herramienta para cerrar la brecha, no una excusa para ignorarla.
+    </p>
+
+    <div class="versus">
+      <div class="vs-card them">
+        <h4>Dear Passengers</h4>
+        <div class="big">2.000.000</div>
+        <ul>
+          <li>Wishlists. Enorme.</li>
+          <li class="lose">Producto: fecha TBA. Solo existe el trailer.</li>
+          <li>Demo jugable recién en Gamescom (agosto).</li>
+          <li>2M de personas esperando algo que no pueden tocar.</li>
+        </ul>
+      </div>
+      <div class="vs-card">
+        <h4>Banana Airways</h4>
+        <div class="big">Jugable</div>
+        <ul>
+          <li class="win">Build de 5 jugadores online, corriendo en Unity, ya en Steam.</li>
+          <li class="win">Netcode con físicas — lo más caro y difícil — ya resuelto.</li>
+          <li>Tomas del trailer = gameplay real capturado de ese build.</li>
+          <li>Historial de git con timestamps desde el 24 de abril.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout good">
+      <h3>Un solo movimiento apaga los dos incendios</h3>
+      <p><strong>La acusación de IA es falsa y es refutable.</strong> Las escenas del trailer son gameplay real de un
+      build que funciona. No se refuta con un comunicado — se refuta con un botón de jugar. Nadie sostiene "es IA"
+      frente a una demo descargable que reproduce exactamente esas escenas.</p>
+      <p><strong>La acusación de copia también.</strong> El día que Banana Airways sea jugable mientras Dear Passengers
+      sigue siendo un trailer, dejamos de ser "los que copiaron" y pasamos a ser "los que sí lo hicieron". La misma demo
+      resuelve las dos cosas. Un solo movimiento.</p>
+    </div>
+  </section>
+
+  <!-- OPTIONS CONSIDERED -->
+  <section>
+    <div class="section-title">
+      <h2>Las cinco salidas — y por qué cuatro son peores</h2>
+      <span class="tag">Decisión</span>
+    </div>
+
+    <div class="verdicts">
+      <div class="verdict no">
+        <div class="tagcol">Matar</div>
+        <div class="body">
+          <h4>Matar el proyecto</h4>
+          <p>Prematuro. El género premia al segundo: Lethal Company → Content Warning → R.E.P.O. salieron uno atrás de otro y vendieron millones. 2M de wishlists prueban demanda gigante que un solo juego no puede servir, no que perdimos.</p>
+        </div>
+      </div>
+      <div class="verdict no">
+        <div class="tagcol">Nuevo juego</div>
+        <div class="body">
+          <h4>Arrancar otro juego</h4>
+          <p>La peor de las cinco. Tirás meses de producción y un build multiplayer andando para empezar de cero el mismo problema de descubrimiento con menos plata. Así se mueren los estudios.</p>
+        </div>
+      </div>
+      <div class="verdict no">
+        <div class="tagcol">Doblar paid</div>
+        <div class="body">
+          <h4>Más inversión en ads</h4>
+          <p>US$800 → 1.000 wishlists fríos. La plata comprada no compone: no genera prensa, ni streamers, ni comunidad, ni un thread de Reddit. Comprás el número y nada de lo que el número debería significar. <strong>Cortado.</strong></p>
+        </div>
+      </div>
+      <div class="verdict hold">
+        <div class="tagcol">Renombrar</div>
+        <div class="body">
+          <h4>Cambiar el nombre</h4>
+          <p>No, salvo choque legal de marca. Comprás escapar de una línea en un newsletter; pagás tirar la página de Steam, su índice en Google, la URL y cualquier wishlist de julio (Steam no los migra). "Banana Airways" es bueno. El nombre no fue el problema.</p>
+        </div>
+      </div>
+      <div class="verdict yes">
+        <div class="tagcol">Relanzar ✓</div>
+        <div class="body">
+          <h4>Shipear la demo + trailer nuevo</h4>
+          <p>La jugada. Convertir el build interno en demo pública estable, y sacar un trailer de gameplay real que cierra con "jugá la demo ahora". Entra al mercado en el pico de calor de la categoría, refuta IA y copia, y da a los publishers algo real que ver.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- THE PLAN -->
+  <section id="plan">
+    <div class="section-title">
+      <h2>El plan de relanzamiento</h2>
+      <span class="tag">Ejecución</span>
+    </div>
+    <p class="section-intro">
+      El error irreversible que tenemos disponible es soltar una demo pública rota — un review score hundido en Steam
+      no se recupera nunca. Por eso el build todavía privado no es un atraso: estamos parados justo antes de la única
+      puerta sin vuelta atrás. El trabajo de los próximos ~2 meses no es "seguir desarrollando", es cruzar un umbral concreto.
+    </p>
+
+    <div class="gate">
+      <div class="gate-head">🚪 El gate — "un desconocido lo baja y no se rompe"</div>
+      <ul>
+        <li><span class="box"></span><span><strong>Entrar en 60 segundos.</strong> El camino de emparejarse con un amigo, a prueba de tontos: crear sala → compartir código → entrar. Sin fricción.</span></li>
+        <li><span class="box"></span><span><strong>Primeros 5 minutos sin bug que rompa la partida.</strong> No hace falta que todo el juego sea perfecto — hace falta que la primera sesión no se caiga.</span></li>
+        <li><span class="box"></span><span><strong>Resiliencia a desconexión.</strong> Si un jugador se cae, la sesión sobrevive. En co-op esto pasa siempre.</span></li>
+        <li><span class="box"></span><span><strong>Un loop divertido y clipeable.</strong> Al menos un desastre que un streamer quiera cortar y subir. La demo no necesita convertir — necesita existir y no aburrir en los primeros 5 minutos.</span></li>
+      </ul>
+    </div>
+
+    <p class="section-intro" style="margin-top:20px">
+      El día que el build cruza ese gate, y ni un día antes, sale la demo pública y sale el trailer que apunta a ella.
+      El trailer no puede salir antes que la demo: toda su fuerza es mandar a un botón que funcione. Un trailer que
+      promete una demo que todavía no está es la trampa de julio otra vez.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <div class="when">Ahora → ~6 semanas</div>
+          <h4>Cerrar la brecha de calidad</h4>
+          <p>Este es el corazón del plan, no un paso de limpieza. La razón por la que perdimos es que su juego es mejor; el trabajo es que el nuestro deje de serlo menos. Subir el nivel del arte, del feel, del pulido — donde más se nota primero. El "gate" de abajo es el piso (que no se rompa), no el techo (que valga la pena jugarlo). Apuntamos al techo. En paralelo: elegir el eje de diferenciación (ver Ideas) y meterlo donde se vea.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <div class="when">Cuando cruza el gate</div>
+          <h4>Publicar la demo</h4>
+          <p>Recién acá es "pública". Descargable por cualquiera. Este es el activo que refuta IA y copia de una sola vez, y el que un publisher puede realmente jugar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <div class="when">El mismo día que la demo</div>
+          <h4>Trailer nuevo — con fecha, no anuncio</h4>
+          <p>Gameplay real (ya lo tenemos), montado para ser clipeable, cerrando con <em>"Demo disponible ahora · Early Access [fecha]"</em>. No otro trailer de "este juego existe" — eso ya falló. Un trailer que le da al espectador algo que hacer hoy, al streamer un motivo para agendarlo, a la prensa una nota para escribir.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div>
+          <div class="when">Recién con demo + trailer en mano</div>
+          <h4>Disparar el playbook de outreach</h4>
+          <p>Los 150 contactos de <a href="outreach.html">outreach.html</a> se activan <strong>ahora</strong>, no antes. Cada contacto tiene un solo primer impacto; mandarlo con 11 followers y una demo privada quema la lista. Se guarda para cuando hay algo jugable detrás del link.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <div>
+          <div class="when">Esta semana, en paralelo</div>
+          <h4>Abrir conversación con publishers</h4>
+          <p>La ventana está abierta ahora: todos vieron 2M de wishlists en 3 días y buscan la categoría. Somos el único otro equipo con un build jugable. No llegamos con un deck — llegamos con un juego andando y un git con timestamps desde abril: "no perseguimos la tendencia, estábamos primero y nos ganaron de mano en marketing". El publisher va <em>en paralelo</em>, no en lugar del relanzamiento.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout key">
+      <h3>Sobre Next Fest</h3>
+      <p>La v1 de la estrategia guardaba la carta de Next Fest para octubre. Con cero conversaciones de publisher y ~3–4 meses
+      de runway, esperar ya no cierra. La mediana de un demo en Next Fest son ~806 wishlists — un buen canje por entrar al
+      mercado en el pico de calor de la categoría. Con Early Access vivo, el deal de publisher además sale mejor y más rápido.
+      <strong>Shipear ahora le gana a esperar a un evento cuando la ola ya pasó.</strong></p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- IDEAS -->
+  <section id="ideas">
+    <div class="section-title">
+      <h2>Banco de ideas — cómo no ser "lo mismo pero peor"</h2>
+      <span class="tag">Producto</span>
+    </div>
+    <p class="section-intro">
+      No podemos ganar out-puliéndolos: tienen mejor arte y meses de ventaja. Se gana <strong>out-raro</strong>.
+      Ellos ocuparon el carril del absurdo aterrizado — <em>"tu avión se cae a pedazos, tu carga es ilegal"</em>.
+      Ese carril ya está tomado. El nuestro, el que ya insinúa nuestra propia lista de features, es el
+      <strong>surrealismo comedia-horror</strong>: el pulpo alienígena que se prende de una cara, la bomba en la
+      bodega, el baño maldito. No lo tenemos que inventar — lo tenemos que subir a la primera línea en vez de
+      enterrarlo en el sexto bullet.
+    </p>
+    <div class="pill-row">
+      <span class="pill">🟢 Ahora = barato, cabe antes de la demo</span>
+      <span class="pill">🟡 Medio = una feature de peso</span>
+      <span class="pill">🟣 Grande = identidad / Early Access</span>
+    </div>
+
+    <div class="ideas">
+
+      <div class="idea">
+        <span class="lvl now">🟢 Ahora</span>
+        <h4>Elegir el gancho y ponerlo primero</h4>
+        <p>Hoy las dos páginas de Steam dicen casi la misma frase. Reescribir la primera línea alrededor de lo que ellos NO tienen: el pulpo, lo sobrenatural, lo maldito. La descripción es lo que convierte — el 68–88% de los wishlists los ponen personas que nunca abren la demo.</p>
+        <p class="why"><b>Por qué:</b> es gratis, es un día de trabajo, y es la diferencia entre "clon" y "primo raro".</p>
+      </div>
+
+      <div class="idea">
+        <span class="lvl now">🟢 Ahora</span>
+        <h4>Un desastre firma, diseñado para clip</h4>
+        <p>Necesitamos <em>un</em> momento inconfundible que solo pase en Banana Airways — no "otro caos de cabina" que también podrían mostrar ellos. El pulpo alienígena tomando el control de un jugador y obligándolo a sabotear a los demás es exactamente eso: caos físico + traición + criatura, en una sola toma que nadie más tiene.</p>
+        <p class="why"><b>Por qué:</b> el trailer necesita 3 segundos que nadie más pueda mostrar. Este es el candidato.</p>
+      </div>
+
+      <div class="idea">
+        <span class="lvl mid">🟡 Medio</span>
+        <h4>Contaminación / posesión entre jugadores</h4>
+        <p>Convertir el pulpo (y lo que venga: hongo, parásito, "algo en el café") en un vector que salta de jugador a jugador. El infectado juega distinto — controles invertidos, ve cosas que no están, o tiene un objetivo secreto. Traición emergente sin ser un juego de traición.</p>
+        <p class="why"><b>Por qué:</b> es el tipo de mecánica que genera historias que la gente cuenta — y las historias se comparten solas. Dear Passengers es puro co-op cooperativo; esto es un eje que ellos no tienen.</p>
+      </div>
+
+      <div class="idea">
+        <span class="lvl mid">🟡 Medio</span>
+        <h4>La aerolínea como meta entre vuelos</h4>
+        <p>Dear Passengers es por-vuelo. Nosotros podemos tener un loop roguelite: cada vuelo sobrevivido mejora (o arruina) tu aerolínea de mierda — comprás una tostadora que hace de radar, un asiento eyectable defectuoso, un pasajero VIP que es un problema. Progresión ligera entre partidas.</p>
+        <p class="why"><b>Por qué:</b> da razón para volver a jugar y una identidad de "administrás la peor aerolínea", no solo "sobrevivís un vuelo". Buen gancho de Early Access.</p>
+      </div>
+
+      <div class="idea">
+        <span class="lvl mid">🟡 Medio</span>
+        <h4>Pasajeros como caos, no decorado</h4>
+        <p>Los pasajeros piden café hoy. Que hagan más: uno es un contrabandista con la bomba, otro un animal suelto, otro se transforma a mitad de vuelo, otro paga el triple pero trae la maldición. Elegir a quién embarcás antes de despegar = riesgo/recompensa, y variedad por partida.</p>
+        <p class="why"><b>Por qué:</b> reusa el sistema de pasajeros que ya existe y lo convierte en generador de situaciones. Barato en concepto, alto en variedad.</p>
+      </div>
+
+      <div class="idea">
+        <span class="lvl big">🟣 Grande</span>
+        <h4>Comprometerse con el tono surreal-horror</h4>
+        <p>No "avión low-cost gracioso" sino "aerolínea que claramente no debería existir en este plano de la realidad". Iluminación, sonido y criaturas que empujan a lo perturbador-cómico. El arte es más feo que el de ellos — convertí eso en estética deliberada en vez de esconderlo. Feo-a-propósito &gt; feo-por-accidente.</p>
+        <p class="why"><b>Por qué:</b> es la única forma de que "más feo" deje de ser una crítica y pase a ser la marca. Dear Passengers es tierno; nosotros podemos ser el que da un poco de miedo.</p>
+      </div>
+
+      <div class="idea">
+        <span class="lvl big">🟣 Grande</span>
+        <h4>Momentos de 5 jugadores que el de 4 no puede</h4>
+        <p>Ellos son hasta 4. Nosotros corremos 5. Diseñar al menos una crisis que necesite cinco pares de manos — algo que con cuatro es imposible de cubrir. Es una diferencia numérica concreta, decible en una línea de tienda: "el único co-op de aerolínea para cinco".</p>
+        <p class="why"><b>Por qué:</b> diferenciador objetivo, no de gusto. Fácil de comunicar y difícil de discutir.</p>
+      </div>
+
+      <div class="idea">
+        <span class="lvl now">🟢 Ahora</span>
+        <h4>Comparables honestos en la página</h4>
+        <p>Poner en la descripción: <em>"Para fans de Lethal Company, Content Warning, R.E.P.O., PEAK"</em>. Ubica el juego en un vecindario que la gente ya ama y busca, y le dice al algoritmo de Steam a quién mostrárselo. No mencionar a Dear Passengers — no le regalamos el SEO.</p>
+        <p class="why"><b>Por qué:</b> gratis, y las tags/comparables manejan ~30% del descubrimiento en Steam.</p>
+      </div>
+
+    </div>
+
+    <div class="callout">
+      <h3>La regla para elegir de esta lista</h3>
+      <p>No hacer todo. Elegir <strong>un</strong> eje 🟣 de identidad (el surreal-horror es mi voto) + <strong>un</strong> momento 🟢
+      firma para el trailer, y meter eso antes de la demo. El resto son munición para Early Access. Diluir el esfuerzo en ocho
+      ideas a medias es cómo se pierde el envión que da tener el build ya andando.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>BANANA AIRWAYS · Estrategia 2.0 · Interno, no público · Complementa <a href="steam-strategy.html">steam-strategy</a></span>
+    <span>De perseguir wishlists a shipear el juego.</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
