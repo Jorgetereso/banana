@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lavada de cara — BANANA AIRWAYS</title>
+  <meta name="description" content="El plan de 3 semanas para dar vuelta Banana Airways y llegar a Gamescom con algo que un publisher quiera financiar. Decisiones de la reunión Jorge · Fernando · Federico." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%BC%3C/text%3E%3C/svg%3E" />
+  <style>
+    /* ===== Lavada de cara — scoped ===== */
+    .ldc-lead { font-size: 19px; line-height: 1.6; color: var(--ink-soft); max-width: 780px; }
+    .ldc-lead strong { color: var(--ink); }
+
+    /* Countdown */
+    .countdown {
+      display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+      background: var(--ink); color: var(--cream);
+      border-radius: 14px; padding: 20px 24px; margin: 0;
+      border: 2px solid var(--ink);
+    }
+    .countdown .num {
+      font-size: 52px; font-weight: 900; line-height: 1; color: var(--banana);
+      font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+    }
+    .countdown .lbl { font-size: 13px; line-height: 1.4; }
+    .countdown .lbl b { color: var(--cream); display: block; font-size: 15px; letter-spacing: 0.02em; }
+    .countdown .lbl span { color: #9fb0c4; }
+
+    /* Callouts */
+    .callout {
+      border: 2px solid var(--ink); border-left-width: 8px; border-radius: 12px;
+      background: var(--cream); padding: 22px 26px; margin: 26px 0;
+    }
+    .callout.thesis { border-left-color: var(--green); background: #f2fbf5; }
+    .callout.warn { border-left-color: var(--coral); }
+    .callout.key { border-left-color: var(--banana); background: #fffbe6; }
+    .callout h3 { margin: 0 0 8px; font-size: 18px; font-weight: 800; }
+    .callout p { margin: 0 0 8px; font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout strong { color: var(--ink); }
+
+    /* Pull quote */
+    .quote {
+      border-left: 4px solid var(--banana); padding: 4px 0 4px 18px; margin: 18px 0;
+      font-size: 17px; line-height: 1.5; font-style: italic; color: var(--ink);
+      max-width: 720px;
+    }
+    .quote cite { display: block; font-style: normal; font-size: 12px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--slate); margin-top: 6px; }
+
+    /* Diagnosis list */
+    .diag { display: grid; gap: 10px; margin: 20px 0; }
+    .diag-item {
+      display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start;
+      padding: 14px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper);
+    }
+    .diag-item .x { color: var(--coral); font-weight: 900; font-size: 18px; line-height: 1.3; }
+    .diag-item p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
+    .diag-item p b { color: var(--ink); }
+
+    /* Workstream cards */
+    .streams { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 22px 0; }
+    .stream {
+      border: 2px solid var(--ink); border-radius: 14px; background: var(--cream);
+      padding: 20px 22px; display: flex; flex-direction: column;
+    }
+    .stream .top { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .stream .ico { font-size: 22px; }
+    .stream h4 { margin: 0; font-size: 17px; font-weight: 800; }
+    .stream .sub { font-size: 12px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin: 2px 0 12px; }
+    .stream ul { margin: 0; padding-left: 18px; }
+    .stream li { font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); margin-bottom: 7px; }
+    .stream li b { color: var(--ink); }
+
+    /* status pills */
+    .pill { display: inline-block; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+      font-weight: 800; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+    .pill.decidido { background: var(--green); color: #05210f; }
+    .pill.explorar { background: var(--banana); color: var(--ink); }
+    .pill.abierto { background: var(--slate); color: #fff; }
+    .pill.prioridad { background: var(--coral); color: #2a0808; }
+
+    /* Creative / tone band */
+    .tone {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0;
+    }
+    .tone .half { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; background: var(--paper); }
+    .tone .half h4 { margin: 0 0 8px; font-size: 15px; font-weight: 800; }
+    .tone .half p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-soft); }
+    .tone .half.clean { background: #f7fbff; border-color: #cfe2f5; }
+    .tone .half.horror { background: #1a1020; border-color: #3a2440; color: #e9dcef; }
+    .tone .half.horror h4 { color: #fff; }
+    .tone .half.horror p { color: #c4b0cf; }
+
+    /* character strip */
+    .cast { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0; }
+    .cast figure { margin: 0; width: 92px; text-align: center; }
+    .cast img { width: 92px; height: 92px; object-fit: cover; border-radius: 10px; border: 2px solid var(--ink); background: var(--cream); }
+    .cast figcaption { font-size: 10px; color: var(--slate); margin-top: 4px; line-height: 1.2; }
+
+    /* aesthetic gallery placeholder */
+    .aesthetic { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
+    .look {
+      aspect-ratio: 16/10; border-radius: 10px; border: 2px dashed var(--line);
+      background: var(--cream); display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 10px; position: relative; overflow: hidden;
+    }
+    .look .n { position: absolute; top: 8px; left: 10px; font-size: 11px; font-weight: 800; color: var(--slate); }
+    .look .name { font-size: 12px; font-weight: 800; color: var(--ink); line-height: 1.2; }
+    .look .desc { font-size: 10px; color: var(--slate); line-height: 1.25; margin-top: 2px; }
+
+    /* two-col info (diff / pitch) */
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 22px 0; }
+    .col { border: 2px solid var(--ink); border-radius: 12px; padding: 20px 22px; background: var(--cream); }
+    .col.dark { background: var(--paper); }
+    .col h4 { margin: 0 0 10px; font-size: 16px; font-weight: 800; }
+    .col ul { margin: 0; padding-left: 18px; }
+    .col li { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 8px; }
+    .col li b { color: var(--ink); }
+
+    /* timeline steps */
+    .steps { display: grid; gap: 12px; margin: 22px 0; }
+    .step { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: start;
+      border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; background: var(--cream); }
+    .step .when { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--coral); font-weight: 800; }
+    .step h4 { margin: 0 0 4px; font-size: 15px; font-weight: 800; }
+    .step p { margin: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
+
+    /* open questions */
+    .open { display: grid; gap: 10px; margin: 20px 0; }
+    .oq { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center;
+      border: 1px solid var(--line); border-left: 4px solid var(--slate); border-radius: 8px;
+      padding: 12px 16px; background: var(--paper); }
+    .oq p { margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.45; }
+    .oq p b { color: var(--ink); }
+
+    .section-intro { max-width: 800px; font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 6px; }
+    .divider { border: none; border-top: 1px dashed var(--line); margin: 46px 0; }
+    .owner { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 6px; background: var(--ink); color: var(--banana); white-space: nowrap; }
+
+    @media (max-width: 900px) {
+      .streams, .tone, .cols { grid-template-columns: 1fr; }
+      .aesthetic { grid-template-columns: repeat(2, 1fr); }
+      .step { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">B</div>
+    <span>BANANA AIRWAYS — LAVADA DE CARA</span>
+  </div>
+  <nav>
+    <a href="index.html">Portal</a>
+    <a href="strategy-2.html">Estrategia 2.0</a>
+    <a href="#diagnostico">Diagnóstico</a>
+    <a href="#frentes">Frentes</a>
+    <a href="#estetica">Estética</a>
+    <a href="#gamescom">Gamescom</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Lavada<br><span class="accent">de cara.</span></h1>
+      <p>Tres semanas para dar vuelta el juego y llegar a Gamescom con algo que un publisher quiera financiar. La última bala — y esta vez apuntada bien.</p>
+    </div>
+    <div class="meta">
+      <div class="row"><span>Objetivo</span><strong>Publisher en Gamescom</strong></div>
+      <div class="row"><span>Deadline</span><strong>Gamescom · 26–30 AGO · Colonia</strong></div>
+      <div class="row"><span>Dirección</span><strong>Jorge · Fernando · Federico</strong></div>
+      <div class="row"><span>Método</span><strong>Takeover creativo temporal</strong></div>
+      <div class="row"><span>Reunión base</span><strong>3 AGO 2026 · 1h11</strong></div>
+      <div class="row"><span>Estado</span><strong id="status">Priorizando cambios</strong></div>
+    </div>
+  </section>
+
+  <div class="countdown">
+    <div class="num" id="cd-num">—</div>
+    <div class="lbl">
+      <b>días para Gamescom</b>
+      <span id="cd-sub">Opening Night Live 25 AGO · feria 26–30 AGO · Koelnmesse, Colonia</span>
+    </div>
+  </div>
+
+  <!-- LA APUESTA -->
+  <section>
+    <div class="section-title"><h2>La apuesta</h2><span class="tag">Por qué vale la pena</span></div>
+    <p class="ldc-lead">
+      Le pusimos plata y meses a esto y la recepción fue floja. La reacción no es abandonarlo — es
+      <strong>gastar la última bala mejorándolo mucho en 20 días</strong> y llevarlo a Gamescom a buscar
+      un publisher que lo termine y lo publique. El mercado ya está validado: Dear Passengers hizo
+      2 millones de wishlists en días. Nosotros no necesitamos toda esa demanda; con una parte alcanza.
+    </p>
+
+    <div class="callout thesis">
+      <h3>La ventaja que ellos no tienen</h3>
+      <p>Dear Passengers tiene 2 millones de wishlists <strong>y ningún juego jugable</strong> — fecha TBA, solo un trailer.
+      Nosotros tenemos un juego que corre y se puede jugar en vivo. Ese es todo el pitch: sentar al publisher a jugarlo.</p>
+      <p><strong>Lo que pedimos es plata para terminarlo y publicarlo</strong>, no que crean en una promesa.</p>
+    </div>
+
+    <div class="quote">
+      "Nuestro juego es el juego leproso, la copia mal hecha… pero si nos agarra un buen publisher le podemos dar una buena lavada de cara."
+      <cite>Reunión · 3 ago 2026</cite>
+    </div>
+
+    <p class="ldc-lead">
+      Precedente que nos banca: <strong>Stumble Guys salió un año después de Fall Guys y generó más plata que Fall Guys.</strong>
+      Llegar segundos a un mercado abierto no es una condena — es una oportunidad, si el producto está a la altura.
+    </p>
+  </section>
+
+  <!-- DIAGNOSTICO -->
+  <section id="diagnostico">
+    <div class="section-title"><h2>El diagnóstico honesto</h2><span class="tag">Qué está mal hoy</span></div>
+    <p class="section-intro">Antes de decidir qué mejorar, lo que la reunión puso sobre la mesa sin anestesia:</p>
+
+    <div class="quote">
+      "¿Qué hago si entro al juego y me quedo quieto? Gano. No pasa nada."
+      <cite>El problema central de diseño</cite>
+    </div>
+
+    <div class="diag">
+      <div class="diag-item"><span class="x">✕</span><p><b>No hay objetivo ni game over.</b> No hay diferencia real entre jugar solo o acompañado, ni razón para hacer nada. Regla nueva: <i>si tardás más de 20 segundos en explicar de qué se trata, hay un problema — y hoy lo hay.</i></p></div>
+      <div class="diag-item"><span class="x">✕</span><p><b>La muerte no pesa.</b> Morís y reapareces a los 2 segundos. Sin consecuencia, no hay tensión.</p></div>
+      <div class="diag-item"><span class="x">✕</span><p><b>Personajes sin carisma ni expresión.</b> Casi siempre con la cara neutra por defecto del rig — parecen "cero inteligentes", el jugador los ignora. Todos iguales, "culones", cuello rígido.</p></div>
+      <div class="diag-item"><span class="x">✕</span><p><b>Estética incoherente.</b> Piezas low-poly / Counter-Strike sueltas que no pegan con el resto. La cabina "está muy fulera, estética off de guerra". El "café" no tiene consecuencia.</p></div>
+      <div class="diag-item"><span class="x">✕</span><p><b>Somos "copia peor" y el nombre choca.</b> Hoy leemos como Dear Passengers pero peor; encima hay un "Banana Airways" en Roblox de hace 2 años y ~4 juegos de aviones parecidos. Desmarcarse es prioridad.</p></div>
+    </div>
+  </section>
+
+  <!-- DECISIONES -->
+  <section>
+    <div class="section-title"><h2>Cómo trabajamos esto</h2><span class="tag">Método</span></div>
+    <div class="cols">
+      <div class="col">
+        <h4>Dirección creativa temporal</h4>
+        <ul>
+          <li>El trío <b>Jorge · Fernando · Federico</b> toma la dirección creativa por este período para poder implementar ideas nuevas — lo acordado es "córrete, dirigimos nosotros por un tiempo".</li>
+          <li>Definimos entre nosotros una <b>lista priorizada de cambios</b> y se la bajamos al equipo de desarrollo para ejecutar y probar algo distinto.</li>
+        </ul>
+      </div>
+      <div class="col dark">
+        <h4>Las ideas valen aunque no se programen</h4>
+        <ul>
+          <li>Mucho de esto se <b>vende con trailer, póster e imágenes</b> ante el publisher, sin necesidad de que esté en el gameplay. <i>"Las ideas tienen su peso, no solo ser implementadas."</i></li>
+          <li>Nos protege del <b>"embudo"</b>: no casarnos con 20 mecánicas y morir intentando codearlas todas en 3 semanas. Contamos la visión; implementamos lo que mueve la aguja.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- FRENTES -->
+  <section id="frentes">
+    <div class="section-title"><h2>Frentes de mejora</h2><span class="tag">De la reunión al juego</span></div>
+    <p class="section-intro">
+      Todo lo que salió, ordenado por sistema. <span class="pill decidido">Decidido</span> es rumbo tomado ·
+      <span class="pill explorar">Explorar</span> es idea fuerte a validar · <span class="pill prioridad">Prioridad</span> es lo que primero mueve la aguja.
+    </p>
+
+    <div class="streams">
+
+      <div class="stream">
+        <div class="top"><span class="ico">🎯</span><h4>Objetivo &amp; game loop</h4><span class="pill prioridad">Prioridad</span></div>
+        <div class="sub">Lo que hoy no existe</div>
+        <ul>
+          <li><b>Indicadores de éxito/fracaso visibles:</b> contador de plata + límite de tiempo. Fórmula: <b>mezcla de tiempo y plata</b> — llegar a destino en el tiempo estipulado juntando un mínimo de guita.</li>
+          <li><b>Récords / leaderboard</b> como consecuencia de esa fórmula.</li>
+          <li><b>Despegue colaborativo:</b> uno pilotea, el resto se sienta y se abrocha para poder despegar. Al despegar cambia el contador de plata (feedback claro).</li>
+          <li><b>Rondas/oleadas con dificultad creciente</b> al estilo REPO. "Buscá un formato que ya funcione y aplicalo", no inventes uno nuevo.</li>
+        </ul>
+      </div>
+
+      <div class="stream">
+        <div class="top"><span class="ico">💀</span><h4>Muerte &amp; pasajeros</h4><span class="pill explorar">Explorar</span></div>
+        <div class="sub">Darle peso y caos</div>
+        <ul>
+          <li><b>Que la muerte pese.</b> Al morir te quedás <b>como pasajero</b> — espectador activo: molestás, vomitás, tomás café, saboteás al resto, podés cambiar de pasajero. Mantiene la sesión viva.</li>
+          <li><b>Variedad y personalización</b> real: cuerpos, ropa, edades. Hoy son todos iguales.</li>
+          <li><b>Eventos de caos:</b> vómitos (piso resbaloso), pasajeros que se drogan y flotan/alucinan, bebés que se pierden, peleas, el "loco de la bomba" (con tono gracioso).</li>
+          <li><b>Mecánica tipo Gremlins:</b> son pollos modificados genéticamente — si no los alimentás cada ~15s se vuelven agresivos, se comen el asiento y el avión. Alimentarlos o sedarlos los calma.</li>
+        </ul>
+      </div>
+
+      <div class="stream">
+        <div class="top"><span class="ico">💉</span><h4>Kits &amp; consecuencias</h4><span class="pill explorar">Explorar</span></div>
+        <div class="sub">Que las acciones importen</div>
+        <ul>
+          <li><b>Kits de emergencia con líquido "fluo":</b> se lo inyectás a los que vomitan o enloquecen para estabilizarlos.</li>
+          <li><b>El propio jugador</b> es de la misma raza: mantené su estabilidad (comer / inyectarse) o se descontrola.</li>
+          <li>Reemplazar/complementar el "dar café" (hoy sin consecuencia) por comida o inyecciones con efecto real.</li>
+        </ul>
+      </div>
+
+      <div class="stream">
+        <div class="top"><span class="ico">💥</span><h4>Física &amp; sensación</h4><span class="pill explorar">Explorar</span></div>
+        <div class="sub">Que se sienta el desastre</div>
+        <ul>
+          <li><b>Rotura orgánica</b> del avión y la turbina — menos "cuadradita/trucha".</li>
+          <li>Fuselaje roto: <b>succión, viento, papeles volando, arrastre</b>, pasajeros agarrándose, un bebé que casi vuela. Hoy "no se siente que se rompió el avión".</li>
+          <li>Corregir <b>escala de props</b> (objetos gigantes que no sirven).</li>
+        </ul>
+      </div>
+
+      <div class="stream">
+        <div class="top"><span class="ico">🧳</span><h4>Bodega</h4><span class="pill explorar">Explorar</span></div>
+        <div class="sub">Hoy desaprovechada</div>
+        <ul>
+          <li>Eventos propios: un ataúd con un <b>Drácula</b> que despierta — hay que encontrar el hacha y matarlo.</li>
+          <li><b>Bananas rellenas de cocaína</b> (si las rompés te drogás), o bananas para alimentar a las criaturas y que no se broten.</li>
+          <li>Carga peligrosa / perros en jaulas que no te muerdan.</li>
+        </ul>
+      </div>
+
+      <div class="stream">
+        <div class="top"><span class="ico">🗺️</span><h4>Mapa · UI · luz · sonido</h4><span class="pill explorar">Explorar</span></div>
+        <div class="sub">Look más pro</div>
+        <ul>
+          <li><b>Mapa vivo</b> que responde al vuelo en tiempo real; <b>zonas peligrosas</b> con ícono (ej. nuclear que se expande) que hay que esquivar. Evaluar un mapa por jugador.</li>
+          <li><b>UI más clean:</b> nombres de jugadores, contador monetario, look pro (referencia REPO).</li>
+          <li><b>Luces dinámicas animadas</b> en emergencias / momentos de terror; poder ir a cabina y <b>controlar la música</b>.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- DIRECCION CREATIVA / TONO -->
+  <section id="creativa">
+    <div class="section-title"><h2>Dirección creativa &amp; tono</h2><span class="tag">La identidad</span></div>
+    <p class="section-intro">
+      El giro de tono es lo que nos separa de la competencia y le da coartada al caos. No terror porque sí
+      (como el trailer anterior), sino terror <b>justificado</b>: reactores nucleares y criaturas modificadas
+      genéticamente que explican por qué "de golpe se va todo a la mierda".
+    </p>
+
+    <div class="tone">
+      <div class="half clean">
+        <h4>☀️ Base: inocente y limpia</h4>
+        <p>Look clean, amable, legible — la puerta de entrada. Los chicos no juegan hardcore puro; juegan cosas
+        "inocentonas". Ese es el piso sobre el que construimos.</p>
+      </div>
+      <div class="half horror">
+        <h4>🩸 Picos: que dé miedo</h4>
+        <p>"Que sea más clean, más bueno, pero que de golpe se vaya a la mierda de vez en cuando." Zona nuclear
+        tipo Chernobyl, Triángulo de las Bermudas (fantasmal, no zombie). Referencia tonal: The Amazing Digital Circus.</p>
+      </div>
+    </div>
+
+    <div class="callout key">
+      <h3>Personajes: el punto más insistido</h3>
+      <p><b>Rig facial expresivo, estilo stop-motion.</b> Hoy la cara neutra por defecto los mata. Bocas y expresiones
+      bien extremas — risa, enojo, pánico — con "flash". Hacerlos interesantes de mirar.</p>
+      <p><b>Los "pollitos" quedan en revisión.</b> Son fáciles de dibujar y meme-ables, pero les falta carisma. Hay
+      exploraciones descartadas que gustaban más — los de <i>labios inflados</i>, los <i>gatitos calvos</i>, los <i>narigones</i> —
+      que son referencia viva para reexplorar. Sin decidir rehacerlos todavía.</p>
+    </div>
+
+    <div class="cast">
+      <figure><img src="assets/CHARACTER/cast/orange-chubby.png" alt="Orange chubby" /><figcaption>Orange chubby (actual)</figcaption></figure>
+      <figure><img src="assets/CHARACTER/cast/green-pigtails.png" alt="Green pigtails" /><figcaption>Green pigtails</figcaption></figure>
+      <figure><img src="assets/CHARACTER/cast/purple-muscle.png" alt="Purple muscle" /><figcaption>Purple muscle</figcaption></figure>
+      <figure><img src="assets/CHARACTER/cast/red-mustache.png" alt="Red mustache" /><figcaption>Red mustache</figcaption></figure>
+      <figure><img src="assets/CHARACTER/cast/octopus-on-orange.png" alt="Octopus" /><figcaption>Pulpo alien</figcaption></figure>
+    </div>
+    <p class="section-intro" style="font-size:13px;color:var(--slate)">El cast actual "pollito". Reabrimos expresividad y variedad; el logo también está en replanteo (el actual quedó "conservador, tipo American Airlines").</p>
+  </section>
+
+  <!-- ESTETICA / 10 LOOKS -->
+  <section id="estetica">
+    <div class="section-title"><h2>Exploración estética — cabina</h2><span class="tag">10 direcciones</span></div>
+    <p class="section-intro">
+      Misma cabina, mismos personajes — solo cambiamos <b>luz, tono y textura</b> para ver qué dirección la levanta.
+      Se genera con nuestro pipeline de Krea en modo image-to-image (Nano Banana Pro mantiene la escena y cambia el mood).
+      Técnica que propuso Federico: partir de un frame real y reilustrarlo, sin remodelar nada, para el pitch.
+    </p>
+
+    <div class="callout warn">
+      <h3>⏳ Esperando dos cosas para generar</h3>
+      <p><b>1. La key de Krea (<code>Patakey</code>)</b> — no está en el entorno. Pegala o guardala en las keys de PATAPIM.</p>
+      <p><b>2. El frame fuente</b> — el screenshot del build nuevo, guardado en <code>assets/FRAMES/cabin.png</code> (el video prototipo es una versión vieja greybox, no sirve de base).</p>
+    </div>
+
+    <div class="aesthetic">
+      <div class="look"><span class="n">01</span><span class="name">Fotorrealista</span><span class="desc">luz real, PBR, sombras suaves</span></div>
+      <div class="look"><span class="n">02</span><span class="name">Golden hour</span><span class="desc">amanecer cálido por las ventanillas</span></div>
+      <div class="look"><span class="n">03</span><span class="name">Terror</span><span class="desc">oscuro, niebla, luz roja de emergencia</span></div>
+      <div class="look"><span class="n">04</span><span class="name">Noir</span><span class="desc">alto contraste, blanco y negro</span></div>
+      <div class="look"><span class="n">05</span><span class="name">Neón / cyberpunk</span><span class="desc">rosas y cianes, glow</span></div>
+      <div class="look"><span class="n">06</span><span class="name">Cómic / cel-shaded</span><span class="desc">líneas, colores planos</span></div>
+      <div class="look"><span class="n">07</span><span class="name">Claymation premium</span><span class="desc">stop-motion pulido, tipo Aardman</span></div>
+      <div class="look"><span class="n">08</span><span class="name">Chernobyl</span><span class="desc">verdoso tóxico, polvo, decadencia</span></div>
+      <div class="look"><span class="n">09</span><span class="name">Tormenta eléctrica</span><span class="desc">relámpagos, luz dura intermitente</span></div>
+      <div class="look"><span class="n">10</span><span class="name">AAA sobrio</span><span class="desc">clean, pro, iluminación de estudio</span></div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- DIFERENCIACION + PITCH -->
+  <section id="gamescom">
+    <div class="section-title"><h2>Diferenciación &amp; pitch de Gamescom</h2><span class="tag">Cómo lo vendemos</span></div>
+
+    <div class="cols">
+      <div class="col">
+        <h4>Cómo nos separamos de Dear Passengers</h4>
+        <ul>
+          <li><b>La versión hardcore.</b> "Dear Passengers quedaría medio soft al lado de este." Terror y caos de verdad.</li>
+          <li><b>Núcleo distinto + historia:</b> pollos modificados que se descontrolan, reactores nucleares que activan "lo que tienen adentro". Ahí empieza a separarse.</li>
+          <li><b>Personajes con más carisma y variedad</b> que la competencia.</li>
+          <li><b>Posible cambio de nombre</b> — genérico y choca con el Roblox. En evaluación.</li>
+        </ul>
+      </div>
+      <div class="col dark">
+        <h4>Qué llevamos a Colonia</h4>
+        <ul>
+          <li><b>No la demo actual.</b> Una versión mejorada: look clean, luces bien, nombres de jugadores, UI arreglada.</li>
+          <li><b>El juego jugable en vivo</b> — sentar al publisher a jugarlo es el pitch.</li>
+          <li><b>Trailer + póster + imágenes</b> para todo lo que no llegue a programarse pero valga contar.</li>
+          <li><b>El speech:</b> mercado ya validado (2M de wishlists), nosotros tenemos el producto, falta plata para terminarlo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <div class="section-title"><h2>Próximos pasos</h2><span class="tag">~23 días</span></div>
+    <div class="steps">
+      <div class="step"><div class="when">Hoy · 3 AGO</div><div><h4>Lista priorizada de cambios <span class="owner">Jorge</span></h4><p>Bajar el transcript, sumar notas manuales y armar la lista priorizada (cambios, personajes, UI, branding, posible nombre).</p></div></div>
+      <div class="step"><div class="when">Hoy · 20:30</div><div><h4>Reunión de seguimiento <span class="owner">Trío</span></h4><p>Revisar la lista y decidir qué se ataca primero. Bajar del brainstorming a prioridades reales.</p></div></div>
+      <div class="step"><div class="when">Esta semana</div><div><h4>Bajar el listado al equipo <span class="owner">Trío → Dev</span></h4><p>Comunicar las prioridades al equipo de desarrollo para implementar y probar los enfoques nuevos.</p></div></div>
+      <div class="step"><div class="when">Semanas 1–3</div><div><h4>Ejecutar la lavada + material de pitch <span class="owner">Todos</span></h4><p>Mejoras de alto impacto en el juego + trailer/póster/imágenes de las direcciones que se venden aunque no se programen.</p></div></div>
+      <div class="step"><div class="when">26–30 AGO</div><div><h4>Gamescom — buscar publisher <span class="owner">Jorge + Germán</span></h4><p>Llevar la versión mejorada a Colonia. Sentar publishers a jugarlo. Cerrar financiamiento.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ABIERTO -->
+  <section>
+    <div class="section-title"><h2>Sin decidir</h2><span class="tag">Lo que queda abierto</span></div>
+    <p class="section-intro">Para no fingir que está todo resuelto — esto es lo que la reunión dejó en el aire:</p>
+    <div class="open">
+      <div class="oq"><p><b>Dirección post-financiamiento.</b> ¿Seguimos dirigiendo nosotros o vuelve a Valen? Depende del deal.</p><span class="pill abierto">Abierto</span></div>
+      <div class="oq"><p><b>La cabina.</b> Jorge la odia ("fulera"); Fer y Fede la encuentran graciosa. Sin resolver.</p><span class="pill abierto">Abierto</span></div>
+      <div class="oq"><p><b>Cambio de nombre.</b> Consenso de que "puede ser buena idea", pero no decidido.</p><span class="pill abierto">Abierto</span></div>
+      <div class="oq"><p><b>Precisión del objetivo.</b> ¿Tiempo, plata, o plata como resultado? Convergemos en "mezcla" — falta afinar.</p><span class="pill abierto">Abierto</span></div>
+      <div class="oq"><p><b>Los pollitos.</b> ¿Se rehacen hacia los diseños con más carisma o se quedan por ser fáciles/meme-ables?</p><span class="pill abierto">Abierto</span></div>
+      <div class="oq"><p><b>Qué se implementa vs qué se cuenta.</b> La selección final para esquivar el "embudo" queda para la próxima.</p><span class="pill abierto">Abierto</span></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>BANANA AIRWAYS · Lavada de cara · Interno · Base: reunión 3 AGO 2026 (Jorge · Fernando · Federico)</span>
+    <span>Complementa <a href="strategy-2.html">Estrategia 2.0</a></span>
+  </footer>
+
+</main>
+
+<script>
+  // Countdown to Gamescom (feria 26 AGO 2026)
+  (function () {
+    const FAIR = new Date('2026-08-26T00:00:00');
+    const ONL = new Date('2026-08-25T20:00:00');
+    const today = new Date();
+    const days = Math.max(0, Math.ceil((FAIR - today) / 86400000));
+    const el = document.getElementById('cd-num');
+    const sub = document.getElementById('cd-sub');
+    if (el) el.textContent = days;
+    if (today >= FAIR) { if (el) el.textContent = '★'; if (sub) sub.textContent = 'GAMESCOM EN CURSO · Koelnmesse, Colonia'; }
+    // status line
+    const st = document.getElementById('status');
+    if (st && today >= FAIR) st.textContent = 'En Gamescom';
+  })();
+</script>
+
+</body>
+</html>
