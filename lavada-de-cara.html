@@ -99,16 +99,15 @@
     .cast img { width: 92px; height: 92px; object-fit: cover; border-radius: 10px; border: 2px solid var(--ink); background: var(--cream); }
     .cast figcaption { font-size: 10px; color: var(--slate); margin-top: 4px; line-height: 1.2; }
 
-    /* aesthetic gallery placeholder */
-    .aesthetic { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
-    .look {
-      aspect-ratio: 16/10; border-radius: 10px; border: 2px dashed var(--line);
-      background: var(--cream); display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 10px; position: relative; overflow: hidden;
-    }
-    .look .n { position: absolute; top: 8px; left: 10px; font-size: 11px; font-weight: 800; color: var(--slate); }
-    .look .name { font-size: 12px; font-weight: 800; color: var(--ink); line-height: 1.2; }
-    .look .desc { font-size: 10px; color: var(--slate); line-height: 1.25; margin-top: 2px; }
+    /* aesthetic gallery */
+    .aesthetic { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; margin: 20px 0; }
+    .look { margin: 0; border-radius: 12px; border: 2px solid var(--ink); background: var(--ink); overflow: hidden;
+      transition: transform 0.12s ease, box-shadow 0.12s ease; }
+    .look:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--ink); }
+    .look img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+    .look figcaption { padding: 9px 13px; background: var(--ink); color: var(--cream); font-size: 12px; line-height: 1.35; }
+    .look figcaption b { color: var(--banana); }
+    .look figcaption span { color: #9fb0c4; }
 
     /* two-col info (diff / pitch) */
     .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 22px 0; }
@@ -142,7 +141,7 @@
 
     @media (max-width: 900px) {
       .streams, .tone, .cols { grid-template-columns: 1fr; }
-      .aesthetic { grid-template-columns: repeat(2, 1fr); }
+      .aesthetic { grid-template-columns: 1fr; }
       .step { grid-template-columns: 1fr; }
     }
   </style>
@@ -388,24 +387,27 @@
       Técnica que propuso Federico: partir de un frame real y reilustrarlo, sin remodelar nada, para el pitch.
     </p>
 
-    <div class="callout warn">
-      <h3>⏳ Falta solo el frame</h3>
-      <p><b>Key de OpenAI ✓ recibida</b> (<code>gpt-image-1</code>, lista en el entorno).</p>
-      <p><b>Frame fuente</b> — guardá el screenshot del build en el Escritorio o en <code>assets/FRAMES/cabin.png</code>. Hay un watcher activo que lo detecta y dispara las 10 generaciones solo. (El video prototipo es greybox viejo, no sirve de base.)</p>
-    </div>
+    <p class="section-intro" style="color:var(--slate)">
+      10 looks generados con <code>gpt-image-2</code> (edición image-to-image) desde un frame real de cabina —
+      misma escena, mismos personajes, solo cambia la luz y el mood. Clic para ver en grande.
+    </p>
 
     <div class="aesthetic">
-      <div class="look"><span class="n">01</span><span class="name">Fotorrealista</span><span class="desc">luz real, PBR, sombras suaves</span></div>
-      <div class="look"><span class="n">02</span><span class="name">Golden hour</span><span class="desc">amanecer cálido por las ventanillas</span></div>
-      <div class="look"><span class="n">03</span><span class="name">Terror</span><span class="desc">oscuro, niebla, luz roja de emergencia</span></div>
-      <div class="look"><span class="n">04</span><span class="name">Noir</span><span class="desc">alto contraste, blanco y negro</span></div>
-      <div class="look"><span class="n">05</span><span class="name">Neón / cyberpunk</span><span class="desc">rosas y cianes, glow</span></div>
-      <div class="look"><span class="n">06</span><span class="name">Cómic / cel-shaded</span><span class="desc">líneas, colores planos</span></div>
-      <div class="look"><span class="n">07</span><span class="name">Claymation premium</span><span class="desc">stop-motion pulido, tipo Aardman</span></div>
-      <div class="look"><span class="n">08</span><span class="name">Chernobyl</span><span class="desc">verdoso tóxico, polvo, decadencia</span></div>
-      <div class="look"><span class="n">09</span><span class="name">Tormenta eléctrica</span><span class="desc">relámpagos, luz dura intermitente</span></div>
-      <div class="look"><span class="n">10</span><span class="name">AAA sobrio</span><span class="desc">clean, pro, iluminación de estudio</span></div>
+      <figure class="look"><a href="assets/AESTHETIC/01-fotorrealista.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/01-fotorrealista.png" alt="Fotorrealista" loading="lazy" /></a><figcaption><b>01 · Fotorrealista</b> <span>— luz real, PBR, sombras suaves</span></figcaption></figure>
+      <figure class="look"><a href="assets/AESTHETIC/02-golden-hour.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/02-golden-hour.png" alt="Golden hour" loading="lazy" /></a><figcaption><b>02 · Golden hour</b> <span>— amanecer cálido por las ventanillas</span></figcaption></figure>
+      <figure class="look"><a href="assets/AESTHETIC/03-terror.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/03-terror.png" alt="Terror" loading="lazy" /></a><figcaption><b>03 · Terror</b> <span>— oscuro, niebla, luz roja de emergencia</span></figcaption></figure>
+      <figure class="look"><a href="assets/AESTHETIC/04-noir.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/04-noir.png" alt="Noir" loading="lazy" /></a><figcaption><b>04 · Noir</b> <span>— alto contraste, blanco y negro</span></figcaption></figure>
+      <figure class="look"><a href="assets/AESTHETIC/05-neon-cyberpunk.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/05-neon-cyberpunk.png" alt="Neón cyberpunk" loading="lazy" /></a><figcaption><b>05 · Neón / cyberpunk</b> <span>— rosas y cianes, glow</span></figcaption></figure>
+      <figure class="look"><a href="assets/AESTHETIC/06-comic-cel.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/06-comic-cel.png" alt="Cómic cel-shaded" loading="lazy" /></a><figcaption><b>06 · Cómic / cel-shaded</b> <span>— líneas, colores planos</span></figcaption></figure>
+      <figure class="look"><a href="assets/AESTHETIC/07-claymation.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/07-claymation.png" alt="Claymation" loading="lazy" /></a><figcaption><b>07 · Claymation premium</b> <span>— stop-motion pulido, tipo Aardman</span></figcaption></figure>
+      <figure class="look"><a href="assets/AESTHETIC/08-chernobyl.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/08-chernobyl.png" alt="Chernobyl" loading="lazy" /></a><figcaption><b>08 · Chernobyl</b> <span>— verdoso tóxico, polvo, decadencia</span></figcaption></figure>
+      <figure class="look"><a href="assets/AESTHETIC/09-tormenta.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/09-tormenta.png" alt="Tormenta" loading="lazy" /></a><figcaption><b>09 · Tormenta eléctrica</b> <span>— relámpagos, luz dura</span></figcaption></figure>
+      <figure class="look"><a href="assets/AESTHETIC/10-aaa-sobrio.png" target="_blank" rel="noopener"><img src="assets/AESTHETIC/10-aaa-sobrio.png" alt="AAA sobrio" loading="lazy" /></a><figcaption><b>10 · AAA sobrio</b> <span>— clean, pro, iluminación de estudio</span></figcaption></figure>
     </div>
+
+    <p class="section-intro" style="font-size:13px;color:var(--slate);margin-top:6px">
+      Base: frame real del build (POV con la cafetera). Próximo paso: elegir 1–2 direcciones y llevarlas a un test de arte real, no solo reilustrado.
+    </p>
   </section>
 
   <hr class="divider" />
