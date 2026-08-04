@@ -384,14 +384,14 @@
     <div class="section-title"><h2>Exploración estética — cabina</h2><span class="tag">10 direcciones</span></div>
     <p class="section-intro">
       Misma cabina, mismos personajes — solo cambiamos <b>luz, tono y textura</b> para ver qué dirección la levanta.
-      Se genera con nuestro pipeline de Krea en modo image-to-image (Nano Banana Pro mantiene la escena y cambia el mood).
+      Se genera con la API de imágenes de OpenAI (<code>gpt-image-1</code>, modo edición: mantiene la escena y cambia el mood).
       Técnica que propuso Federico: partir de un frame real y reilustrarlo, sin remodelar nada, para el pitch.
     </p>
 
     <div class="callout warn">
-      <h3>⏳ Esperando dos cosas para generar</h3>
-      <p><b>1. La key de Krea (<code>Patakey</code>)</b> — no está en el entorno. Pegala o guardala en las keys de PATAPIM.</p>
-      <p><b>2. El frame fuente</b> — el screenshot del build nuevo, guardado en <code>assets/FRAMES/cabin.png</code> (el video prototipo es una versión vieja greybox, no sirve de base).</p>
+      <h3>⏳ Falta solo el frame</h3>
+      <p><b>Key de OpenAI ✓ recibida</b> (<code>gpt-image-1</code>, lista en el entorno).</p>
+      <p><b>Frame fuente</b> — guardá el screenshot del build en el Escritorio o en <code>assets/FRAMES/cabin.png</code>. Hay un watcher activo que lo detecta y dispara las 10 generaciones solo. (El video prototipo es greybox viejo, no sirve de base.)</p>
     </div>
 
     <div class="aesthetic">
