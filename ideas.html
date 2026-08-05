@@ -18,6 +18,7 @@
     .bar .count { font-weight: 700; }
     .bar .count .d { color: var(--teal); font-weight: 900; }
     .bar .count .v { color: var(--purple); font-weight: 900; }
+    .bar .count .w { color: var(--banana); font-weight: 900; }
     .bar .sp { flex: 1; }
     .bar .filters { display: flex; gap: 6px; flex-wrap: wrap; }
     .bar button { font: inherit; font-size: 12px; font-weight: 700; padding: 6px 11px; border-radius: 999px;
@@ -80,16 +81,17 @@
   </div>
 
   <div class="bar">
-    <span class="count">🎮 <span class="d" id="cd">0</span> al demo · 🎬 <span class="v" id="cv">0</span> al video</span>
+    <span class="count">🎮 <span class="d" id="cd">0</span> demo · 🎬 <span class="v" id="cv">0</span> video · 🗒️ <span class="w" id="cw">0</span> wishlist</span>
     <span class="filters">
       <button data-f="all" class="active">Todas</button>
       <button data-f="demo">Demo</button>
       <button data-f="video">Video</button>
-      <button data-f="none">Sin asignar</button>
+      <button data-f="none">🗒️ Wishlist</button>
     </span>
     <span class="sp"></span>
     <button id="copy-d" type="button">Copiar Demo</button>
     <button id="copy-v" type="button">Copiar Video</button>
+    <button id="copy-w" type="button">Copiar Wishlist</button>
     <button id="clear" type="button">Limpiar</button>
   </div>
 
@@ -219,11 +221,11 @@
 <script>(function(){
   var list = document.getElementById('list');
   var ideas = [].slice.call(list.querySelectorAll('.idea'));
-  var cd = document.getElementById('cd'), cv = document.getElementById('cv');
+  var cd = document.getElementById('cd'), cv = document.getElementById('cv'), cw = document.getElementById('cw');
   function counts(){
-    var d=0,v=0;
-    ideas.forEach(function(r){ if(r.classList.contains('has-d'))d++; if(r.classList.contains('has-v'))v++; });
-    cd.textContent=d; cv.textContent=v;
+    var d=0,v=0,w=0;
+    ideas.forEach(function(r){ var hd=r.classList.contains('has-d'), hv=r.classList.contains('has-v'); if(hd)d++; if(hv)v++; if(!hd&&!hv)w++; });
+    cd.textContent=d; cv.textContent=v; cw.textContent=w;
   }
   ideas.forEach(function(r){
     var k=r.dataset.k, kd='ideas:'+k+':d', kv='ideas:'+k+':v';
@@ -255,6 +257,14 @@
   }
   document.getElementById('copy-d').addEventListener('click', function(){ copyBy('has-d','Copiar Demo', this); });
   document.getElementById('copy-v').addEventListener('click', function(){ copyBy('has-v','Copiar Video', this); });
+  document.getElementById('copy-w').addEventListener('click', function(){
+    var btn=this;
+    var txt = ideas.filter(function(r){ return !r.classList.contains('has-d') && !r.classList.contains('has-v'); })
+                   .map(function(r){ return '• ' + r.querySelector('.txt').innerText.trim(); }).join('\n');
+    if (navigator.clipboard) navigator.clipboard.writeText(txt || '(wishlist vacío)');
+    btn.textContent = txt ? '¡Copiado!' : 'Vacío';
+    setTimeout(function(){ btn.textContent = 'Copiar Wishlist'; }, 1500);
+  });
   document.getElementById('clear').addEventListener('click', function(){
     ideas.forEach(function(r){ localStorage.setItem('ideas:'+r.dataset.k+':d','0'); localStorage.setItem('ideas:'+r.dataset.k+':v','0');
       r.querySelector('.chip.d').classList.remove('on'); r.querySelector('.chip.v').classList.remove('on'); r.classList.remove('has-d','has-v'); });
