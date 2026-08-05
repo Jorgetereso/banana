@@ -157,6 +157,7 @@
     <a href="index.html">Portal</a>
     <a href="strategy-2.html">Estrategia 2.0</a>
     <a href="#diagnostico">Diagnóstico</a>
+    <a href="#playtest">Notas</a>
     <a href="#frentes">Frentes</a>
     <a href="#estetica">Estética</a>
     <a href="#gamescom">Gamescom</a>
@@ -235,6 +236,128 @@
       <div class="diag-item"><span class="x">✕</span><p><b>Estética incoherente.</b> Piezas low-poly / Counter-Strike sueltas que no pegan con el resto. La cabina "está muy fulera, estética off de guerra". El "café" no tiene consecuencia.</p></div>
       <div class="diag-item"><span class="x">✕</span><p><b>Somos "copia peor" y el nombre choca.</b> Hoy leemos como Dear Passengers pero peor; encima hay un "Banana Airways" en Roblox de hace 2 años y ~4 juegos de aviones parecidos. Desmarcarse es prioridad.</p></div>
     </div>
+  </section>
+
+  <!-- NOTAS PLAYTEST -->
+  <style>
+    .notes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 20px 0; }
+    .note-card { border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 10px;
+      background: var(--paper); padding: 16px 18px; }
+    .note-card h4 { margin: 0 0 10px; font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 7px; }
+    .note-card ul { margin: 0; padding-left: 17px; }
+    .note-card li { font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); margin-bottom: 6px; }
+    .note-card li b { color: var(--ink); }
+    .note-principle { border: 2px solid var(--ink); border-left: 8px solid var(--coral); border-radius: 12px;
+      background: #fff5f5; padding: 16px 20px; margin: 6px 0 0; }
+    .note-principle p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ink); }
+    .note-principle b { color: var(--coral); }
+    .note-card ul.opts { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; }
+    .opt { display: flex; gap: 9px; align-items: flex-start; padding: 6px 8px; border-radius: 7px; cursor: pointer;
+      font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); transition: background 0.1s; }
+    .opt:hover { background: #fff8e0; }
+    .opt input { margin: 3px 0 0; flex: none; width: 16px; height: 16px; accent-color: var(--green); cursor: pointer; }
+    .opt.on { background: #eafaf0; color: var(--ink); }
+    .opt.on span b { color: var(--green); }
+    .opt b { color: var(--ink); }
+    .notes-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 6px 0 4px;
+      padding: 12px 16px; background: var(--ink); color: var(--cream); border-radius: 10px; font-size: 14px; }
+    .notes-bar b { color: var(--banana); font-size: 18px; }
+    .notes-bar button { font: inherit; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 999px;
+      border: 1px solid var(--banana); background: transparent; color: var(--banana); cursor: pointer; }
+    .notes-bar button:hover { background: var(--banana); color: var(--ink); }
+    .notes-bar .sp { flex: 1; }
+    @media (max-width: 900px) { .notes-grid { grid-template-columns: 1fr; } }
+  </style>
+  <section id="playtest">
+    <div class="section-title"><h2>Notas de playtest</h2><span class="tag">Pozo de ideas · opcional</span></div>
+    <p class="section-intro"><b>No es una lista de lo que vamos a hacer.</b> Es el registro completo de las observaciones del playtest — todo capturado, sin compromiso, para pescar de acá lo que sirva. Redundancias con los frentes de arriba incluidas a propósito, para no perder nada.</p>
+
+    <div class="notes-bar">
+      <span><b id="pt-count">0</b> ideas marcadas para incluir</span>
+      <span class="sp"></span>
+      <button id="pt-copy" type="button">Copiar seleccionadas</button>
+      <button id="pt-clear" type="button">Limpiar</button>
+    </div>
+
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>☕ Vínculo con los pasajeros</h4>
+        <ul class="opts">
+          <li><label class="opt"><input type="checkbox" data-k="v1"><span>Más acciones: <b>solo café hace que los quieras ignorar</b> todo el tiempo. Falta relación.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="v2"><span>Más cosas para hacer con ellos — agrandar el vínculo.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="v3"><span>Les das las bananas a los pasajeros.</span></label></li>
+        </ul>
+      </div>
+      <div class="note-card">
+        <h4>😐 Personajes &amp; caras</h4>
+        <ul class="opts">
+          <li><label class="opt"><input type="checkbox" data-k="p1"><span><b>No querés ser esos personajes</b> — deberían ser más agradables.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="p2"><span>Las expresiones faciales están muertas: no expresan ni generan nada.</span></label></li>
+        </ul>
+      </div>
+      <div class="note-card">
+        <h4>💨 Sensación &amp; peligro</h4>
+        <ul class="opts">
+          <li><label class="opt"><input type="checkbox" data-k="s1"><span>Poder <b>abrir la puerta de emergencia</b>, mandarte cagadas, que se vuele gente con <b>ragdoll</b>.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="s2"><span>Que haya <b>viento cuando salís</b> — no se siente la velocidad ni el peligro de salir.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="s3"><span><b>Estar afuera sube el nivel de peligro.</b></span></label></li>
+        </ul>
+      </div>
+      <div class="note-card">
+        <h4>💥 Física &amp; rotura</h4>
+        <ul class="opts">
+          <li><label class="opt"><input type="checkbox" data-k="f1"><span>La rotura del avión debería ser más realista. <b>Lo cuadrado funciona en Roblox, no en esta estética.</b></span></label></li>
+        </ul>
+      </div>
+      <div class="note-card">
+        <h4>🖥️ UI &amp; claridad</h4>
+        <ul class="opts">
+          <li><label class="opt"><input type="checkbox" data-k="u1"><span>¿Counter monetario en el UI?</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="u2"><span>Debería haber algo que muestre <b>progreso</b>.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="u3"><span>No se entiende qué hay que hacer: <b>si entro y no hago nada, ¿qué pasa?</b></span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="u4"><span>¿Música en el avión?</span></label></li>
+        </ul>
+      </div>
+      <div class="note-card">
+        <h4>🩸 Caos &amp; terror</h4>
+        <ul class="opts">
+          <li><label class="opt"><input type="checkbox" data-k="c1"><span>Los pasajeros deberían <b>paniquear o enloquecer</b> cuando se pudre. ¿Qué cosas dan miedo?</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="c2"><span>Más creepy y sacado, <b>más hardcore</b>. Vómitos → inyectarles algo para que paren.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="c3"><span>Si te drogás deberías <b>flotar</b>. Jugadores que enloquecieron.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="c4"><span>Sos tripulación; cuando morís pasás a <b>pasajero zombie</b>.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="c5"><span>Si no les das de comer se ponen agresivos, <b>se comen el asiento y destruyen el avión</b>.</span></label></li>
+          <li><label class="opt"><input type="checkbox" data-k="c6"><span>Pollos modificados genéticamente — se les activa en las <b>zonas nucleares</b>. Ataúd en la bodega con un bicho extremo.</span></label></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-principle">
+      <p><b>El núcleo, sin vueltas:</b> no hay caos humano real, solo eventos medio desconectados — <b>falta el conflicto núcleo</b>. Ahí hay que separarse de Dear Passengers. Y ojo: <b>no volverlo más complejo antes de entender de qué se trata el juego.</b> Posicionamiento: la <b>versión hardcore</b> — que deje a Dear Passengers como el juego blando al lado nuestro.</p>
+    </div>
+
+    <script>(function(){
+      var boxes=[].slice.call(document.querySelectorAll('#playtest .opt input'));
+      var cnt=document.getElementById('pt-count');
+      function upd(){ cnt.textContent=boxes.filter(function(b){return b.checked;}).length; }
+      boxes.forEach(function(cb){
+        var k='ldc:pt:'+cb.dataset.k;
+        cb.checked=localStorage.getItem(k)==='1';
+        cb.closest('.opt').classList.toggle('on',cb.checked);
+        cb.addEventListener('change',function(){ localStorage.setItem(k,cb.checked?'1':'0'); cb.closest('.opt').classList.toggle('on',cb.checked); upd(); });
+      });
+      upd();
+      var copy=document.getElementById('pt-copy');
+      copy&&copy.addEventListener('click',function(){
+        var sel=boxes.filter(function(b){return b.checked;}).map(function(b){return '• '+b.closest('.opt').innerText.trim();}).join('\n');
+        navigator.clipboard&&navigator.clipboard.writeText(sel||'(ninguna seleccionada)');
+        copy.textContent=sel?'¡Copiado!':'Nada marcado'; setTimeout(function(){copy.textContent='Copiar seleccionadas';},1500);
+      });
+      var clr=document.getElementById('pt-clear');
+      clr&&clr.addEventListener('click',function(){
+        boxes.forEach(function(b){ b.checked=false; b.closest('.opt').classList.remove('on'); localStorage.setItem('ldc:pt:'+b.dataset.k,'0'); });
+        upd();
+      });
+    })();</script>
   </section>
 
   <!-- DECISIONES -->
