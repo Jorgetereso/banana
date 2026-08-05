@@ -10,6 +10,13 @@
   <style>
     .intro { font-size: 15px; line-height: 1.6; color: var(--ink-soft); max-width: 760px; margin: 0 0 4px; }
     .intro b { color: var(--ink); }
+    .objective { background: var(--ink); color: var(--cream); border-radius: 14px; padding: 20px 24px;
+      margin: 12px 0 18px; border-left: 8px solid var(--banana); }
+    .objective .obj-tag { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--banana); margin-bottom: 10px; }
+    .objective p { margin: 0 0 7px; font-size: 15px; line-height: 1.55; color: var(--cream); }
+    .objective p:last-child { margin-bottom: 0; }
+    .objective b { color: var(--banana); }
     .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--slate); margin: 8px 0 0; }
     .legend span b { color: var(--ink); }
 
@@ -67,7 +74,7 @@
 <header class="topbar">
   <div class="brand">
     <div class="logo">B</div>
-    <span>BANANA AIRWAYS — LISTA DE IDEAS</span>
+    <span>BANANA AIRWAYS — BROTACIONES</span>
   </div>
   <nav>
     <a href="index.html">Portal</a>
@@ -76,6 +83,12 @@
 </header>
 
 <main class="wrap">
+
+  <div class="objective">
+    <span class="obj-tag">🎯 Objetivo del juego</span>
+    <p><b>Colectivo:</b> que no se te mueran los pasajeros. Llegá a destino con la mayor cantidad de pasajeros vivos y en el menor tiempo — perdés si la tripulación supera en número a los pasajeros.</p>
+    <p><b>Individual:</b> sobrevivir.</p>
+  </div>
 
   <p class="intro" style="margin-top:8px"><b>Todas las ideas de las dos reuniones.</b> Marcá cada una según a dónde va. Sin marcar = no va.</p>
   <div class="legend">
@@ -106,13 +119,10 @@
       <h2>🎯 Objetivo &amp; game loop</h2>
       <ul>
         <li class="idea" data-k="i1"><span class="txt"><b>Indicadores de éxito/fracaso visibles:</b> contador de plata + límite de tiempo. Fórmula mezcla de tiempo y plata.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i2"><span class="txt"><b>Objetivo:</b> llegar con más pasajeros vivos y en menos tiempo. Perdés si la tripulación supera en número a los pasajeros.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
         <li class="idea" data-k="i3"><span class="txt">Récords / leaderboard.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
         <li class="idea" data-k="i4"><span class="txt"><b>Despegue colaborativo:</b> todos sentados y abrochados para poder despegar. Al despegar cambia el contador de plata.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
         <li class="idea" data-k="i5"><span class="txt">Rondas/oleadas con dificultad creciente, tipo REPO.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
         <li class="idea" data-k="i6"><span class="txt">UI que muestre progreso; que se entienda qué hacer (si no hago nada, ¿qué pasa?).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i56"><span class="txt"><b>Objetivo (colectivo):</b> que no se te mueran los pasajeros.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i57"><span class="txt"><b>Objetivo individual:</b> sobrevivir.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
       </ul>
     </div>
 
