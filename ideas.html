@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lista de ideas — BANANA AIRWAYS</title>
-  <meta name="description" content="Todas las ideas de las dos reuniones. Marcá cada una: al demo o al video AI." />
+  <meta name="description" content="Todas las ideas de las dos reuniones, en una lista." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A1%3C/text%3E%3C/svg%3E" />
   <style>
@@ -17,21 +17,6 @@
     .objective p { margin: 0 0 7px; font-size: 15px; line-height: 1.55; color: var(--cream); }
     .objective p:last-child { margin-bottom: 0; }
     .objective b { color: var(--banana); }
-    .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--slate); margin: 8px 0 0; }
-    .legend span b { color: var(--ink); }
-
-    .bar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-      padding: 12px 16px; background: var(--ink); color: var(--cream); border-radius: 10px; margin: 16px 0; font-size: 14px; }
-    .bar .count { font-weight: 700; }
-    .bar .count .d { color: var(--teal); font-weight: 900; }
-    .bar .count .v { color: var(--purple); font-weight: 900; }
-    .bar .count .w { color: var(--banana); font-weight: 900; }
-    .bar .sp { flex: 1; }
-    .bar .filters { display: flex; gap: 6px; flex-wrap: wrap; }
-    .bar button { font: inherit; font-size: 12px; font-weight: 700; padding: 6px 11px; border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.25); background: transparent; color: var(--cream); cursor: pointer; }
-    .bar button:hover { border-color: var(--banana); color: var(--banana); }
-    .bar .filters button.active { background: var(--banana); color: var(--ink); border-color: var(--banana); }
 
     .cat { margin: 22px 0 0; }
     .cat h2 { font-size: 15px; font-weight: 800; letter-spacing: 0.02em; margin: 0 0 8px; padding-bottom: 6px;
@@ -43,29 +28,9 @@
     .idea:hover { background: var(--cream); }
     .idea .txt { flex: 1; font-size: 14px; line-height: 1.5; color: var(--ink-soft); padding-top: 2px; }
     .idea .txt b { color: var(--ink); }
-    .idea .tags { display: flex; gap: 6px; flex: none; }
-    .chip { font: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.02em; padding: 5px 10px;
-      border-radius: 999px; border: 1.5px solid var(--line); background: var(--paper); color: var(--slate);
-      cursor: pointer; white-space: nowrap; transition: all 0.1s; }
-    .chip:hover { border-color: var(--ink); }
-    .chip.d.on { background: var(--teal); border-color: var(--teal); color: #04211d; }
-    .chip.v.on { background: var(--purple); border-color: var(--purple); color: #1a1033; }
-    .idea.has-d, .idea.has-v { background: #f6faf9; border-color: var(--line); }
-
-    /* filters */
-    #list[data-filter="demo"]  .idea:not(.has-d),
-    #list[data-filter="video"] .idea:not(.has-v),
-    #list[data-filter="none"]  .idea.has-d,
-    #list[data-filter="none"]  .idea.has-v,
-    #list[data-filter="assigned"] .idea:not(.has-d):not(.has-v) { display: none; }
-    #list[data-filter="none"] .cat:not(:has(.idea:not(.has-d):not(.has-v))),
-    #list[data-filter="assigned"] .cat:not(:has(.has-d)):not(:has(.has-v)),
-    #list[data-filter="demo"]  .cat:not(:has(.has-d)),
-    #list[data-filter="video"] .cat:not(:has(.has-v)) { display: none; }
 
     @media (max-width: 640px) {
       .idea { flex-direction: column; gap: 8px; }
-      .bar { position: static; }
     }
   </style>
 </head>
@@ -90,198 +55,127 @@
     <p><b>Individual:</b> sobrevivir.</p>
   </div>
 
-
-  <div class="bar">
-    <span class="count">🎮 <span class="d" id="cd">0</span> demo · 🎬 <span class="v" id="cv">0</span> video · 🗒️ <span class="w" id="cw">0</span> wishlist</span>
-    <span class="filters">
-      <button data-f="all" class="active">Todas</button>
-      <button data-f="assigned">Selección</button>
-      <button data-f="demo">Demo</button>
-      <button data-f="video">Video</button>
-      <button data-f="none">🗒️ Wishlist</button>
-    </span>
-    <span class="sp"></span>
-    <button id="copy-d" type="button">Copiar Demo</button>
-    <button id="copy-v" type="button">Copiar Video</button>
-    <button id="copy-w" type="button">Copiar Wishlist</button>
-    <button id="clear" type="button">Limpiar</button>
-  </div>
-
-  <div id="list" data-filter="all">
+  <div id="list">
 
     <div class="cat">
       <h2>🎯 Objetivo &amp; game loop</h2>
       <ul>
-        <li class="idea" data-k="i1"><span class="txt"><b>Indicadores de éxito/fracaso visibles:</b> contador de plata + límite de tiempo.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i2"><span class="txt">Llegar a destino con la mayor cantidad de pasajeros vivos y en el menor tiempo; perdés si la tripulación supera en número a los pasajeros.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i3"><span class="txt">Récords / leaderboard.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i4"><span class="txt"><b>Despegue colaborativo:</b> todos sentados y abrochados para poder despegar. Al despegar cambia el contador de plata.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i5"><span class="txt">Rondas/oleadas con dificultad creciente, tipo REPO.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i6"><span class="txt">UI que muestre progreso; que se entienda qué hacer (si no hago nada, ¿qué pasa?).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt"><b>Indicadores de éxito/fracaso visibles:</b> contador de plata + límite de tiempo.</span></li>
+        <li class="idea"><span class="txt">Llegar a destino con la mayor cantidad de pasajeros vivos y en el menor tiempo; perdés si la tripulación supera en número a los pasajeros.</span></li>
+        <li class="idea"><span class="txt">Récords / leaderboard.</span></li>
+        <li class="idea"><span class="txt"><b>Despegue colaborativo:</b> todos sentados y abrochados para poder despegar. Al despegar cambia el contador de plata.</span></li>
+        <li class="idea"><span class="txt">Rondas/oleadas con dificultad creciente, tipo REPO.</span></li>
+        <li class="idea"><span class="txt">UI que muestre progreso; que se entienda qué hacer (si no hago nada, ¿qué pasa?).</span></li>
       </ul>
     </div>
 
     <div class="cat">
       <h2>💀 Muerte &amp; pasajeros</h2>
       <ul>
-        <li class="idea" data-k="i7"><span class="txt"><b>Que la muerte pese:</b> al morir pasás a pasajero zombie / espectador activo (molestás, saboteás, cambiás de pasajero).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i8"><span class="txt">Variedad y personalización de pasajeros (cuerpos, ropa, edades). Hoy son todos iguales.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i9"><span class="txt">Más acciones y vínculo con los pasajeros — solo café hace que los ignores.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i10"><span class="txt">Darles bananas a los pasajeros.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i11"><span class="txt"><b>Gremlins:</b> si no los alimentás se vuelven agresivos, se comen el asiento y destruyen el avión.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i12"><span class="txt"><b>Exploding chickens:</b> al cruzar la zona nuclear explotan y abren agujeros en las paredes.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i13"><span class="txt">Pasajeros paniquean o enloquecen cuando se pudre todo.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i14"><span class="txt">Pollos modificados genéticamente; se les activa en las zonas nucleares.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i15"><span class="txt">Mutación / doble: cuando muere un pasajero, crece otro.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i53"><span class="txt">Peleas y pánico entre pasajeros.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i54"><span class="txt">Bebés que se pierden o se vuelan por la cabina.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt"><b>Que la muerte pese:</b> al morir pasás a pasajero zombie / espectador activo (molestás, saboteás, cambiás de pasajero).</span></li>
+        <li class="idea"><span class="txt">Variedad y personalización de pasajeros (cuerpos, ropa, edades). Hoy son todos iguales.</span></li>
+        <li class="idea"><span class="txt">Más acciones y vínculo con los pasajeros — solo café hace que los ignores.</span></li>
+        <li class="idea"><span class="txt">Darles bananas a los pasajeros.</span></li>
+        <li class="idea"><span class="txt"><b>Gremlins:</b> si no los alimentás se vuelven agresivos, se comen el asiento y destruyen el avión.</span></li>
+        <li class="idea"><span class="txt"><b>Exploding chickens:</b> al cruzar la zona nuclear explotan y abren agujeros en las paredes.</span></li>
+        <li class="idea"><span class="txt">Pasajeros paniquean o enloquecen cuando se pudre todo.</span></li>
+        <li class="idea"><span class="txt">Pollos modificados genéticamente; se les activa en las zonas nucleares.</span></li>
+        <li class="idea"><span class="txt">Mutación / doble: cuando muere un pasajero, crece otro.</span></li>
+        <li class="idea"><span class="txt">Peleas y pánico entre pasajeros.</span></li>
+        <li class="idea"><span class="txt">Bebés que se pierden o se vuelan por la cabina.</span></li>
       </ul>
     </div>
 
     <div class="cat">
       <h2>💉 Kits, vómitos &amp; drogas</h2>
       <ul>
-        <li class="idea" data-k="i16"><span class="txt">Vómitos (piso resbaloso).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i17"><span class="txt">Inyectar un líquido fluo para estabilizar / que dejen de vomitar.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i18"><span class="txt">Si te drogás, flotás. Jugadores que enloquecieron.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i19"><span class="txt">Comida exagerada / asquerosa + inyección (antídoto de radiación).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i20"><span class="txt">El jugador es de la misma raza: mantené su estabilidad (comer / inyectarse) o se descontrola.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i21"><span class="txt">Reemplazar el café (hoy sin consecuencia) por comida o inyecciones con efecto real.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt">Vómitos (piso resbaloso).</span></li>
+        <li class="idea"><span class="txt">Inyectar un líquido fluo para estabilizar / que dejen de vomitar.</span></li>
+        <li class="idea"><span class="txt">Si te drogás, flotás. Jugadores que enloquecieron.</span></li>
+        <li class="idea"><span class="txt">Comida exagerada / asquerosa + inyección (antídoto de radiación).</span></li>
+        <li class="idea"><span class="txt">El jugador es de la misma raza: mantené su estabilidad (comer / inyectarse) o se descontrola.</span></li>
+        <li class="idea"><span class="txt">Reemplazar el café (hoy sin consecuencia) por comida o inyecciones con efecto real.</span></li>
       </ul>
     </div>
 
     <div class="cat">
       <h2>💥 Física &amp; sensación</h2>
       <ul>
-        <li class="idea" data-k="i22"><span class="txt">Rotura orgánica del avión — lo cuadrado funciona en Roblox, no en esta estética.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i23"><span class="txt">Fuselaje roto: succión, viento, papeles volando, arrastre; un bebé casi vuela.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i24"><span class="txt">Abrir la puerta de emergencia; ragdoll; que se vuele gente.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i25"><span class="txt">Viento al salir; que se sienta la velocidad y el peligro de salir.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i26"><span class="txt">Estar afuera sube el nivel de peligro.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i27"><span class="txt">Corregir la escala de props.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i28"><span class="txt">Caos ambiental / magnético del avión en la zona radioactiva.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt">Rotura orgánica del avión — lo cuadrado funciona en Roblox, no en esta estética.</span></li>
+        <li class="idea"><span class="txt">Fuselaje roto: succión, viento, papeles volando, arrastre; un bebé casi vuela.</span></li>
+        <li class="idea"><span class="txt">Abrir la puerta de emergencia; ragdoll; que se vuele gente.</span></li>
+        <li class="idea"><span class="txt">Viento al salir; que se sienta la velocidad y el peligro de salir.</span></li>
+        <li class="idea"><span class="txt">Estar afuera sube el nivel de peligro.</span></li>
+        <li class="idea"><span class="txt">Corregir la escala de props.</span></li>
+        <li class="idea"><span class="txt">Caos ambiental / magnético del avión en la zona radioactiva.</span></li>
       </ul>
     </div>
 
     <div class="cat">
       <h2>🧳 Bodega</h2>
       <ul>
-        <li class="idea" data-k="i29"><span class="txt">Ataúd con un Drácula / bicho extremo — encontrar el hacha y matarlo.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i30"><span class="txt">Bananas con cocaína (si las rompés te drogás) / bananas para alimentar a las criaturas.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i31"><span class="txt">Carga peligrosa / perros en jaulas que no te muerdan.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i52"><span class="txt">Bomba en una valija de la bodega — hay que desarmarla.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i51"><span class="txt">Valijas de los pasajeros con sorpresas adentro (ej. un cocodrilo que tenés que sacar).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt">Ataúd con un Drácula / bicho extremo — encontrar el hacha y matarlo.</span></li>
+        <li class="idea"><span class="txt">Bananas con cocaína (si las rompés te drogás) / bananas para alimentar a las criaturas.</span></li>
+        <li class="idea"><span class="txt">Carga peligrosa / perros en jaulas que no te muerdan.</span></li>
+        <li class="idea"><span class="txt">Bomba en una valija de la bodega — hay que desarmarla.</span></li>
+        <li class="idea"><span class="txt">Valijas de los pasajeros con sorpresas adentro (ej. un cocodrilo que tenés que sacar).</span></li>
       </ul>
     </div>
 
     <div class="cat">
       <h2>🗺️ Mapa, UI, luz &amp; sonido</h2>
       <ul>
-        <li class="idea" data-k="i32"><span class="txt">Mapa vivo que responde al vuelo; zonas peligrosas con ícono (nuclear que se expande) para esquivar.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i33"><span class="txt">Mapa por jugador.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i34"><span class="txt">UI clean: nombres de jugadores, contador monetario, look pro.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i35"><span class="txt">Luces dinámicas animadas en emergencias / momentos de terror.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i36"><span class="txt">Música en el avión / poder controlar la música desde la cabina.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i55"><span class="txt">UI liviana / de descubrimiento: globito cerca del personaje (no cartel sobre el asiento).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt">Mapa vivo que responde al vuelo; zonas peligrosas con ícono (nuclear que se expande) para esquivar.</span></li>
+        <li class="idea"><span class="txt">Mapa por jugador.</span></li>
+        <li class="idea"><span class="txt">UI clean: nombres de jugadores, contador monetario, look pro.</span></li>
+        <li class="idea"><span class="txt">Luces dinámicas animadas en emergencias / momentos de terror.</span></li>
+        <li class="idea"><span class="txt">Música en el avión / poder controlar la música desde la cabina.</span></li>
+        <li class="idea"><span class="txt">UI liviana / de descubrimiento: globito cerca del personaje (no cartel sobre el asiento).</span></li>
       </ul>
     </div>
 
     <div class="cat">
       <h2>🩸 Terror, criaturas &amp; estructura</h2>
       <ul>
-        <li class="idea" data-k="i37"><span class="txt">Criatura gigante: un pasajero se transforma en un bicho enorme dentro del avión que te quiere matar.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i38"><span class="txt">Estructura tipo REPO: partes del avión que se desbloquean con puertas al progresar.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i39"><span class="txt">Más creepy y hardcore — picos de terror al cruzar zonas nucleares.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt">Criatura gigante: un pasajero se transforma en un bicho enorme dentro del avión que te quiere matar.</span></li>
+        <li class="idea"><span class="txt">Estructura tipo REPO: partes del avión que se desbloquean con puertas al progresar.</span></li>
+        <li class="idea"><span class="txt">Más creepy y hardcore — picos de terror al cruzar zonas nucleares.</span></li>
       </ul>
     </div>
 
     <div class="cat">
       <h2>😀 Personajes &amp; caras</h2>
       <ul>
-        <li class="idea" data-k="i40"><span class="txt">Rig facial expresivo estilo stop-motion; expresiones extremas (risa, enojo, pánico).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i41"><span class="txt">No querés ser esos personajes — que sean más agradables / carismáticos.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i42"><span class="txt">Las expresiones faciales están muertas hoy: no expresan ni generan nada.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i45"><span class="txt">Props / accesorios para diferenciar los personajes (vía Tripo).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i46"><span class="txt">Explorar diseños con más carisma: los de labios inflados, los gatitos calvos, los narigones.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i58"><span class="txt">Mejorar las texturas de los personajes — están muy chotas. El <b>bump está berreta</b>.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt">Rig facial expresivo estilo stop-motion; expresiones extremas (risa, enojo, pánico).</span></li>
+        <li class="idea"><span class="txt">No querés ser esos personajes — que sean más agradables / carismáticos.</span></li>
+        <li class="idea"><span class="txt">Las expresiones faciales están muertas hoy: no expresan ni generan nada.</span></li>
+        <li class="idea"><span class="txt">Props / accesorios para diferenciar los personajes (vía Tripo).</span></li>
+        <li class="idea"><span class="txt">Explorar diseños con más carisma: los de labios inflados, los gatitos calvos, los narigones.</span></li>
+        <li class="idea"><span class="txt">Mejorar las texturas de los personajes — están muy chotas. El <b>bump está berreta</b>.</span></li>
       </ul>
     </div>
 
     <div class="cat">
       <h2>🌎 Mundo, lore &amp; branding</h2>
       <ul>
-        <li class="idea" data-k="i47"><span class="txt">Es un <b>mundo de pollos</b>, no hay humanos abajo — el lore nuclear (mutación / reemplazo) lo justifica.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i48"><span class="txt">Lore de fondo / IP: por sobre-inyectar a los pollos, tomaron nuestro lugar y nos reemplazaron (profundidad tipo FNAF).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i49"><span class="txt">Zonas temáticas: zona nuclear tipo <b>Chernobyl</b> y <b>Triángulo de las Bermudas</b> (fantasmal / espiritual, no zombie).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i50"><span class="txt">Logo más <b>bananero</b> / aerolínea sudamericana — replantear el actual ("conservador, tipo American Airlines").</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt">Es un <b>mundo de pollos</b>, no hay humanos abajo — el lore nuclear (mutación / reemplazo) lo justifica.</span></li>
+        <li class="idea"><span class="txt">Lore de fondo / IP: por sobre-inyectar a los pollos, tomaron nuestro lugar y nos reemplazaron (profundidad tipo FNAF).</span></li>
+        <li class="idea"><span class="txt">Zonas temáticas: zona nuclear tipo <b>Chernobyl</b> y <b>Triángulo de las Bermudas</b> (fantasmal / espiritual, no zombie).</span></li>
+        <li class="idea"><span class="txt">Logo más <b>bananero</b> / aerolínea sudamericana — replantear el actual ("conservador, tipo American Airlines").</span></li>
       </ul>
     </div>
 
     <div class="cat">
       <h2>🎬 Trailer / universo</h2>
       <ul>
-        <li class="idea" data-k="i43"><span class="txt">Escenas tiktokeables: ampliar el universo (personaje cayendo al mar con chaleco salvavidas, etc.).</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
-        <li class="idea" data-k="i44"><span class="txt">Posicionamiento: la versión hardcore que deja a Dear Passengers como el juego blando al lado nuestro.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea"><span class="txt">Escenas tiktokeables: ampliar el universo (personaje cayendo al mar con chaleco salvavidas, etc.).</span></li>
+        <li class="idea"><span class="txt">Posicionamiento: la versión hardcore que deja a Dear Passengers como el juego blando al lado nuestro.</span></li>
       </ul>
     </div>
 
   </div>
 
 </main>
-
-<script>(function(){
-  var list = document.getElementById('list');
-  var ideas = [].slice.call(list.querySelectorAll('.idea'));
-  var cd = document.getElementById('cd'), cv = document.getElementById('cv'), cw = document.getElementById('cw');
-  function counts(){
-    var d=0,v=0,w=0;
-    ideas.forEach(function(r){ var hd=r.classList.contains('has-d'), hv=r.classList.contains('has-v'); if(hd)d++; if(hv)v++; if(!hd&&!hv)w++; });
-    cd.textContent=d; cv.textContent=v; cw.textContent=w;
-  }
-  ideas.forEach(function(r){
-    var k=r.dataset.k, kd='ideas:'+k+':d', kv='ideas:'+k+':v';
-    var db=r.querySelector('.chip.d'), vb=r.querySelector('.chip.v');
-    function sync(){
-      var dn=localStorage.getItem(kd)==='1', vn=localStorage.getItem(kv)==='1';
-      db.classList.toggle('on',dn); vb.classList.toggle('on',vn);
-      r.classList.toggle('has-d',dn); r.classList.toggle('has-v',vn);
-    }
-    db.addEventListener('click',function(){ localStorage.setItem(kd, localStorage.getItem(kd)==='1'?'0':'1'); sync(); counts(); });
-    vb.addEventListener('click',function(){ localStorage.setItem(kv, localStorage.getItem(kv)==='1'?'0':'1'); sync(); counts(); });
-    sync();
-  });
-  counts();
-  // filters
-  [].slice.call(document.querySelectorAll('.bar .filters button')).forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('.bar .filters button').forEach(function(x){ x.classList.remove('active'); });
-      b.classList.add('active'); list.setAttribute('data-filter', b.dataset.f);
-    });
-  });
-  // copy
-  function copyBy(cls, label, btn){
-    var txt = ideas.filter(function(r){ return r.classList.contains(cls); })
-                   .map(function(r){ return '• ' + r.querySelector('.txt').innerText.trim(); }).join('\n');
-    if (navigator.clipboard) navigator.clipboard.writeText(txt || '(nada marcado)');
-    btn.textContent = txt ? '¡Copiado!' : 'Vacío';
-    setTimeout(function(){ btn.textContent = label; }, 1500);
-  }
-  document.getElementById('copy-d').addEventListener('click', function(){ copyBy('has-d','Copiar Demo', this); });
-  document.getElementById('copy-v').addEventListener('click', function(){ copyBy('has-v','Copiar Video', this); });
-  document.getElementById('copy-w').addEventListener('click', function(){
-    var btn=this;
-    var txt = ideas.filter(function(r){ return !r.classList.contains('has-d') && !r.classList.contains('has-v'); })
-                   .map(function(r){ return '• ' + r.querySelector('.txt').innerText.trim(); }).join('\n');
-    if (navigator.clipboard) navigator.clipboard.writeText(txt || '(wishlist vacío)');
-    btn.textContent = txt ? '¡Copiado!' : 'Vacío';
-    setTimeout(function(){ btn.textContent = 'Copiar Wishlist'; }, 1500);
-  });
-  document.getElementById('clear').addEventListener('click', function(){
-    ideas.forEach(function(r){ localStorage.setItem('ideas:'+r.dataset.k+':d','0'); localStorage.setItem('ideas:'+r.dataset.k+':v','0');
-      r.querySelector('.chip.d').classList.remove('on'); r.querySelector('.chip.v').classList.remove('on'); r.classList.remove('has-d','has-v'); });
-    counts();
-  });
-})();</script>
 
 </body>
 </html>
