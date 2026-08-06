@@ -26,6 +26,7 @@
     .bar .count .d { color: var(--teal); font-weight: 900; }
     .bar .count .v { color: var(--purple); font-weight: 900; }
     .bar .count .w { color: var(--banana); font-weight: 900; }
+    .bar .count .p { color: #ff7a7d; font-weight: 900; }
     .bar .sp { flex: 1; }
     .bar .filters { display: flex; gap: 6px; flex-wrap: wrap; }
     .bar button { font: inherit; font-size: 12px; font-weight: 700; padding: 6px 11px; border-radius: 999px;
@@ -50,18 +51,23 @@
     .chip:hover { border-color: var(--ink); }
     .chip.d.on { background: var(--teal); border-color: var(--teal); color: #04211d; }
     .chip.v.on { background: var(--purple); border-color: var(--purple); color: #1a1033; }
+    .chip.p { border-color: #e5484d; color: #c62a2f; }
+    .chip.p.on { background: #e5484d; border-color: #e5484d; color: #fff; }
     .idea.has-d, .idea.has-v { background: #f6faf9; border-color: var(--line); }
+    .idea.has-p { background: #fff4f4; border-color: #f2b2b4; box-shadow: inset 4px 0 0 #e5484d; }
 
     /* filters */
     #list[data-filter="demo"]  .idea:not(.has-d),
     #list[data-filter="video"] .idea:not(.has-v),
     #list[data-filter="none"]  .idea.has-d,
     #list[data-filter="none"]  .idea.has-v,
-    #list[data-filter="assigned"] .idea:not(.has-d):not(.has-v) { display: none; }
+    #list[data-filter="assigned"] .idea:not(.has-d):not(.has-v),
+    #list[data-filter="priority"] .idea:not(.has-p) { display: none; }
     #list[data-filter="none"] .cat:not(:has(.idea:not(.has-d):not(.has-v))),
     #list[data-filter="assigned"] .cat:not(:has(.has-d)):not(:has(.has-v)),
     #list[data-filter="demo"]  .cat:not(:has(.has-d)),
-    #list[data-filter="video"] .cat:not(:has(.has-v)) { display: none; }
+    #list[data-filter="video"] .cat:not(:has(.has-v)),
+    #list[data-filter="priority"] .cat:not(:has(.has-p)) { display: none; }
 
     @media (max-width: 640px) {
       .idea { flex-direction: column; gap: 8px; }
@@ -92,9 +98,10 @@
 
 
   <div class="bar">
-    <span class="count">🎮 <span class="d" id="cd">0</span> demo · 🎬 <span class="v" id="cv">0</span> video · 🗒️ <span class="w" id="cw">0</span> wishlist</span>
+    <span class="count">⭐ <span class="p" id="cp">0</span> prioridad · 🎮 <span class="d" id="cd">0</span> demo · 🎬 <span class="v" id="cv">0</span> video · 🗒️ <span class="w" id="cw">0</span> wishlist</span>
     <span class="filters">
       <button data-f="all" class="active">Todas</button>
+      <button data-f="priority">⭐ Prioridad</button>
       <button data-f="assigned">Selección</button>
       <button data-f="demo">Demo</button>
       <button data-f="video">Video</button>
@@ -232,22 +239,25 @@
 <script>(function(){
   var list = document.getElementById('list');
   var ideas = [].slice.call(list.querySelectorAll('.idea'));
-  var cd = document.getElementById('cd'), cv = document.getElementById('cv'), cw = document.getElementById('cw');
+  var cd = document.getElementById('cd'), cv = document.getElementById('cv'), cw = document.getElementById('cw'), cp = document.getElementById('cp');
   function counts(){
-    var d=0,v=0,w=0;
-    ideas.forEach(function(r){ var hd=r.classList.contains('has-d'), hv=r.classList.contains('has-v'); if(hd)d++; if(hv)v++; if(!hd&&!hv)w++; });
-    cd.textContent=d; cv.textContent=v; cw.textContent=w;
+    var d=0,v=0,w=0,p=0;
+    ideas.forEach(function(r){ var hd=r.classList.contains('has-d'), hv=r.classList.contains('has-v'); if(hd)d++; if(hv)v++; if(!hd&&!hv)w++; if(r.classList.contains('has-p'))p++; });
+    cd.textContent=d; cv.textContent=v; cw.textContent=w; cp.textContent=p;
   }
   ideas.forEach(function(r){
-    var k=r.dataset.k, kd='ideas:'+k+':d', kv='ideas:'+k+':v';
+    var k=r.dataset.k, kd='ideas:'+k+':d', kv='ideas:'+k+':v', kp='ideas:'+k+':p';
     var db=r.querySelector('.chip.d'), vb=r.querySelector('.chip.v');
+    var pb=document.createElement('button'); pb.className='chip p'; pb.type='button'; pb.textContent='⭐ Prioridad';
+    r.querySelector('.tags').insertBefore(pb, db);
     function sync(){
-      var dn=localStorage.getItem(kd)==='1', vn=localStorage.getItem(kv)==='1';
-      db.classList.toggle('on',dn); vb.classList.toggle('on',vn);
-      r.classList.toggle('has-d',dn); r.classList.toggle('has-v',vn);
+      var dn=localStorage.getItem(kd)==='1', vn=localStorage.getItem(kv)==='1', pn=localStorage.getItem(kp)==='1';
+      db.classList.toggle('on',dn); vb.classList.toggle('on',vn); pb.classList.toggle('on',pn);
+      r.classList.toggle('has-d',dn); r.classList.toggle('has-v',vn); r.classList.toggle('has-p',pn);
     }
     db.addEventListener('click',function(){ localStorage.setItem(kd, localStorage.getItem(kd)==='1'?'0':'1'); sync(); counts(); });
     vb.addEventListener('click',function(){ localStorage.setItem(kv, localStorage.getItem(kv)==='1'?'0':'1'); sync(); counts(); });
+    pb.addEventListener('click',function(){ localStorage.setItem(kp, localStorage.getItem(kp)==='1'?'0':'1'); sync(); counts(); });
     sync();
   });
   counts();
@@ -277,8 +287,8 @@
     setTimeout(function(){ btn.textContent = 'Copiar Wishlist'; }, 1500);
   });
   document.getElementById('clear').addEventListener('click', function(){
-    ideas.forEach(function(r){ localStorage.setItem('ideas:'+r.dataset.k+':d','0'); localStorage.setItem('ideas:'+r.dataset.k+':v','0');
-      r.querySelector('.chip.d').classList.remove('on'); r.querySelector('.chip.v').classList.remove('on'); r.classList.remove('has-d','has-v'); });
+    ideas.forEach(function(r){ localStorage.setItem('ideas:'+r.dataset.k+':d','0'); localStorage.setItem('ideas:'+r.dataset.k+':v','0'); localStorage.setItem('ideas:'+r.dataset.k+':p','0');
+      r.querySelector('.chip.d').classList.remove('on'); r.querySelector('.chip.v').classList.remove('on'); r.querySelector('.chip.p').classList.remove('on'); r.classList.remove('has-d','has-v','has-p'); });
     counts();
   });
 })();</script>
