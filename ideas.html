@@ -112,7 +112,7 @@
     <div class="cat">
       <h2>🎯 Objetivo &amp; game loop</h2>
       <ul>
-        <li class="idea" data-k="i1"><span class="txt"><b>Indicadores de éxito/fracaso visibles:</b> contador de plata + límite de tiempo. Fórmula mezcla de tiempo y plata.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
+        <li class="idea" data-k="i1"><span class="txt"><b>Indicadores de éxito/fracaso visibles:</b> contador de plata + límite de tiempo.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
         <li class="idea" data-k="i2"><span class="txt">Llegar a destino con la mayor cantidad de pasajeros vivos y en el menor tiempo; perdés si la tripulación supera en número a los pasajeros.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
         <li class="idea" data-k="i3"><span class="txt">Récords / leaderboard.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
         <li class="idea" data-k="i4"><span class="txt"><b>Despegue colaborativo:</b> todos sentados y abrochados para poder despegar. Al despegar cambia el contador de plata.</span><span class="tags"><button class="chip d">🎮 Demo</button><button class="chip v">🎬 Video</button></span></li>
@@ -230,27 +230,62 @@
 </main>
 
 <script>(function(){
+  var API = 'https://jsonblob.com/api/jsonBlob/019fd75c-fa70-7fff-b65c-13618d70a300';
   var list = document.getElementById('list');
   var ideas = [].slice.call(list.querySelectorAll('.idea'));
   var cd = document.getElementById('cd'), cv = document.getElementById('cv'), cw = document.getElementById('cw');
+  var lastJSON = '';
+
   function counts(){
     var d=0,v=0,w=0;
     ideas.forEach(function(r){ var hd=r.classList.contains('has-d'), hv=r.classList.contains('has-v'); if(hd)d++; if(hv)v++; if(!hd&&!hv)w++; });
     cd.textContent=d; cv.textContent=v; cw.textContent=w;
   }
-  ideas.forEach(function(r){
-    var k=r.dataset.k, kd='ideas:'+k+':d', kv='ideas:'+k+':v';
-    var db=r.querySelector('.chip.d'), vb=r.querySelector('.chip.v');
-    function sync(){
-      var dn=localStorage.getItem(kd)==='1', vn=localStorage.getItem(kv)==='1';
-      db.classList.toggle('on',dn); vb.classList.toggle('on',vn);
+  function buildDoc(){
+    var doc={};
+    ideas.forEach(function(r){ doc[r.dataset.k]={ t:r.querySelector('.txt').innerHTML, d:r.classList.contains('has-d')?1:0, v:r.classList.contains('has-v')?1:0 }; });
+    return doc;
+  }
+  function applyDoc(doc){
+    if(!doc) return;
+    ideas.forEach(function(r){
+      var e=doc[r.dataset.k]; if(!e) return;
+      var txt=r.querySelector('.txt');
+      if(typeof e.t==='string' && document.activeElement!==txt && e.t!==txt.innerHTML) txt.innerHTML=e.t;
+      var dn=!!e.d, vn=!!e.v;
+      r.querySelector('.chip.d').classList.toggle('on',dn);
+      r.querySelector('.chip.v').classList.toggle('on',vn);
       r.classList.toggle('has-d',dn); r.classList.toggle('has-v',vn);
-    }
-    db.addEventListener('click',function(){ localStorage.setItem(kd, localStorage.getItem(kd)==='1'?'0':'1'); sync(); counts(); });
-    vb.addEventListener('click',function(){ localStorage.setItem(kv, localStorage.getItem(kv)==='1'?'0':'1'); sync(); counts(); });
-    sync();
+    });
+    counts();
+  }
+  var saveT;
+  function save(){
+    clearTimeout(saveT);
+    saveT=setTimeout(function(){
+      var body=JSON.stringify(buildDoc()); lastJSON=body;
+      fetch(API,{method:'PUT',headers:{'Content-Type':'application/json','Accept':'application/json'},body:body}).catch(function(){});
+    },400);
+  }
+  function load(initial){
+    fetch(API,{headers:{'Accept':'application/json'}}).then(function(r){return r.json();}).then(function(doc){
+      var hasData=doc && ideas[0] && doc[ideas[0].dataset.k];
+      if(hasData){ var j=JSON.stringify(doc); if(j!==lastJSON){ lastJSON=j; applyDoc(doc); } }
+      else if(initial){ save(); }
+    }).catch(function(){});
+  }
+
+  // make text editable + tags shared
+  ideas.forEach(function(r){
+    var txt=r.querySelector('.txt');
+    txt.setAttribute('contenteditable','true');
+    txt.addEventListener('blur', save);
+    var db=r.querySelector('.chip.d'), vb=r.querySelector('.chip.v');
+    db.addEventListener('click',function(){ r.classList.toggle('has-d'); db.classList.toggle('on'); counts(); save(); });
+    vb.addEventListener('click',function(){ r.classList.toggle('has-v'); vb.classList.toggle('on'); counts(); save(); });
   });
   counts();
+
   // filters
   [].slice.call(document.querySelectorAll('.bar .filters button')).forEach(function(b){
     b.addEventListener('click',function(){
@@ -259,28 +294,22 @@
     });
   });
   // copy
-  function copyBy(cls, label, btn){
-    var txt = ideas.filter(function(r){ return r.classList.contains(cls); })
-                   .map(function(r){ return '• ' + r.querySelector('.txt').innerText.trim(); }).join('\n');
-    if (navigator.clipboard) navigator.clipboard.writeText(txt || '(nada marcado)');
+  function copyBy(pred, label, btn){
+    var txt = ideas.filter(pred).map(function(r){ return '• ' + r.querySelector('.txt').innerText.trim(); }).join('\n');
+    if (navigator.clipboard) navigator.clipboard.writeText(txt || '(vacío)');
     btn.textContent = txt ? '¡Copiado!' : 'Vacío';
     setTimeout(function(){ btn.textContent = label; }, 1500);
   }
-  document.getElementById('copy-d').addEventListener('click', function(){ copyBy('has-d','Copiar Demo', this); });
-  document.getElementById('copy-v').addEventListener('click', function(){ copyBy('has-v','Copiar Video', this); });
-  document.getElementById('copy-w').addEventListener('click', function(){
-    var btn=this;
-    var txt = ideas.filter(function(r){ return !r.classList.contains('has-d') && !r.classList.contains('has-v'); })
-                   .map(function(r){ return '• ' + r.querySelector('.txt').innerText.trim(); }).join('\n');
-    if (navigator.clipboard) navigator.clipboard.writeText(txt || '(wishlist vacío)');
-    btn.textContent = txt ? '¡Copiado!' : 'Vacío';
-    setTimeout(function(){ btn.textContent = 'Copiar Wishlist'; }, 1500);
-  });
+  document.getElementById('copy-d').addEventListener('click', function(){ copyBy(function(r){return r.classList.contains('has-d');},'Copiar Demo', this); });
+  document.getElementById('copy-v').addEventListener('click', function(){ copyBy(function(r){return r.classList.contains('has-v');},'Copiar Video', this); });
+  document.getElementById('copy-w').addEventListener('click', function(){ copyBy(function(r){return !r.classList.contains('has-d') && !r.classList.contains('has-v');},'Copiar Wishlist', this); });
   document.getElementById('clear').addEventListener('click', function(){
-    ideas.forEach(function(r){ localStorage.setItem('ideas:'+r.dataset.k+':d','0'); localStorage.setItem('ideas:'+r.dataset.k+':v','0');
-      r.querySelector('.chip.d').classList.remove('on'); r.querySelector('.chip.v').classList.remove('on'); r.classList.remove('has-d','has-v'); });
-    counts();
+    ideas.forEach(function(r){ r.classList.remove('has-d','has-v'); r.querySelector('.chip.d').classList.remove('on'); r.querySelector('.chip.v').classList.remove('on'); });
+    counts(); save();
   });
+
+  load(true);
+  setInterval(function(){ load(false); }, 8000);
 })();</script>
 
 </body>

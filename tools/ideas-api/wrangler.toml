@@ -1,0 +1,8 @@
+name = "banana-ideas"
+main = "worker.js"
+compatibility_date = "2026-08-01"
+
+# KV binding — the namespace id gets filled in after `wrangler kv namespace create IDEAS`
+kv_namespaces = [
+  { binding = "IDEAS", id = "REPLACE_WITH_KV_ID" }
+]
