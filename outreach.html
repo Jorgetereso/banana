@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BANANA AIRWAYS — Outreach & Press Kit Playbook</title>
+  <meta name="description" content="Wishlist-focused outreach playbook for BANANA AIRWAYS — press kit spec, contact database (press, creators, Steam curators), and send-ready templates." />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A3%3C/text%3E%3C/svg%3E" />
+  <style>
+    /* ---- Outreach-specific ---- */
+    .ob-lead { max-width: 760px; color: var(--ink-soft); font-size: 17px; line-height: 1.6; }
+    .ob-lead strong { color: var(--ink); }
+
+    .callout {
+      border: 2px solid var(--ink);
+      border-radius: 14px;
+      background: var(--cream);
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+    .callout.banana { background: var(--banana); }
+    .callout h4 { margin: 0 0 8px; font-size: 15px; font-weight: 800; letter-spacing: 0.02em; }
+    .callout p { margin: 0 0 8px; font-size: 14px; line-height: 1.55; color: var(--ink-soft); }
+    .callout.banana p { color: var(--ink); }
+    .callout ul { margin: 6px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+    .callout.banana ul { color: var(--ink); }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 900px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      padding: 18px 20px;
+    }
+    .panel h4 { margin: 0 0 10px; font-size: 15px; font-weight: 800; }
+    .panel ul { margin: 0; padding-left: 18px; font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); }
+    .panel .num { font-weight: 900; font-size: 26px; color: var(--banana-dark); line-height: 1; }
+
+    .checklist { list-style: none; padding: 0; margin: 0; }
+    .checklist li {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 9px 0; border-bottom: 1px dashed var(--line);
+      font-size: 14px; line-height: 1.5;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: "☐"; color: var(--banana-dark); font-weight: 900; font-size: 16px; flex: none; }
+    .checklist li b { color: var(--ink); }
+    .checklist li .must { color: var(--coral); font-weight: 800; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-left: 6px; }
+
+    .step-row { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; padding: 12px 0; border-bottom: 1px dashed var(--line); }
+    .step-row:last-child { border-bottom: none; }
+    .step-row .badge-n {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--ink); color: var(--banana);
+      display: grid; place-items: center; font-weight: 900; font-size: 16px;
+    }
+    .step-row h5 { margin: 0 0 4px; font-size: 15px; font-weight: 800; }
+    .step-row p { margin: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+
+    /* Templates */
+    .tmpl {
+      border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--paper); margin: 14px 0;
+    }
+    .tmpl > summary {
+      cursor: pointer; padding: 14px 18px; font-weight: 800; font-size: 14.5px;
+      background: var(--cream); list-style: none; display: flex; justify-content: space-between; align-items: center;
+    }
+    .tmpl > summary::-webkit-details-marker { display: none; }
+    .tmpl > summary .lang { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); }
+    .tmpl[open] > summary { border-bottom: 1px solid var(--line); }
+    .tmpl pre {
+      margin: 0; padding: 18px; font-family: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+      font-size: 13px; line-height: 1.6; white-space: pre-wrap; color: var(--ink); background: var(--paper);
+    }
+    .tmpl .tvar { background: var(--banana); padding: 0 3px; border-radius: 3px; font-weight: 700; }
+
+    /* Database */
+    .db-controls {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+      padding: 14px 16px; background: var(--cream); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 14px;
+    }
+    .db-controls input[type=search] {
+      flex: 1 1 240px; min-width: 200px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px;
+      font-size: 14px; background: var(--paper); color: var(--ink);
+    }
+    .db-controls .btn {
+      padding: 9px 14px; border-radius: 8px; border: 2px solid var(--ink); background: var(--banana);
+      color: var(--ink); font-weight: 800; font-size: 13px; cursor: pointer; text-decoration: none; white-space: nowrap;
+    }
+    .db-controls .btn:hover { box-shadow: 3px 3px 0 var(--ink); transform: translate(-1px,-1px); }
+    .db-controls .btn.ghost { background: var(--paper); }
+
+    .tbl-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+    table.db { border-collapse: collapse; width: 100%; min-width: 880px; font-size: 13px; background: var(--paper); }
+    table.db th {
+      position: sticky; top: 0; background: var(--ink); color: var(--cream);
+      text-align: left; padding: 10px 12px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; z-index: 1;
+    }
+    table.db td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.45; }
+    table.db tr:hover td { background: rgba(255,217,61,0.08); }
+    table.db a { color: #1d4ed8; text-decoration: none; font-weight: 600; }
+    table.db a:hover { text-decoration: underline; }
+    table.db .name { font-weight: 800; color: var(--ink); }
+    table.db .note { color: var(--slate); font-size: 12px; }
+    .pill { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; }
+    .pill.email { background: #dcfce7; color: #166534; }
+    .pill.form { background: #dbeafe; color: #1e40af; }
+    .pill.dm { background: #fce7f3; color: #9d174d; }
+    .pill.connect { background: #ede9fe; color: #5b21b6; }
+    .pill.v { background: #dcfce7; color: #166534; }
+    .pill.l { background: #fef9c3; color: #854d0e; }
+    .tier { font-weight: 900; }
+
+    .toc { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 6px; }
+    .toc a {
+      text-decoration: none; font-size: 13px; font-weight: 700; padding: 7px 12px;
+      border: 1px solid var(--line); border-radius: 999px; background: var(--cream); color: var(--ink);
+    }
+    .toc a:hover { background: var(--banana); border-color: var(--ink); }
+    .warn { color: var(--coral); font-weight: 800; }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">B</div>
+    <span>BANANA AIRWAYS — OUTREACH</span>
+  </div>
+  <nav>
+    <a href="index.html">Portal</a>
+    <a href="#strategy">Strategy</a>
+    <a href="#presskit">Press kit</a>
+    <a href="#how">How to send</a>
+    <a href="#templates">Templates</a>
+    <a href="#database">Database</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" style="grid-template-columns: 1.3fr 1fr;">
+    <div>
+      <h1>Outreach for <span class="accent">wishlists.</span></h1>
+      <p class="ob-lead" style="margin-top:14px;">The single goal of every message below is one thing: <strong>a Steam wishlist.</strong> This is the press kit spec, the send-ready templates, and a database of <strong>150+ real contacts</strong> — press, co-op creators, and Steam curators — each with a concrete way to reach them.</p>
+    </div>
+    <div class="meta">
+      <div class="row"><span>Goal</span><strong>Wishlists → Next Fest</strong></div>
+      <div class="row"><span>Window</span><strong>Now → 19–26 OCT 2026</strong></div>
+      <div class="row"><span>Contacts</span><strong id="count-total">150+</strong></div>
+      <div class="row"><span>Channels</span><strong>Press · Creators · Curators</strong></div>
+    </div>
+  </section>
+
+  <!-- ===================== STRATEGY ===================== -->
+  <section id="strategy">
+    <div class="section-title">
+      <h2>The strategy</h2>
+      <span class="tag">Read first</span>
+    </div>
+    <p class="ob-lead">For a chaotic co-op party game, <strong>coverage is not the goal — wishlists are.</strong> That reorders who you contact. A single mid-size streamer playing it "with the boys" out-converts a text article on IGN. Work the channels in this order, not alphabetically:</p>
+
+    <div class="grid3" style="margin-top:18px;">
+      <div class="panel">
+        <div class="num">1</div>
+        <h4>Creators &amp; streamers</h4>
+        <ul>
+          <li><b>Highest wishlist conversion</b> for co-op.</li>
+          <li>People wishlist a game they watched friends laugh at.</li>
+          <li>Mid-tier (10k–500k) reply more &amp; convert better than mega-channels.</li>
+          <li>Send a <b>free Steam key</b> + a 20-second "why it's fun with friends" hook.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="num">2</div>
+        <h4>Steam curators</h4>
+        <ul>
+          <li>Recommend <b>directly inside the store</b> — closest to the wishlist button.</li>
+          <li>Reach them via <b>Steam Curator Connect</b> (send keys from Steamworks).</li>
+          <li>Co-op / party / local-multiplayer curators are the tight fit.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="num">3</div>
+        <h4>Press &amp; trailer portals</h4>
+        <ul>
+          <li>Credibility, SEO, and a <b>reason for creators to trust you</b>.</li>
+          <li>Trailer aggregators (IGN/GameSpot trailers) = big reach, low effort.</li>
+          <li>Indie-focused &amp; LATAM outlets reply far more than IGN's tips inbox.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout banana" style="margin-top:20px;">
+      <h4>The one rule for every message</h4>
+      <p>Every email, DM, and pitch ends with <b>one link and one ask</b>: the Steam page, and "wishlist it / here's a key." Never bury it. Never send someone to a portal page when you want them on the Steam page.</p>
+    </div>
+
+    <div class="callout">
+      <h4>Timing beats volume</h4>
+      <p>Two moments move the wishlist needle most — plan the list around them:</p>
+      <ul>
+        <li><b>Trailer / announcement drop</b> — hit press + trailer portals the same day, embargo optional.</li>
+        <li><b>Demo live during Next Fest (19–26 OCT)</b> — hit creators &amp; curators hard; a playable demo is the single biggest wishlist driver. Line the list up 3–4 weeks before.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== PRESS KIT ===================== -->
+  <section id="presskit">
+    <div class="section-title">
+      <h2>The impeccable press kit</h2>
+      <span class="tag">What you send</span>
+    </div>
+    <p class="ob-lead">A press kit is not an attachment — it's <strong>a single URL</strong> anyone can open, skim in 60 seconds, and pull assets from without emailing you back. Host it (presskit() / dopresskit.com, or a page on <code>bananaairways.com/press</code>). Below is the full spec; check each box before you send a single email.</p>
+
+    <div class="grid2" style="margin-top:18px;">
+      <div class="panel">
+        <h4>📄 The essentials (must-have)</h4>
+        <ul class="checklist">
+          <li><b>Steam page link</b> — top of the page, impossible to miss <span class="must">wishlist target</span></li>
+          <li><b>Trailer</b> — YouTube link + downloadable .mp4 <span class="must">must</span></li>
+          <li><b>One-line hook</b> — "Chaotic co-op as crew on a doomed low-cost airline."</li>
+          <li><b>Short description</b> — 2–3 sentences, the fantasy + the co-op chaos</li>
+          <li><b>Fact sheet</b> — platform (PC/Steam), players (1–4 co-op), genre, release window, price, languages, dev name + location (Argentina)</li>
+          <li><b>Key art</b> — Steam capsule + a clean logo (PNG, transparent)</li>
+          <li><b>Screenshots</b> — 6–10, high-res, gameplay not menus <span class="must">must</span></li>
+          <li><b>GIFs</b> — 3–5 short loops of the funniest chaos <span class="must">creators love these</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>✨ The credibility layer (sets you apart)</h4>
+        <ul class="checklist">
+          <li><b>"For content creators" line</b> — "Full monetization allowed, no embargo on the demo."</li>
+          <li><b>Steam key request</b> — a form or clear "email us for a key" line</li>
+          <li><b>Feature list</b> — 4–6 bullets (Serve · Repair · Defend · Fly)</li>
+          <li><b>Comparables</b> — "For fans of Overcooked, Content Warning, PEAK, R.E.P.O."</li>
+          <li><b>Team / studio blurb</b> — 3-person team, one paragraph, human</li>
+          <li><b>Logos &amp; branding</b> — zipped asset pack, download in one click</li>
+          <li><b>Contact</b> — a real name + email that replies fast</li>
+          <li><b>Social links</b> — Steam, X, Instagram, TikTok, Discord, YouTube</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:18px;">
+      <h4 class="warn">⚠ Three links you must slot in before sending anything</h4>
+      <ul>
+        <li><b>Steam page URL</b> — <span class="note">(the wishlist target — the whole campaign depends on this being live)</span></li>
+        <li><b>Trailer URL</b> — <span class="note">(YouTube, unlisted or public)</span></li>
+        <li><b>Hosted press kit URL</b> — <span class="note">(presskit() page or bananaairways.com/press)</span></li>
+      </ul>
+      <p style="margin-top:8px;">Every template below has these as <span class="tvar" style="background:var(--banana);padding:0 3px;border-radius:3px;">[[PLACEHOLDERS]]</span> — fill them once, reuse everywhere.</p>
+    </div>
+
+    <div class="callout banana">
+      <h4>What to attach per channel (don't send the same thing to everyone)</h4>
+      <ul>
+        <li><b>Press / trailer portals:</b> short pitch email + press kit link + trailer link. No key needed for trailer aggregators.</li>
+        <li><b>Creators / streamers:</b> 2-line hook + <b>Steam key</b> (or key-request link) + 2–3 GIFs. Lead with "fun with friends," not features.</li>
+        <li><b>Steam curators:</b> send the key via <b>Curator Connect</b> in Steamworks + a one-line why-it-fits note. Keep it short.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== HOW TO SEND ===================== -->
+  <section id="how">
+    <div class="section-title">
+      <h2>How to actually send it</h2>
+      <span class="tag">Per channel</span>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <h4>✉️ Press &amp; trailer portals — by email/form</h4>
+        <div class="step-row"><div class="badge-n">1</div><div><h5>Find the tips/submission route</h5><p>Use the <b>email</b> or <b>form</b> in the database. tips@ / news@ go to the whole desk — that's fine.</p></div></div>
+        <div class="step-row"><div class="badge-n">2</div><div><h5>One outlet = one tailored subject line</h5><p>"[Trailer] BANANA AIRWAYS — chaotic 4-player airline co-op (Steam, Next Fest)". Personalize the first line if you can.</p></div></div>
+        <div class="step-row"><div class="badge-n">3</div><div><h5>Body: hook → 2 lines → links</h5><p>Press-kit link + trailer + Steam page. Nothing attached; everything linked.</p></div></div>
+        <div class="step-row"><div class="badge-n">4</div><div><h5>One follow-up, 5–7 days later</h5><p>Short, polite, new angle (a fresh GIF or milestone). Never a third.</p></div></div>
+      </div>
+
+      <div class="panel">
+        <h4>🎮 Creators — email first, DM second</h4>
+        <div class="step-row"><div class="badge-n">1</div><div><h5>Use the business email</h5><p>YouTube "About" → "View email address". That inbox is for exactly this. Prefer it over DMs.</p></div></div>
+        <div class="step-row"><div class="badge-n">2</div><div><h5>If no email, DM on their most-active platform</h5><p>Usually X or Instagram (handle in the database). Keep it to 3 lines + key offer.</p></div></div>
+        <div class="step-row"><div class="badge-n">3</div><div><h5>Lead with the key, not the ask</h5><p>"Free key, full monetization, no embargo — want it?" Make saying yes frictionless.</p></div></div>
+        <div class="step-row"><div class="badge-n">4</div><div><h5>Batch by tier</h5><p>Send mid-tier first (they reply), use their coverage as proof when you pitch bigger channels.</p></div></div>
+      </div>
+
+      <div class="panel">
+        <h4>🛒 Steam curators — Curator Connect</h4>
+        <div class="step-row"><div class="badge-n">1</div><div><h5>From Steamworks, open Curator Connect</h5><p>Search the curator by name, send review keys directly — no email needed. Free and built for this.</p></div></div>
+        <div class="step-row"><div class="badge-n">2</div><div><h5>Attach a one-line note</h5><p>"Co-op chaos like Overcooked × Content Warning — thought it'd fit your list. Key attached, wishlist welcome."</p></div></div>
+        <div class="step-row"><div class="badge-n">3</div><div><h5>Use the external contact only if listed</h5><p>Some curators list an email/Discord/form on their page (in the database) — respect their stated preference.</p></div></div>
+        <div class="step-row"><div class="badge-n">4</div><div><h5>Don't spam every curator</h5><p>Steam limits Curator Connect volume. Prioritize genuine co-op/party fit or it looks like spam.</p></div></div>
+      </div>
+
+      <div class="panel">
+        <h4>📸 Instagram / X DMs — when there's no email</h4>
+        <div class="step-row"><div class="badge-n">1</div><div><h5>Go to the exact handle in the database</h5><p>Each creator/outlet row has the direct profile link. Open it, hit Message.</p></div></div>
+        <div class="step-row"><div class="badge-n">2</div><div><h5>First line earns the second</h5><p>No wall of text. "Hi [name] — made a co-op game I think your audience would lose it over. Free key?"</p></div></div>
+        <div class="step-row"><div class="badge-n">3</div><div><h5>Drop one GIF, then the Steam link</h5><p>A DM with a funny 3-second clip gets opened. A DM with a paragraph gets ignored.</p></div></div>
+        <div class="step-row"><div class="badge-n">4</div><div><h5>Track who you hit</h5><p>Mark the row in your CSV: contacted / replied / covered. Don't double-DM.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TEMPLATES ===================== -->
+  <section id="templates">
+    <div class="section-title">
+      <h2>Send-ready templates</h2>
+      <span class="tag">EN + ES · copy &amp; fill</span>
+    </div>
+    <p class="ob-lead">Fill the <span class="tvar">[[PLACEHOLDERS]]</span> once. Keep them short — every one is built to be skimmed on a phone. Click to expand.</p>
+
+    <details class="tmpl">
+      <summary><span>1 · Press / trailer portal pitch</span><span class="lang">EN</span></summary>
+      <pre>Subject: [Trailer] BANANA AIRWAYS — chaotic 4-player airline co-op hits Steam
+
+Hi [[OUTLET / EDITOR NAME]],
+
+BANANA AIRWAYS is a chaotic 1–4 player co-op game where you're the crew of a
+doomed low-cost airline — serve passengers, repair the plane mid-flight, defend
+the cabin, and try to land. Think Overcooked meets Content Warning at 30,000 ft.
+
+We just dropped a new trailer and the Steam page is live:
+▶ Trailer: [[TRAILER URL]]
+🎮 Steam (wishlist): [[STEAM PAGE URL]]
+📦 Press kit (assets, GIFs, fact sheet): [[PRESS KIT URL]]
+
+We're a 3-person team out of Argentina heading into Steam Next Fest (Oct 19–26)
+with a playable demo. Happy to send review keys or answer anything.
+
+Thanks for the time,
+[[YOUR NAME]] — BANANA AIRWAYS
+[[EMAIL]] · [[STUDIO SOCIAL]]</pre>
+    </details>
+
+    <details class="tmpl">
+      <summary><span>1 · Pitch a prensa / portal de trailers</span><span class="lang">ES</span></summary>
+      <pre>Asunto: [Trailer] BANANA AIRWAYS — co-op caótico de aerolínea, 4 jugadores, en Steam
+
+Hola [[MEDIO / EDITOR]],
+
+BANANA AIRWAYS es un co-op caótico de 1 a 4 jugadores donde sos la tripulación
+de una aerolínea low-cost condenada: servís pasajeros, reparás el avión en pleno
+vuelo, defendés la cabina e intentás aterrizar. Overcooked se encuentra con
+Content Warning a 30.000 pies.
+
+Estrenamos trailer nuevo y la página de Steam ya está online:
+▶ Trailer: [[TRAILER URL]]
+🎮 Steam (wishlist): [[STEAM PAGE URL]]
+📦 Press kit (assets, GIFs, ficha): [[PRESS KIT URL]]
+
+Somos un equipo de 3 personas de Argentina rumbo al Steam Next Fest (19–26 oct)
+con una demo jugable. Con gusto mandamos keys de review o lo que necesiten.
+
+Gracias por el tiempo,
+[[TU NOMBRE]] — BANANA AIRWAYS
+[[EMAIL]] · [[SOCIAL DEL ESTUDIO]]</pre>
+    </details>
+
+    <details class="tmpl">
+      <summary><span>2 · Creator / streamer — key offer</span><span class="lang">EN</span></summary>
+      <pre>Subject: Free key — chaotic 4-player co-op your audience would lose it over
+
+Hi [[CREATOR NAME]],
+
+Love your co-op videos — [[ONE SPECIFIC THING, e.g. "the R.E.P.O. series"]] is
+exactly the vibe of what we built.
+
+BANANA AIRWAYS = 1–4 players running a falling-apart low-cost airline. Pure
+"scream at your friends" chaos: serve, repair, defend, crash-land. Clips tend to
+write their own punchlines.
+
+Free Steam key, full monetization, no embargo — want one?
+▶ 20-sec look: [[GIF / SHORT CLIP URL]]
+🎮 Steam: [[STEAM PAGE URL]]
+
+Either way, thanks for making the co-op content you do.
+[[YOUR NAME]] — BANANA AIRWAYS</pre>
+    </details>
+
+    <details class="tmpl">
+      <summary><span>2 · Creator / streamer — oferta de key</span><span class="lang">ES</span></summary>
+      <pre>Asunto: Key gratis — co-op caótico de 4 que tu audiencia va a amar
+
+Hola [[CREATOR]],
+
+Me encantan tus videos de co-op — [[ALGO ESPECÍFICO, ej. "la serie de R.E.P.O."]]
+es justo la vibra de lo que hicimos.
+
+BANANA AIRWAYS = 1 a 4 jugadores manejando una aerolínea low-cost que se cae a
+pedazos. Caos puro de "gritarle a tus amigos": servir, reparar, defender,
+aterrizar como puedas. Los clips se hacen solos.
+
+Key de Steam gratis, monetización libre, sin embargo — ¿querés una?
+▶ Vistazo de 20 seg: [[GIF / CLIP URL]]
+🎮 Steam: [[STEAM PAGE URL]]
+
+Igual, gracias por el contenido co-op que hacés.
+[[TU NOMBRE]] — BANANA AIRWAYS</pre>
+    </details>
+
+    <details class="tmpl">
+      <summary><span>3 · Instagram / X DM (short)</span><span class="lang">EN</span></summary>
+      <pre>Hi [[NAME]] 👋 we made a chaotic 1–4p co-op game — you run a falling-apart
+budget airline with friends. Total mayhem. Free Steam key + full monetization,
+no embargo if you ever want to try it 🎮 [[STEAM PAGE URL]]</pre>
+    </details>
+
+    <details class="tmpl">
+      <summary><span>3 · DM de Instagram / X (corto)</span><span class="lang">ES</span></summary>
+      <pre>Hola [[NOMBRE]] 👋 hicimos un co-op caótico de 1 a 4 jugadores — manejás una
+aerolínea low-cost que se cae a pedazos con amigos. Caos total. Key de Steam
+gratis + monetización libre, sin embargo si algún día querés probarlo 🎮
+[[STEAM PAGE URL]]</pre>
+    </details>
+
+    <details class="tmpl">
+      <summary><span>4 · Steam Curator Connect note</span><span class="lang">EN</span></summary>
+      <pre>Hi! Sending a key for BANANA AIRWAYS — a chaotic 1–4 player co-op where you crew
+a doomed low-cost airline (Overcooked × Content Warning energy). Saw your curator
+page leans co-op/party, thought it'd be a fit. Wishlists & recommendations very
+welcome 🙏 Steam: [[STEAM PAGE URL]]</pre>
+    </details>
+
+    <details class="tmpl">
+      <summary><span>5 · Follow-up (any channel)</span><span class="lang">EN</span></summary>
+      <pre>Subject: Re: BANANA AIRWAYS — one quick follow-up
+
+Hi [[NAME]], just floating this back up in case it got buried. New since last
+time: [[NEW GIF / DEMO DATE / MILESTONE]]. Still happy to send a key.
+Steam: [[STEAM PAGE URL]] — thanks either way!</pre>
+    </details>
+  </section>
+
+  <!-- ===================== DATABASE ===================== -->
+  <section id="database">
+    <div class="section-title">
+      <h2>Contact database</h2>
+      <span class="tag" id="count-tag">150+ contacts</span>
+    </div>
+    <p class="ob-lead">Every row has a <b>concrete way in</b> — a real email, a submission form, a DM handle, or Curator Connect. <span class="pill v">verified</span> = confirmed on their page; <span class="pill l">likely</span> = widely reported, confirm before sending. Search filters all three tables live.</p>
+
+    <div class="toc">
+      <a href="#db-press">📰 Press &amp; portals</a>
+      <a href="#db-creators">🎮 Creators &amp; streamers</a>
+      <a href="#db-curators">🛒 Steam curators</a>
+    </div>
+
+    <div class="db-controls">
+      <input type="search" id="db-search" placeholder="Filter all tables — name, outlet, note, language…" />
+      <a class="btn" href="outreach.csv" download>⬇ Download CSV</a>
+      <button class="btn ghost" id="btn-clear" type="button">Clear</button>
+    </div>
+
+    <!-- PRESS TABLE -->
+    <h3 id="db-press" style="margin:26px 0 10px; font-size:18px;">📰 Press &amp; trailer portals</h3>
+    <div class="tbl-scroll">
+      <table class="db" id="tbl-press">
+        <thead><tr><th>Outlet</th><th>Contact</th><th>Email / Form</th><th>Social</th><th>Conf.</th><th>Note</th></tr></thead>
+        <tbody>
+        <!--PRESS_ROWS-->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CREATORS TABLE -->
+    <h3 id="db-creators" style="margin:30px 0 10px; font-size:18px;">🎮 Creators &amp; streamers</h3>
+    <div class="tbl-scroll">
+      <table class="db" id="tbl-creators">
+        <thead><tr><th>Creator</th><th>Reach</th><th>How to reach</th><th>Channel / Social</th><th>Conf.</th><th>Note</th></tr></thead>
+        <tbody>
+        <!--CREATOR_ROWS-->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CURATORS TABLE -->
+    <h3 id="db-curators" style="margin:30px 0 10px; font-size:18px;">🛒 Steam curators</h3>
+    <div class="tbl-scroll">
+      <table class="db" id="tbl-curators">
+        <thead><tr><th>Curator</th><th>Followers</th><th>Contact route</th><th>Steam page</th><th>Conf.</th><th>Note</th></tr></thead>
+        <tbody>
+        <!--CURATOR_ROWS-->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>BANANA AIRWAYS · Outreach playbook · <a href="index.html">← back to portal</a></span>
+    <span>Goal: wishlists before Next Fest · Not public-facing (noindex)</span>
+  </footer>
+
+</main>
+
+<script>
+  // Live filter across all three tables
+  (function () {
+    const q = document.getElementById('db-search');
+    const clear = document.getElementById('btn-clear');
+    const tables = ['tbl-press','tbl-creators','tbl-curators'].map(id => document.getElementById(id));
+    function apply() {
+      const term = q.value.trim().toLowerCase();
+      tables.forEach(t => {
+        if (!t) return;
+        t.querySelectorAll('tbody tr').forEach(tr => {
+          tr.style.display = !term || tr.textContent.toLowerCase().includes(term) ? '' : 'none';
+        });
+      });
+    }
+    q.addEventListener('input', apply);
+    clear.addEventListener('click', () => { q.value=''; apply(); q.focus(); });
+
+    // Count rows
+    let n = 0;
+    tables.forEach(t => { if (t) n += t.querySelectorAll('tbody tr').length; });
+    if (n > 0) {
+      document.getElementById('count-total').textContent = n;
+      document.getElementById('count-tag').textContent = n + ' contacts';
+    }
+  })();
+</script>
+
+</body>
+</html>

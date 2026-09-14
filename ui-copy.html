@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BANANA AIRWAYS — UI Copy / Textos del juego</title>
+<meta name="description" content="Todos los textos de la UI del vuelo guionado de Banana Airways, con una versión más corta propuesta para cada uno. Cartel de situación, consignas y checklist, beat por beat." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%8C%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --banana:#ffd93d; --banana-dark:#e6b800; --ink:#0a1628; --ink-soft:#2a3a4f;
+  --cream:#fff9e8; --paper:#fffdf5; --line:#e7dfb8; --coral:#ff6b6b; --purple:#a78bfa;
+  --teal:#14b8a6; --orange:#fb923c; --green:#22c55e; --pink:#ec4899; --blue:#3b82f6;
+  --gold:#f59e0b; --slate:#64748b;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 24px 80px;}
+
+/* topbar */
+header.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;background:var(--ink);color:var(--cream);border-bottom:4px solid var(--banana);position:sticky;top:0;z-index:20;}
+header.topbar .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.04em;font-size:14px;}
+header.topbar .brand .logo{width:34px;height:34px;border-radius:50%;background:var(--banana);color:var(--ink);display:grid;place-items:center;font-weight:900;font-size:17px;}
+header.topbar nav a{text-decoration:none;color:var(--cream);opacity:.85;margin-left:18px;font-size:13px;}
+header.topbar nav a:hover{opacity:1;color:var(--banana);}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:32px;align-items:end;padding:36px 0 34px;border-bottom:1px dashed var(--line);margin-bottom:34px;}
+.hero h1{font-size:clamp(36px,5.5vw,64px);line-height:.95;margin:0 0 14px;letter-spacing:-.02em;font-weight:900;}
+.hero h1 .accent{background:var(--banana);padding:0 10px;box-shadow:4px 4px 0 var(--ink);display:inline-block;}
+.hero p{font-size:17px;color:var(--ink-soft);max-width:560px;line-height:1.55;margin:0;}
+.hero .meta{display:grid;gap:10px;font-size:13px;}
+.hero .meta .row{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;background:var(--cream);border:1px solid var(--line);border-radius:8px;}
+.hero .meta .row span:first-child{color:var(--slate);font-weight:700;text-transform:uppercase;font-size:10px;letter-spacing:.08em;}
+.hero .meta .row strong{text-align:right;}
+
+/* principles */
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 44px;}
+.principle{border:2px solid var(--ink);border-radius:14px;background:var(--cream);padding:20px 20px 22px;}
+.principle .n{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);font-weight:800;}
+.principle h3{margin:6px 0 8px;font-size:18px;font-weight:900;}
+.principle p{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink-soft);}
+.principle code{background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:12px;}
+
+/* HUD-rule callout */
+.hudrule{border:2px dashed var(--ink);border-radius:14px;background:#0a1628;color:var(--cream);padding:22px 24px;margin:0 0 44px;}
+.hudrule h3{margin:0 0 8px;font-size:16px;letter-spacing:.02em;font-weight:900;color:var(--banana);}
+.hudrule p{margin:0 0 12px;font-size:13.5px;line-height:1.6;color:#dce6f0;max-width:820px;}
+.hudrule .demo{display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:13px;}
+.hudrule .demo .chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:6px 12px;}
+.hudrule .demo .chip.out{background:var(--banana);color:var(--ink);border-color:var(--banana);font-weight:800;letter-spacing:.04em;}
+.hudrule .demo .arw{opacity:.6;font-weight:800;}
+
+/* section heading */
+.section-title{display:flex;align-items:baseline;gap:14px;margin:44px 0 8px;flex-wrap:wrap;}
+.section-title h2{font-size:23px;margin:0;font-weight:900;letter-spacing:-.01em;}
+.section-title .tag{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);padding:4px 9px;background:var(--cream);border:1px solid var(--line);border-radius:999px;}
+.lead{color:var(--ink-soft);font-size:14px;line-height:1.55;margin:0 0 20px;max-width:760px;}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 14px;background:var(--cream);border:1px solid var(--line);border-radius:10px;margin:0 0 22px;font-size:13px;position:sticky;top:63px;z-index:10;}
+.controls .lbl{font-weight:700;color:var(--slate);text-transform:uppercase;letter-spacing:.08em;font-size:10.5px;}
+.toggle{display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;}
+.toggle button{border:none;background:var(--paper);color:var(--ink);padding:6px 14px;font-size:12.5px;font-weight:700;cursor:pointer;}
+.toggle button.on{background:var(--ink);color:var(--banana);}
+.controls .spacer{flex:1;}
+.controls .hint{color:var(--slate);font-size:12px;}
+
+/* beats */
+.beat{border:2px solid var(--ink);border-radius:14px;background:var(--paper);margin:0 0 16px;overflow:hidden;}
+.beat-head{display:flex;align-items:center;gap:14px;padding:12px 18px;background:var(--cream);border-bottom:2px solid var(--ink);}
+.beat-head .time{font-weight:900;font-size:15px;font-variant-numeric:tabular-nums;background:var(--ink);color:var(--banana);padding:3px 9px;border-radius:6px;letter-spacing:.04em;}
+.beat-head .moment{font-weight:800;font-size:15px;}
+.beat-head .wait{margin-left:auto;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--coral);border:1px solid var(--coral);border-radius:999px;padding:3px 9px;}
+.beat-body{padding:8px 18px 16px;}
+
+.line{display:grid;grid-template-columns:112px 1fr;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:start;}
+.line:last-child{border-bottom:none;}
+.line .role{font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#fff;padding:4px 8px;border-radius:6px;text-align:center;align-self:start;margin-top:2px;}
+.role.banner{background:var(--coral);}
+.role.consigna{background:var(--blue);}
+.role.check{background:var(--teal);}
+.role.state{background:var(--purple);color:#1a1033;}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.pair.single{grid-template-columns:1fr;}
+.txt{border:1px solid var(--line);border-radius:9px;padding:9px 12px;position:relative;background:var(--paper);}
+.txt .k{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--slate);display:block;margin-bottom:4px;}
+.txt.orig{background:#fff;}
+.txt.short{background:var(--banana);border-color:var(--banana-dark);}
+.txt.short .k{color:#7a5c00;}
+.txt .val{font-size:14px;line-height:1.4;font-weight:600;word-break:break-word;}
+.txt.hud .val{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;letter-spacing:.04em;}
+.txt .copy{position:absolute;top:7px;right:7px;border:1px solid rgba(10,22,40,.25);background:rgba(255,255,255,.6);border-radius:6px;font-size:11px;padding:2px 7px;cursor:pointer;font-weight:700;opacity:0;transition:opacity .12s;}
+.txt:hover .copy{opacity:1;}
+.txt .copy.done{background:var(--green);color:#fff;border-color:var(--green);opacity:1;}
+.txt .note{font-size:11.5px;color:var(--slate);margin-top:6px;line-height:1.4;font-style:italic;}
+.savings{font-size:11px;color:var(--slate);margin-top:5px;}
+.savings b{color:var(--green);}
+
+/* summary table */
+.copytable{border:2px solid var(--ink);border-radius:14px;overflow:hidden;margin:6px 0 0;}
+.copytable table{border-collapse:collapse;width:100%;font-size:13px;}
+.copytable th{background:var(--ink);color:var(--cream);text-align:left;padding:10px 14px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;}
+.copytable td{padding:9px 14px;border-top:1px solid var(--line);vertical-align:top;line-height:1.4;}
+.copytable tr:nth-child(even) td{background:var(--cream);}
+.copytable td.short{font-weight:700;}
+.copytable td.orig{color:var(--ink-soft);}
+
+footer.foot{margin-top:64px;padding-top:20px;border-top:1px dashed var(--line);color:var(--slate);font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .principles{grid-template-columns:1fr;}
+  .pair{grid-template-columns:1fr;}
+  .line{grid-template-columns:1fr;gap:8px;}
+  .line .role{justify-self:start;}
+  .controls{position:static;}
+  header.topbar{position:static;}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><div class="logo">B</div><span>BANANA AIRWAYS — UI COPY</span></div>
+  <nav>
+    <a href="index.html">← Portal</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="#beats">Guion</a>
+    <a href="#glossary">Glosario</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <h1>Los textos del <span class="accent">vuelo</span>, más cortos.</h1>
+      <p>Toda la copy que aparece en pantalla durante los 9 minutos del modo demo — carteles, consignas y checklist — con una versión más corta propuesta al lado de cada una. El lenguaje del juego tiene que leerse de un vistazo, en medio del caos.</p>
+    </div>
+    <div class="meta">
+      <div class="row"><span>Fuente</span><strong>Planilla · Línea de tiempo</strong></div>
+      <div class="row"><span>Modo</span><strong>DEMO · PlayFlow</strong></div>
+      <div class="row"><span>Duración</span><strong>~9:00 min</strong></div>
+      <div class="row"><span>Tipos de texto</span><strong>Cartel · Consigna · Checklist</strong></div>
+      <div class="row"><span>Idioma UI</span><strong>Inglés (in-game)</strong></div>
+    </div>
+  </section>
+
+  <div class="principles">
+    <div class="principle">
+      <div class="n">Principio 01</div>
+      <h3>Verbo primero</h3>
+      <p>El jugador está apagando un incendio, no leyendo. Empezá por la acción: <code>Fix engine</code>, no <code>Repair the engine so the plane can fly</code>. Sacá artículos y sujetos donde el contexto ya los da.</p>
+    </div>
+    <div class="principle">
+      <div class="n">Principio 02</div>
+      <h3>No repitas la amenaza</h3>
+      <p>Si el cartel ya grita <code>TORNADO</code>, el renglón del checklist no necesita decir <code>TORNADO! Change flight course</code>. Con <code>Change course</code> alcanza. Cada palabra que se repite es ruido.</p>
+    </div>
+    <div class="principle">
+      <div class="n">Principio 03</div>
+      <h3>Una idea por línea</h3>
+      <p>Las consignas encadenan tres pasos en una oración larga. Partilas con <code>·</code> o mandá un paso por vez: leer en 1 segundo &gt; leer completo.</p>
+    </div>
+  </div>
+
+  <div class="hudrule">
+    <h3>⚠︎ Ojo con la chapa del HUD — todo pasa por <code style="color:#fff">HudTheme.T()</code></h3>
+    <p>El cartel de situación y la consigna se dibujan con la chapa del HUD, así que el motor los transforma antes de mostrarlos: <b>TODO A MAYÚSCULAS</b>, la coma pasa a punto, los guiones se unifican, y <b>borra</b> <code style="color:#fff">! ? ' " ( ) [ ] % # &amp; * $</code>. Solo sobreviven espacio, <code style="color:#fff">+ - . / :</code> y <code style="color:#fff">0-9 A-Z</code>. Moraleja: los <code style="color:#fff">!</code> de dramatismo y los <code style="color:#fff">(paréntesis)</code> aclaratorios <b>no se ven</b> — escribir <code style="color:#fff">(use bananas)</code> es tipear al vacío. Prendé el preview de abajo para verlo tal cual sale.</p>
+    <div class="demo">
+      <span class="chip">Make syringes (bananas in the extractor)</span>
+      <span class="arw">→</span>
+      <span class="chip out">MAKE SYRINGES BANANAS IN THE EXTRACTOR</span>
+    </div>
+  </div>
+
+  <div class="section-title" id="beats">
+    <h2>El guion, beat por beat</h2>
+    <span class="tag">16 beats · 0:01 → 9:00</span>
+  </div>
+  <p class="lead">Cada beat muestra la copy actual (izquierda) y la propuesta más corta (derecha, en amarillo). Pasá el mouse por cualquier caja para copiar. Los renglones marcados <b>ESPERA</b> plantan el reloj hasta que se resuelva el checklist.</p>
+
+  <div class="controls">
+    <span class="lbl">Ver como</span>
+    <div class="toggle" id="renderToggle">
+      <button data-mode="raw" class="on">Texto fuente</button>
+      <button data-mode="hud">Render HUD (T)</button>
+    </div>
+    <span class="spacer"></span>
+    <span class="hint">El render HUD aplica la transformación real solo a carteles y consignas (el checklist conserva emojis).</span>
+  </div>
+
+  <div id="beatList"></div>
+
+  <div class="section-title" id="glossary">
+    <h2>Glosario de carteles</h2>
+    <span class="tag">Cartel de situación</span>
+  </div>
+  <p class="lead">El titular grande que entra al centro, se lee 7 s y vuela a la esquina. Solo 7 situaciones lo tienen. Ya están casi todos cortos — un par se pueden apretar más.</p>
+  <div class="copytable">
+    <table>
+      <thead><tr><th style="width:34%">Actual</th><th style="width:33%">Propuesta corta</th><th style="width:33%">Por qué</th></tr></thead>
+      <tbody id="bannerRows"></tbody>
+    </table>
+  </div>
+
+  <div class="section-title">
+    <h2>Copy-paste de consignas</h2>
+    <span class="tag">Solo las versiones cortas</span>
+  </div>
+  <p class="lead">La lista limpia para pegar en el proyecto. Consigna = el subtítulo persistente que acompaña al cartel; cambia por beat, no por situación.</p>
+  <div class="copytable">
+    <table>
+      <thead><tr><th style="width:50%">Consigna actual</th><th style="width:50%">Consigna corta</th></tr></thead>
+      <tbody id="consignaRows"></tbody>
+    </table>
+  </div>
+
+  <footer class="foot">
+    <span>BANANA AIRWAYS · UI Copy · Derivado de la planilla «Línea de tiempo — Modo DEMO»</span>
+    <span>Propuestas de acortado — revisar antes de pegar en World.unity</span>
+  </footer>
+
+</main>
+
+<script>
+// ---- HudTheme.T(): la transformación real de la chapa del HUD ----
+function hudT(s){
+  let out = s.toUpperCase();
+  out = out.replace(/,/g, '.');           // coma -> punto
+  out = out.replace(/[—·–_=]/g, '-');      // dashes/varios -> guion
+  out = out.replace(/[!?'"()\[\]%#&*$]/g, ''); // borra estos
+  // colapsar guiones repetidos y espacios que quedan
+  out = out.replace(/\s{2,}/g, ' ').trim();
+  return out;
+}
+
+// ---- Datos: cada beat del guion ----
+// role: banner | consigna | check | state ; s = versión corta ; note/whyBanner opcional
+const BEATS = [
+  {time:'0:01', moment:'Despegue', lines:[
+    {role:'consigna', o:'Take off: sit at the controls and hold S', s:'Sit at the controls · Hold S'},
+    {role:'check', o:'Take off from the cockpit ✈️', s:'Take off ✈️'},
+  ]},
+  {time:'0:25', moment:'Empieza el servicio', lines:[
+    {role:'check', o:'Serve the passengers ☕️ 🥤 🍌', s:'Serve passengers ☕️ 🥤 🍌', note:'Renglón fijo de punta a punta: nunca se tacha.'},
+  ]},
+  {time:'1:00', moment:'Tormenta', wait:false, lines:[
+    {role:'banner', o:'ELECTRICAL STORM', s:'ELECTRICAL STORM', note:'Ya está bien; opcional STORM a secas.'},
+    {role:'consigna', o:'Steer away from the storm: A / D at the controls', s:'Dodge the storm · A / D'},
+  ]},
+  {time:'1:15', moment:'Viraje', lines:[
+    {role:'check', o:'STORM! Change flight course 🌩️', s:'Change course 🌩️', note:'El cartel ya dice STORM.'},
+  ]},
+  {time:'1:35', moment:'Fuego en el ala y motor roto', lines:[
+    {role:'consigna', o:'Grab the extinguisher and get out on the wing: put the fires out, then reconnect the engine cables', s:'Grab extinguisher · Kill the fires · Reconnect engine'},
+    {role:'check', o:'The engine is on fire 🔥', s:'Engine on fire 🔥'},
+    {role:'check', o:'The wing is on fire 🔥', s:'Wing on fire 🔥'},
+    {role:'check', o:'Repair the engine 🔧', s:'Fix engine 🔧'},
+  ]},
+  {time:'2:30', moment:'Tormenta resuelta', wait:true, lines:[
+    {role:'consigna', o:'Serve the passengers: bring what they ask for and click them', s:'Bring their order · Click them'},
+  ]},
+  {time:'3:00', moment:'Tornado', lines:[
+    {role:'banner', o:'TORNADO WARNING', s:'TORNADO', note:'"WARNING" no agrega info; ya es un cartel de alerta.'},
+    {role:'consigna', o:'Fly away from the tornado: A / D at the controls', s:'Dodge the tornado · A / D'},
+    {role:'check', o:'TORNADO! Change flight course 🌪️', s:'Change course 🌪️'},
+  ]},
+  {time:'3:20', moment:'Vuelan dos puertas', lines:[
+    {role:'consigna', o:'Grab the hammer and hold click on each blown door', s:'Grab hammer · Hold-click each door'},
+    {role:'check', o:'Repair the left door 🔨', s:'Fix left door 🔨'},
+    {role:'check', o:'Repair the right door 🔨', s:'Fix right door 🔨'},
+  ]},
+  {time:'4:45', moment:'Bandada', lines:[
+    {role:'banner', o:'BIRD FLOCK AHEAD', s:'BIRDS AHEAD', note:'"FLOCK" es adorno; se entiende igual.'},
+    {role:'consigna', o:'Dodge the birds: A / D at the controls', s:'Dodge the birds · A / D'},
+  ]},
+  {time:'4:51', moment:'Impacto de los pájaros', lines:[
+    {role:'consigna', o:'Grab the extinguisher and get out on the wing: put the fires out, then reconnect the engine cables', s:'Grab extinguisher · Kill the fires · Reconnect engine'},
+    {role:'check', o:'KILLER BIRDS! Change flight course 🐦', s:'Change course 🐦', note:'Contador de 4 oleadas: se puede fallar.'},
+    {role:'check', o:'The engine is on fire 🔥', s:'Engine on fire 🔥'},
+    {role:'check', o:'Repair the engine 🔧', s:'Fix engine 🔧'},
+  ]},
+  {time:'6:00', moment:'Radiación', lines:[
+    {role:'banner', o:'RADIATION ZONE', s:'RADIATION', note:'"ZONE" sobra.'},
+    {role:'consigna', o:'Hold your course across the radiation zone', s:'Hold your course'},
+  ]},
+  {time:'6:10', moment:'Se contagian los pasajeros', lines:[
+    {role:'consigna', o:'Bananas into the extractor, then click each infected passenger with a syringe', s:'Bananas → extractor · Inject the infected'},
+    {role:'check', o:'PREPARE SYRINGES 💉 (use bananas) (0/4)', s:'Make syringes 💉 0/4', note:'El "(use bananas)" desaparece en la chapa: es ruido.'},
+    {role:'check', o:'INJECT infected passengers 💉 (0/4)', s:'Inject the infected 💉 0/4'},
+  ]},
+  {time:'7:30', moment:'Ataque aéreo', lines:[
+    {role:'banner', o:'AIR ATTACK', s:'AIR ATTACK', note:'Perfecto así.'},
+    {role:'consigna', o:'Shoot the missiles down with the flare gun', s:'Shoot missiles · Flare gun'},
+    {role:'check', o:'Shoot the missiles with flare gun 🔫 (0/6)', s:'Shoot missiles 🔫 0/6', note:'Contador de 6: se puede fallar.'},
+  ]},
+  {time:'7:40', moment:'Un misil pega en el motor', lines:[
+    {role:'consigna', o:'Get out on the wing and reconnect the engine cables', s:'Reconnect the engine cables'},
+    {role:'check', o:'The engine is on fire 🔥', s:'Engine on fire 🔥'},
+    {role:'check', o:'Repair the engine 🔧', s:'Fix engine 🔧'},
+  ]},
+  {time:'8:45', moment:'Vuelve la calma', lines:[
+    {role:'state', o:'~ BACK TO NORMAL ~', s:'~ BACK TO NORMAL ~', note:'Dejalo; el tono relajado funciona.'},
+    {role:'consigna', o:'The turbulence has passed', s:'Turbulence over'},
+  ]},
+  {time:'9:00', moment:'Fin del vuelo', lines:[
+    {role:'state', o:'FLIGHT COMPLETE', s:'FLIGHT COMPLETE', note:'Queda 10 s y vuelve al menú.'},
+    {role:'consigna', o:'The turbulence has passed', s:'Turbulence over'},
+  ]},
+];
+
+const ROLE_LABEL = {banner:'Cartel', consigna:'Consigna', check:'Checklist', state:'Estado'};
+let MODE = 'raw';
+
+function display(text, role){
+  // HUD render solo para cartel/consigna/estado; el checklist mantiene emojis
+  if(MODE === 'hud' && role !== 'check') return hudT(text);
+  return text;
+}
+
+function copyBtn(getText){
+  const b = document.createElement('button');
+  b.className = 'copy';
+  b.textContent = 'copiar';
+  b.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    navigator.clipboard.writeText(getText()).then(()=>{
+      b.textContent = '✓'; b.classList.add('done');
+      setTimeout(()=>{ b.textContent='copiar'; b.classList.remove('done'); }, 1100);
+    });
+  });
+  return b;
+}
+
+function txtBox(kind, klass, role, getVal){
+  const box = document.createElement('div');
+  box.className = 'txt ' + klass + (MODE==='hud' && role!=='check' ? ' hud':'');
+  const k = document.createElement('span'); k.className='k'; k.textContent = kind; box.appendChild(k);
+  const v = document.createElement('div'); v.className='val'; v.textContent = getVal(); box.appendChild(v);
+  box.appendChild(copyBtn(getVal));
+  return box;
+}
+
+function renderBeats(){
+  const host = document.getElementById('beatList');
+  host.innerHTML = '';
+  BEATS.forEach(beat=>{
+    const el = document.createElement('div'); el.className='beat';
+    const head = document.createElement('div'); head.className='beat-head';
+    head.innerHTML = `<span class="time">${beat.time}</span><span class="moment">${beat.moment}</span>`;
+    if(beat.wait){ const w=document.createElement('span'); w.className='wait'; w.textContent='Espera'; head.appendChild(w); }
+    el.appendChild(head);
+    const body = document.createElement('div'); body.className='beat-body';
+    beat.lines.forEach(ln=>{
+      const row = document.createElement('div'); row.className='line';
+      const role = document.createElement('span'); role.className='role '+ln.role; role.textContent = ROLE_LABEL[ln.role];
+      row.appendChild(role);
+      const pair = document.createElement('div'); pair.className='pair' + (ln.o===ln.s ? ' single':'');
+      pair.appendChild(txtBox('Actual','orig',ln.role,()=>display(ln.o,ln.role)));
+      if(ln.o!==ln.s) pair.appendChild(txtBox('Más corto','short',ln.role,()=>display(ln.s,ln.role)));
+      const cell = document.createElement('div');
+      cell.appendChild(pair);
+      if(ln.o!==ln.s){
+        const oc = display(ln.o,ln.role).length, sc = display(ln.s,ln.role).length;
+        const cut = Math.max(0, Math.round((1-sc/oc)*100));
+        const sv = document.createElement('div'); sv.className='savings';
+        sv.innerHTML = `${oc} → ${sc} car · <b>−${cut}%</b>`;
+        cell.appendChild(sv);
+      }
+      if(ln.note){ const n=document.createElement('div'); n.className='note'; n.textContent='» '+ln.note; cell.appendChild(n); }
+      row.appendChild(cell);
+      body.appendChild(row);
+    });
+    el.appendChild(body);
+    host.appendChild(el);
+  });
+}
+
+// glosario carteles + tabla consignas (independiente del toggle -> siempre fuente)
+function renderTables(){
+  const banners = [];
+  const consignas = [];
+  const seenC = new Set();
+  BEATS.forEach(b=>b.lines.forEach(ln=>{
+    if((ln.role==='banner'||ln.role==='state')){ banners.push(ln); }
+    if(ln.role==='consigna' && !seenC.has(ln.o)){ seenC.add(ln.o); consignas.push(ln); }
+  }));
+  const br = document.getElementById('bannerRows');
+  banners.forEach(ln=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="orig">${ln.o}</td><td class="short">${ln.s}</td><td>${ln.note||''}</td>`;
+    br.appendChild(tr);
+  });
+  const cr = document.getElementById('consignaRows');
+  consignas.forEach(ln=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="orig">${ln.o}</td><td class="short">${ln.s}</td>`;
+    cr.appendChild(tr);
+  });
+}
+
+document.getElementById('renderToggle').addEventListener('click', (e)=>{
+  const btn = e.target.closest('button'); if(!btn) return;
+  MODE = btn.dataset.mode;
+  document.querySelectorAll('#renderToggle button').forEach(b=>b.classList.toggle('on', b===btn));
+  renderBeats();
+});
+
+renderBeats();
+renderTables();
+</script>
+
+</body>
+</html>

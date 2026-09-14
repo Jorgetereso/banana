@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BANANA AIRWAYS — Cabin Soundtrack</title>
+  <meta name="description" content="Seis piezas de música incidental para el vuelo de BANANA AIRWAYS — del lounge caribeño en tierra al meltdown nuclear. Prompts de Suno listos y reproductor con filtro de PA de cabina." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B5%3C/text%3E%3C/svg%3E" />
+  <style>
+    /* ===== Music page ===== */
+    .lead {
+      max-width: 720px;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+    .lead strong { color: var(--ink); }
+
+    /* Global controls bar */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 18px;
+      background: var(--ink);
+      color: var(--cream);
+      border-radius: 12px;
+      margin: 26px 0 8px;
+      position: sticky;
+      top: 8px;
+      z-index: 20;
+      box-shadow: 4px 4px 0 rgba(10,22,40,0.25);
+    }
+    .controls .c-title {
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      font-size: 13px;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    .toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .toggle input { display: none; }
+    .toggle .track {
+      width: 42px; height: 24px;
+      background: var(--ink-soft);
+      border: 2px solid var(--banana);
+      border-radius: 999px;
+      position: relative;
+      transition: background 0.15s ease;
+      flex: none;
+    }
+    .toggle .track::after {
+      content: "";
+      position: absolute; top: 2px; left: 2px;
+      width: 16px; height: 16px;
+      background: var(--banana);
+      border-radius: 50%;
+      transition: transform 0.15s ease;
+    }
+    .toggle input:checked + .track { background: var(--banana); }
+    .toggle input:checked + .track::after { transform: translateX(18px); background: var(--ink); }
+    .controls .hint { font-size: 12px; opacity: 0.7; }
+
+    /* Intensity strip */
+    .flightstrip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+      margin: 22px 0 8px;
+    }
+    .flightstrip a {
+      text-decoration: none;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      padding: 10px 10px 12px;
+      background: var(--cream);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      display: block;
+    }
+    .flightstrip a:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); }
+    .flightstrip .fs-num { font-size: 11px; font-weight: 800; color: var(--slate); }
+    .flightstrip .fs-name { font-size: 12px; font-weight: 800; line-height: 1.15; margin: 3px 0 8px; }
+    .flightstrip .fs-bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--green), var(--gold), var(--coral)); }
+    .flightstrip .i1 .fs-bar { width: 16%; background: var(--green); }
+    .flightstrip .i2 .fs-bar { width: 34%; background: var(--teal); }
+    .flightstrip .i3 .fs-bar { width: 58%; background: var(--gold); }
+    .flightstrip .i4 .fs-bar { width: 46%; background: var(--purple); }
+    .flightstrip .i5 .fs-bar { width: 100%; background: var(--coral); }
+    .flightstrip .i6 .fs-bar { width: 22%; background: var(--slate); }
+
+    /* Track card */
+    .track-card {
+      border: 2px solid var(--ink);
+      border-radius: 16px;
+      background: var(--paper);
+      margin: 22px 0;
+      overflow: hidden;
+      scroll-margin-top: 80px;
+    }
+    .track-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 22px 16px;
+      background: var(--cream);
+      border-bottom: 2px solid var(--ink);
+    }
+    .track-head .num {
+      flex: none;
+      width: 54px; height: 54px;
+      border-radius: 12px;
+      background: var(--ink);
+      color: var(--banana);
+      display: grid; place-items: center;
+      font-size: 26px; font-weight: 900;
+      box-shadow: 3px 3px 0 var(--banana);
+    }
+    .track-head .th-main { flex: 1 1 auto; min-width: 0; }
+    .track-head h3 { margin: 0 0 4px; font-size: 24px; font-weight: 900; letter-spacing: -0.01em; }
+    .track-head .scene-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate);
+    }
+    .track-head .meta-tags {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+    }
+    .track-head .meta-tags span {
+      font-size: 11px; font-weight: 700;
+      background: var(--paper); border: 1px solid var(--line);
+      padding: 3px 9px; border-radius: 999px;
+    }
+    .intensity {
+      flex: none;
+      text-align: right;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+    }
+    .intensity .dots { display: flex; gap: 4px; }
+    .intensity .dots i {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--line); display: inline-block;
+    }
+    .intensity .dots i.on { background: var(--coral); }
+    .intensity .lab { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); }
+
+    .track-body { padding: 18px 22px 22px; }
+    .scene-desc { font-size: 15px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 16px; }
+    .scene-desc strong { color: var(--ink); }
+
+    /* Prompt box */
+    .prompt-box {
+      background: var(--ink);
+      color: var(--cream);
+      border-radius: 12px;
+      padding: 14px 16px;
+      position: relative;
+      margin-bottom: 18px;
+    }
+    .prompt-box .pb-label {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800;
+      color: var(--banana); margin-bottom: 8px; display: block;
+    }
+    .prompt-box .pb-text { font-size: 13.5px; line-height: 1.5; font-family: "SFMono-Regular", ui-monospace, Menlo, monospace; white-space: pre-wrap; }
+    .prompt-box .copy-btn {
+      position: absolute; top: 12px; right: 12px;
+      background: var(--banana); color: var(--ink);
+      border: none; border-radius: 7px; padding: 6px 11px;
+      font-size: 11px; font-weight: 800; cursor: pointer; letter-spacing: 0.04em;
+    }
+    .prompt-box .copy-btn:hover { background: #fff; }
+    .prompt-box .copy-btn.done { background: var(--green); color: #fff; }
+
+    /* Audio options */
+    .options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .options.single { grid-template-columns: 1fr; }
+    .opt .file-tag code { font-size: 11px; color: var(--slate); }
+    @media (max-width: 640px) { .options { grid-template-columns: 1fr; } }
+    .opt {
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: var(--cream);
+      transition: border-color 0.12s ease, box-shadow 0.12s ease;
+    }
+    .opt.chosen { border-color: var(--ink); box-shadow: 3px 3px 0 var(--banana); background: var(--paper); }
+    .opt-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+    .opt-top .opt-name { font-weight: 800; font-size: 14px; }
+    .opt .choose {
+      font-size: 11px; font-weight: 800; letter-spacing: 0.05em;
+      border: 2px solid var(--ink); background: var(--paper); color: var(--ink);
+      padding: 4px 10px; border-radius: 999px; cursor: pointer;
+    }
+    .opt.chosen .choose { background: var(--ink); color: var(--banana); }
+    .opt audio { width: 100%; height: 38px; }
+    .opt .pending {
+      font-size: 12px; color: var(--slate); font-style: italic;
+      padding: 10px 0; text-align: center;
+      border: 1px dashed var(--line); border-radius: 8px;
+    }
+
+    .section-note {
+      font-size: 13px; color: var(--ink-soft); line-height: 1.5;
+      background: var(--cream); border: 1px solid var(--line); border-left: 4px solid var(--banana);
+      padding: 12px 16px; border-radius: 8px; margin: 8px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">B</div>
+    <span>BANANA AIRWAYS — CABIN SOUNDTRACK</span>
+  </div>
+  <nav>
+    <a href="index.html">← Portal</a>
+    <a href="#tracks">Tracks</a>
+    <a href="ui-copy.html">UI Copy</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" style="grid-template-columns: 1.3fr 1fr;">
+    <div>
+      <h1>Música de <span class="accent">cabina.</span></h1>
+      <p class="lead">Seis piezas de <strong>música incidental</strong> para el vuelo guionado. No son canciones — son fondos que respiran con el gameplay y suenan como si salieran de <strong>los parlantes del avión</strong>: lo-fi, un poco saturados, mono. Nada de Disney: <strong>exotica podrida</strong>, cinta destemplada, musique concrète y <strong>gallinas mutantes</strong>. Arranca en una sala de espera tropical que no está del todo bien y se va pudriendo a medida que el vuelo se va al infierno.</p>
+    </div>
+    <div class="meta">
+      <div class="row"><span>Tracks</span><strong>6 · incidental / loopable</strong></div>
+      <div class="row"><span>Motif</span><strong>Exotica podrida · hauntología</strong></div>
+      <div class="row"><span>Textura</span><strong>PA de cabina · lo-fi mono</strong></div>
+      <div class="row"><span>Fuente</span><strong>Generación manual · 1 por track</strong></div>
+      <div class="row"><span>Uso</span><strong>Copiá el prompt · soltá el mp3</strong></div>
+    </div>
+  </section>
+
+  <div class="controls">
+    <span class="c-title">📻 Filtro de cabina</span>
+    <label class="toggle">
+      <input type="checkbox" id="paToggle" />
+      <span class="track"></span>
+      <span>Simular parlantes del avión</span>
+    </label>
+    <span class="hint">Filtra cualquier track en vivo (banda telefónica + saturación suave) para escuchar cómo va a sonar por el PA.</span>
+    <span class="hint" id="paWarn" style="display:none; color:var(--banana);">⚠ El filtro necesita la página servida por http (no <code>file://</code>) — abrila desde GitHub Pages o un server local. La reproducción normal funciona igual.</span>
+  </div>
+
+  <section id="tracks">
+    <div class="section-title">
+      <h2>La progresión del vuelo</h2>
+      <span class="tag">de la calma al meltdown</span>
+    </div>
+
+    <div class="flightstrip">
+      <a href="#t1" class="i1"><div class="fs-num">01</div><div class="fs-name">Welcome Aboard</div><div class="fs-bar"></div></a>
+      <a href="#t2" class="i2"><div class="fs-num">02</div><div class="fs-name">Fasten Seatbelts</div><div class="fs-bar"></div></a>
+      <a href="#t3" class="i3"><div class="fs-num">03</div><div class="fs-name">The Tornado</div><div class="fs-bar"></div></a>
+      <a href="#t4" class="i4"><div class="fs-num">04</div><div class="fs-name">Radiation Zone</div><div class="fs-bar"></div></a>
+      <a href="#t5" class="i5"><div class="fs-num">05</div><div class="fs-name">Meltdown</div><div class="fs-bar"></div></a>
+      <a href="#t6" class="i6"><div class="fs-num">06</div><div class="fs-name">Final Descent</div><div class="fs-bar"></div></a>
+    </div>
+
+    <div id="cards"></div>
+
+    <p class="section-note">
+      <strong>Cómo cargar las pistas:</strong> copiá el prompt de cada track y generá tu versión afuera (instrumental, ~90&nbsp;s, loopable). Guardá el mp3 final con el nombre que indica cada slot (<code>audio/track-1.mp3</code> … <code>audio/track-6.mp3</code>) y la página lo levanta sola. Probá el filtro de cabina arriba para escuchar cómo suena por el PA (necesita http, no <code>file://</code>).
+    </p>
+  </section>
+
+  <footer class="foot">
+    <span>BANANA AIRWAYS · Cabin soundtrack · 6 tracks incidentales</span>
+    <span id="chosenSummary">Elegí una opción por track</span>
+  </footer>
+
+</main>
+
+<script>
+/* ---------------- Track data ---------------- */
+const TRACKS = [
+  {
+    id: "t1", num: 1, title: "Welcome Aboard",
+    scene: "Embarque · avión en tierra",
+    intensity: 1,
+    tags: ["Exotica podrida", "Music box detuned", "Tape hiss", "Uncanny"],
+    desc: "El baseline — pero podrido. Sala de espera de un aeropuerto que no está del todo bien: una cinta de muzak tropical que gira demasiado lento, un music box que se apaga, y algo que <strong>cloquea</strong> entre el ruido. Tranquilo, pero te eriza la piel — de gallina.",
+    prompt: "Decayed tropical exotica heard through a dying PA — a warped tape loop of 1960s lounge muzak running slightly too slow, sour detuned steel drums and marimba, a music box winding down, faint clucking and wet feather-rustles used as percussion, tape hiss and wow-and-flutter, no clear melody, uneasy and uncanny, lo-fi mono. Instrumental, avant-garde, hauntological.",
+    file: "audio/track-1.mp3"
+  },
+  {
+    id: "t2", num: 2, title: "Fasten Seatbelts",
+    scene: "Despegue + primera tormenta / turbulencia",
+    intensity: 2,
+    tags: ["Cinta que falla", "Prepared piano", "Microtonal", "Ansioso"],
+    desc: "Despegamos y la cinta <strong>empieza a fallar</strong>. El loop podrido se traba y se destempla, un piano preparado tira notas nerviosas, y los cloqueos se multiplican en un pulso inestable. Mareo microtonal, sin gancho ni ritmo firme.",
+    prompt: "The rotting exotica loop begins to malfunction — pitch-bending tape, stuttering and skipping loops, nervous prepared-piano plinks, dissonant detuned swells, anxious multiplying clucks turning into an unstable pulse, seasick microtonal wobble, rising unease with no groove or hook, degraded PA speakers, mono, lo-fi. Instrumental, experimental, unsettling.",
+    file: "audio/track-2.mp3"
+  },
+  {
+    id: "t3", num: 3, title: "The Tornado",
+    scene: "El tornado golpea · muy intenso",
+    intensity: 4,
+    tags: ["Musique concrète", "Clusters de cuerda", "Ruido", "Atonal"],
+    desc: "El tornado impacta: <strong>musique concrète</strong> pura. Clusters de cuerdas que chillan, metal que raspa, viento y plumas volando, batería rota ahogada en distorsión. Nada a lo que agarrarse — caos atonal y aterrador.",
+    prompt: "A musique-concrète storm — shrieking atonal string clusters and brass smears, scraping metal, howling wind and flying feathers, broken surf-rock drums drowning in tape distortion, dense percussion chaos with no beat to hold onto, terrifying and unhinged, clipping overloaded PA speakers, mono. Instrumental, avant-garde horror, Ligeti and Penderecki dissonance.",
+    file: "audio/track-3.mp3"
+  },
+  {
+    id: "t4", num: 4, title: "Radiation Zone",
+    scene: "Cerca de la planta nuclear · empiezan los problemas",
+    intensity: 3,
+    tags: ["Dark ambient", "Drones industriales", "Gallinas pitcheadas", "Enfermizo"],
+    desc: "Nos acercamos a la <strong>planta nuclear</strong> y todo se vuelve <strong>dark ambient</strong>. Drones de reactor, clicks de Geiger, y las <strong>gallinas mutantes</strong> pitcheadas hacia abajo en gruñidos húmedos. Lento, enfermo, amenazante — la calma tóxica antes de la explosión.",
+    prompt: "Radioactive dark-ambient dread — deep reactor sub-drones, Geiger-counter clicks as sparse percussion, a detuned steel drum smeared into a sickly drone, mutant-chicken vocalizations pitched down into wet guttural growls, throbbing industrial hum, ghostly microtonal theremin, menacing and slow, airplane PA lo-fi, mono. Instrumental, experimental, no melody.",
+    file: "audio/track-4.mp3"
+  },
+  {
+    id: "t5", num: 5, title: "Meltdown",
+    scene: "Mutaciones · pasajeros explotando · clímax épico",
+    intensity: 5,
+    tags: ["Épico grotesco", "Coro de gallinas", "Muro de ruido", "Glitch"],
+    desc: "Las gallinas <strong>mutan y explotan</strong>. El clímax: épico pero <strong>grotesco</strong>, nunca triunfal. Clusters orquestales monstruosos, percusión de impacto, un coro de gallinas gritando y el tema del lounge convertido en una fanfarria horrible. Muro de ruido y glitch.",
+    prompt: "Grotesque apocalyptic climax — monstrous distorted orchestral clusters, pounding blast percussion, a screaming choir of mutant chickens, the rotten lounge theme mutated into a horrifying fanfare, walls of noise, feedback and digital glitch, unhinged and overwhelming, epic but sickening and never triumphant, over-driven clipping PA speakers, mono. Instrumental, avant-garde, noise.",
+    file: "audio/track-5.mp3"
+  },
+  {
+    id: "t6", num: 6, title: "Final Descent",
+    scene: "El juego termina",
+    intensity: 1,
+    tags: ["Hauntología", "Music box roto", "Wow & flutter", "Vacío"],
+    desc: "<strong>El juego termina.</strong> Un reprise <strong>fantasmal</strong>: el tema del principio en un music box medio derretido, sonando por parlantes rotos, con wow-and-flutter de cinta. Un último cloqueo estrangulado a lo lejos. Vacío, y se disuelve en ruido.",
+    prompt: "A haunted, ruined reprise — a half-melted music-box version of the opening exotica tune playing through broken speakers, heavy tape wow-and-flutter, a lone detuned whistle and ukulele, drifting ash and static, a final distant strangled cluck, empty and eerie, unresolved and dissolving into hiss, lo-fi mono PA. Instrumental, hauntological, sparse.",
+    file: "audio/track-6.mp3"
+  }
+];
+
+/* ---------------- Render ---------------- */
+function dots(n){
+  let h = '<div class="dots">';
+  for (let i=1;i<=5;i++) h += '<i class="'+(i<=n?'on':'')+'"></i>';
+  return h + '</div>';
+}
+
+function playerHtml(t){
+  return `
+    <div class="opt">
+      <div class="opt-top">
+        <span class="opt-name">🎧 Track final</span>
+        <span class="file-tag"><code>${t.file}</code></span>
+      </div>
+      <audio controls preload="none" src="${t.file}" data-audio></audio>
+      <div class="pending" style="display:none">🎵 Pendiente — generá con el prompt y soltá tu mp3 en <code>${t.file}</code></div>
+    </div>`;
+}
+
+function cardHtml(t){
+  return `
+  <div class="track-card" id="${t.id}">
+    <div class="track-head">
+      <div class="num">${t.num}</div>
+      <div class="th-main">
+        <div class="scene-tag">${t.scene}</div>
+        <h3>${t.title}</h3>
+        <div class="meta-tags">${t.tags.map(x=>`<span>${x}</span>`).join('')}</div>
+      </div>
+      <div class="intensity">
+        ${dots(t.intensity)}
+        <span class="lab">Intensidad</span>
+      </div>
+    </div>
+    <div class="track-body">
+      <p class="scene-desc">${t.desc}</p>
+      <div class="prompt-box">
+        <span class="pb-label">Prompt · instrumental — copiá y generá</span>
+        <button class="copy-btn" onclick="copyPrompt(this, ${t.num-1})">Copiar</button>
+        <div class="pb-text">${t.prompt}</div>
+      </div>
+      <div class="options single">
+        ${playerHtml(t)}
+      </div>
+    </div>
+  </div>`;
+}
+
+document.getElementById('cards').innerHTML = TRACKS.map(cardHtml).join('');
+
+/* ---------------- Interactions ---------------- */
+function copyPrompt(btn, i){
+  navigator.clipboard.writeText(TRACKS[i].prompt).then(()=>{
+    btn.textContent = "✓ Copiado";
+    btn.classList.add('done');
+    setTimeout(()=>{ btn.textContent="Copiar"; btn.classList.remove('done'); }, 1400);
+  });
+}
+
+/* Check which final tracks exist yet → show pending state + counter.
+   preload="none" means <audio> won't fetch until play, so we probe with fetch. */
+async function checkPresence(){
+  const auds = [...document.querySelectorAll('audio[data-audio]')];
+  const total = auds.length;
+  let present = 0;
+  await Promise.all(auds.map(async a=>{
+    const src = a.getAttribute('src');
+    let ok = false;
+    try { const r = await fetch(src, {method:'HEAD'}); ok = r.ok; } catch(e){ ok = false; }
+    if (ok){
+      present++;
+    } else {
+      a.style.display = 'none';
+      const p = a.parentElement.querySelector('.pending');
+      if (p) p.style.display = 'block';
+    }
+  }));
+  const el = document.getElementById('chosenSummary');
+  if (el) el.textContent = present === 0 ? `0/${total} tracks cargados` :
+    present === total ? `✓ ${total}/${total} tracks cargados — set completo` : `${present}/${total} tracks cargados`;
+}
+checkPresence();
+
+/* ---------------- Cabin PA filter (Web Audio) ---------------- */
+let audioCtx = null;
+const graph = new Map(); // audio element -> {dry, wet}
+let paOn = false;
+
+function makeCurve(amount){
+  const n = 256, curve = new Float32Array(n), k = amount;
+  for (let i=0;i<n;i++){ const x = i*2/n - 1; curve[i] = (1+k)*x/(1+k*Math.abs(x)); }
+  return curve;
+}
+
+function ensureCtx(){
+  if (!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  return audioCtx;
+}
+
+// IMPORTANT: normal playback stays 100% native <audio>. Routing an <audio>
+// element through a Web Audio MediaElementSource makes it output SILENCE for
+// file:// origins (Chrome treats local files as opaque/cross-origin), so we
+// only build the graph when the user explicitly turns the PA filter ON.
+function routeThroughFilter(el){
+  if (graph.has(el)) return graph.get(el);
+  const ctx = ensureCtx();
+  let src;
+  try { src = ctx.createMediaElementSource(el); }
+  catch (e) { return null; }
+  const dry = ctx.createGain();
+  const wet = ctx.createGain();
+  const hp = ctx.createBiquadFilter(); hp.type='highpass'; hp.frequency.value=450;
+  const lp = ctx.createBiquadFilter(); lp.type='lowpass';  lp.frequency.value=3200;
+  const peak = ctx.createBiquadFilter(); peak.type='peaking'; peak.frequency.value=1600; peak.Q.value=1.2; peak.gain.value=6;
+  const shaper = ctx.createWaveShaper(); shaper.curve = makeCurve(4);
+  src.connect(dry); dry.connect(ctx.destination);
+  src.connect(hp); hp.connect(lp); lp.connect(peak); peak.connect(shaper); shaper.connect(wet); wet.connect(ctx.destination);
+  dry.gain.value = paOn ? 0 : 1;
+  wet.gain.value = paOn ? 1 : 0;
+  const g = {dry, wet};
+  graph.set(el, g);
+  return g;
+}
+
+document.getElementById('paToggle').addEventListener('change', (e)=>{
+  paOn = e.target.checked;
+  const warn = document.getElementById('paWarn');
+  if (paOn){
+    ensureCtx();
+    document.querySelectorAll('audio[data-audio]').forEach(el=>routeThroughFilter(el));
+    // Web Audio silences file:// media — warn the user the filter needs http
+    if (warn) warn.style.display = (location.protocol === 'file:') ? 'inline' : 'none';
+  } else if (warn){
+    warn.style.display = 'none';
+  }
+  graph.forEach(({dry,wet})=>{
+    dry.gain.value = paOn ? 0 : 1;
+    wet.gain.value = paOn ? 1 : 0;
+  });
+});
+</script>
+
+</body>
+</html>
