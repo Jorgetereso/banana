@@ -4,333 +4,384 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BANANA AIRWAYS — Munición de marketing</title>
-  <meta name="description" content="Ideas de marketing picantes para BANANA AIRWAYS. Guerrilla contra Dear Passengers + copy listo para postear." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Ideas de marketing para BANANA AIRWAYS. Rivalidad con Dear Passengers + copy listo para postear." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A5%3C/text%3E%3C/svg%3E" />
   <style>
-    .wrap { max-width: 1100px; }
-    .top {
-      padding: 40px 0 28px;
-      border-bottom: 3px solid var(--ink);
-      margin-bottom: 8px;
+    :root {
+      --bg: #0d0e11;
+      --surface: #15171c;
+      --surface-2: #1b1e24;
+      --line: #262a32;
+      --text: #eceef2;
+      --muted: #8b909c;
+      --faint: #5b616d;
+      --accent: #ffd93d;
+      --danger: #ff6b6b;
     }
-    .kick {
-      display: inline-block;
-      background: var(--coral);
-      color: #fff;
-      font-weight: 800;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 5px 10px;
-      border-radius: 4px;
-      margin-bottom: 16px;
-    }
-    .top h1 {
-      font-size: clamp(38px, 6.5vw, 68px);
-      line-height: 0.94;
-      margin: 0 0 16px;
-      letter-spacing: -0.02em;
-      font-weight: 900;
-    }
-    .top h1 span {
-      background: var(--banana);
-      padding: 0 10px;
-      box-shadow: 5px 5px 0 var(--ink);
-      display: inline-block;
-    }
-    .thesis {
-      font-size: 19px;
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
       line-height: 1.5;
-      max-width: 720px;
-      color: var(--ink-soft);
+    }
+    ::selection { background: var(--accent); color: #000; }
+
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .masthead {
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+    }
+    .masthead .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .brand b { color: var(--text); }
+    .navlinks a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      margin-left: 20px;
+      transition: color .15s;
+    }
+    .navlinks a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero { padding: 72px 0 56px; border-bottom: 1px solid var(--line); }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0 0 20px;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      margin: 0 0 24px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 620px;
       margin: 0;
     }
-    .thesis b { color: var(--ink); background: var(--banana); padding: 0 4px; }
+    .hero p strong { color: var(--text); font-weight: 600; }
 
-    .rule {
-      margin: 28px 0 44px;
-      padding: 18px 22px;
-      background: var(--ink);
-      color: var(--cream);
-      border-left: 8px solid var(--banana);
-      border-radius: 0 8px 8px 0;
-      font-size: 16px;
-      line-height: 1.5;
+    .principle {
+      margin: 28px 0 0;
+      padding-left: 18px;
+      border-left: 2px solid var(--accent);
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 620px;
     }
-    .rule b { color: var(--banana); }
+    .principle strong { color: var(--text); font-weight: 600; }
 
-    .section-head {
+    /* Sections */
+    section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+    .sec-title {
       display: flex;
       align-items: baseline;
-      gap: 14px;
-      margin: 48px 0 20px;
+      justify-content: space-between;
+      margin: 0 0 28px;
     }
-    .section-head h2 {
-      font-size: 26px;
+    .sec-title h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
       margin: 0;
-      font-weight: 900;
+    }
+    .sec-title span { font-size: 13px; color: var(--faint); }
+
+    /* Visual gag list */
+    .list { display: flex; flex-direction: column; }
+    .item {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      gap: 20px;
+      align-items: start;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+    .item:first-child { border-top: none; }
+    .item .idx {
+      font-size: 14px;
+      color: var(--faint);
+      font-variant-numeric: tabular-nums;
+      padding-top: 2px;
+    }
+    .item h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      font-weight: 600;
       letter-spacing: -0.01em;
     }
-    .section-head .count {
-      font-size: 13px;
-      color: var(--slate);
-      font-weight: 700;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      position: relative;
-      background: var(--paper);
-      border: 2px solid var(--ink);
-      border-radius: 12px;
-      padding: 20px 20px 18px;
-      box-shadow: 4px 4px 0 var(--ink);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .card .num {
-      position: absolute;
-      top: -12px;
-      left: -12px;
-      width: 30px;
-      height: 30px;
-      background: var(--banana);
-      border: 2px solid var(--ink);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 14px;
-    }
-    .card h3 {
-      margin: 4px 0 0;
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.2;
-    }
-    .card p {
+    .item p {
       margin: 0;
-      font-size: 15px;
-      line-height: 1.45;
-      color: var(--ink-soft);
+      font-size: 14.5px;
+      color: var(--muted);
+      max-width: 560px;
     }
-    .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
-    .pill {
+    .tag {
       font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 20px;
-      border: 1.5px solid var(--ink);
+      color: var(--faint);
+      white-space: nowrap;
+      padding-top: 3px;
     }
-    .pill.visual { background: var(--purple); color: #fff; border-color: var(--purple); }
-    .pill.copy { background: var(--teal); color: #fff; border-color: var(--teal); }
-    .pill.spice3 { background: var(--coral); color: #fff; border-color: var(--coral); }
-    .pill.spice2 { background: var(--orange); color: #fff; border-color: var(--orange); }
-    .pill.spice1 { background: var(--gold); color: var(--ink); border-color: var(--gold); }
-    .pill.risk { background: #fff; color: var(--coral); border-color: var(--coral); }
-
-    /* Copy cards */
-    .copy-card {
-      background: var(--ink);
-      color: var(--cream);
-      border: 2px solid var(--ink);
-      border-radius: 12px;
-      padding: 22px;
-      box-shadow: 4px 4px 0 var(--banana);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .copy-card .quote {
-      font-size: 18px;
-      line-height: 1.45;
+    .tag.hot { color: var(--danger); }
+    .item h3 .flag {
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--danger);
+      border: 1px solid var(--danger);
+      border-radius: 4px;
+      padding: 1px 6px;
+      margin-left: 8px;
+      vertical-align: middle;
       font-weight: 600;
     }
-    .copy-card .quote .hl { color: var(--banana); font-weight: 800; }
-    .copy-btn {
-      align-self: flex-start;
-      background: var(--banana);
-      color: var(--ink);
-      border: none;
-      font-weight: 800;
-      font-size: 13px;
-      padding: 8px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      letter-spacing: 0.02em;
-    }
-    .copy-btn:active { transform: translate(1px, 1px); }
 
-    .note {
-      margin: 40px 0 0;
-      padding: 16px 20px;
-      background: #fff;
-      border: 2px dashed var(--coral);
+    /* Copy blocks */
+    .copy-list { display: flex; flex-direction: column; gap: 14px; }
+    .copy {
+      background: var(--surface);
+      border: 1px solid var(--line);
       border-radius: 10px;
-      font-size: 14.5px;
-      line-height: 1.5;
-      color: var(--ink-soft);
+      padding: 22px 22px 18px;
     }
-    .note b { color: var(--coral); }
+    .copy .label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0 0 12px;
+    }
+    .copy blockquote {
+      margin: 0 0 16px;
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+    .copy .btn {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 500;
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .copy .btn:hover { color: var(--text); border-color: var(--muted); }
+    .copy .btn.done { color: var(--accent); border-color: var(--accent); }
 
-    footer.foot {
-      margin-top: 56px;
-      padding-top: 20px;
-      border-top: 1px dashed var(--line);
-      font-size: 13px;
-      color: var(--slate);
+    /* Note */
+    .note {
+      padding: 56px 0 64px;
+    }
+    .note .box {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px 22px;
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .note .box strong { color: var(--danger); font-weight: 600; }
+    .note .box em { color: var(--text); font-style: normal; text-decoration: underline; text-underline-offset: 2px; }
+
+    footer {
+      padding: 28px 0 60px;
+      font-size: 12.5px;
+      color: var(--faint);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 8px;
     }
+
+    @media (max-width: 560px) {
+      .item { grid-template-columns: 28px 1fr; }
+      .item .tag { grid-column: 2; padding-top: 4px; }
+    }
   </style>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="brand">
-    <div class="logo">B</div>
-    <span>BANANA AIRWAYS — MUNICIÓN</span>
-  </div>
-  <nav>
-    <a href="index.html">Portal</a>
-    <a href="ideas.html">Ideas</a>
-    <a href="lavada-de-cara.html">Lavada de cara</a>
-  </nav>
-</header>
+  <header class="masthead">
+    <div class="wrap">
+      <div class="brand"><b>Banana Airways</b> · Munición de marketing</div>
+      <nav class="navlinks">
+        <a href="index.html">Portal</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="lavada-de-cara.html">Lavada de cara</a>
+      </nav>
+    </div>
+  </header>
 
-<main class="wrap">
-
-  <div class="top">
-    <span class="kick">💥 Marketing picante · borrador para el equipo</span>
-    <h1>Guerra de <span>guerrillas.</span></h1>
-    <p class="thesis">
-      Cambió el tablero: ahora el juego <b>se ve mejor que el de ellos</b> y <b>tenemos demo jugable — ellos no</b>.
-      Dejamos de ser el feo simpático. Somos el que tiene el juego en la mano.
-      Todo gira alrededor de una idea: <b>jugable &gt; prometido</b>.
-    </p>
-  </div>
-
-  <div class="rule">
-    <b>Regla de oro:</b> pegá para arriba, nunca para abajo. Somos 3 tipos de Argentina contra el juego de 2M de wishlists
-    — mientras seamos el desvalido carismático, ganamos. El día que parezcamos resentidos, perdemos.
-    Y el arma #1 es <b>“andá y jugalo”</b>: las wishlists no se juegan, un trailer no se juega, nuestra demo sí.
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Borrador interno</p>
+      <h1>Guerra de guerrillas.</h1>
+      <p>
+        Cambió el tablero: ahora el juego <strong>se ve mejor que el de ellos</strong> y
+        <strong>tenemos demo jugable — ellos no</strong>. Dejamos de ser el feo simpático;
+        somos el que tiene el juego en la mano. Todo gira alrededor de una idea: <strong>jugable &gt; prometido</strong>.
+      </p>
+      <p class="principle">
+        <strong>Regla de oro:</strong> pegar para arriba, nunca para abajo. Somos 3 tipos de Argentina contra el juego
+        de 2M de wishlists — mientras seamos el desvalido carismático, ganamos. El arma #1 es “andá y jugalo”.
+      </p>
+    </div>
   </div>
 
-  <div class="section-head">
-    <h2>🎯 Gags visuales contra Dear Passengers</h2>
-    <span class="count">6 conceptos para ilustrar / animar</span>
-  </div>
+  <section>
+    <div class="wrap">
+      <div class="sec-title">
+        <h2>Gags visuales contra Dear Passengers</h2>
+        <span>6 conceptos</span>
+      </div>
+      <div class="list">
 
-  <div class="grid">
+        <div class="item">
+          <div class="idx">01</div>
+          <div>
+            <h3>“Dick Passengers”</h3>
+            <p>Parodia del nombre y el logo — mismo lettering, chiste inmediato. Sello recurrente para toda la campaña de rivalidad.</p>
+          </div>
+          <div class="tag">Picante</div>
+        </div>
 
-    <div class="card">
-      <span class="num">1</span>
-      <div class="pills"><span class="pill visual">Visual</span><span class="pill spice2">Picante</span></div>
-      <h3>“Dick Passengers”</h3>
-      <p>Parodia del nombre / logo. Mismo lettering, mismo estilo, chiste inmediato. Sirve de sello recurrente para toda la campaña de rivalidad.</p>
+        <div class="item">
+          <div class="idx">02</div>
+          <div>
+            <h3>Bebé cagándose en la falda</h3>
+            <p>Un bebé de Banana en la falda de un personaje de Dear Passengers, dejándole el regalo. Nuestro caos contra su cabina prolija.</p>
+          </div>
+          <div class="tag hot">Muy picante</div>
+        </div>
+
+        <div class="item">
+          <div class="idx">03</div>
+          <div>
+            <h3>Caca en la cara</h3>
+            <p>El bebé le planta caca en la cara al personaje de Dear Passengers. Formato meme puro, hecho para reacciones y quotes.</p>
+          </div>
+          <div class="tag hot">Muy picante</div>
+        </div>
+
+        <div class="item">
+          <div class="idx">04</div>
+          <div>
+            <h3>Estrellados estilo “Viven” <span class="flag">Ojo riesgo</span></h3>
+            <p>Los pasajeros de Dear Passengers estrellados, comiéndose una pierna — mientras el avión de Banana pasa volando tranquilo por atrás.</p>
+          </div>
+          <div class="tag hot">Muy picante</div>
+        </div>
+
+        <div class="item">
+          <div class="idx">05</div>
+          <div>
+            <h3>El avión de Banana pasando</h3>
+            <p>Recurso comodín: nuestro avión pasa por encima y los deja atrás. Funciona solo o como remate de los otros gags.</p>
+          </div>
+          <div class="tag">Suave</div>
+        </div>
+
+        <div class="item">
+          <div class="idx">06</div>
+          <div>
+            <h3>Bebé con el muñeco</h3>
+            <p>El bebé de Banana agarrando un muñequito chiquito de un personaje de Dear Passengers, como juguete. Los miniaturiza.</p>
+          </div>
+          <div class="tag">Picante</div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <span class="num">2</span>
-      <div class="pills"><span class="pill visual">Visual</span><span class="pill spice3">Muy picante</span></div>
-      <h3>Bebé cagándose en la falda</h3>
-      <p>Un bebé de Banana sentado en la falda de un personaje de Dear Passengers, dejándole el regalo. Choque de mundos: nuestro caos contra su cabina prolija.</p>
+  <section>
+    <div class="wrap">
+      <div class="sec-title">
+        <h2>Copy listo para postear</h2>
+        <span>tocá para copiar</span>
+      </div>
+      <div class="copy-list">
+
+        <div class="copy">
+          <p class="label">Reto</p>
+          <blockquote>Jugá los dos con tu grupo y decinos cuál es más divertido. Si ganan ellos… te devolvemos nada, somos pobres.</blockquote>
+          <button class="btn" data-copy="Jugá los dos con tu grupo y decinos cuál es más divertido. Si ganan ellos… te devolvemos nada, somos pobres.">Copiar</button>
+        </div>
+
+        <div class="copy">
+          <p class="label">El hachazo</p>
+          <blockquote>Ellos: 2M wishlists y un trailer. Nosotros: 3 tipos y una demo que podés jugar hoy. Las wishlists no se juegan, capo.</blockquote>
+          <button class="btn" data-copy="Ellos: 2M wishlists y un trailer. Nosotros: 3 tipos y una demo que podés jugar hoy. Las wishlists no se juegan, capo.">Copiar</button>
+        </div>
+
+        <div class="copy">
+          <p class="label">Desertores</p>
+          <blockquote>¿Cansado de esperar la demo del juego de aviones que todos hostean? El nuestro ya está. Vení a volar barato.</blockquote>
+          <button class="btn" data-copy="¿Cansado de esperar la demo del juego de aviones que todos hostean? El nuestro ya está. Vení a volar barato.">Copiar</button>
+        </div>
+
+      </div>
     </div>
-
-    <div class="card">
-      <span class="num">3</span>
-      <div class="pills"><span class="pill visual">Visual</span><span class="pill spice3">Muy picante</span></div>
-      <h3>Caca en la cara</h3>
-      <p>El bebé le planta caca en la cara al personaje de Dear Passengers. Formato meme puro, hecho para reacciones y stitch/quote en redes.</p>
-    </div>
-
-    <div class="card">
-      <span class="num">4</span>
-      <div class="pills"><span class="pill visual">Visual</span><span class="pill spice3">Muy picante</span><span class="pill risk">Ojo riesgo</span></div>
-      <h3>Estrellados estilo “Viven”</h3>
-      <p>Los pasajeros de Dear Passengers estrellados, comiéndose una pierna — mientras el avión de Banana pasa volando tranquilo por atrás.</p>
-    </div>
-
-    <div class="card">
-      <span class="num">5</span>
-      <div class="pills"><span class="pill visual">Visual</span><span class="pill spice1">Suave</span></div>
-      <h3>El avión de Banana pasando</h3>
-      <p>Recurso visual comodín: nuestro avión pasa por encima / deja atrás la escena de ellos. Funciona solo o como remate de los otros gags (ver #4).</p>
-    </div>
-
-    <div class="card">
-      <span class="num">6</span>
-      <div class="pills"><span class="pill visual">Visual</span><span class="pill spice2">Picante</span></div>
-      <h3>Bebé con el muñeco</h3>
-      <p>El bebé de Banana agarrando un muñequito chiquito de un personaje de Dear Passengers — como juguete. Los miniaturiza. Tierno y letal a la vez.</p>
-    </div>
-
-  </div>
-
-  <div class="section-head">
-    <h2>✍️ Copy listo para postear</h2>
-    <span class="count">tocá para copiar</span>
-  </div>
-
-  <div class="grid">
-
-    <div class="copy-card">
-      <div class="pills"><span class="pill copy">Copy</span><span class="pill spice2">Reto</span></div>
-      <p class="quote">Jugá los dos con tu grupo y decinos cuál es más divertido. Si ganan ellos… <span class="hl">te devolvemos nada, somos pobres.</span></p>
-      <button class="copy-btn" data-copy="Jugá los dos con tu grupo y decinos cuál es más divertido. Si ganan ellos… te devolvemos nada, somos pobres.">Copiar</button>
-    </div>
-
-    <div class="copy-card">
-      <div class="pills"><span class="pill copy">Copy</span><span class="pill spice3">El hachazo</span></div>
-      <p class="quote">Ellos: 2M wishlists y un trailer. Nosotros: 3 tipos y una demo que podés jugar hoy. <span class="hl">Las wishlists no se juegan, capo.</span></p>
-      <button class="copy-btn" data-copy="Ellos: 2M wishlists y un trailer. Nosotros: 3 tipos y una demo que podés jugar hoy. Las wishlists no se juegan, capo.">Copiar</button>
-    </div>
-
-    <div class="copy-card">
-      <div class="pills"><span class="pill copy">Copy</span><span class="pill spice2">Desertores</span></div>
-      <p class="quote">¿Cansado de esperar la demo del juego de aviones que todos hostean? <span class="hl">El nuestro ya está. Vení a volar barato.</span></p>
-      <button class="copy-btn" data-copy="¿Cansado de esperar la demo del juego de aviones que todos hostean? El nuestro ya está. Vení a volar barato.">Copiar</button>
-    </div>
-
-  </div>
+  </section>
 
   <div class="note">
-    <b>Una sola advertencia honesta (#4):</b> el gag estilo “Viven” toca un accidente aéreo real donde murieron argentinos.
-    Puede leerse buenísimo… o hundirte a <i>vos</i> si algún medio lo agarra como “se ríen de una tragedia”.
-    No lo mato — es tu llamada — pero yo lo dejaría para testear en un grupo chico antes de tirarlo público, o lo giraría a un
-    accidente genérico de dibujo animado (sin la referencia a Los Andes) para quedarte con el chiste sin la bomba de PR.
+    <div class="wrap">
+      <div class="box">
+        <strong>Una advertencia honesta (#4):</strong> el gag estilo “Viven” toca un accidente aéreo real donde murieron
+        argentinos. Puede leerse buenísimo… o hundirte a <em>vos</em> si algún medio lo agarra como “se ríen de una tragedia”.
+        No lo mato — es tu llamada — pero lo dejaría para testear en un grupo chico antes de tirarlo público, o lo giraría a un
+        accidente genérico de dibujo (sin la referencia a Los Andes) para quedarte con el chiste sin la bomba de PR.
+      </div>
+    </div>
   </div>
 
-  <footer class="foot">
-    <span>BANANA AIRWAYS · Munición de marketing · borrador interno</span>
+  <footer class="wrap">
+    <span>Banana Airways · borrador interno</span>
     <span>jugable &gt; prometido</span>
   </footer>
 
-</main>
-
-<script>
-  document.querySelectorAll('.copy-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var text = btn.getAttribute('data-copy');
-      navigator.clipboard.writeText(text).then(function () {
-        var old = btn.textContent;
-        btn.textContent = '¡Copiado! ✓';
-        setTimeout(function () { btn.textContent = old; }, 1400);
+  <script>
+    document.querySelectorAll('.btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function () {
+          var old = btn.textContent;
+          btn.textContent = 'Copiado ✓';
+          btn.classList.add('done');
+          setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1400);
+        });
       });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
